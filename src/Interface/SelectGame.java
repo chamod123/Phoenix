@@ -5,8 +5,14 @@
  */
 package Interface;
 
+import GlorySchema.GameType;
 import java.awt.Dimension;
 import java.awt.Font;
+import com.mysql.jdbc.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultCellEditor;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -22,21 +28,36 @@ import javax.swing.table.TableColumnModel;
  */
 public class SelectGame extends javax.swing.JFrame {
 
+    GameType game = new GameType();
+
     /**
      * Creates new form SelectGame
      */
     public SelectGame() {
         initComponents();
         ShowGrid();
+        getGameData();
     }
-    
-     private void ShowGrid() {
+
+    private void getGameData() {
+        try {
+            ResultSet rsFind = null;
+            String data[][] = null;
+
+            rsFind = game.getGameTypes();
+            ResultSetMetaData rsmd = rsFind.getMetaData();
+        } catch (SQLException ex) {
+            Logger.getLogger(SelectGame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    private void ShowGrid() {
         String data[][] = null;
-        String colu[] = new String[]{"Game Id", "Player Id","No of games"};
+        String colu[] = new String[]{"Game Id", "Player Id", "No of games"};
         DefaultTableModel model = new DefaultTableModel(data, colu) {
             //@Override
             public boolean isCellEditable(int x, int y) {
-                if (y == 1 ) {
+                if (y == 1) {
                     return true;
                 } else {
                     return false;
@@ -51,10 +72,10 @@ public class SelectGame extends javax.swing.JFrame {
 
         DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
         rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
-       // tblGames.getColumnModel().getColumn(4).setCellRenderer(rightRenderer);
+        // tblGames.getColumnModel().getColumn(4).setCellRenderer(rightRenderer);
 
-       model.setRowCount(2);
-       
+        model.setRowCount(2);
+
         TableColumn colou10 = tblGames.getColumnModel().getColumn(0);
         colou10.setMinWidth(80);
         colou10.setPreferredWidth(80);
