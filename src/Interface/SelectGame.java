@@ -36,7 +36,7 @@ public class SelectGame extends javax.swing.JFrame {
     public SelectGame() {
         initComponents();
         ShowGrid();
-        getGameData();
+        getGameData(); 
     }
 
     private void getGameData() {
