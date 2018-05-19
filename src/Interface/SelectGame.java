@@ -55,12 +55,11 @@ public class SelectGame extends javax.swing.JFrame {
 
        model.setRowCount(2);
        
-       
-//        TableColumn colou10 = tblGames.getColumnModel().getColumn(0);
-//        colou10.setMinWidth(80);
-//        colou10.setPreferredWidth(80);
-//        colou10.setMaxWidth(80);
-//
+        TableColumn colou10 = tblGames.getColumnModel().getColumn(0);
+        colou10.setMinWidth(80);
+        colou10.setPreferredWidth(80);
+        colou10.setMaxWidth(80);
+
 //        TableColumn colou11 = tblGames.getColumnModel().getColumn(1);
 //        colou11.setMinWidth(80);
 //        colou11.setPreferredWidth(80);
