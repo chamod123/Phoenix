@@ -7,12 +7,10 @@ package GlorySchema;
 
 /**
  *
- * @author NIPUNI
+ * @author CHAMOD
  */
-public class Word {
-    public void matchWord(){}
-    public void checkSpelling(){}
-    public void automaticSearch(){}
-    public void manualSearch(){}
+public class AutoSearch extends WordSearch{
+    String AutoWord;
+    
+    public void doAutoSearch(){}
 }
-//hhhhh

@@ -10,5 +10,5 @@ package GlorySchema;
  * @author MELANI
  */
 public class LeaderBoad {
-    
+    public void addToLeaderBord(){}
 }

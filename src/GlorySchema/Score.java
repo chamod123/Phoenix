@@ -10,6 +10,9 @@ package GlorySchema;
  * @author MELANI
  */
 public class Score {
+    int noOfLettters;
+    double roundScore;
+    
     public void noOfLettersUsed(){}
     public void checkIfInitiolUsed(){}
     public void getScorePosition(){}

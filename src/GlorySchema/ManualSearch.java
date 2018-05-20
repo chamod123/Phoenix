@@ -9,6 +9,8 @@ package GlorySchema;
  *
  * @author CHAMOD
  */
-public class RoundResults extends Results{
-    public void addRoundResults(){}
+public class ManualSearch extends WordSearch{
+    String manualWord;
+    
+    public void domanualSearch(){}
 }

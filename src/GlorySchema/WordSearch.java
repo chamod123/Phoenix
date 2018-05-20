@@ -9,14 +9,12 @@ package GlorySchema;
  *
  * @author NIPUNI
  */
-public class Player {
-    private int userId;
-    private String UserName;
-    private String Email;
-    private String password;
+public class WordSearch {
+    String word;
+    boolean checkSpell;
     
-    public void register(){}
-    public void loging(){}
-    public void editDetails(){}
- 
+    public void matchWord(){}
+    public void checkSpelling(){}
+    public void automaticSearch(){}
+    public void manualSearch(){}
 }

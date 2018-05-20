@@ -6,14 +6,16 @@
 package GlorySchema;
 
 import Db.DataBase;
-import java.sql.ResultSet;
+import java.util.Date;
 
 /**
  *
  * @author INDIKA
  */
 public class GameBord {
-       
+       String constLetters;
+       String vowelLetters;
+       Date time;
         
     public void getInitialLetter(){}
     public void getConstent(){}
