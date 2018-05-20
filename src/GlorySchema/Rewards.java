@@ -10,6 +10,8 @@ package GlorySchema;
  * @author NIRO
  */
 public class Rewards {
+    
+    
     public void compareScore(){}
     public void rankPlayers(){}
     

@@ -10,10 +10,12 @@ package GlorySchema;
  * @author NIPUNI
  */
 public class Player {
-    private int userId;
-    private String UserName;
-    private String Email;
-    private String password;
+     int userId;
+     String UserName;
+     String Email;
+     String password;
+     double hightScore;
+    
     
     public void register(){}
     public void loging(){}
