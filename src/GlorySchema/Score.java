@@ -19,11 +19,11 @@ public class Score {
     int hightScoreBones = 5;
     
     
-    public void noOfLettersUsed(){}
-    public void checkIfInitiolUsed(){}
-    public void getScorePosition(){}
-    public void getTotalScore(){}
-    public void checkHightScorePerRount(){}
-    public void calculate(){}
+    public void noOfLettersUsed(){} //indi
+    public void checkIfInitiolUsed(){} //dilaka
+    public void getScorePosition(){} //melani
+    public void getTotalScore(){} //sathsarani
+    public void checkHightScorePerRount(){} //niro
+    public void calculate(){} //chamod
     
 }

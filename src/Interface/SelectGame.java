@@ -31,13 +31,10 @@ public class SelectGame extends javax.swing.JFrame {
 
     GameType game = new GameType();
 
-    /**
-     * Creates new form SelectGame
-     */
     public SelectGame() {
         initComponents();
         ShowGrid();
-        getGameData();
+        getGameData(); // show current Games
     }
 
     private void getGameData() {
@@ -102,31 +99,7 @@ public class SelectGame extends javax.swing.JFrame {
         colou10.setMinWidth(80);
         colou10.setPreferredWidth(80);
         colou10.setMaxWidth(80);
-
-//        TableColumn colou11 = tblGames.getColumnModel().getColumn(1);
-//        colou11.setMinWidth(80);
-//        colou11.setPreferredWidth(80);
-//        colou11.setMaxWidth(80);
-//
-//        TableColumnModel cm = tblGames.getColumnModel();
-//        JComboBox type = new JComboBox();
-//        type.addItem("C");
-//        type.addItem("D");
-//        cm.getColumn(1).setCellEditor(new DefaultCellEditor(type));
-//
-//        TableColumn colou12 = tblGames.getColumnModel().getColumn(2);
-//        colou12.setMinWidth(120);
-//        colou12.setPreferredWidth(120);
-//
-//        TableColumn colou13 = tblGames.getColumnModel().getColumn(3);
-//        colou13.setMinWidth(90);
-//        colou13.setPreferredWidth(90);
-//        colou13.setPreferredWidth(110);
-//
-//        TableColumn colou14 = tblGames.getColumnModel().getColumn(4);
-//        colou14.setMinWidth(100);
-//        colou14.setPreferredWidth(100);
-//        colou14.setPreferredWidth(120);
+        
     }
 
     /**
