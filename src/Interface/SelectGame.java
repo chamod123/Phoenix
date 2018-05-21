@@ -11,8 +11,9 @@ import java.awt.Font;
 import com.mysql.jdbc.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.util.Vector;
 import java.util.logging.Level;
-import java.util.logging.Logger; 
+import java.util.logging.Logger;
 import javax.swing.DefaultCellEditor;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -36,17 +37,37 @@ public class SelectGame extends javax.swing.JFrame {
     public SelectGame() {
         initComponents();
         ShowGrid();
-        getGameData(); 
+        getGameData();
     }
 
     private void getGameData() {
         try {
-            ResultSet rsFind = null;
+            ResultSet rs = null;
             String data[][] = null;
-            
 
-           rsFind = game.getGameTypes("");
-            ResultSetMetaData rsmd = rsFind.getMetaData();
+            rs = game.getGameTypes("");
+            ResultSetMetaData rsmd = rs.getMetaData();
+            
+            rs.last();
+            int count = rs.getRow();
+            rs.beforeFirst();
+            data = new String[count][5];
+            int x = 0;
+            while (rs.next()) {
+                Vector v = new Vector();
+               DefaultTableModel dtf = (javax.swing.table.DefaultTableModel) tblGames.getModel();
+                v.add(data[x][0] = rs.getString("PoolId"));
+                v.add(data[x][1] = rs.getString("TypeId"));
+//                v.add(data[x][2] = rs.getString(""));
+//                v.add(data[x][3] = rs.getString(""));
+//                v.add(data[x][4] = rs.getString(""));
+                dtf.addRow(v);
+                //confirm = rs.getInt("confirm");
+                x = x + 1;
+            }
+            
+            
+            
         } catch (SQLException ex) {
             Logger.getLogger(SelectGame.class.getName()).log(Level.SEVERE, null, ex);
         }

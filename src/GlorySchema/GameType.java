@@ -19,7 +19,7 @@ public class GameType {
         ResultSet rs = null;
         try {
             String query = "SELECT * FROM gamepool WHERE poolId like '" + bankid + "%'";
-            rs = (ResultSet) db.fetch(query);
+            rs =(ResultSet) db.fetch(query);
         } catch (Exception e) {
             e.printStackTrace();
         }
