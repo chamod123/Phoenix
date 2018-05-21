@@ -6,8 +6,7 @@
 package GlorySchema;
 
 import Db.DataBase;
-import java.sql.ResultSet;
-
+import com.mysql.jdbc.ResultSet;
 /**
  *
  * @author CHAMOD
@@ -27,4 +26,6 @@ public class GameType {
         return rs;
 
     }
+
+   
 }

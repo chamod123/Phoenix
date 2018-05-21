@@ -8,7 +8,7 @@ package Interface;
 import GlorySchema.GameType;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.sql.ResultSet;
+import com.mysql.jdbc.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -43,8 +43,9 @@ public class SelectGame extends javax.swing.JFrame {
         try {
             ResultSet rsFind = null;
             String data[][] = null;
+            
 
-           // rsFind = game.getGameTypes();
+           rsFind = game.getGameTypes("");
             ResultSetMetaData rsmd = rsFind.getMetaData();
         } catch (SQLException ex) {
             Logger.getLogger(SelectGame.class.getName()).log(Level.SEVERE, null, ex);
@@ -119,7 +120,7 @@ public class SelectGame extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
+        rdb2Player = new javax.swing.JRadioButton();
         jRadioButton3 = new javax.swing.JRadioButton();
         jRadioButton4 = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -130,8 +131,8 @@ public class SelectGame extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel1.setText("Select the Game Type");
 
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setText("2 Player Game");
+        buttonGroup1.add(rdb2Player);
+        rdb2Player.setText("2 Player Game");
 
         buttonGroup1.add(jRadioButton3);
         jRadioButton3.setText("3 Player Game");
@@ -172,7 +173,7 @@ public class SelectGame extends javax.swing.JFrame {
                         .addGap(75, 75, 75)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jRadioButton4)
-                            .addComponent(jRadioButton1)
+                            .addComponent(rdb2Player)
                             .addComponent(jRadioButton3)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -185,7 +186,7 @@ public class SelectGame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(21, 21, 21)
-                .addComponent(jRadioButton1)
+                .addComponent(rdb2Player)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jRadioButton3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -256,10 +257,10 @@ public class SelectGame extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JRadioButton rdb2Player;
     private javax.swing.JTable tblGames;
     // End of variables declaration//GEN-END:variables
 }
