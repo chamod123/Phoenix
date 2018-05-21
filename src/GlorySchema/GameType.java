@@ -6,7 +6,7 @@
 package GlorySchema;
 
 import Db.DataBase;
-import com.mysql.jdbc.ResultSet;
+import java.sql.ResultSet;
 /**
  *
  * @author CHAMOD

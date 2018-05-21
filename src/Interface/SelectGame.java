@@ -8,7 +8,7 @@ package Interface;
 import GlorySchema.GameType;
 import java.awt.Dimension;
 import java.awt.Font;
-import com.mysql.jdbc.ResultSet;
+import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.Vector;
@@ -96,7 +96,7 @@ public class SelectGame extends javax.swing.JFrame {
         rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
         // tblGames.getColumnModel().getColumn(4).setCellRenderer(rightRenderer);
 
-        model.setRowCount(2);
+       // model.setRowCount(2);
 
         TableColumn colou10 = tblGames.getColumnModel().getColumn(0);
         colou10.setMinWidth(80);
