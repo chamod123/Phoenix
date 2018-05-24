@@ -18,8 +18,10 @@ public class LoginScreen extends javax.swing.JFrame {
      * Creates new form LoginScreen
      */
     public LoginScreen() {
+        
         setUndecorated(true);
         getRootPane().setWindowDecorationStyle(JRootPane.NONE);
+        setSize(852, 480);
         setLocationRelativeTo(null);
         initComponents();
       //  btnLoging.setBackground(Color.red);
@@ -94,7 +96,7 @@ public class LoginScreen extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 100, 25));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 100, 25));
 
         jButton3.setBackground(new java.awt.Color(56, 185, 33));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -108,7 +110,7 @@ public class LoginScreen extends javax.swing.JFrame {
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 270, 100, 25));
 
         lblLog.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/loging.jpg"))); // NOI18N
-        getContentPane().add(lblLog, new org.netbeans.lib.awtextra.AbsoluteConstraints(4, 0, 610, 350));
+        getContentPane().add(lblLog, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 350));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -141,6 +143,8 @@ public class LoginScreen extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         txt_username.setText(null);
         txt_password.setText(null);
+        this.hide();
+        new regiter().setVisible(rootPaneCheckingEnabled);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
