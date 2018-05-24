@@ -60,7 +60,7 @@ public class regiter extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 255, 255));
         jLabel1.setText("Name");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 70, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 70, 30));
 
         name.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         name.setText(" ");
@@ -101,14 +101,14 @@ public class regiter extends javax.swing.JFrame {
         cPassword.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPanel1.add(cPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 340, 340, 30));
 
-        btn.setBackground(new java.awt.Color(0, 255, 51));
-        btn.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
+        btn.setBackground(new java.awt.Color(51, 255, 51));
+        btn.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
         btn.setForeground(new java.awt.Color(255, 255, 255));
         btn.setText("Register");
-        jPanel1.add(btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 450, 140, 50));
+        jPanel1.add(btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 460, 140, 40));
 
-        btn1.setBackground(new java.awt.Color(0, 255, 51));
-        btn1.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
+        btn1.setBackground(new java.awt.Color(0, 255, 0));
+        btn1.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
         btn1.setForeground(new java.awt.Color(255, 255, 255));
         btn1.setText("MainMenu");
         btn1.addActionListener(new java.awt.event.ActionListener() {
@@ -116,7 +116,7 @@ public class regiter extends javax.swing.JFrame {
                 btn1ActionPerformed(evt);
             }
         });
-        jPanel1.add(btn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 450, 150, 50));
+        jPanel1.add(btn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 460, 150, 40));
 
         jLabel5.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(204, 255, 255));

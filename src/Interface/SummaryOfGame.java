@@ -61,20 +61,22 @@ public class SummaryOfGame extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, 550, 100));
 
-        jButton1.setFont(new java.awt.Font("Cambria Math", 0, 24)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(51, 204, 0));
+        jButton1.setBackground(new java.awt.Color(0, 255, 0));
+        jButton1.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Exit");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 380, -1, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 387, 130, 30));
 
-        jButton2.setFont(new java.awt.Font("Cambria Math", 0, 24)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(51, 204, 0));
+        jButton2.setBackground(new java.awt.Color(0, 255, 0));
+        jButton2.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Play Again");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 380, -1, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 387, -1, 30));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/game.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
