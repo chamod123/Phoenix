@@ -6,6 +6,7 @@
 package Interface;
 
 import java.awt.Color;
+import javax.swing.JRootPane;
 
 /**
  *
@@ -17,6 +18,12 @@ public class regiter extends javax.swing.JFrame {
      * Creates new form regiter
      */
     public regiter() {
+        
+        setUndecorated(true);
+        getRootPane().setWindowDecorationStyle(JRootPane.NONE);
+        setSize(1920, 1200);
+        validate();
+        setLocationRelativeTo(null);
         initComponents();
         btn.setBackground(Color.GREEN);
     }
@@ -40,6 +47,7 @@ public class regiter extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         cPassword = new javax.swing.JPasswordField();
         btn = new javax.swing.JButton();
+        btn1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         email = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
@@ -61,7 +69,7 @@ public class regiter extends javax.swing.JFrame {
                 nameActionPerformed(evt);
             }
         });
-        jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 220, 230, 30));
+        jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 220, 340, 30));
 
         jLabel2.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 255, 255));
@@ -75,7 +83,7 @@ public class regiter extends javax.swing.JFrame {
                 uNameActionPerformed(evt);
             }
         });
-        jPanel1.add(uName, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 260, 230, 30));
+        jPanel1.add(uName, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 260, 340, 30));
 
         jLabel3.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(204, 255, 255));
@@ -83,8 +91,7 @@ public class regiter extends javax.swing.JFrame {
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, -1, -1));
 
         Password.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        Password.setText("jPasswordField1");
-        jPanel1.add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 300, 230, 30));
+        jPanel1.add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 300, 340, 30));
 
         jLabel4.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(204, 255, 255));
@@ -92,14 +99,24 @@ public class regiter extends javax.swing.JFrame {
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 340, -1, -1));
 
         cPassword.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        cPassword.setText("jPasswordField1");
-        jPanel1.add(cPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 340, 230, 30));
+        jPanel1.add(cPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 340, 340, 30));
 
         btn.setBackground(new java.awt.Color(0, 255, 51));
         btn.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
         btn.setForeground(new java.awt.Color(255, 255, 255));
         btn.setText("Register");
-        jPanel1.add(btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 460, 140, 50));
+        jPanel1.add(btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 450, 140, 50));
+
+        btn1.setBackground(new java.awt.Color(0, 255, 51));
+        btn1.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
+        btn1.setForeground(new java.awt.Color(255, 255, 255));
+        btn1.setText("MainMenu");
+        btn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 450, 150, 50));
 
         jLabel5.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(204, 255, 255));
@@ -107,25 +124,22 @@ public class regiter extends javax.swing.JFrame {
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, -1, -1));
 
         email.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jPanel1.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 380, 230, 30));
+        jPanel1.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 380, 340, 30));
 
         jLabel6.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 204));
         jLabel6.setText("              User Registation");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 80, 340, 32));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 70, 340, 32));
 
         jLabel7.setForeground(new java.awt.Color(204, 255, 255));
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/game.jpg"))); // NOI18N
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 980, 550));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 960, 540));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,6 +156,12 @@ public class regiter extends javax.swing.JFrame {
     private void uNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_uNameActionPerformed
+
+    private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
+this.hide();
+new LoginScreen().setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -181,6 +201,7 @@ public class regiter extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPasswordField Password;
     private javax.swing.JButton btn;
+    private javax.swing.JButton btn1;
     private javax.swing.JPasswordField cPassword;
     private javax.swing.JTextField email;
     private javax.swing.JLabel jLabel1;
