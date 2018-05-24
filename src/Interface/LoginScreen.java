@@ -6,6 +6,7 @@
 package Interface;
 
 import java.awt.Color;
+import javax.swing.JRootPane;
 
 /**
  *
@@ -17,6 +18,9 @@ public class LoginScreen extends javax.swing.JFrame {
      * Creates new form LoginScreen
      */
     public LoginScreen() {
+        setUndecorated(true);
+        getRootPane().setWindowDecorationStyle(JRootPane.NONE);
+        setLocationRelativeTo(null);
         initComponents();
       //  btnLoging.setBackground(Color.red);
     }
@@ -84,7 +88,7 @@ public class LoginScreen extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(56, 185, 33));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Singin");
+        jButton2.setText("Signin");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -141,7 +145,8 @@ public class LoginScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       // systemExit();
+        this.dispose();
+        // systemExit();
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
