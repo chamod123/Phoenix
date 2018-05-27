@@ -5,7 +5,10 @@
  */
 package Interface;
 
+import Db.DataBase;
 import java.awt.Color;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 import javax.swing.JRootPane;
 
 /**
@@ -18,13 +21,14 @@ public class LoginScreen extends javax.swing.JFrame {
      * Creates new form LoginScreen
      */
     public LoginScreen() {
-        
+
         setUndecorated(true);
-        getRootPane().setWindowDecorationStyle(JRootPane.NONE);
-        setSize(852, 480);
-        setLocationRelativeTo(null);
+//        getRootPane().setWindowDecorationStyle(JRootPane.NONE);
+//        setSize(852, 480);
         initComponents();
-      //  btnLoging.setBackground(Color.red);
+        setLocationRelativeTo(null);
+
+        //  btnLoging.setBackground(Color.red);
     }
 
     /**
@@ -38,7 +42,7 @@ public class LoginScreen extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        txt_username = new javax.swing.JTextField();
+        txtUsername = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         txt_password = new javax.swing.JPasswordField();
         btnLoging = new javax.swing.JButton();
@@ -66,8 +70,8 @@ public class LoginScreen extends javax.swing.JFrame {
         jLabel1.setText("UserName");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 80, 20));
 
-        txt_username.setFont(new java.awt.Font("Cambria Math", 1, 12)); // NOI18N
-        getContentPane().add(txt_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 169, 25));
+        txtUsername.setFont(new java.awt.Font("Cambria Math", 1, 12)); // NOI18N
+        getContentPane().add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 169, 25));
 
         jLabel2.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
         jLabel2.setText("Password");
@@ -116,6 +120,22 @@ public class LoginScreen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLogingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogingActionPerformed
+   DataBase db = new DataBase();
+        String username = txtUsername.getText();
+        ResultSet rs = null;
+        try {
+            String query = "SELECT Password FROM player WHERE UserName  = '" + username + "'";
+            rs =(ResultSet) db.fetch(query);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (txt_password.getText().equals(rs)) {
+            JOptionPane.showMessageDialog(null, "Success", "InfoBox: " + "Done", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "Failed", "InfoBox: " + "Error", JOptionPane.INFORMATION_MESSAGE);
+        }
+    
+
 //        String sql="select*from admin where UserName=? and Password=? ";
 //        try {
 //            conn=DBFacade.connect();
@@ -141,7 +161,7 @@ public class LoginScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLogingActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        txt_username.setText(null);
+        txtUsername.setText(null);
         txt_password.setText(null);
         this.hide();
         new regiter().setVisible(rootPaneCheckingEnabled);
@@ -197,7 +217,7 @@ public class LoginScreen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblLog;
+    private javax.swing.JTextField txtUsername;
     private javax.swing.JPasswordField txt_password;
-    private javax.swing.JTextField txt_username;
     // End of variables declaration//GEN-END:variables
 }
