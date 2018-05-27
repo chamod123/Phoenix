@@ -97,7 +97,7 @@ public class SelectGame extends javax.swing.JFrame {
         rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
         // tblGames.getColumnModel().getColumn(4).setCellRenderer(rightRenderer);
 
-        model.setRowCount(20);
+       // model.setRowCount(20);
         TableColumn colou10 = tblGames.getColumnModel().getColumn(0);
         colou10.setMinWidth(80);
         colou10.setPreferredWidth(80);
