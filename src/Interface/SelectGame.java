@@ -59,8 +59,8 @@ public class SelectGame extends javax.swing.JFrame {
             while (rs.next()) {
                 Vector v = new Vector();
                 DefaultTableModel dtf = (javax.swing.table.DefaultTableModel) tblGames.getModel();
-                v.add(data[x][0] = rs.getString("PoolId"));
-                v.add(data[x][1] = rs.getString("TypeId"));
+                v.add(data[x][0] = rs.getString("gameId"));
+                v.add(data[x][1] = rs.getString("gameTypeId"));
 //                v.add(data[x][2] = rs.getString(""));
 //                v.add(data[x][3] = rs.getString(""));
 //                v.add(data[x][4] = rs.getString(""));

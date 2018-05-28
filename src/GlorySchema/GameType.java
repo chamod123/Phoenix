@@ -15,10 +15,10 @@ public class GameType {
 
     DataBase db = new DataBase();
 
-    public ResultSet getGameTypes(String bankid) {
+    public ResultSet getGameTypes(String gameid) {
         ResultSet rs = null;
         try {
-            String query = "SELECT * FROM gamepool WHERE poolId like '" + bankid + "%'";
+            String query = "SELECT * FROM onlinegame WHERE gameId like '" + gameid + "%'";
             rs =(ResultSet) db.fetch(query);
         } catch (Exception e) {
             e.printStackTrace();
