@@ -38,6 +38,7 @@ public class SelectGame extends javax.swing.JFrame {
         initComponents();
         ShowGrid();
         getGameData(); // show current Games
+        game.connectWithGame(3);
         //rdb2Player.setOpaque(false);
         tblGames.setOpaque(true);
         setLocationRelativeTo(null);
@@ -97,7 +98,7 @@ public class SelectGame extends javax.swing.JFrame {
         rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
         // tblGames.getColumnModel().getColumn(4).setCellRenderer(rightRenderer);
 
-       // model.setRowCount(20);
+        // model.setRowCount(20);
         TableColumn colou10 = tblGames.getColumnModel().getColumn(0);
         colou10.setMinWidth(80);
         colou10.setPreferredWidth(80);
@@ -117,9 +118,9 @@ public class SelectGame extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        rdb2Player = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
+        chk2Player = new javax.swing.JRadioButton();
+        chk3Player = new javax.swing.JRadioButton();
+        chk4Player = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblGames = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
@@ -135,44 +136,44 @@ public class SelectGame extends javax.swing.JFrame {
         jLabel1.setText("Select the Game Type");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 290, -1));
 
-        rdb2Player.setBackground(null
+        chk2Player.setBackground(null
         );
-        buttonGroup1.add(rdb2Player);
-        rdb2Player.setFont(new java.awt.Font("Cambria Math", 1, 20)); // NOI18N
-        rdb2Player.setForeground(new java.awt.Color(204, 255, 255));
-        rdb2Player.setText("2 Player Game");
-        rdb2Player.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(chk2Player);
+        chk2Player.setFont(new java.awt.Font("Cambria Math", 1, 20)); // NOI18N
+        chk2Player.setForeground(new java.awt.Color(204, 255, 255));
+        chk2Player.setText("2 Player Game");
+        chk2Player.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rdb2PlayerActionPerformed(evt);
+                chk2PlayerActionPerformed(evt);
             }
         });
-        jPanel1.add(rdb2Player, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, -1, -1));
+        jPanel1.add(chk2Player, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, -1, -1));
 
-        jRadioButton3.setBackground(null
+        chk3Player.setBackground(null
         );
-        buttonGroup1.add(jRadioButton3);
-        jRadioButton3.setFont(new java.awt.Font("Cambria Math", 1, 20)); // NOI18N
-        jRadioButton3.setForeground(new java.awt.Color(204, 255, 255));
-        jRadioButton3.setText("3 Player Game");
-        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(chk3Player);
+        chk3Player.setFont(new java.awt.Font("Cambria Math", 1, 20)); // NOI18N
+        chk3Player.setForeground(new java.awt.Color(204, 255, 255));
+        chk3Player.setText("3 Player Game");
+        chk3Player.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton3ActionPerformed(evt);
+                chk3PlayerActionPerformed(evt);
             }
         });
-        jPanel1.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, -1, -1));
+        jPanel1.add(chk3Player, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, -1, -1));
 
-        jRadioButton4.setBackground(null
+        chk4Player.setBackground(null
         );
-        buttonGroup1.add(jRadioButton4);
-        jRadioButton4.setFont(new java.awt.Font("Cambria Math", 1, 20)); // NOI18N
-        jRadioButton4.setForeground(new java.awt.Color(204, 255, 255));
-        jRadioButton4.setText("4 Player Game");
-        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(chk4Player);
+        chk4Player.setFont(new java.awt.Font("Cambria Math", 1, 20)); // NOI18N
+        chk4Player.setForeground(new java.awt.Color(204, 255, 255));
+        chk4Player.setText("4 Player Game");
+        chk4Player.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton4ActionPerformed(evt);
+                chk4PlayerActionPerformed(evt);
             }
         });
-        jPanel1.add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, -1, -1));
+        jPanel1.add(chk4Player, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, -1, -1));
 
         tblGames.setBackground(new java.awt.Color(204, 128, 59));
         tblGames.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -199,6 +200,11 @@ public class SelectGame extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Play");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(683, 457, 120, 30));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/game.jpg"))); // NOI18N
@@ -220,17 +226,28 @@ public class SelectGame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
+    private void chk3PlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chk3PlayerActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton3ActionPerformed
+    }//GEN-LAST:event_chk3PlayerActionPerformed
 
-    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
+    private void chk4PlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chk4PlayerActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton4ActionPerformed
+    }//GEN-LAST:event_chk4PlayerActionPerformed
 
-    private void rdb2PlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdb2PlayerActionPerformed
+    private void chk2PlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chk2PlayerActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_rdb2PlayerActionPerformed
+    }//GEN-LAST:event_chk2PlayerActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        int typeid = 0;
+        if (chk2Player.isSelected()) {
+            typeid = 2;
+        } else if (chk3Player.isSelected()) {
+            typeid = 3;
+        } else if (chk4Player.isSelected()) {
+            typeid = 4;
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -269,15 +286,15 @@ public class SelectGame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JRadioButton chk2Player;
+    private javax.swing.JRadioButton chk3Player;
+    private javax.swing.JRadioButton chk4Player;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JRadioButton rdb2Player;
     private javax.swing.JTable tblGames;
     // End of variables declaration//GEN-END:variables
 }

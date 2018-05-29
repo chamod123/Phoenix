@@ -6,7 +6,9 @@
 package GlorySchema;
 
 import Db.DataBase;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+
 /**
  *
  * @author CHAMOD
@@ -19,7 +21,7 @@ public class GameType {
         ResultSet rs = null;
         try {
             String query = "SELECT * FROM onlinegame WHERE gameId like '" + gameid + "%'";
-            rs =(ResultSet) db.fetch(query);
+            rs = (ResultSet) db.fetch(query);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -27,5 +29,33 @@ public class GameType {
 
     }
 
-   
+    public void connectWithGame(int typeOfGame) {
+        ResultSet rs = null;
+        try {
+            String query = "SELECT * FROM onlinegame WHERE gameTypeID = '" + typeOfGame + "%' AND currentPlayers < '" + typeOfGame + "%'";
+            rs = (ResultSet) db.fetch(query);
+            rs.beforeFirst();
+            
+            if (!rs.next()) {
+                System.out.println("No Game. need create new record for game ");
+            
+            PreparedStatement pst2 = (PreparedStatement) db.psmt("INSERT INTO onlinegame (gameTypeID, currentPlayers) VALUES (?,?);");
+            pst2.setString(1, String.valueOf(typeOfGame));
+            pst2.setString(2, "1");
+            pst2.executeUpdate();
+            } else {
+                System.out.println("game have");
+                rs.beforeFirst();
+
+                while (rs.next()) {
+                    PreparedStatement pst = (PreparedStatement) db.psmt("UPDATE  onlinegame SET  currentPlayers = currentPlayers + 1 WHERE gameId = '" + rs.getString("gameId") + "'");
+                    pst.executeUpdate();
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }
