@@ -38,7 +38,7 @@ public class SelectGame extends javax.swing.JFrame {
         initComponents();
         ShowGrid();
         getGameData(); // show current Games
-        game.connectWithGame(3);
+
         //rdb2Player.setOpaque(false);
         tblGames.setOpaque(true);
         setLocationRelativeTo(null);
@@ -61,8 +61,8 @@ public class SelectGame extends javax.swing.JFrame {
                 Vector v = new Vector();
                 DefaultTableModel dtf = (javax.swing.table.DefaultTableModel) tblGames.getModel();
                 v.add(data[x][0] = rs.getString("gameId"));
-                v.add(data[x][1] = rs.getString("gameTypeId"));
-//                v.add(data[x][2] = rs.getString(""));
+                v.add(data[x][1] = rs.getString("Description"));
+                v.add(data[x][2] = rs.getString("currentPlayers"));
 //                v.add(data[x][3] = rs.getString(""));
 //                v.add(data[x][4] = rs.getString(""));
                 dtf.addRow(v);
@@ -121,6 +121,7 @@ public class SelectGame extends javax.swing.JFrame {
         chk2Player = new javax.swing.JRadioButton();
         chk3Player = new javax.swing.JRadioButton();
         chk4Player = new javax.swing.JRadioButton();
+        jButton3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblGames = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
@@ -174,6 +175,17 @@ public class SelectGame extends javax.swing.JFrame {
             }
         });
         jPanel1.add(chk4Player, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, -1, -1));
+
+        jButton3.setBackground(new java.awt.Color(56, 185, 33));
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setText("Quit");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 455, 120, 30));
 
         tblGames.setBackground(new java.awt.Color(204, 128, 59));
         tblGames.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -241,13 +253,22 @@ public class SelectGame extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         int typeid = 0;
         if (chk2Player.isSelected()) {
-            typeid = 2;
+            typeid = 1;
         } else if (chk3Player.isSelected()) {
-            typeid = 3;
+            typeid = 2;
         } else if (chk4Player.isSelected()) {
-            typeid = 4;
+            typeid = 3;
         }
+        
+        ShowGrid();
+        getGameData(); // show current Games
+        
+        game.connectWithGame(typeid);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -290,6 +311,7 @@ public class SelectGame extends javax.swing.JFrame {
     private javax.swing.JRadioButton chk3Player;
     private javax.swing.JRadioButton chk4Player;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
