@@ -93,7 +93,7 @@ public class gameResult1 extends javax.swing.JFrame {
         rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
         // tblGames.getColumnModel().getColumn(4).setCellRenderer(rightRenderer);
 
-        // model.setRowCount(2);
+         model.setRowCount(20);
 //        TableColumn colou10 = tblGames.getColumnModel().getColumn(0);
 //        colou10.setMinWidth(80);
 //        colou10.setPreferredWidth(80);
@@ -127,6 +127,7 @@ public class gameResult1 extends javax.swing.JFrame {
         jLabel1.setText("SCORE");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 40, 90, -1));
 
+        tblGames.setBackground(new java.awt.Color(204, 128, 59));
         tblGames.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
         tblGames.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

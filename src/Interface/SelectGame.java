@@ -72,7 +72,7 @@ public class SelectGame extends javax.swing.JFrame {
 
     private void ShowGrid() {
         String data[][] = null;
-        String colu[] = new String[]{"Game Id", "Player Id", "No of games"};
+        String colu[] = new String[]{"Game Id", "Game Type", "Connected players"};
         DefaultTableModel model = new DefaultTableModel(data, colu) {
             //@Override
             public boolean isCellEditable(int x, int y) {
@@ -93,7 +93,7 @@ public class SelectGame extends javax.swing.JFrame {
         rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
         // tblGames.getColumnModel().getColumn(4).setCellRenderer(rightRenderer);
 
-        // model.setRowCount(2);
+        model.setRowCount(20);
         TableColumn colou10 = tblGames.getColumnModel().getColumn(0);
         colou10.setMinWidth(80);
         colou10.setPreferredWidth(80);
@@ -170,7 +170,8 @@ public class SelectGame extends javax.swing.JFrame {
         });
         jPanel1.add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, -1, -1));
 
-        tblGames.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
+        tblGames.setBackground(new java.awt.Color(204, 128, 59));
+        tblGames.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         tblGames.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -187,8 +188,8 @@ public class SelectGame extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 0, 0));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Current Online Game");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 810, 40));
+        jLabel3.setText("Current Online Games");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 810, 40));
 
         jButton1.setBackground(new java.awt.Color(0, 255, 0));
         jButton1.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
