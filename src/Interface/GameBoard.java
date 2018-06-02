@@ -239,8 +239,6 @@ public class GameBoard extends javax.swing.JFrame {
         jPanel5.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, 40));
 
         jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, 1080, 50));
-
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\deela\\Desktop\\bag1.png")); // NOI18N
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 310, -1, -1));
 
         jButton6.setBackground(new java.awt.Color(255, 204, 0));
@@ -261,7 +259,7 @@ public class GameBoard extends javax.swing.JFrame {
         jButton17.setBackground(new java.awt.Color(255, 204, 0));
         jPanel1.add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 50, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\deela\\Desktop\\green-wallpaper12.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\deela\\Desktop\\Assignment\\green-wallpaper12.jpg")); // NOI18N
         jLabel1.setText("jLabel1");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 630));
 
