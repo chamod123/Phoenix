@@ -64,7 +64,6 @@ public class gameResult1 extends javax.swing.JFrame {
                 //confirm = rs.getInt("confirm");
                 x = x + 1;
             }
-
         } catch (SQLException ex) {
             Logger.getLogger(gameResult1.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -72,7 +71,7 @@ public class gameResult1 extends javax.swing.JFrame {
 
     private void ShowGrid() {
         String data[][] = null;
-        String colu[] = new String[]{"Player", "Level Score", "Total"};
+        String colu[] = new String[]{ "Player", "Level Score", "Total" };
         DefaultTableModel model = new DefaultTableModel(data, colu) {
             //@Override
             public boolean isCellEditable(int x, int y) {
@@ -93,7 +92,7 @@ public class gameResult1 extends javax.swing.JFrame {
         rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
         // tblGames.getColumnModel().getColumn(4).setCellRenderer(rightRenderer);
 
-         model.setRowCount(20);
+        model.setRowCount(20);
 //        TableColumn colou10 = tblGames.getColumnModel().getColumn(0);
 //        colou10.setMinWidth(80);
 //        colou10.setPreferredWidth(80);
