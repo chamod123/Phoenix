@@ -10,8 +10,6 @@ import java.util.Arrays;
 /**
  *
  * @author
- * UCD ID: 17209226
- * Name: Maduka Chamod Wijesena
  */
 public class Score {
 

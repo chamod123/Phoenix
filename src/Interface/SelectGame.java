@@ -260,10 +260,11 @@ public class SelectGame extends javax.swing.JFrame {
             typeid = 3;
         }
         
-        ShowGrid();
-        getGameData(); // show current Games
-        
         game.connectWithGame(typeid);
+        
+         ShowGrid();
+         getGameData(); // show current Games
+         
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
