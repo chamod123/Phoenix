@@ -6,6 +6,7 @@
 package Interface;
 
 import GlorySchema.GameType;
+import GlorySchema.Results;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.sql.ResultSet;
@@ -25,26 +26,26 @@ import javax.swing.table.TableColumnModel;
 
 /**
  *
- * @author CHAMOD
+ * @author MELANI
  */
 public class gameResult1 extends javax.swing.JFrame {
 
-    GameType game = new GameType();
-
+    Results result = new Results();
+    
     public gameResult1() {
         initComponents();
         ShowGrid();
-        getGameData(); // show current Games
+        getLevelRanking(); // show current Result
         //rdb2Player.setOpaque(false);
         tblGames.setOpaque(true);
     }
-
-    private void getGameData() {
-        try {
+    
+    public void getLevelRanking() {
+         try {
             ResultSet rs = null;
             String data[][] = null;
 
-            rs = game.getGameTypes("");
+            rs = result.getRanking(1);//todomel
             ResultSetMetaData rsmd = rs.getMetaData();
 
             rs.last();
@@ -55,18 +56,20 @@ public class gameResult1 extends javax.swing.JFrame {
             while (rs.next()) {
                 Vector v = new Vector();
                 DefaultTableModel dtf = (javax.swing.table.DefaultTableModel) tblGames.getModel();
-                v.add(data[x][0] = rs.getString("PoolId"));
-                v.add(data[x][1] = rs.getString("TypeId"));
-//                v.add(data[x][2] = rs.getString(""));
+                v.add(data[x][0] = rs.getString("Name"));
+                v.add(data[x][1] = rs.getString("Level"+1+"Score"));//todomel
+                v.add(data[x][2] = rs.getString("Total"));
 //                v.add(data[x][3] = rs.getString(""));
 //                v.add(data[x][4] = rs.getString(""));
                 dtf.addRow(v);
                 //confirm = rs.getInt("confirm");
                 x = x + 1;
             }
+
         } catch (SQLException ex) {
-            Logger.getLogger(gameResult1.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SelectGame.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
     }
 
     private void ShowGrid() {
@@ -92,11 +95,16 @@ public class gameResult1 extends javax.swing.JFrame {
         rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
         // tblGames.getColumnModel().getColumn(4).setCellRenderer(rightRenderer);
 
-        model.setRowCount(20);
-//        TableColumn colou10 = tblGames.getColumnModel().getColumn(0);
-//        colou10.setMinWidth(80);
-//        colou10.setPreferredWidth(80);
-//        colou10.setMaxWidth(80);
+       // model.setRowCount(20);
+        TableColumn colou10 = tblGames.getColumnModel().getColumn(1);
+        colou10.setMinWidth(80);
+        colou10.setPreferredWidth(80);
+        colou10.setMaxWidth(80);
+        
+        TableColumn colou2 = tblGames.getColumnModel().getColumn(2);
+        colou2.setMinWidth(80);
+        colou2.setPreferredWidth(80);
+        colou2.setMaxWidth(80);
 
     }
 
@@ -124,7 +132,7 @@ public class gameResult1 extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 0));
         jLabel1.setText("SCORE");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 40, 90, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, 90, -1));
 
         tblGames.setBackground(new java.awt.Color(204, 128, 59));
         tblGames.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
@@ -138,7 +146,7 @@ public class gameResult1 extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblGames);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 660, 230));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, 450, 130));
 
         jButton1.setBackground(new java.awt.Color(0, 255, 0));
         jButton1.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
