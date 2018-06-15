@@ -12,7 +12,10 @@ package GlorySchema;
 public class Rewards {
     
     
-    public void compareScore(){}
-    public void rankPlayers(){}
+    public void compareScore(){
+        
+    }
+    public void rankPlayers(){
+    }
     
 }

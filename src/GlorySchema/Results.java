@@ -27,6 +27,8 @@ public class Results {
         }
         return rs;
     }
-    public void getwiner(){}
+    public void getwiner(){
+    
+    }
     
 }
