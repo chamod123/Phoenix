@@ -71,17 +71,17 @@ public class LoginScreen extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
         jLabel1.setText("UserName");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 80, 20));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 90, 20));
 
         txtUsername.setFont(new java.awt.Font("Cambria Math", 1, 12)); // NOI18N
-        getContentPane().add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 169, 25));
+        getContentPane().add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 169, 25));
 
         jLabel2.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
         jLabel2.setText("Password");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, 70, 20));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 150, 90, 20));
 
         txt_password.setFont(new java.awt.Font("Cambria Math", 1, 12)); // NOI18N
-        getContentPane().add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 169, 25));
+        getContentPane().add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, 169, 25));
 
         btnLoging.setBackground(new java.awt.Color(56, 185, 33));
         btnLoging.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -146,7 +146,6 @@ public class LoginScreen extends javax.swing.JFrame {
         } catch (Exception ex) {
             Logger.getLogger(LoginScreen.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }//GEN-LAST:event_btnLogingActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

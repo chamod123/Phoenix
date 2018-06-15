@@ -259,7 +259,7 @@ public class GameBoard extends javax.swing.JFrame {
         jButton17.setBackground(new java.awt.Color(255, 204, 0));
         jPanel1.add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 50, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\deela\\Desktop\\Assignment\\green-wallpaper12.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/green-wallpaper12.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 630));
 
