@@ -42,4 +42,18 @@ public class LeaderBoad {
         return rs;
     }
 
+public ResultSet getGameSummery()
+    {
+    
+        ResultSet rs = null;
+        try {
+            String query = "SELECT * FROM gameboard1";
+            rs = (ResultSet) db.fetch(query);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return rs;
+    
+    
+    }
 }
