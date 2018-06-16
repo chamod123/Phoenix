@@ -6,6 +6,8 @@
 package Interface;
 
 import GlorySchema.GameBord;
+import GlorySchema.UpdateUI;
+import java.util.Timer;
 import javax.swing.JRootPane;
 
 /**
@@ -23,6 +25,9 @@ public class GameBoard extends javax.swing.JFrame {
         setSize(1100, 630);
         setLocationRelativeTo(null);
         initComponents();
+        
+          Timer timer = new Timer();//UpdateUI
+        timer.schedule(new UpdateUI(), 0, 1000);//1 Second
         
         GameBord G = new GameBord();
         G.getInitialLetter();
@@ -50,13 +55,6 @@ public class GameBoard extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
         txtMain = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -83,6 +81,7 @@ public class GameBoard extends javax.swing.JFrame {
         btnFirst = new javax.swing.JButton();
         btnSecond = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        tblScoreBoard = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -129,68 +128,6 @@ public class GameBoard extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 390, 150, 40));
-
-        jPanel3.setBackground(new java.awt.Color(153, 255, 102));
-
-        jLabel5.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 11)); // NOI18N
-        jLabel5.setText("Mike");
-
-        jLabel11.setBackground(new java.awt.Color(153, 204, 255));
-        jLabel11.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 11)); // NOI18N
-        jLabel11.setText("Player 3");
-
-        jLabel12.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 11)); // NOI18N
-        jLabel12.setText("Player 2");
-
-        jLabel36.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 11)); // NOI18N
-        jLabel36.setText("74");
-
-        jLabel37.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 11)); // NOI18N
-        jLabel37.setText("68");
-
-        jLabel38.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 11)); // NOI18N
-        jLabel38.setText("60");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel36))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel37))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel38)))
-                .addContainerGap(20, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel36))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel37))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel38))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 40, 90, 70));
 
         txtMain.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -348,7 +285,17 @@ public class GameBoard extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/cha.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 630));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 420));
+
+        tblScoreBoard.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "null", "Title 2"
+            }
+        ));
+        jPanel1.add(tblScoreBoard, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 44, 110, 100));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -632,8 +579,6 @@ this.dispose();
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
@@ -641,19 +586,15 @@ this.dispose();
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    public static javax.swing.JTable tblScoreBoard;
     private javax.swing.JTextField txtMain;
     // End of variables declaration//GEN-END:variables
 }
