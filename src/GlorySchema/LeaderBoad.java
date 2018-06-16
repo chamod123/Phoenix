@@ -6,10 +6,17 @@
 package GlorySchema;
 
 import Db.DataBase;
+import Interface.gameResult1;
+import java.sql.Array;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -56,4 +63,34 @@ public ResultSet getGameSummery()
     
     
     }
+
+    public ResultSet getTopScore()
+    { 
+
+        ResultSet rs = null;
+        try {
+             String query = "SELECT Total FROM gameboard1";
+            rs = (ResultSet) db.fetch(query);
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return rs;
+    }
+    
+
+ public ResultSet getLeaderTopScore()
+    { 
+
+        ResultSet rs = null;
+        try {
+             String query = "SELECT Score FROM topscore";
+            rs = (ResultSet) db.fetch(query);
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return rs;
+    }
 }
+
