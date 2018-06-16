@@ -283,7 +283,6 @@ public class GameBoard extends javax.swing.JFrame {
         });
         jPanel1.add(btnSecond, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 50, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/cha.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 420));
 

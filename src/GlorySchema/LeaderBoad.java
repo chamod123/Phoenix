@@ -54,7 +54,7 @@ public ResultSet getGameSummery()
     
         ResultSet rs = null;
         try {
-            String query = "SELECT * FROM gameboard1";
+            String query = "SELECT * FROM gameboard1 order by Total";
             rs = (ResultSet) db.fetch(query);
         } catch (Exception e) {
             e.printStackTrace();
@@ -69,7 +69,7 @@ public ResultSet getGameSummery()
 
         ResultSet rs = null;
         try {
-             String query = "SELECT Total FROM gameboard1";
+             String query = "SELECT Total FROM gameboard1 order by Total";
             rs = (ResultSet) db.fetch(query);
             
         } catch (Exception e) {
@@ -84,7 +84,7 @@ public ResultSet getGameSummery()
 
         ResultSet rs = null;
         try {
-             String query = "SELECT Score FROM topscore";
+             String query = "SELECT Score FROM topscore order by Score";
             rs = (ResultSet) db.fetch(query);
             
         } catch (Exception e) {
@@ -92,5 +92,16 @@ public ResultSet getGameSummery()
         }
         return rs;
     }
+   
+    /* public ResultSet getFinalTopScore()
+     {
+       ResultSet rs = null;
+       try 
+       {
+        String query = "UPDATE";
+       
+       }
+     
+     }*/
 }
 
