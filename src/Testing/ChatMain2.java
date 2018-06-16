@@ -38,11 +38,9 @@ public class ChatMain2 extends javax.swing.JFrame {
 
             try {
                 while ((stream = reader.readLine()) != null) {
-
                     data = stream.split(":");
 
                     if (data[2].equals(chat)) {
-
                         chatTextArea.append(data[0] + ": " + data[1] + "\n");
                         chatTextArea.setCaretPosition(chatTextArea.getDocument().getLength());
 
@@ -94,32 +92,32 @@ public class ChatMain2 extends javax.swing.JFrame {
         }
 
     }
-    
-     public void sendDisconnect() {
 
-       String bye = (username + ": :Disconnect");
-        try{
+    public void sendDisconnect() {
+
+        String bye = (username + ": :Disconnect");
+        try {
             writer.println(bye); // Sends server the disconnect signal.
             writer.flush(); // flushes the buffer
         } catch (Exception e) {
             chatTextArea.append("Could not send Disconnect message.\n");
         }
 
-      }
+    }
 
     public void Disconnect() {
 
         try {
-               chatTextArea.append("Disconnected.\n");
-               sock.close();
-        } catch(Exception ex) {
-               chatTextArea.append("Failed to disconnect. \n");
+            chatTextArea.append("Disconnected.\n");
+            sock.close();
+        } catch (Exception ex) {
+            chatTextArea.append("Failed to disconnect. \n");
         }
         isConnected = false;
         txtUserName.setEditable(true);
         usersList.setText("");
 
-      }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -262,19 +260,19 @@ public class ChatMain2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         sendDisconnect();
+        sendDisconnect();
         Disconnect();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-          String nothing = "";
+        String nothing = "";
         if ((inputTextArea.getText()).equals(nothing)) {
             inputTextArea.setText("");
             inputTextArea.requestFocus();
         } else {
             try {
-               writer.println(username + ":" + inputTextArea.getText() + ":" + "Chat");
-               writer.flush(); // flushes the buffer
+                writer.println(username + ":" + inputTextArea.getText() + ":" + "Chat");
+                writer.flush(); // flushes the buffer
             } catch (Exception ex) {
                 chatTextArea.append("Message was not sent. \n");
             }

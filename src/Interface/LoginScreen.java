@@ -20,8 +20,8 @@ import javax.swing.JRootPane;
  */
 public class LoginScreen extends javax.swing.JFrame {
 
-    public static String userId;
-    public static String userName;
+    public static String PlayerId;
+    public static String PlayerName;
 
     /**
      * Creates new form LoginScreen
@@ -134,8 +134,8 @@ public class LoginScreen extends javax.swing.JFrame {
             String query = "SELECT * FROM player WHERE UserName  = '" + username + "'";
             rs = (ResultSet) db.fetch(query);
             if (rs.next()) {
-                userName = rs.getString("Name");
-                userId = rs.getString("UserId");
+                PlayerName = rs.getString("Name");
+                PlayerId = rs.getString("UserId");
                 if (txt_password.getText().equals(rs.getString("Password"))) {
                     // JOptionPane.showMessageDialog(null, "Success", "InfoBox: " + "Done", JOptionPane.INFORMATION_MESSAGE);
                     SelectGame breq = new SelectGame();
