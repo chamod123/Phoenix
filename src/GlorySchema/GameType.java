@@ -14,6 +14,7 @@ import java.sql.ResultSet;
  * @author CHAMOD
  */
 public class GameType {
+    public static String tableName;
 
     DataBase db = new DataBase();
 
@@ -69,7 +70,17 @@ public class GameType {
                     pst.executeUpdate();
                 }
             }
-        } catch (Exception e) {
+            
+            
+       
+      
+//           PreparedStatement pst = (PreparedStatement) db.psmt("INSERT INTO `samrogl`.`bankaccounts`(`BNK_id`,`BNK_AcctNumber`) VALUES (?,?);");
+//            pst.setInt(1, BankID);
+//            pst.setString(2, Account);
+//            pst.executeUpdate();
+       
+      
+    } catch (Exception e) {
             e.printStackTrace();
         }
     }
