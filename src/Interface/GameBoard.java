@@ -5,6 +5,9 @@
  */
 package Interface;
 
+import GlorySchema.GameBord;
+import GlorySchema.UpdateUI;
+import java.util.Timer;
 import javax.swing.JRootPane;
 
 /**
@@ -22,6 +25,18 @@ public class GameBoard extends javax.swing.JFrame {
         setSize(1100, 630);
         setLocationRelativeTo(null);
         initComponents();
+        
+          Timer timer = new Timer();//UpdateUI
+        timer.schedule(new UpdateUI(), 0, 1000);//1 Second
+        
+        GameBord G = new GameBord();
+        G.getInitialLetter();
+        String x = String.valueOf(G.getInitialLetter1());
+        btnFirst.setText(x);
+        String y = String.valueOf(G.getInitialLetter2());
+        btnSecond.setText(y);
+        String z = String.valueOf(G.getInitialLetter3());
+        btnThird.setText(z);
     }
 
     /**
@@ -40,14 +55,7 @@ public class GameBoard extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtMain = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
@@ -61,19 +69,19 @@ public class GameBoard extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
-        jButton17 = new javax.swing.JButton();
+        btnThird = new javax.swing.JButton();
+        btnForth = new javax.swing.JButton();
+        btnFifth = new javax.swing.JButton();
+        btnSixth = new javax.swing.JButton();
+        btnSeventh = new javax.swing.JButton();
+        btnEighth = new javax.swing.JButton();
+        btnNineth = new javax.swing.JButton();
+        btnTenth = new javax.swing.JButton();
+        btnEleventh = new javax.swing.JButton();
+        btnFirst = new javax.swing.JButton();
+        btnSecond = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        tblScoreBoard = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -114,70 +122,19 @@ public class GameBoard extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(51, 51, 51));
         jButton2.setText("VOWEL");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 390, 150, 40));
 
-        jPanel3.setBackground(new java.awt.Color(153, 255, 102));
-
-        jLabel5.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 11)); // NOI18N
-        jLabel5.setText("Mike");
-
-        jLabel11.setBackground(new java.awt.Color(153, 204, 255));
-        jLabel11.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 11)); // NOI18N
-        jLabel11.setText("Player 3");
-
-        jLabel12.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 11)); // NOI18N
-        jLabel12.setText("Player 2");
-
-        jLabel36.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 11)); // NOI18N
-        jLabel36.setText("74");
-
-        jLabel37.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 11)); // NOI18N
-        jLabel37.setText("68");
-
-        jLabel38.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 11)); // NOI18N
-        jLabel38.setText("60");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel36))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel37))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel38)))
-                .addContainerGap(20, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel36))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel37))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel38))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 40, 90, 70));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 820, 50));
+        txtMain.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtMainActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtMain, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 820, 50));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -214,6 +171,11 @@ public class GameBoard extends javax.swing.JFrame {
         jButton4.setBackground(new java.awt.Color(51, 204, 255));
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton4.setText("CONSTANT");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, 150, 40));
 
         jButton5.setBackground(new java.awt.Color(0, 153, 255));
@@ -241,27 +203,99 @@ public class GameBoard extends javax.swing.JFrame {
         jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, 1080, 50));
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 310, -1, -1));
 
-        jButton6.setBackground(new java.awt.Color(255, 204, 0));
-        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 50, 50));
-        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, 50, 50));
-        jPanel1.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, 50, 50));
-        jPanel1.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 220, 50, 50));
-        jPanel1.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 220, 50, 50));
-        jPanel1.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 220, 50, 50));
-        jPanel1.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 220, 50, 50));
-        jPanel1.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 220, 50, 50));
-        jPanel1.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 220, 50, 50));
+        btnThird.setBackground(new java.awt.Color(255, 204, 0));
+        btnThird.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnThirdActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnThird, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 50, 50));
 
-        jButton15.setBackground(new java.awt.Color(255, 204, 0));
-        jPanel1.add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 50, 50));
-        jPanel1.add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 220, 50, 50));
+        btnForth.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnForthActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnForth, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, 50, 50));
 
-        jButton17.setBackground(new java.awt.Color(255, 204, 0));
-        jPanel1.add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 50, 50));
+        btnFifth.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFifthActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnFifth, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, 50, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/green-wallpaper12.jpg"))); // NOI18N
+        btnSixth.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSixthActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnSixth, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 220, 50, 50));
+
+        btnSeventh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeventhActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnSeventh, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 220, 50, 50));
+
+        btnEighth.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEighthActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnEighth, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 220, 50, 50));
+
+        btnNineth.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNinethActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnNineth, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 220, 50, 50));
+
+        btnTenth.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTenthActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnTenth, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 220, 50, 50));
+
+        btnEleventh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEleventhActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnEleventh, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 220, 50, 50));
+
+        btnFirst.setBackground(new java.awt.Color(255, 204, 0));
+        btnFirst.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFirstActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnFirst, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 50, 50));
+
+        btnSecond.setBackground(new java.awt.Color(255, 204, 0));
+        btnSecond.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSecondActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnSecond, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 50, 50));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/cha.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 630));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 420));
+
+        tblScoreBoard.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "null", "Title 2"
+            }
+        ));
+        jPanel1.add(tblScoreBoard, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 44, 110, 100));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -283,6 +317,214 @@ this.dispose();
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnFirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFirstActionPerformed
+        // TODO add your handling code here:
+       String Y= txtMain.getText().toString();
+        String X = btnFirst.getText().toString();
+        String Z = Y.concat(X);
+        txtMain.setText(Z);
+        btnFirst.setEnabled(false);
+    }//GEN-LAST:event_btnFirstActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        GameBord G = new GameBord();
+        String x; 
+                  
+
+        if(btnForth.getText().trim()=="" || btnForth.getText()==null){
+        G.getVowel();
+         x = String.valueOf(G.getSelectedVowel()); 
+         btnForth.setText(x);
+             
+         }
+        else if(btnFifth.getText().trim()=="" || btnFifth.getText()==null){
+         G.getVowel();
+          x = String.valueOf(G.getSelectedVowel()); 
+         btnFifth.setText(x);
+        }
+       else if(btnSixth.getText().trim()=="" || btnSixth.getText()==null){
+          G.getVowel();
+          x = String.valueOf(G.getSelectedVowel()); 
+         btnSixth.setText(x);
+        }
+        else if(btnSeventh.getText().trim()=="" || btnSeventh.getText()==null){
+         G.getVowel();
+          x = String.valueOf(G.getSelectedVowel()); 
+         btnSeventh.setText(x);
+        }
+        else if(btnEighth.getText().trim()=="" || btnEighth.getText()==null){
+         G.getVowel();
+          x = String.valueOf(G.getSelectedVowel()); 
+         btnEighth.setText(x);
+        }
+        else if(btnNineth.getText().trim()=="" || btnNineth.getText()==null){
+         G.getVowel();
+          x = String.valueOf(G.getSelectedVowel()); 
+         btnNineth.setText(x);
+        }
+        else if(btnTenth.getText().trim()=="" || btnTenth.getText()==null){
+         G.getVowel();
+          x = String.valueOf(G.getSelectedVowel()); 
+         btnTenth.setText(x);
+        }
+        else if(btnEleventh.getText().trim()=="" || btnEleventh.getText()==null){
+         G.getVowel();
+          x = String.valueOf(G.getSelectedVowel()); 
+         btnEleventh.setText(x);
+        }
+        
+        
+        
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void btnThirdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThirdActionPerformed
+        // TODO add your handling code here:
+        String Y= txtMain.getText().toString();
+        String X = btnThird.getText().toString();
+        String Z = Y.concat(X);
+        txtMain.setText(Z);
+        btnThird.setEnabled(false);
+    }//GEN-LAST:event_btnThirdActionPerformed
+
+    private void txtMainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMainActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMainActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        GameBord G = new GameBord();
+        String x; 
+                  
+
+        if(btnForth.getText().trim()=="" || btnForth.getText()==null){
+        G.getConstent();
+         x = String.valueOf(G.getSelectedConst()); 
+         btnForth.setText(x);
+             
+         }
+        else if(btnFifth.getText().trim()=="" || btnFifth.getText()==null){
+         G.getConstent();
+         x = String.valueOf(G.getSelectedConst()); 
+         btnFifth.setText(x);
+        }
+       else if(btnSixth.getText().trim()=="" || btnSixth.getText()==null){
+          G.getConstent();
+         x = String.valueOf(G.getSelectedConst()); 
+         btnSixth.setText(x);
+        }
+        else if(btnSeventh.getText().trim()=="" || btnSeventh.getText()==null){
+         G.getConstent();
+         x = String.valueOf(G.getSelectedConst()); 
+         btnSeventh.setText(x);
+        }
+        else if(btnEighth.getText().trim()=="" || btnEighth.getText()==null){
+        G.getConstent();
+         x = String.valueOf(G.getSelectedConst());  
+         btnEighth.setText(x);
+        }
+        else if(btnNineth.getText().trim()=="" || btnNineth.getText()==null){
+        G.getConstent();
+         x = String.valueOf(G.getSelectedConst()); 
+         btnNineth.setText(x);
+        }
+        else if(btnTenth.getText().trim()=="" || btnTenth.getText()==null){
+         G.getConstent();
+         x = String.valueOf(G.getSelectedConst()); 
+         btnTenth.setText(x);
+        }
+        else if(btnEleventh.getText().trim()=="" || btnEleventh.getText()==null){
+         G.getConstent();
+         x = String.valueOf(G.getSelectedConst());  
+         btnEleventh.setText(x);
+        }
+        
+        
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void btnSecondActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSecondActionPerformed
+        // TODO add your handling code here:
+        String Y= txtMain.getText().toString();
+        String X = btnSecond.getText().toString();
+        String Z = Y.concat(X);
+        txtMain.setText(Z);
+        btnSecond.setEnabled(false);
+        
+    }//GEN-LAST:event_btnSecondActionPerformed
+
+    private void btnForthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnForthActionPerformed
+        // TODO add your handling code here:
+        String Y= txtMain.getText().toString();
+        String X = btnForth.getText().toString();
+        String Z = Y.concat(X);
+        txtMain.setText(Z);
+        btnForth.setEnabled(false);
+    }//GEN-LAST:event_btnForthActionPerformed
+
+    private void btnFifthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFifthActionPerformed
+        // TODO add your handling code here:
+        String Y= txtMain.getText().toString();
+        String X = btnFifth.getText().toString();
+        String Z = Y.concat(X);
+        txtMain.setText(Z);
+        btnFifth.setEnabled(false);
+    }//GEN-LAST:event_btnFifthActionPerformed
+
+    private void btnSixthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSixthActionPerformed
+        // TODO add your handling code here:
+        String Y= txtMain.getText().toString();
+        String X = btnSixth.getText().toString();
+        String Z = Y.concat(X);
+        txtMain.setText(Z);
+        btnSixth.setEnabled(false);
+    }//GEN-LAST:event_btnSixthActionPerformed
+
+    private void btnSeventhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeventhActionPerformed
+        // TODO add your handling code here:
+        String Y= txtMain.getText().toString();
+        String X = btnSeventh.getText().toString();
+        String Z = Y.concat(X);
+        txtMain.setText(Z);
+        btnSeventh.setEnabled(false);
+    }//GEN-LAST:event_btnSeventhActionPerformed
+
+    private void btnEighthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEighthActionPerformed
+        // TODO add your handling code here:
+        String Y= txtMain.getText().toString();
+        String X = btnEighth.getText().toString();
+        String Z = Y.concat(X);
+        txtMain.setText(Z);
+        btnEighth.setEnabled(false);
+    }//GEN-LAST:event_btnEighthActionPerformed
+
+    private void btnNinethActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNinethActionPerformed
+        // TODO add your handling code here:
+        String Y= txtMain.getText().toString();
+        String X = btnNineth.getText().toString();
+        String Z = Y.concat(X);
+        txtMain.setText(Z);
+        btnNineth.setEnabled(false);
+    }//GEN-LAST:event_btnNinethActionPerformed
+
+    private void btnTenthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTenthActionPerformed
+        // TODO add your handling code here:
+        String Y= txtMain.getText().toString();
+        String X = btnTenth.getText().toString();
+        String Z = Y.concat(X);
+        txtMain.setText(Z);
+        btnTenth.setEnabled(false);
+    }//GEN-LAST:event_btnTenthActionPerformed
+
+    private void btnEleventhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEleventhActionPerformed
+        // TODO add your handling code here:
+        String Y= txtMain.getText().toString();
+        String X = btnEleventh.getText().toString();
+        String Z = Y.concat(X);
+        txtMain.setText(Z);
+        btnEleventh.setEnabled(false);
+    }//GEN-LAST:event_btnEleventhActionPerformed
 
     /**
      * @param args the command line arguments
@@ -320,26 +562,23 @@ this.dispose();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEighth;
+    private javax.swing.JButton btnEleventh;
+    private javax.swing.JButton btnFifth;
+    private javax.swing.JButton btnFirst;
+    private javax.swing.JButton btnForth;
+    private javax.swing.JButton btnNineth;
+    private javax.swing.JButton btnSecond;
+    private javax.swing.JButton btnSeventh;
+    private javax.swing.JButton btnSixth;
+    private javax.swing.JButton btnTenth;
+    private javax.swing.JButton btnThird;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
@@ -347,19 +586,15 @@ this.dispose();
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JTextField jTextField1;
+    public static javax.swing.JTable tblScoreBoard;
+    private javax.swing.JTextField txtMain;
     // End of variables declaration//GEN-END:variables
 }

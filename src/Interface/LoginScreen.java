@@ -20,6 +20,9 @@ import javax.swing.JRootPane;
  */
 public class LoginScreen extends javax.swing.JFrame {
 
+    public static String userId;
+    public static String userName;
+
     /**
      * Creates new form LoginScreen
      */
@@ -128,9 +131,11 @@ public class LoginScreen extends javax.swing.JFrame {
             String username = txtUsername.getText();
             ResultSet rs = null;
 
-            String query = "SELECT Password FROM player WHERE UserName  = '" + username + "'";
+            String query = "SELECT * FROM player WHERE UserName  = '" + username + "'";
             rs = (ResultSet) db.fetch(query);
             if (rs.next()) {
+                userName = rs.getString("Name");
+                userId = rs.getString("UserId");
                 if (txt_password.getText().equals(rs.getString("Password"))) {
                     // JOptionPane.showMessageDialog(null, "Success", "InfoBox: " + "Done", JOptionPane.INFORMATION_MESSAGE);
                     SelectGame breq = new SelectGame();
@@ -152,7 +157,7 @@ public class LoginScreen extends javax.swing.JFrame {
         txtUsername.setText(null);
         txt_password.setText(null);
         this.hide();
-         new regiter().setVisible(rootPaneCheckingEnabled);
+        new regiter().setVisible(rootPaneCheckingEnabled);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 

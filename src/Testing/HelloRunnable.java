@@ -22,11 +22,11 @@ public class HelloRunnable {
     
 //################ running this code and call hello class to run in every 1 second
     public static void main(String args[]) {
-        Timer timer = new Timer();
+        Timer timer = new Timer();//UpdateUI
         timer.schedule(new Hello(), 0, 1000);//1 Second
 
 //################## therads ##############
-        (new Thread(new HelloRunnable1())).start();
+        (new Thread(new HelloRunnable1())).start();//UpdateUI
         (new Thread(new HelloRunnable2())).start();
     }
 
