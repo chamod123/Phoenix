@@ -6,6 +6,8 @@
 package Testing;
 
 import java.util.Timer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -18,16 +20,22 @@ public class HelloRunnable {
 //        System.out.println("Hello from a thread!");
 //        
 //    }
-    
-    
 //################ running this code and call hello class to run in every 1 second
     public static void main(String args[]) {
-        Timer timer = new Timer();//UpdateUI
-        timer.schedule(new Hello(), 0, 1000);//1 Second
+        try {
+//            Timer timer = new Timer();//UpdateUI
+//            timer.schedule(new Hello(), 0, 1000);//1 Second
 
 //################## therads ##############
-        (new Thread(new HelloRunnable1())).start();//UpdateUI
-        (new Thread(new HelloRunnable2())).start();
+            HelloRunnable1 t = new HelloRunnable1();
+            t.start();
+            Thread.sleep(5000);
+            t.shoutDown();
+                    //(new Thread(new HelloRunnable1())).start();//UpdateUI
+                    // (new Thread(new HelloRunnable2())).start();
+        } catch (InterruptedException ex) {
+            Logger.getLogger(HelloRunnable.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 }
