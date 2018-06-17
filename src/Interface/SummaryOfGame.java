@@ -6,6 +6,8 @@
 package Interface;
 
 import GlorySchema.LeaderBoad;
+import java.awt.Dimension;
+import java.awt.Font;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -13,6 +15,7 @@ import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
 
 /**
  *
@@ -21,13 +24,17 @@ import javax.swing.table.DefaultTableModel;
 public class SummaryOfGame extends javax.swing.JFrame {
 
     LeaderBoad summary = new LeaderBoad();
+    
+       int leaderTOp[] = null;
+       int topTot[] = null;
 
     public SummaryOfGame() {
         initComponents();
         ShowGrid();
         getSummaryData();
         getTopTot();
-        jTable1.setOpaque(true);
+        //sort() ;
+        summaryTbl.setOpaque(true);
     }
 
     /**
@@ -45,7 +52,7 @@ public class SummaryOfGame extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        summaryTbl = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -59,9 +66,9 @@ public class SummaryOfGame extends javax.swing.JFrame {
         jLabel1.setText("GAME SUMMARY");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 60, 280, 40));
 
-        jTable1.setBackground(new java.awt.Color(204, 128, 59));
-        jTable1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        summaryTbl.setBackground(new java.awt.Color(204, 128, 59));
+        summaryTbl.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        summaryTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -69,7 +76,7 @@ public class SummaryOfGame extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(summaryTbl);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 550, 100));
 
@@ -129,7 +136,7 @@ public class SummaryOfGame extends javax.swing.JFrame {
             int x = 0;
             while (rs.next()) {
                 Vector v = new Vector();
-                DefaultTableModel dtf = (javax.swing.table.DefaultTableModel) jTable1.getModel();
+                DefaultTableModel dtf = (javax.swing.table.DefaultTableModel) summaryTbl.getModel();
                 v.add(data[x][0] = rs.getString(x + 1));
                 v.add(data[x][1] = rs.getString("PlayerName"));
                 v.add(data[x][2] = rs.getString("Level1Score"));
@@ -161,13 +168,16 @@ public class SummaryOfGame extends javax.swing.JFrame {
                 }
             }
         };
-
+        summaryTbl.setModel(model);
+        summaryTbl.getTableHeader().setPreferredSize(new Dimension(summaryTbl.getTableHeader().getPreferredSize().width, 35));
+        JTableHeader head = summaryTbl.getTableHeader();
+        head.setFont(head.getFont().deriveFont(Font.BOLD));
     }
 
     private void getTopTot() {
         try {
             ResultSet rs = null;
-            String data[] = null;
+      
 
             rs = summary.getTopScore();
             ResultSetMetaData rsmd = rs.getMetaData();
@@ -175,12 +185,12 @@ public class SummaryOfGame extends javax.swing.JFrame {
             rs.last();
             int count = rs.getRow();
             rs.beforeFirst();
-            data = new String[count];
+            topTot = new int[count];
             int x = 0;
             while (rs.next()) {
                 Vector v = new Vector();
 
-                v.add(data[x] = rs.getString("Total"));
+                v.add(topTot[x] = rs.getInt("Total"));
                 //confirm = rs.getInt("confirm");
                 x = x + 1;
             }
@@ -192,7 +202,7 @@ public class SummaryOfGame extends javax.swing.JFrame {
     private void getLeaderTop() {
         try {
             ResultSet rs = null;
-            String data[] = null;
+          
 
             rs = summary.getLeaderTopScore();
             ResultSetMetaData rsmd = rs.getMetaData();
@@ -200,12 +210,12 @@ public class SummaryOfGame extends javax.swing.JFrame {
             rs.last();
             int count = rs.getRow();
             rs.beforeFirst();
-            data = new String[count];
+            leaderTOp = new int[count];
             int x = 0;
             while (rs.next()) {
                 Vector v = new Vector();
 
-                v.add(data[x] = rs.getString("Score"));
+                v.add(leaderTOp[x] = rs.getInt("Score"));
                 //confirm = rs.getInt("confirm");
                 x = x + 1;
             }
@@ -214,6 +224,24 @@ public class SummaryOfGame extends javax.swing.JFrame {
         }
 
     }
+    
+   /* public void sort() 
+    {
+    int n = topTot.length;
+    int m= leaderTOp.length;
+    for (int i = 1; i < n; i++)
+    {
+        for (int j = i; j > 0; j--)
+        {
+            if (topTot[i] > leaderTOp[j])
+            {
+                 
+            }
+                
+            else break;
+        }
+    }
+}*/
 
     /**
      * @param args the command line arguments
@@ -257,6 +285,6 @@ public class SummaryOfGame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable summaryTbl;
     // End of variables declaration//GEN-END:variables
 }
