@@ -62,7 +62,7 @@ public class GameType {
                         + "  `Level3Score` DOUBLE DEFAULT NULL, `Level3Letter` VARCHAR(5) DEFAULT NULL,\n"
                         + "  `Level4Score` DOUBLE DEFAULT NULL, `Level4Letter` VARCHAR(5) DEFAULT NULL,\n"
                         + "  `Level5Score` DOUBLE DEFAULT NULL, `Level5Letter` VARCHAR(5) DEFAULT NULL,\n"
-                        + "  `PlayerName` VARCHAR(10) DEFAULT NULL,  PRIMARY KEY (`PlayerId`)\n"
+                        + "  `PlayerName` VARCHAR(10) DEFAULT NULL, `Total` double DEFAULT NULL,  PRIMARY KEY (`PlayerId`)\n"
                         + ") ENGINE=INNODB DEFAULT CHARSET=latin1");
                 //pst3.setString(1, String.valueOf(typeOfGame));
                 // pst3.setString(2, "1");
