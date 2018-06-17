@@ -25,7 +25,7 @@ public class LeaderBoad {
     
     DataBase db = new DataBase();
      
-    public void addToLeaderBord() {
+    public void addToLeaderBord() {  // need to compleet
 
         try {
             PreparedStatement pst = (PreparedStatement) db.psmt("UPDATE  topscore SET  PlayerId = '3' , Score='10' WHERE TopId = '2'");
@@ -50,10 +50,9 @@ public class LeaderBoad {
 
 public ResultSet getGameSummery()
     {
-    
         ResultSet rs = null;
         try {
-            String query = "SELECT * FROM gameboard1 order by Total";
+            String query = "SELECT * FROM " + GameType.tableName + " order by Total";
             rs = (ResultSet) db.fetch(query);
         } catch (Exception e) {
             e.printStackTrace();
@@ -68,7 +67,7 @@ public ResultSet getGameSummery()
 
         ResultSet rs = null;
         try {
-             String query = "SELECT Total FROM gameboard1 order by Total";
+             String query = "SELECT Total FROM " + GameType.tableName + " order by Total";
             rs = (ResultSet) db.fetch(query);
             
         } catch (Exception e) {
