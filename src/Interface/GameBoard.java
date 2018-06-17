@@ -6,6 +6,7 @@
 package Interface;
 
 import GlorySchema.GameBord;
+import GlorySchema.Score;
 import GlorySchema.UpdateUI;
 import java.util.Timer;
 import javax.swing.JLabel;
@@ -18,6 +19,7 @@ import javax.swing.table.DefaultTableCellRenderer;
  */
 public class GameBoard extends javax.swing.JFrame {
     GameBord G = new GameBord();
+    Score score = new Score();
     
     UpdateUI updateUI =new UpdateUI();
     /**
@@ -68,7 +70,7 @@ public class GameBoard extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        txtMain = new javax.swing.JTextField();
+        txtMainWord = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
@@ -148,12 +150,12 @@ public class GameBoard extends javax.swing.JFrame {
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 390, 150, 40));
 
-        txtMain.addActionListener(new java.awt.event.ActionListener() {
+        txtMainWord.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtMainActionPerformed(evt);
+                txtMainWordActionPerformed(evt);
             }
         });
-        jPanel1.add(txtMain, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 820, 50));
+        jPanel1.add(txtMainWord, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 820, 50));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -360,10 +362,10 @@ this.dispose();
 
     private void btnFirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFirstActionPerformed
         // TODO add your handling code here:
-       String Y= txtMain.getText().toString();
+       String Y= txtMainWord.getText().toString();
         String X = btnFirst.getText().toString();
         String Z = Y.concat(X);
-        txtMain.setText(Z);
+        txtMainWord.setText(Z);
         btnFirst.setEnabled(false);
     }//GEN-LAST:event_btnFirstActionPerformed
 
@@ -421,16 +423,16 @@ this.dispose();
 
     private void btnThirdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThirdActionPerformed
         // TODO add your handling code here:
-        String Y= txtMain.getText().toString();
+        String Y= txtMainWord.getText().toString();
         String X = btnThird.getText().toString();
         String Z = Y.concat(X);
-        txtMain.setText(Z);
+        txtMainWord.setText(Z);
         btnThird.setEnabled(false);
     }//GEN-LAST:event_btnThirdActionPerformed
 
-    private void txtMainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMainActionPerformed
+    private void txtMainWordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMainWordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtMainActionPerformed
+    }//GEN-LAST:event_txtMainWordActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
@@ -485,89 +487,90 @@ this.dispose();
 
     private void btnSecondActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSecondActionPerformed
         // TODO add your handling code here:
-        String Y= txtMain.getText().toString();
+        String Y= txtMainWord.getText().toString();
         String X = btnSecond.getText().toString();
         String Z = Y.concat(X);
-        txtMain.setText(Z);
+        txtMainWord.setText(Z);
         btnSecond.setEnabled(false);
         
     }//GEN-LAST:event_btnSecondActionPerformed
 
     private void btnForthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnForthActionPerformed
         // TODO add your handling code here:
-        String Y= txtMain.getText().toString();
+        String Y= txtMainWord.getText().toString();
         String X = btnForth.getText().toString();
         String Z = Y.concat(X);
-        txtMain.setText(Z);
+        txtMainWord.setText(Z);
         btnForth.setEnabled(false);
     }//GEN-LAST:event_btnForthActionPerformed
 
     private void btnFifthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFifthActionPerformed
         // TODO add your handling code here:
-        String Y= txtMain.getText().toString();
+        String Y= txtMainWord.getText().toString();
         String X = btnFifth.getText().toString();
         String Z = Y.concat(X);
-        txtMain.setText(Z);
+        txtMainWord.setText(Z);
         btnFifth.setEnabled(false);
     }//GEN-LAST:event_btnFifthActionPerformed
 
     private void btnSixthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSixthActionPerformed
         // TODO add your handling code here:
-        String Y= txtMain.getText().toString();
+        String Y= txtMainWord.getText().toString();
         String X = btnSixth.getText().toString();
         String Z = Y.concat(X);
-        txtMain.setText(Z);
+        txtMainWord.setText(Z);
         btnSixth.setEnabled(false);
     }//GEN-LAST:event_btnSixthActionPerformed
 
     private void btnSeventhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeventhActionPerformed
         // TODO add your handling code here:
-        String Y= txtMain.getText().toString();
+        String Y= txtMainWord.getText().toString();
         String X = btnSeventh.getText().toString();
         String Z = Y.concat(X);
-        txtMain.setText(Z);
+        txtMainWord.setText(Z);
         btnSeventh.setEnabled(false);
     }//GEN-LAST:event_btnSeventhActionPerformed
 
     private void btnEighthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEighthActionPerformed
         // TODO add your handling code here:
-        String Y= txtMain.getText().toString();
+        String Y= txtMainWord.getText().toString();
         String X = btnEighth.getText().toString();
         String Z = Y.concat(X);
-        txtMain.setText(Z);
+        txtMainWord.setText(Z);
         btnEighth.setEnabled(false);
     }//GEN-LAST:event_btnEighthActionPerformed
 
     private void btnNinethActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNinethActionPerformed
         // TODO add your handling code here:
-        String Y= txtMain.getText().toString();
+        String Y= txtMainWord.getText().toString();
         String X = btnNineth.getText().toString();
         String Z = Y.concat(X);
-        txtMain.setText(Z);
+        txtMainWord.setText(Z);
         btnNineth.setEnabled(false);
     }//GEN-LAST:event_btnNinethActionPerformed
 
     private void btnTenthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTenthActionPerformed
         // TODO add your handling code here:
-        String Y= txtMain.getText().toString();
+        String Y= txtMainWord.getText().toString();
         String X = btnTenth.getText().toString();
         String Z = Y.concat(X);
-        txtMain.setText(Z);
+        txtMainWord.setText(Z);
         btnTenth.setEnabled(false);
     }//GEN-LAST:event_btnTenthActionPerformed
 
     private void btnEleventhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEleventhActionPerformed
         // TODO add your handling code here:
-        String Y= txtMain.getText().toString();
+        String Y= txtMainWord.getText().toString();
         String X = btnEleventh.getText().toString();
         String Z = Y.concat(X);
-        txtMain.setText(Z);
+        txtMainWord.setText(Z);
         btnEleventh.setEnabled(false);
     }//GEN-LAST:event_btnEleventhActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+        score.getTotalScore(txtMainWord.getText().trim(), btnFirst.getText().trim(), btnSecond.getText().trim(), btnThird.getText().trim());
         GameBord.levelNo += 1;
+        
         if(GameBord.levelNo>5){
             SummaryOfGame summary= new SummaryOfGame();
             summary.setVisible(true);
@@ -657,6 +660,6 @@ this.dispose();
     public static javax.swing.JLabel player4;
     public static javax.swing.JLabel player4L;
     public static javax.swing.JTable tblScoreBoard;
-    private javax.swing.JTextField txtMain;
+    private javax.swing.JTextField txtMainWord;
     // End of variables declaration//GEN-END:variables
 }
