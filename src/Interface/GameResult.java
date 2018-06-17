@@ -5,6 +5,7 @@
  */
 package Interface;
 
+import GlorySchema.GameBord;
 import GlorySchema.GameType;
 import GlorySchema.Results;
 import java.awt.Dimension;
@@ -18,6 +19,7 @@ import java.util.logging.Logger;
 import javax.swing.DefaultCellEditor;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JRootPane;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
@@ -28,16 +30,21 @@ import javax.swing.table.TableColumnModel;
  *
  * @author MELANI
  */
-public class gameResult1 extends javax.swing.JFrame {
+public class GameResult extends javax.swing.JFrame {
 
     Results result = new Results();
     
-    public gameResult1() {
+    public GameResult() {
+        setUndecorated(true);
+        getRootPane().setWindowDecorationStyle(JRootPane.NONE);
+        setSize(1100, 630);
+        setLocationRelativeTo(null);
         initComponents();
         ShowGrid();
         getLevelRanking(); // show current Result
         //rdb2Player.setOpaque(false);
         tblGames.setOpaque(true);
+        levelScore.setText("Level "+(GameBord.levelNo-1)+" Score");
     }
     
     public void getLevelRanking() {
@@ -45,7 +52,7 @@ public class gameResult1 extends javax.swing.JFrame {
             ResultSet rs = null;
             String data[][] = null;
 
-            rs = result.getRanking(1);//todomel
+            rs = result.getRanking(GameBord.levelNo-1);
             ResultSetMetaData rsmd = rs.getMetaData();
 
             rs.last();
@@ -57,7 +64,7 @@ public class gameResult1 extends javax.swing.JFrame {
                 Vector v = new Vector();
                 DefaultTableModel dtf = (javax.swing.table.DefaultTableModel) tblGames.getModel();
                 v.add(data[x][0] = rs.getString("Name"));
-                v.add(data[x][1] = rs.getString("Level"+1+"Score"));//todomel
+                v.add(data[x][1] = rs.getString("Level"+(GameBord.levelNo-1)+"Score"));
                 v.add(data[x][2] = rs.getString("Total"));
 //                v.add(data[x][3] = rs.getString(""));
 //                v.add(data[x][4] = rs.getString(""));
@@ -93,18 +100,24 @@ public class gameResult1 extends javax.swing.JFrame {
 
         DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
         rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
-        // tblGames.getColumnModel().getColumn(4).setCellRenderer(rightRenderer);
+        tblGames.getColumnModel().getColumn(1).setCellRenderer(rightRenderer);
+        tblGames.getColumnModel().getColumn(2).setCellRenderer(rightRenderer);
 
        // model.setRowCount(20);
-        TableColumn colou10 = tblGames.getColumnModel().getColumn(1);
-        colou10.setMinWidth(80);
-        colou10.setPreferredWidth(80);
-        colou10.setMaxWidth(80);
+       TableColumn col0 = tblGames.getColumnModel().getColumn(1);
+        col0.setMinWidth(80);
+        col0.setPreferredWidth(80);
+        col0.setMaxWidth(80);
         
-        TableColumn colou2 = tblGames.getColumnModel().getColumn(2);
-        colou2.setMinWidth(80);
-        colou2.setPreferredWidth(80);
-        colou2.setMaxWidth(80);
+        TableColumn col1 = tblGames.getColumnModel().getColumn(1);
+        col1.setMinWidth(80);
+        col1.setPreferredWidth(80);
+        col1.setMaxWidth(80);
+        
+        TableColumn col2 = tblGames.getColumnModel().getColumn(2);
+        col2.setMinWidth(80);
+        col2.setPreferredWidth(80);
+        col2.setMaxWidth(80);
 
     }
 
@@ -119,7 +132,7 @@ public class gameResult1 extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        levelScore = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblGames = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
@@ -129,13 +142,12 @@ public class gameResult1 extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 0));
-        jLabel1.setText("SCORE");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, 90, -1));
+        levelScore.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
+        levelScore.setForeground(new java.awt.Color(51, 0, 51));
+        levelScore.setText("SCORE");
+        jPanel1.add(levelScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 50, 190, -1));
 
-        tblGames.setBackground(new java.awt.Color(204, 128, 59));
-        tblGames.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
+        tblGames.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         tblGames.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -146,16 +158,19 @@ public class gameResult1 extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblGames);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, 450, 130));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 580, 320));
 
-        jButton1.setBackground(new java.awt.Color(0, 255, 0));
-        jButton1.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(0, 204, 255));
+        jButton1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Next");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 340, 120, 30));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/game.jpg"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 3, 780, 420));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 430, 170, 80));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 3, 1030, 520));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -170,6 +185,21 @@ public class gameResult1 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        if((GameBord.levelNo-1)<5){
+            GameBoard gameBoard= new GameBoard();
+            gameBoard.setVisible(true);
+            this.dispose();
+        }
+       else{
+            SummaryOfGame summary= new SummaryOfGame();
+            summary.setVisible(true);
+            this.dispose();
+        }
+       
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -188,21 +218,23 @@ public class gameResult1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(gameResult1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GameResult.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(gameResult1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GameResult.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(gameResult1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GameResult.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(gameResult1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GameResult.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new gameResult1().setVisible(true);
+                new GameResult().setVisible(true);
             }
         });
     }
@@ -210,10 +242,10 @@ public class gameResult1 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel levelScore;
     private javax.swing.JTable tblGames;
     // End of variables declaration//GEN-END:variables
 }

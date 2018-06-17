@@ -28,6 +28,7 @@ public class GameBord {
     private int randomInt;
     private int randomVowInt;
     private int randomConInt;
+    public static int levelNo = 1;
     Date time;
 
     public void getLetterBagWord() {
@@ -184,5 +185,6 @@ public class GameBord {
     public void setSelectedConst(char selectedConst) {
         this.selectedConst = selectedConst;
     }
+    
 
 }

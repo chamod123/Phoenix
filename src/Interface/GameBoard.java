@@ -8,14 +8,16 @@ package Interface;
 import GlorySchema.GameBord;
 import GlorySchema.UpdateUI;
 import java.util.Timer;
+import javax.swing.JLabel;
 import javax.swing.JRootPane;
+import javax.swing.table.DefaultTableCellRenderer;
 
 /**
  *
  * @author deela
  */
 public class GameBoard extends javax.swing.JFrame {
-
+    UpdateUI updateUI =new UpdateUI();
     /**
      * Creates new form GameBoard
      */
@@ -25,9 +27,15 @@ public class GameBoard extends javax.swing.JFrame {
         setSize(1100, 630);
         setLocationRelativeTo(null);
         initComponents();
+        updateUI.updateScoreTable();
         
-          Timer timer = new Timer();//UpdateUI
-        timer.schedule(new UpdateUI(), 0, 1000);//1 Second
+        DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
+        rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
+        tblScoreBoard.getColumnModel().getColumn(1).setCellRenderer(rightRenderer);
+      
+        
+  //      Timer timer = new Timer();//UpdateUI
+  //      timer.schedule(new updateInitialLetter(), 0, 1000);//1 Second
         
         GameBord G = new GameBord();
         G.getInitialLetter();
@@ -82,6 +90,7 @@ public class GameBoard extends javax.swing.JFrame {
         btnSecond = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         tblScoreBoard = new javax.swing.JTable();
+        jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -116,7 +125,7 @@ public class GameBoard extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("SCORE BOARD");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 10, -1, 30));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 10, -1, 30));
 
         jButton2.setBackground(new java.awt.Color(0, 204, 255));
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -294,7 +303,17 @@ public class GameBoard extends javax.swing.JFrame {
                 "null", "Title 2"
             }
         ));
-        jPanel1.add(tblScoreBoard, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 44, 110, 100));
+        jPanel1.add(tblScoreBoard, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 44, 170, 80));
+
+        jButton6.setBackground(new java.awt.Color(0, 204, 255));
+        jButton6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton6.setText("GO");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 380, 90, 70));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -525,6 +544,23 @@ this.dispose();
         btnEleventh.setEnabled(false);
     }//GEN-LAST:event_btnEleventhActionPerformed
 
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        GameBord.levelNo += 1;
+        if(GameBord.levelNo>5){
+            SummaryOfGame summary= new SummaryOfGame();
+            summary.setVisible(true);
+            this.dispose();
+        }
+        else{
+           //level result 
+           GameResult result= new GameResult();
+           result.setVisible(true);
+           this.dispose();
+           
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -577,6 +613,7 @@ this.dispose();
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;

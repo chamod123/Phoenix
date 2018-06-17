@@ -20,15 +20,9 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Melanie Rebecca
  */
-public class UpdateUI  extends TimerTask  {
+public class UpdateUI  {
     
     Results result = new Results();
-
-    @Override
-    public void run() {
-       //call update
-       updateScoreTable();
-    }
     
     public void updateScoreTable(){
      try {
@@ -37,7 +31,7 @@ public class UpdateUI  extends TimerTask  {
             ResultSet rs = null;
             String data[][] = null;
 
-            rs = result.getRanking(1);//todomel
+            rs = result.getRanking(GameBord.levelNo);
             ResultSetMetaData rsmd = rs.getMetaData();
 
             rs.last();
@@ -48,7 +42,7 @@ public class UpdateUI  extends TimerTask  {
             while (rs.next()) {
                 Vector v = new Vector();
                 v.add(data[x][0] = rs.getString("Name"));
-                v.add(data[x][1] = rs.getString("Level"+1+"Score"));//todomel
+                v.add(data[x][1] = rs.getString("Total"));
                // v.add(data[x][2] = rs.getString("Total"));
 //                v.add(data[x][3] = rs.getString(""));
 //                v.add(data[x][4] = rs.getString(""));
