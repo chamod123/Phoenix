@@ -24,6 +24,7 @@ public class DataBase {
     private static Connection c     =  null;
 //  protected static String host    =  "10.1.1.2";
     protected static String host    = "localhost";//"192.168.8.102";//
+    //protected static String host    = "192.168.8.100";
     protected static String port    = "3306";
     protected static String DB      = "phoenix";
     protected static String username= "root";

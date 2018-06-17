@@ -14,8 +14,11 @@ import java.sql.SQLException;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JLabel;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
+import javax.swing.table.TableColumn;
 
 /**
  *
@@ -172,6 +175,17 @@ public class SummaryOfGame extends javax.swing.JFrame {
         summaryTbl.getTableHeader().setPreferredSize(new Dimension(summaryTbl.getTableHeader().getPreferredSize().width, 35));
         JTableHeader head = summaryTbl.getTableHeader();
         head.setFont(head.getFont().deriveFont(Font.BOLD));
+        
+        DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
+        rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
+        // tblGames.getColumnModel().getColumn(4).setCellRenderer(rightRenderer);
+
+        // model.setRowCount(20);
+        TableColumn colou10 = summaryTbl.getColumnModel().getColumn(0);
+        colou10.setMinWidth(80);
+        colou10.setPreferredWidth(80);
+        colou10.setMaxWidth(80);
+
     }
 
     private void getTopTot() {
@@ -235,6 +249,7 @@ public class SummaryOfGame extends javax.swing.JFrame {
         {
             if (topTot[i] > leaderTOp[j])
             {
+               topTot[i]=leaderTOp[j];
                  
             }
                 

@@ -6,7 +6,6 @@
 package GlorySchema;
 
 import Db.DataBase;
-import Interface.gameResult1;
 import java.sql.Array;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

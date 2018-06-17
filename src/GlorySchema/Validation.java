@@ -5,12 +5,28 @@
  */
 package GlorySchema;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author INDIKA
  */
-public class Validation {
-    public void checkNull(){}
+public class Validation 
+{
+
+    /**
+     *
+     */
+    public boolean checkNull(String value,String type)
+    {
+    
+     if ("".equals(value.trim()) || value == null) 
+        {
+           JOptionPane.showMessageDialog(null, "Enter The "+ type);
+            return false;
+        } 
+return true;
+    }
     public void numaric(){}
     public void specialCharacter(){}
 }

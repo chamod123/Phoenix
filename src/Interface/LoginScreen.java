@@ -6,6 +6,7 @@
 package Interface;
 
 import Db.DataBase;
+import GlorySchema.Validation;
 import java.awt.Color;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -22,6 +23,8 @@ public class LoginScreen extends javax.swing.JFrame {
 
     public static String PlayerId;
     public static String PlayerName;
+    
+    Validation value= new Validation();
 
     /**
      * Creates new form LoginScreen
@@ -32,6 +35,7 @@ public class LoginScreen extends javax.swing.JFrame {
 //        getRootPane().setWindowDecorationStyle(JRootPane.NONE);
 //        setSize(852, 480);
         initComponents();
+   
         setLocationRelativeTo(null);
 
         //  btnLoging.setBackground(Color.red);
@@ -126,6 +130,12 @@ public class LoginScreen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLogingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogingActionPerformed
+       if(!value.checkNull(txtUsername.getText(), "User name"))
+       {return;
+       }else if(!value.checkNull(txt_password.getText(), "Password"))
+       {return;
+       }
+       
         try {
             DataBase db = new DataBase();
             String username = txtUsername.getText();
