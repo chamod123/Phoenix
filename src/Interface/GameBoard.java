@@ -17,6 +17,8 @@ import javax.swing.table.DefaultTableCellRenderer;
  * @author deela
  */
 public class GameBoard extends javax.swing.JFrame {
+    GameBord G = new GameBord();
+    
     UpdateUI updateUI =new UpdateUI();
     /**
      * Creates new form GameBoard
@@ -45,6 +47,9 @@ public class GameBoard extends javax.swing.JFrame {
         btnSecond.setText(y);
         String z = String.valueOf(G.getInitialLetter3());
         btnThird.setText(z);
+        
+        G.saveInitialLetters(x,y,z);
+        updateUI.updateLetter();
     }
 
     /**
@@ -73,9 +78,14 @@ public class GameBoard extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
+        player1L = new javax.swing.JLabel();
+        player3 = new javax.swing.JLabel();
+        player2 = new javax.swing.JLabel();
+        player4 = new javax.swing.JLabel();
+        player1 = new javax.swing.JLabel();
+        player3L = new javax.swing.JLabel();
+        player4L = new javax.swing.JLabel();
+        player2L = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         btnThird = new javax.swing.JButton();
         btnForth = new javax.swing.JButton();
@@ -197,17 +207,29 @@ public class GameBoard extends javax.swing.JFrame {
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("Initial Letters"));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel18.setText("Player 2");
-        jPanel5.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, 110, 40));
+        player1L.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jPanel5.add(player1L, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 60, 40));
 
-        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel19.setText("Player 3");
-        jPanel5.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 10, 110, 40));
+        player3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jPanel5.add(player3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 140, 40));
 
-        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel17.setText("MIKE");
-        jPanel5.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, 40));
+        player2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jPanel5.add(player2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, 130, 40));
+
+        player4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jPanel5.add(player4, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 10, 110, 40));
+
+        player1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jPanel5.add(player1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 120, 40));
+
+        player3L.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jPanel5.add(player3L, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, 60, 40));
+
+        player4L.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jPanel5.add(player4L, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 10, 60, 40));
+
+        player2L.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jPanel5.add(player2L, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, 60, 40));
 
         jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, 1080, 50));
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 310, -1, -1));
@@ -347,7 +369,6 @@ this.dispose();
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        GameBord G = new GameBord();
         String x; 
                   
 
@@ -617,9 +638,6 @@ this.dispose();
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -630,6 +648,14 @@ this.dispose();
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    public static javax.swing.JLabel player1;
+    public static javax.swing.JLabel player1L;
+    public static javax.swing.JLabel player2;
+    public static javax.swing.JLabel player2L;
+    public static javax.swing.JLabel player3;
+    public static javax.swing.JLabel player3L;
+    public static javax.swing.JLabel player4;
+    public static javax.swing.JLabel player4L;
     public static javax.swing.JTable tblScoreBoard;
     private javax.swing.JTextField txtMain;
     // End of variables declaration//GEN-END:variables

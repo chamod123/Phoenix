@@ -6,16 +6,24 @@
 package GlorySchema;
 
 import Db.DataBase;
+import static Interface.LoginScreen.PlayerId;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Date;
 import java.util.Dictionary;
 import java.util.Enumeration;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author INDIKA
  */
 public class GameBord {
+    
+    DataBase db = new DataBase();
 
     char constLetters[] = {'B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z'};
     char vowelLetters[] = {'A', 'E', 'I', 'O', 'U'};
@@ -185,6 +193,29 @@ public class GameBord {
     public void setSelectedConst(char selectedConst) {
         this.selectedConst = selectedConst;
     }
-    
+    public void saveInitialLetters(String initialLetter1,String initialLetter2,String initialLetter3){
+        
+        try {
+            
+            PreparedStatement pst = (PreparedStatement) db.psmt("UPDATE  " +GameType.tableName+ " SET  Level"+levelNo+"Letter = '"+(initialLetter1+initialLetter2+initialLetter3)+"' WHERE PlayerID='"+PlayerId+"'");
+            pst.executeUpdate();
+        } catch (Exception ex) {
+            Logger.getLogger(GameBord.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    public ResultSet retrieveInitialLetters(){
+        
+        ResultSet rs = null;
+        try {
+           // String query = "SELECT * FROM gameboard1 ORDER BY Total DESC";//SELECT * FROM onlinegame O INNER JOIN gametype T ON O.gameTypeId = T.GameId  WHERE O.gameId LIKE  '" + gameid + "%'";
+           String query = "SELECT playerName,Level"+levelNo+"Letter FROM  "+GameType.tableName+" ";//SELECT * FROM onlinegame O INNER JOIN gametype T ON O.gameTypeId = T.GameId  WHERE O.gameId LIKE  '" + gameid + "%'";
+            rs = (ResultSet) db.fetch(query);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return rs;
+    }
+        
 
 }

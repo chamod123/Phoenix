@@ -17,7 +17,7 @@ public class Results {
     DataBase db = new DataBase();
     
     public ResultSet getRanking(int levelNo){
-        System.out.println(levelNo);
+   //     System.out.println(levelNo);
     ResultSet rs = null;
         try {
            // String query = "SELECT * FROM gameboard1 ORDER BY Total DESC";//SELECT * FROM onlinegame O INNER JOIN gametype T ON O.gameTypeId = T.GameId  WHERE O.gameId LIKE  '" + gameid + "%'";

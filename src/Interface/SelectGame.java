@@ -262,6 +262,10 @@ public class SelectGame extends javax.swing.JFrame {
         
         game.connectWithGame(typeid);
         
+        GameBoard gameBoard= new GameBoard();
+        gameBoard.setVisible(true);
+        this.dispose();
+         
          ShowGrid();
          getGameData(); // show current Games
          
