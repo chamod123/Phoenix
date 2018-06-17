@@ -17,4 +17,6 @@ public class WordSearch {
     public void checkSpelling(){}
     public void automaticSearch(){}
     public void manualSearch(){}
+    
+    
 }

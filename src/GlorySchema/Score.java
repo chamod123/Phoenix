@@ -12,24 +12,28 @@ import java.util.Arrays;
  * @author
  */
 public class Score {
+    Results result=new Results();
 
     int noOfLettters; // word lenght
     double roundScore; // total Score of the round
     double bones; //total bones
     int initialBones = 3;
     int maxLenthBones = 5;
-    int[] position = {1, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int[] position = {1, 2, 3, 5, 8, 12, 17, 13, 30, 38, 47};
     int hightScoreBones = 5;
 
     public void getTotalScore(String word, String letter1, String letter2, String letter3, int unUsedLetter) {
         //calculate total marks of current round with bonus
         noOfLettersUsed(word);
         checkIfInitiolUsed(letter1, letter2, letter3, word);
-        getScorePosition(unUsedLetter);
+        getScorePosition();
         if (noOfLettters == 11) {
             bones = bones + maxLenthBones;
         }
         roundScore = bones + roundScore;
+        //data base save
+        result.updateResults(roundScore);
+        
         System.out.println(String.valueOf(roundScore));
     }
 
@@ -93,14 +97,15 @@ public class Score {
         }
     }
 
-    public void getScorePosition(int unUsedLetter) {
+    public void getScorePosition() {
         //using lenth of word give the score
-        for (int i = 0; noOfLettters > i; i++) {
-            roundScore = roundScore + position[i];
-        }
+//        for (int i = 0; noOfLettters > i; i++) {
+//            roundScore = roundScore + position[i];
+//        }
 
-        roundScore = roundScore + (11 - noOfLettters) * (-2); // reduse score if not length 11
-        roundScore = roundScore + roundScore * (-2);
+roundScore = roundScore+position[noOfLettters];
+//        roundScore = roundScore + (11 - noOfLettters) * (-2); // reduse score if not length 11
+//        roundScore = roundScore + roundScore * (-2);
     }
 
 }

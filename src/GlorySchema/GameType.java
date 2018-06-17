@@ -121,9 +121,10 @@ public class GameType {
 
     private void insertToPlayerData() {
         try {
-            PreparedStatement pst = (PreparedStatement) db.psmt("INSERT INTO " + tableName + "( PlayerId , PlayerName) VALUES (?,?);");
+            PreparedStatement pst = (PreparedStatement) db.psmt("INSERT INTO " + tableName + "( PlayerId , PlayerName, Total) VALUES (?,?,?);");
             pst.setInt(1, Integer.valueOf(PlayerId.trim()));
             pst.setString(2, PlayerName);
+            pst.setInt(3, 0);
             pst.executeUpdate();
         } catch (Exception ex) {
             Logger.getLogger(GameType.class.getName()).log(Level.SEVERE, null, ex);
