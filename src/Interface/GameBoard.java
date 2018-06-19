@@ -7,6 +7,7 @@ package Interface;
 
 import GlorySchema.GameBord;
 import GlorySchema.Score;
+import GlorySchema.ThreadsToUpdateUI.updateGameBoard;
 import GlorySchema.UpdateUI;
 import java.util.Timer;
 import javax.swing.JLabel;
@@ -21,7 +22,7 @@ public class GameBoard extends javax.swing.JFrame {
     GameBord G = new GameBord();
     Score score = new Score();
     
-    UpdateUI updateUI =new UpdateUI();
+ //   UpdateUI updateUI =new UpdateUI();
     /**
      * Creates new form GameBoard
      */
@@ -31,15 +32,10 @@ public class GameBoard extends javax.swing.JFrame {
         setSize(1100, 630);
         setLocationRelativeTo(null);
         initComponents();
-        updateUI.updateScoreTable();
         
         DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
         rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
         tblScoreBoard.getColumnModel().getColumn(1).setCellRenderer(rightRenderer);
-      
-        
-  //      Timer timer = new Timer();//UpdateUI
-  //      timer.schedule(new updateInitialLetter(), 0, 1000);//1 Second
         
         GameBord G = new GameBord();
         G.getInitialLetter();
@@ -51,7 +47,13 @@ public class GameBoard extends javax.swing.JFrame {
         btnThird.setText(z);
         
         G.saveInitialLetters(x,y,z);
-        updateUI.updateLetter();
+
+    updateGameBoard t = new updateGameBoard();
+    t.start();
+    t.sleepThread();
+    t.shutdown();
+        
+    
     }
 
     /**

@@ -103,7 +103,7 @@ public class Score {
 //            roundScore = roundScore + position[i];
 //        }
 
-roundScore = roundScore+position[noOfLettters];
+roundScore = roundScore+position[noOfLettters-1];
 //        roundScore = roundScore + (11 - noOfLettters) * (-2); // reduse score if not length 11
 //        roundScore = roundScore + roundScore * (-2);
     }

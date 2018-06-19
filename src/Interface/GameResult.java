@@ -8,11 +8,13 @@ package Interface;
 import GlorySchema.GameBord;
 import GlorySchema.GameType;
 import GlorySchema.Results;
+import GlorySchema.ThreadsToUpdateUI.updateGameResult;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.util.Timer;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -32,7 +34,7 @@ import javax.swing.table.TableColumnModel;
  */
 public class GameResult extends javax.swing.JFrame {
 
-    Results result = new Results();
+    
     
     public GameResult() {
         setUndecorated(true);
@@ -41,43 +43,46 @@ public class GameResult extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         initComponents();
         ShowGrid();
-        getLevelRanking(); // show current Result
-        //rdb2Player.setOpaque(false);
         tblGames.setOpaque(true);
         levelScore.setText("Level "+(GameBord.levelNo-1)+" Score");
+        updateGameResult t = new updateGameResult();
+        t.start();
+        t.sleepThread();
+        t.shutdown();
     }
     
-    public void getLevelRanking() {
-         try {
-            ResultSet rs = null;
-            String data[][] = null;
-
-            rs = result.getRanking(GameBord.levelNo-1);
-            ResultSetMetaData rsmd = rs.getMetaData();
-
-            rs.last();
-            int count = rs.getRow();
-            rs.beforeFirst();
-            data = new String[count][5];
-            int x = 0;
-            while (rs.next()) {
-                Vector v = new Vector();
-                DefaultTableModel dtf = (javax.swing.table.DefaultTableModel) tblGames.getModel();
-                v.add(data[x][0] = rs.getString("Name"));
-                v.add(data[x][1] = rs.getString("Level"+(GameBord.levelNo-1)+"Score"));
-                v.add(data[x][2] = rs.getString("Total"));
-//                v.add(data[x][3] = rs.getString(""));
-//                v.add(data[x][4] = rs.getString(""));
-                dtf.addRow(v);
-                //confirm = rs.getInt("confirm");
-                x = x + 1;
-            }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(SelectGame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-    }
+//    public void getLevelRanking() {
+//        Results results = new Results();
+//         try {
+//            ResultSet rs = null;
+//            String data[][] = null;
+//
+//            rs = results.getRanking(GameBord.levelNo-1);
+//            ResultSetMetaData rsmd = rs.getMetaData();
+//
+//            rs.last();
+//            int count = rs.getRow();
+//            rs.beforeFirst();
+//            data = new String[count][5];
+//            int x = 0;
+//            while (rs.next()) {
+//                Vector v = new Vector();
+//                DefaultTableModel dtf = (javax.swing.table.DefaultTableModel) tblGames.getModel();
+//                v.add(data[x][0] = rs.getString("Name"));
+//                v.add(data[x][1] = rs.getString("Level"+(GameBord.levelNo-1)+"Score"));
+//                v.add(data[x][2] = rs.getString("Total"));
+////                v.add(data[x][3] = rs.getString(""));
+////                v.add(data[x][4] = rs.getString(""));
+//                dtf.addRow(v);
+//                //confirm = rs.getInt("confirm");
+//                x = x + 1;
+//            }
+//
+//        } catch (SQLException ex) {
+//            Logger.getLogger(SelectGame.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        
+//    }
 
     private void ShowGrid() {
         String data[][] = null;
@@ -195,7 +200,7 @@ public class GameResult extends javax.swing.JFrame {
         }
        else{
             SummaryOfGame summary= new SummaryOfGame();
-            summary.setVisible(true);
+            summary.setVisible(true);  
             this.dispose();
         }
        
@@ -232,7 +237,7 @@ public class GameResult extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+                     java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new GameResult().setVisible(true);
             }
@@ -246,6 +251,6 @@ public class GameResult extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel levelScore;
-    private javax.swing.JTable tblGames;
+    public static javax.swing.JTable tblGames;
     // End of variables declaration//GEN-END:variables
 }

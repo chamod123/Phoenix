@@ -6,11 +6,13 @@
 package Interface;
 
 import GlorySchema.LeaderBoad;
+import GlorySchema.ThreadsToUpdateUI.updateSummary;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.util.Timer;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -34,7 +36,11 @@ public class SummaryOfGame extends javax.swing.JFrame {
     public SummaryOfGame() {
         initComponents();
         ShowGrid();
-        getSummaryData();
+        
+        updateSummary t = new updateSummary();
+        t.start();
+        t.sleepThread();
+        t.shutdown();
         getTopTot();
         //sort() ;
         summaryTbl.setOpaque(true);
@@ -124,7 +130,7 @@ public class SummaryOfGame extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
-    private void getSummaryData() {
+    public void getSummaryData() {
         try {
             ResultSet rs = null;
             String data[][] = null;
