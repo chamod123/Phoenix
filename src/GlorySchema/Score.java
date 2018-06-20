@@ -22,7 +22,7 @@ public class Score {
     int[] position = {1, 2, 3, 5, 8, 12, 17, 13, 30, 38, 47};
     int hightScoreBones = 5;
 
-    public void getTotalScore(String word, String letter1, String letter2, String letter3) {
+    public void getTotalScore(String word, String letter1, String letter2, String letter3,Boolean isWord) {
         //calculate total marks of current round with bonus
         noOfLettersUsed(word);
         checkIfInitiolUsed(letter1, letter2, letter3, word);
@@ -31,6 +31,9 @@ public class Score {
             bones = bones + maxLenthBones;
         }
         roundScore = bones + roundScore;
+        if(isWord==false){
+        roundScore=0;
+         } 
         //data base save
         result.updateResults(roundScore);
         

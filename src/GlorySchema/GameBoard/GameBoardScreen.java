@@ -8,6 +8,7 @@ package GlorySchema.GameBoard;
 import GlorySchema.Score;
 import GlorySchema.ThreadsToUpdateUI.updateGameBoard;
 import GlorySchema.UpdateUI;
+import GlorySchema.WordSearch;
 import Interface.GameResult;
 import Interface.SummaryOfGame;
 import java.util.Timer;
@@ -571,9 +572,15 @@ this.dispose();
     }//GEN-LAST:event_btnEleventhActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        score.getTotalScore(txtMainWord.getText().trim(), btnFirst.getText().trim(), btnSecond.getText().trim(), btnThird.getText().trim());
+        WordSearch w = new WordSearch();
+        w.setWord(txtMainWord.getText());
+        w.matchWord();
+        System.out.println("Debug word" + w.isCheckSpell());
+        if(w.isCheckSpell()==true){
+        score.getTotalScore(txtMainWord.getText().trim(), btnFirst.getText().trim(), btnSecond.getText().trim(), btnThird.getText().trim(),w.isCheckSpell() );
         GameBoard.levelNo += 1;
-        
+         
+      
         if(GameBoard.levelNo>5){
             SummaryOfGame summary= new SummaryOfGame();
             summary.setVisible(true);
@@ -586,6 +593,24 @@ this.dispose();
            this.dispose();
            
         }
+        
+        }else{
+           // JOptionPane.showMessageDialog(rootPane, "Wrong word");
+             score.getTotalScore(txtMainWord.getText().trim(), btnFirst.getText().trim(), btnSecond.getText().trim(), btnThird.getText().trim(),w.isCheckSpell());
+             GameBoard.levelNo += 1;
+            if(GameBoard.levelNo>5){
+            SummaryOfGame summary= new SummaryOfGame();
+            summary.setVisible(true);
+            this.dispose();
+        }
+        else{
+           //level result 
+           GameResult result= new GameResult();
+           result.setVisible(true);
+           this.dispose();
+           
+        }
+         }
     }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
