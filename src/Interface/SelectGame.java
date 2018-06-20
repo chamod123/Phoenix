@@ -5,6 +5,7 @@
  */
 package Interface;
 
+import GlorySchema.GameBoard.GameBoardScreen;
 import GlorySchema.GameType;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -133,7 +134,7 @@ public class SelectGame extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 0));
+        jLabel1.setForeground(new java.awt.Color(153, 153, 0));
         jLabel1.setText("Select the Game Type");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 290, -1));
 
@@ -141,20 +142,20 @@ public class SelectGame extends javax.swing.JFrame {
         );
         buttonGroup1.add(chk2Player);
         chk2Player.setFont(new java.awt.Font("Cambria Math", 1, 20)); // NOI18N
-        chk2Player.setForeground(new java.awt.Color(204, 255, 255));
+        chk2Player.setForeground(new java.awt.Color(0, 0, 204));
         chk2Player.setText("2 Player Game");
         chk2Player.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chk2PlayerActionPerformed(evt);
             }
         });
-        jPanel1.add(chk2Player, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, -1, -1));
+        jPanel1.add(chk2Player, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, -1, -1));
 
         chk3Player.setBackground(null
         );
         buttonGroup1.add(chk3Player);
         chk3Player.setFont(new java.awt.Font("Cambria Math", 1, 20)); // NOI18N
-        chk3Player.setForeground(new java.awt.Color(204, 255, 255));
+        chk3Player.setForeground(new java.awt.Color(0, 0, 204));
         chk3Player.setText("3 Player Game");
         chk3Player.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,14 +168,14 @@ public class SelectGame extends javax.swing.JFrame {
         );
         buttonGroup1.add(chk4Player);
         chk4Player.setFont(new java.awt.Font("Cambria Math", 1, 20)); // NOI18N
-        chk4Player.setForeground(new java.awt.Color(204, 255, 255));
+        chk4Player.setForeground(new java.awt.Color(0, 0, 204));
         chk4Player.setText("4 Player Game");
         chk4Player.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chk4PlayerActionPerformed(evt);
             }
         });
-        jPanel1.add(chk4Player, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, -1, -1));
+        jPanel1.add(chk4Player, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, -1, -1));
 
         jButton3.setBackground(new java.awt.Color(56, 185, 33));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -218,8 +219,6 @@ public class SelectGame extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(683, 457, 120, 30));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/game.jpg"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 500));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -262,7 +261,7 @@ public class SelectGame extends javax.swing.JFrame {
         
         game.connectWithGame(typeid);
         
-        GameBoard gameBoard= new GameBoard();
+        GameBoardScreen gameBoard= new GameBoardScreen();
         gameBoard.setVisible(true);
         this.dispose();
          

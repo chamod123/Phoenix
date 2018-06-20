@@ -5,7 +5,7 @@
  */
 package Interface;
 
-import GlorySchema.LeaderBoad;
+import GlorySchema.LeaderBoard;
 import GlorySchema.ThreadsToUpdateUI.updateSummary;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -28,7 +28,7 @@ import javax.swing.table.TableColumn;
  */
 public class SummaryOfGame extends javax.swing.JFrame {
 
-    LeaderBoad summary = new LeaderBoad();
+    LeaderBoard summary = new LeaderBoard();
     
        int leaderTOp[] = null;
        int topTot[] = null;
@@ -134,7 +134,8 @@ public class SummaryOfGame extends javax.swing.JFrame {
         try {
             ResultSet rs = null;
             String data[][] = null;
-
+            DefaultTableModel dtf = (javax.swing.table.DefaultTableModel) summaryTbl.getModel();
+            dtf.setRowCount(0);
             rs = summary.getGameSummery();
             ResultSetMetaData rsmd = rs.getMetaData();
 
@@ -145,7 +146,7 @@ public class SummaryOfGame extends javax.swing.JFrame {
             int x = 0;
             while (rs.next()) {
                 Vector v = new Vector();
-                DefaultTableModel dtf = (javax.swing.table.DefaultTableModel) summaryTbl.getModel();
+                
                 v.add(data[x][0] = rs.getString(x + 1));
                 v.add(data[x][1] = rs.getString("PlayerName"));
                 v.add(data[x][2] = rs.getString("Level1Score"));

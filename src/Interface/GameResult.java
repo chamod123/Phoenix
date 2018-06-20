@@ -5,7 +5,8 @@
  */
 package Interface;
 
-import GlorySchema.GameBord;
+import GlorySchema.GameBoard.GameBoardScreen;
+import GlorySchema.GameBoard.GameBoard;
 import GlorySchema.GameType;
 import GlorySchema.Results;
 import GlorySchema.ThreadsToUpdateUI.updateGameResult;
@@ -44,7 +45,8 @@ public class GameResult extends javax.swing.JFrame {
         initComponents();
         ShowGrid();
         tblGames.setOpaque(true);
-        levelScore.setText("Level "+(GameBord.levelNo-1)+" Score");
+        levelScore.setText("Level "+(GameBoard.levelNo-1)+" Score");
+       
         updateGameResult t = new updateGameResult();
         t.start();
         t.sleepThread();
@@ -193,8 +195,8 @@ public class GameResult extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        if((GameBord.levelNo-1)<5){
-            GameBoard gameBoard= new GameBoard();
+        if((GameBoard.levelNo-1)<5){
+            GameBoardScreen gameBoard= new GameBoardScreen();
             gameBoard.setVisible(true);
             this.dispose();
         }

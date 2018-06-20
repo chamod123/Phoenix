@@ -5,6 +5,7 @@
  */
 package GlorySchema;
 
+import GlorySchema.GameBoard.GameBoard;
 import Db.DataBase;
 import Interface.LoginScreen;
 import java.sql.PreparedStatement;
@@ -40,7 +41,7 @@ public class Results {
 
     public void updateResults(double score) {
         try {
-            PreparedStatement pst = (PreparedStatement) db.psmt("UPDATE  " + GameType.tableName + " SET  Level" + GameBord.levelNo + "Score = "+score+", Total = Total + "+score+"  WHERE PlayerId = '" + LoginScreen.PlayerId + "'");
+            PreparedStatement pst = (PreparedStatement) db.psmt("UPDATE  " + GameType.tableName + " SET  Level" + GameBoard.levelNo + "Score = "+score+", Total = Total + "+score+"  WHERE PlayerId = '" + LoginScreen.PlayerId + "'");
             pst.executeUpdate();
         } catch (Exception ex) {
             Logger.getLogger(Results.class.getName()).log(Level.SEVERE, null, ex);

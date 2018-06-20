@@ -5,7 +5,8 @@
  */
 package GlorySchema;
 
-import Interface.GameBoard;
+import GlorySchema.GameBoard.GameBoard;
+import GlorySchema.GameBoard.GameBoardScreen;
 import Interface.GameResult;
 import Interface.SelectGame;
 import java.sql.ResultSet;
@@ -28,12 +29,12 @@ public class UpdateUI  {
 
     public void updateScoreTable(){
      try {
-         DefaultTableModel dtf = (javax.swing.table.DefaultTableModel) GameBoard.tblScoreBoard.getModel();
+         DefaultTableModel dtf = (javax.swing.table.DefaultTableModel) GameBoardScreen.tblScoreBoard.getModel();
                dtf.setRowCount(0);
             ResultSet rs = null;
             String data[][] = null;
 
-            rs = result.getRanking(GameBord.levelNo);
+            rs = result.getRanking(GameBoard.levelNo);
             ResultSetMetaData rsmd = rs.getMetaData();
 
             rs.last();
@@ -55,7 +56,7 @@ public class UpdateUI  {
         
 }
      public void updateLetter(){
-     GameBord gameBord = new GameBord();
+     GameBoard gameBord = new GameBoard();
      try {
             ResultSet rs = null;
             rs = gameBord.retrieveInitialLetters();
@@ -69,20 +70,20 @@ public class UpdateUI  {
                 String initialLetters = rs.getString("Level"+gameBord.levelNo+"Letter");
                
               if(x==1){
-                  GameBoard.player1.setText(playerName);
-                  GameBoard.player1L.setText(initialLetters);
+                  GameBoardScreen.player1.setText(playerName);
+                  GameBoardScreen.player1L.setText(initialLetters);
               }
               else if(x==2){
-                  GameBoard.player2.setText(playerName);
-                  GameBoard.player2L.setText(initialLetters);
+                  GameBoardScreen.player2.setText(playerName);
+                  GameBoardScreen.player2L.setText(initialLetters);
               }
               else if(x==3){
-                  GameBoard.player3.setText(playerName);
-                  GameBoard.player3L.setText(initialLetters);
+                  GameBoardScreen.player3.setText(playerName);
+                  GameBoardScreen.player3L.setText(initialLetters);
               }
               else if(x==4){
-                  GameBoard.player4.setText(playerName);
-                  GameBoard.player4L.setText(initialLetters);
+                  GameBoardScreen.player4.setText(playerName);
+                  GameBoardScreen.player4L.setText(initialLetters);
               }
                 x = x + 1;
             }
@@ -94,13 +95,13 @@ public class UpdateUI  {
 }
      public void updateLevelRanking() {
          
-             GameResult gameResult = new GameResult();
+             //GameResult gameResult = new GameResult(); when create object from jFrame thread running
          try {
-            DefaultTableModel dtf2 = (javax.swing.table.DefaultTableModel) gameResult.tblGames.getModel();
+            DefaultTableModel dtf2 = (javax.swing.table.DefaultTableModel) GameResult.tblGames.getModel();
             ResultSet rs = null;
             String data[][] = null;
-
-            rs = result.getRanking(GameBord.levelNo-1);
+            dtf2.setRowCount(0);
+            rs = result.getRanking(GameBoard.levelNo-1);
             ResultSetMetaData rsmd = rs.getMetaData();
 
             rs.last();
@@ -112,7 +113,7 @@ public class UpdateUI  {
                 Vector v = new Vector();
                 
                 v.add(data[x][0] = rs.getString("Name"));
-                v.add(data[x][1] = rs.getString("Level"+(GameBord.levelNo-1)+"Score"));
+                v.add(data[x][1] = rs.getString("Level"+(GameBoard.levelNo-1)+"Score"));
                 v.add(data[x][2] = rs.getString("Total"));
                 dtf2.addRow(v);
                 x = x + 1;

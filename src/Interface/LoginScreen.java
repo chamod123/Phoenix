@@ -167,7 +167,7 @@ public class LoginScreen extends javax.swing.JFrame {
         txtUsername.setText(null);
         txt_password.setText(null);
         this.hide();
-        new regiter().setVisible(rootPaneCheckingEnabled);
+        new RegisterScreen().setVisible(rootPaneCheckingEnabled);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
