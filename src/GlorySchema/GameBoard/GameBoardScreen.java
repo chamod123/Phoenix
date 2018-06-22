@@ -21,25 +21,24 @@ import javax.swing.table.DefaultTableCellRenderer;
  * @author deela
  */
 public class GameBoardScreen extends javax.swing.JFrame {
+
     GameBoard G = new GameBoard();
     Score score = new Score();
-    
- //   UpdateUI updateUI =new UpdateUI();
+
+    //   UpdateUI updateUI =new UpdateUI();
     /**
      * Creates new form GameBoard
      */
     public GameBoardScreen() {
         setUndecorated(true);
-        getRootPane().setWindowDecorationStyle(JRootPane.NONE);
-        setSize(1100, 630);
-        setLocationRelativeTo(null);
         initComponents();
+        setLocationRelativeTo(null);
         
         DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
         rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
         tblScoreBoard.getColumnModel().getColumn(1).setCellRenderer(rightRenderer);
-        
-        GameBoard G = new GameBoard();
+
+        // get the initial letter to player
         G.getInitialLetter();
         String x = String.valueOf(G.getInitialLetter1());
         btnFirst.setText(x);
@@ -47,15 +46,14 @@ public class GameBoardScreen extends javax.swing.JFrame {
         btnSecond.setText(y);
         String z = String.valueOf(G.getInitialLetter3());
         btnThird.setText(z);
-        
-        G.saveInitialLetters(x,y,z);
 
-    updateGameBoard t = new updateGameBoard();
-    t.start();
-    t.sleepThread();
-    t.shutdown();
-        
-    
+        G.saveInitialLetters(x, y, z);
+
+        updateGameBoard t = new updateGameBoard();
+        t.start();
+        t.sleepThread();
+        t.shutdown();
+
     }
 
     /**
@@ -359,14 +357,14 @@ public class GameBoardScreen extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-this.dispose();
+        this.dispose();
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnFirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFirstActionPerformed
         // TODO add your handling code here:
-       String Y= txtMainWord.getText().toString();
+        String Y = txtMainWord.getText().toString();
         String X = btnFirst.getText().toString();
         String Z = Y.concat(X);
         txtMainWord.setText(Z);
@@ -375,59 +373,49 @@ this.dispose();
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        String x; 
-                  
+        String x;
 
-        if(btnForth.getText().trim()=="" || btnForth.getText()==null){
-        G.getVowel();
-         x = String.valueOf(G.getSelectedVowel()); 
-         btnForth.setText(x);
-             
-         }
-        else if(btnFifth.getText().trim()=="" || btnFifth.getText()==null){
-         G.getVowel();
-          x = String.valueOf(G.getSelectedVowel()); 
-         btnFifth.setText(x);
+        if (btnForth.getText().trim() == "" || btnForth.getText() == null) {
+            G.getVowel();
+            x = String.valueOf(G.getSelectedVowel());
+            btnForth.setText(x);
+
+        } else if (btnFifth.getText().trim() == "" || btnFifth.getText() == null) {
+            G.getVowel();
+            x = String.valueOf(G.getSelectedVowel());
+            btnFifth.setText(x);
+        } else if (btnSixth.getText().trim() == "" || btnSixth.getText() == null) {
+            G.getVowel();
+            x = String.valueOf(G.getSelectedVowel());
+            btnSixth.setText(x);
+        } else if (btnSeventh.getText().trim() == "" || btnSeventh.getText() == null) {
+            G.getVowel();
+            x = String.valueOf(G.getSelectedVowel());
+            btnSeventh.setText(x);
+        } else if (btnEighth.getText().trim() == "" || btnEighth.getText() == null) {
+            G.getVowel();
+            x = String.valueOf(G.getSelectedVowel());
+            btnEighth.setText(x);
+        } else if (btnNineth.getText().trim() == "" || btnNineth.getText() == null) {
+            G.getVowel();
+            x = String.valueOf(G.getSelectedVowel());
+            btnNineth.setText(x);
+        } else if (btnTenth.getText().trim() == "" || btnTenth.getText() == null) {
+            G.getVowel();
+            x = String.valueOf(G.getSelectedVowel());
+            btnTenth.setText(x);
+        } else if (btnEleventh.getText().trim() == "" || btnEleventh.getText() == null) {
+            G.getVowel();
+            x = String.valueOf(G.getSelectedVowel());
+            btnEleventh.setText(x);
         }
-       else if(btnSixth.getText().trim()=="" || btnSixth.getText()==null){
-          G.getVowel();
-          x = String.valueOf(G.getSelectedVowel()); 
-         btnSixth.setText(x);
-        }
-        else if(btnSeventh.getText().trim()=="" || btnSeventh.getText()==null){
-         G.getVowel();
-          x = String.valueOf(G.getSelectedVowel()); 
-         btnSeventh.setText(x);
-        }
-        else if(btnEighth.getText().trim()=="" || btnEighth.getText()==null){
-         G.getVowel();
-          x = String.valueOf(G.getSelectedVowel()); 
-         btnEighth.setText(x);
-        }
-        else if(btnNineth.getText().trim()=="" || btnNineth.getText()==null){
-         G.getVowel();
-          x = String.valueOf(G.getSelectedVowel()); 
-         btnNineth.setText(x);
-        }
-        else if(btnTenth.getText().trim()=="" || btnTenth.getText()==null){
-         G.getVowel();
-          x = String.valueOf(G.getSelectedVowel()); 
-         btnTenth.setText(x);
-        }
-        else if(btnEleventh.getText().trim()=="" || btnEleventh.getText()==null){
-         G.getVowel();
-          x = String.valueOf(G.getSelectedVowel()); 
-         btnEleventh.setText(x);
-        }
-        
-        
-        
-        
+
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btnThirdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThirdActionPerformed
         // TODO add your handling code here:
-        String Y= txtMainWord.getText().toString();
+        String Y = txtMainWord.getText().toString();
         String X = btnThird.getText().toString();
         String Z = Y.concat(X);
         txtMainWord.setText(Z);
@@ -441,67 +429,59 @@ this.dispose();
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         GameBoard G = new GameBoard();
-        String x; 
-                  
+        String x;
 
-        if(btnForth.getText().trim()=="" || btnForth.getText()==null){
-        G.getConstent();
-         x = String.valueOf(G.getSelectedConst()); 
-         btnForth.setText(x);
-             
-         }
-        else if(btnFifth.getText().trim()=="" || btnFifth.getText()==null){
-         G.getConstent();
-         x = String.valueOf(G.getSelectedConst()); 
-         btnFifth.setText(x);
+        if (btnForth.getText().trim() == "" || btnForth.getText() == null) {
+            G.getConstent();
+            x = String.valueOf(G.getSelectedConst());
+            btnForth.setText(x);
+
+        } else if (btnFifth.getText().trim() == "" || btnFifth.getText() == null) {
+            G.getConstent();
+            x = String.valueOf(G.getSelectedConst());
+            btnFifth.setText(x);
+        } else if (btnSixth.getText().trim() == "" || btnSixth.getText() == null) {
+            G.getConstent();
+            x = String.valueOf(G.getSelectedConst());
+            btnSixth.setText(x);
+        } else if (btnSeventh.getText().trim() == "" || btnSeventh.getText() == null) {
+            G.getConstent();
+            x = String.valueOf(G.getSelectedConst());
+            btnSeventh.setText(x);
+        } else if (btnEighth.getText().trim() == "" || btnEighth.getText() == null) {
+            G.getConstent();
+            x = String.valueOf(G.getSelectedConst());
+            btnEighth.setText(x);
+        } else if (btnNineth.getText().trim() == "" || btnNineth.getText() == null) {
+            G.getConstent();
+            x = String.valueOf(G.getSelectedConst());
+            btnNineth.setText(x);
+        } else if (btnTenth.getText().trim() == "" || btnTenth.getText() == null) {
+            G.getConstent();
+            x = String.valueOf(G.getSelectedConst());
+            btnTenth.setText(x);
+        } else if (btnEleventh.getText().trim() == "" || btnEleventh.getText() == null) {
+            G.getConstent();
+            x = String.valueOf(G.getSelectedConst());
+            btnEleventh.setText(x);
         }
-       else if(btnSixth.getText().trim()=="" || btnSixth.getText()==null){
-          G.getConstent();
-         x = String.valueOf(G.getSelectedConst()); 
-         btnSixth.setText(x);
-        }
-        else if(btnSeventh.getText().trim()=="" || btnSeventh.getText()==null){
-         G.getConstent();
-         x = String.valueOf(G.getSelectedConst()); 
-         btnSeventh.setText(x);
-        }
-        else if(btnEighth.getText().trim()=="" || btnEighth.getText()==null){
-        G.getConstent();
-         x = String.valueOf(G.getSelectedConst());  
-         btnEighth.setText(x);
-        }
-        else if(btnNineth.getText().trim()=="" || btnNineth.getText()==null){
-        G.getConstent();
-         x = String.valueOf(G.getSelectedConst()); 
-         btnNineth.setText(x);
-        }
-        else if(btnTenth.getText().trim()=="" || btnTenth.getText()==null){
-         G.getConstent();
-         x = String.valueOf(G.getSelectedConst()); 
-         btnTenth.setText(x);
-        }
-        else if(btnEleventh.getText().trim()=="" || btnEleventh.getText()==null){
-         G.getConstent();
-         x = String.valueOf(G.getSelectedConst());  
-         btnEleventh.setText(x);
-        }
-        
-        
+
+
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void btnSecondActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSecondActionPerformed
         // TODO add your handling code here:
-        String Y= txtMainWord.getText().toString();
+        String Y = txtMainWord.getText().toString();
         String X = btnSecond.getText().toString();
         String Z = Y.concat(X);
         txtMainWord.setText(Z);
         btnSecond.setEnabled(false);
-        
+
     }//GEN-LAST:event_btnSecondActionPerformed
 
     private void btnForthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnForthActionPerformed
         // TODO add your handling code here:
-        String Y= txtMainWord.getText().toString();
+        String Y = txtMainWord.getText().toString();
         String X = btnForth.getText().toString();
         String Z = Y.concat(X);
         txtMainWord.setText(Z);
@@ -510,7 +490,7 @@ this.dispose();
 
     private void btnFifthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFifthActionPerformed
         // TODO add your handling code here:
-        String Y= txtMainWord.getText().toString();
+        String Y = txtMainWord.getText().toString();
         String X = btnFifth.getText().toString();
         String Z = Y.concat(X);
         txtMainWord.setText(Z);
@@ -519,7 +499,7 @@ this.dispose();
 
     private void btnSixthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSixthActionPerformed
         // TODO add your handling code here:
-        String Y= txtMainWord.getText().toString();
+        String Y = txtMainWord.getText().toString();
         String X = btnSixth.getText().toString();
         String Z = Y.concat(X);
         txtMainWord.setText(Z);
@@ -528,7 +508,7 @@ this.dispose();
 
     private void btnSeventhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeventhActionPerformed
         // TODO add your handling code here:
-        String Y= txtMainWord.getText().toString();
+        String Y = txtMainWord.getText().toString();
         String X = btnSeventh.getText().toString();
         String Z = Y.concat(X);
         txtMainWord.setText(Z);
@@ -537,7 +517,7 @@ this.dispose();
 
     private void btnEighthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEighthActionPerformed
         // TODO add your handling code here:
-        String Y= txtMainWord.getText().toString();
+        String Y = txtMainWord.getText().toString();
         String X = btnEighth.getText().toString();
         String Z = Y.concat(X);
         txtMainWord.setText(Z);
@@ -546,7 +526,7 @@ this.dispose();
 
     private void btnNinethActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNinethActionPerformed
         // TODO add your handling code here:
-        String Y= txtMainWord.getText().toString();
+        String Y = txtMainWord.getText().toString();
         String X = btnNineth.getText().toString();
         String Z = Y.concat(X);
         txtMainWord.setText(Z);
@@ -555,7 +535,7 @@ this.dispose();
 
     private void btnTenthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTenthActionPerformed
         // TODO add your handling code here:
-        String Y= txtMainWord.getText().toString();
+        String Y = txtMainWord.getText().toString();
         String X = btnTenth.getText().toString();
         String Z = Y.concat(X);
         txtMainWord.setText(Z);
@@ -564,7 +544,7 @@ this.dispose();
 
     private void btnEleventhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEleventhActionPerformed
         // TODO add your handling code here:
-        String Y= txtMainWord.getText().toString();
+        String Y = txtMainWord.getText().toString();
         String X = btnEleventh.getText().toString();
         String Z = Y.concat(X);
         txtMainWord.setText(Z);
@@ -576,41 +556,38 @@ this.dispose();
         w.setWord(txtMainWord.getText());
         w.matchWord();
         System.out.println("Debug word" + w.isCheckSpell());
-        if(w.isCheckSpell()==true){
-        score.getTotalScore(txtMainWord.getText().trim(), btnFirst.getText().trim(), btnSecond.getText().trim(), btnThird.getText().trim(),w.isCheckSpell() );
-        GameBoard.levelNo += 1;
-         
-      
-        if(GameBoard.levelNo>5){
-            SummaryOfGame summary= new SummaryOfGame();
-            summary.setVisible(true);
-            this.dispose();
+        if (w.isCheckSpell() == true) {
+            score.getTotalScore(txtMainWord.getText().trim(), btnFirst.getText().trim(), btnSecond.getText().trim(), btnThird.getText().trim(), w.isCheckSpell());
+            GameBoard.levelNo += 1;
+
+            if (GameBoard.levelNo > 5) {
+                SummaryOfGame summary = new SummaryOfGame();
+                summary.setVisible(true);
+                this.dispose();
+            } else {
+                //level result 
+                GameResult result = new GameResult();
+                result.setVisible(true);
+                this.dispose();
+
+            }
+
+        } else {
+            // JOptionPane.showMessageDialog(rootPane, "Wrong word");
+            score.getTotalScore(txtMainWord.getText().trim(), btnFirst.getText().trim(), btnSecond.getText().trim(), btnThird.getText().trim(), w.isCheckSpell());
+            GameBoard.levelNo += 1;
+            if (GameBoard.levelNo > 5) {
+                SummaryOfGame summary = new SummaryOfGame();
+                summary.setVisible(true);
+                this.dispose();
+            } else {
+                //level result 
+                GameResult result = new GameResult();
+                result.setVisible(true);
+                this.dispose();
+
+            }
         }
-        else{
-           //level result 
-           GameResult result= new GameResult();
-           result.setVisible(true);
-           this.dispose();
-           
-        }
-        
-        }else{
-           // JOptionPane.showMessageDialog(rootPane, "Wrong word");
-             score.getTotalScore(txtMainWord.getText().trim(), btnFirst.getText().trim(), btnSecond.getText().trim(), btnThird.getText().trim(),w.isCheckSpell());
-             GameBoard.levelNo += 1;
-            if(GameBoard.levelNo>5){
-            SummaryOfGame summary= new SummaryOfGame();
-            summary.setVisible(true);
-            this.dispose();
-        }
-        else{
-           //level result 
-           GameResult result= new GameResult();
-           result.setVisible(true);
-           this.dispose();
-           
-        }
-         }
     }//GEN-LAST:event_jButton6ActionPerformed
 
     /**

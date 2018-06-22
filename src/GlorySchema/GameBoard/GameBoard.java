@@ -158,9 +158,7 @@ public class GameBoard {
         this.selectedConst = selectedConst;
     }
     public void saveInitialLetters(String initialLetter1,String initialLetter2,String initialLetter3){
-        
         try {
-            
             PreparedStatement pst = (PreparedStatement) db.psmt("UPDATE  " +GameType.tableName+ " SET  Level"+levelNo+"Letter = '"+(initialLetter1+initialLetter2+initialLetter3)+"' WHERE PlayerID='"+PlayerId+"'");
             pst.executeUpdate();
         } catch (Exception ex) {

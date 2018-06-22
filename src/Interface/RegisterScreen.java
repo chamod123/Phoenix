@@ -5,55 +5,39 @@
  */
 package Interface;
 
-import java.awt.Color;
-import javax.swing.JRootPane;
-import Db.DataBase;
-import java.sql.ResultSet;
 import javax.swing.JOptionPane;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import GlorySchema.Player;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import GlorySchema.Validation;
 import static Interface.RegisterScreen.cPassword;
-import static java.lang.System.load;
-import static java.util.ServiceLoader.load;
-import javax.swing.SwingUtilities;
-
 
 /**
  *
  * @author Niroshima
  */
 public class RegisterScreen extends javax.swing.JFrame {
-    
+
     Player Details = new Player();
-    
-    
+
     public static String UserId;
     public static String Name;
     public static String Email;
     public static String UserName;
     public static String password;
     public static String cPassword;
-    
+
     /**
-     * Creates new form regiter
+     * Creates new form RegisterScreen
      */
     public RegisterScreen() {
-        
-        
+
         setUndecorated(true);
-        getRootPane().setWindowDecorationStyle(JRootPane.NONE);
-        setSize(1920, 1200);
         validate();
-        setLocationRelativeTo(null);
         initComponents();
-        btn_register.setBackground(Color.GREEN);
+        setLocationRelativeTo(null);
+        //btn_register.setBackground(Color.GREEN);
         UpdateUserID();
     }
-     
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -79,119 +63,123 @@ public class RegisterScreen extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         name = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(153, 153, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel1.setText("User ID");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 120, 30));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 120, 30));
 
         uId.setEditable(false);
-        uId.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        uId.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         uId.setText(" ");
         uId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 uIdActionPerformed(evt);
             }
         });
-        jPanel1.add(uId, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 170, 340, 30));
+        jPanel1.add(uId, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, 340, 30));
 
-        jLabel2.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel2.setText("User Name");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, -1, -1));
 
-        uName.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        uName.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         uName.setText(" ");
         uName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 uNameActionPerformed(evt);
             }
         });
-        jPanel1.add(uName, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 290, 340, 30));
+        jPanel1.add(uName, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 240, 340, 30));
 
-        jLabel3.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(204, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel3.setText("Password");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 330, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, -1, -1));
 
-        Password.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        Password.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         Password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PasswordActionPerformed(evt);
             }
         });
-        jPanel1.add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 330, 340, 30));
+        jPanel1.add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 280, 340, 30));
 
-        jLabel4.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(204, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel4.setText("Confirm Password");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, -1, -1));
 
-        confirm_password.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jPanel1.add(confirm_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 370, 340, 30));
+        confirm_password.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jPanel1.add(confirm_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 320, 340, 30));
 
-        btn_register.setBackground(new java.awt.Color(51, 255, 51));
+        btn_register.setBackground(new java.awt.Color(56, 185, 33));
         btn_register.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
         btn_register.setForeground(new java.awt.Color(255, 255, 255));
+        btn_register.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-add-user-male-25.png"))); // NOI18N
         btn_register.setText("Register");
         btn_register.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_registerActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_register, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 450, 140, 40));
+        jPanel1.add(btn_register, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 420, 130, 40));
 
-        btn_mainmenu.setBackground(new java.awt.Color(0, 255, 0));
+        btn_mainmenu.setBackground(new java.awt.Color(56, 185, 33));
         btn_mainmenu.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
         btn_mainmenu.setForeground(new java.awt.Color(255, 255, 255));
-        btn_mainmenu.setText("MainMenu");
+        btn_mainmenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-back-arrow-25(1).png"))); // NOI18N
+        btn_mainmenu.setText("Back");
         btn_mainmenu.setToolTipText("");
         btn_mainmenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_mainmenuActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_mainmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 450, 150, 40));
+        jPanel1.add(btn_mainmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, 120, 40));
 
-        jLabel5.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(204, 255, 255));
+        jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel5.setText("Email");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 250, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, -1, -1));
 
-        email.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jPanel1.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 250, 340, 30));
+        email.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jPanel1.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, 340, 30));
 
         jLabel6.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 204));
-        jLabel6.setText("              User Registation");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 70, 340, 32));
+        jLabel6.setText("User Registation");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, 210, 32));
 
-        jLabel9.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(204, 255, 255));
+        jLabel9.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel9.setText("Name");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 120, 30));
-        jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 210, 340, 30));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 120, 30));
 
-        jButton1.setBackground(new java.awt.Color(51, 255, 51));
-        jButton1.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Clear");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        name.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 160, 340, 30));
+
+        jButton3.setBackground(new java.awt.Color(56, 185, 33));
+        jButton3.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-shutdown-25.png"))); // NOI18N
+        jButton3.setText("Quit");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 450, 150, 40));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 420, 120, 40));
 
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/phoenix50.png"))); // NOI18N
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, -1, -1));
+
+        jLabel7.setBackground(new java.awt.Color(153, 204, 255));
         jLabel7.setForeground(new java.awt.Color(204, 255, 255));
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/game.jpg"))); // NOI18N
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 960, 540));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 530));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -216,77 +204,84 @@ public class RegisterScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_uNameActionPerformed
 
     private void btn_mainmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_mainmenuActionPerformed
-    this.setVisible(true);
-    new LoginScreen().setVisible(true);
-        // TODO add your handling code here:
+        new LoginScreen().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btn_mainmenuActionPerformed
 
     public void UpdateUserID() {
-        
-     int Id = Details.getUserID();
-     uId.setText(String.valueOf(Id));
-    
+        int Id = Details.getUserID();
+        uId.setText(String.valueOf(Id));
     }
-    
-   
+
+
     private void btn_registerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registerActionPerformed
-    
-    UserId = uId.getText();
-    Name = name.getText();
-    Email = email.getText();
-    UserName = uName.getText();
-    password = new String(Password.getPassword());
-    cPassword = new String(confirm_password.getPassword());
-    ValidateDetails();
-    
+
+        UserId = uId.getText();
+        Name = name.getText();
+        Email = email.getText();
+        UserName = uName.getText();
+        password = new String(Password.getPassword());
+        cPassword = new String(confirm_password.getPassword());
+        ValidateDetails();
+
     }//GEN-LAST:event_btn_registerActionPerformed
 
-    public boolean ValidateDetails(){
-    try{ 
-        Validation val = new Validation();
-    if(!val.checkNull(uId.getText(), "UserId")){return true;}
-    if(!val.checkNull(name.getText(), "Name")){return true;}
-    if(!val.checkNumaric(Name,"Name")){return true;}
-    if(!val.checkNull(email.getText(), "Email")){return true;}
-    if(val.checkEmail(Email)){}
-    if(!val.checkNull(uName.getText(), "UserName")){return true;}
-    if(val.checkNull(new String(Password.getPassword()), "Password")){
-    if(val.checkPasswordLength(new String(Password.getPassword()))){}}
-    if(!val.checkNull(new String(confirm_password.getPassword()), "Confirm Password")){return true;}
-    if(!val.comfirmPassword(password,cPassword)){return true;}
-    
-    else{
-     try{
-     
-    Player insert = new Player();
-    insert.insertDetails(UserId,Name,Email,UserName,password);// Insert data to the Player table in DB
-   
-        } 
-    catch(Exception e)  {
-      JOptionPane.showMessageDialog(null,"Error: "+e.getMessage());
+    public boolean ValidateDetails() {
+        try {
+            Validation val = new Validation();
+            if (!val.checkNull(uId.getText(), "UserId")) {
+                return true;
+            }
+            if (!val.checkNull(name.getText(), "Name")) {
+                return true;
+            }
+            if (!val.checkNumaric(Name, "Name")) {
+                return true;
+            }
+            if (!val.checkNull(email.getText(), "Email")) {
+                return true;
+            }
+            if (val.checkEmail(Email)) {
+            }
+            if (!val.checkNull(uName.getText(), "UserName")) {
+                return true;
+            }
+            if (val.checkNull(new String(Password.getPassword()), "Password")) {
+                if (val.checkPasswordLength(new String(Password.getPassword()))) {
+                }
+            }
+            if (!val.checkNull(new String(confirm_password.getPassword()), "Confirm Password")) {
+                return true;
+            }
+            if (!val.comfirmPassword(password, cPassword)) {
+                return true;
+            } else {
+                Player insert = new Player();
+                int result = insert.insertDetails(UserId, Name, Email, UserName, password);// Insert data to the Player table in DB
 
+                if (result > 0) {
+                    JOptionPane.showMessageDialog(null, "Data Saved Successfully");
+                    new LoginScreen().setVisible(true);
+                    this.dispose();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Data not saved");
+                }
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Please recheck your information");
+        }
+        return true;
     }
-    
-    }
-    }catch(Exception e){
-      JOptionPane.showMessageDialog(null,"Please recheck your information");
-    }
-    return true;
-    }
- 
-    
+
+
     private void PasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_PasswordActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
-     this.setVisible(false); //this will close frame i.e. NewJFrame
-     new RegisterScreen().setVisible(true);
-        
-      // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-   
     /**
      * @param args the command line arguments
      */
@@ -329,7 +324,7 @@ public class RegisterScreen extends javax.swing.JFrame {
     private javax.swing.JButton btn_register;
     private javax.swing.JPasswordField confirm_password;
     private javax.swing.JTextField email;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -337,6 +332,7 @@ public class RegisterScreen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField name;

@@ -7,6 +7,7 @@ package Interface;
 
 import GlorySchema.GameBoard.GameBoardScreen;
 import GlorySchema.GameType;
+import GlorySchema.ThreadsToUpdateUI.OnlineUser;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.sql.ResultSet;
@@ -31,11 +32,10 @@ import javax.swing.table.TableColumnModel;
 public class SelectGame extends javax.swing.JFrame {
 
     GameType game = new GameType();
+    public static int gameTypeid = 0;
 
     public SelectGame() {
         setUndecorated(true);
-//        getRootPane().setWindowDecorationStyle(JRootPane.NONE);
-//        setSize(852, 480);
         initComponents();
         ShowGrid();
         getGameData(); // show current Games
@@ -122,71 +122,58 @@ public class SelectGame extends javax.swing.JFrame {
         chk2Player = new javax.swing.JRadioButton();
         chk3Player = new javax.swing.JRadioButton();
         chk4Player = new javax.swing.JRadioButton();
-        jButton3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblGames = new javax.swing.JTable();
-        jLabel3 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(153, 153, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(153, 153, 0));
+        jLabel1.setForeground(new java.awt.Color(0, 0, 153));
         jLabel1.setText("Select the Game Type");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 290, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 260, -1));
 
         chk2Player.setBackground(null
         );
         buttonGroup1.add(chk2Player);
         chk2Player.setFont(new java.awt.Font("Cambria Math", 1, 20)); // NOI18N
-        chk2Player.setForeground(new java.awt.Color(0, 0, 204));
         chk2Player.setText("2 Player Game");
         chk2Player.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chk2PlayerActionPerformed(evt);
             }
         });
-        jPanel1.add(chk2Player, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, -1, -1));
+        jPanel1.add(chk2Player, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 100, -1, -1));
 
         chk3Player.setBackground(null
         );
         buttonGroup1.add(chk3Player);
         chk3Player.setFont(new java.awt.Font("Cambria Math", 1, 20)); // NOI18N
-        chk3Player.setForeground(new java.awt.Color(0, 0, 204));
         chk3Player.setText("3 Player Game");
         chk3Player.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chk3PlayerActionPerformed(evt);
             }
         });
-        jPanel1.add(chk3Player, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, -1, -1));
+        jPanel1.add(chk3Player, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 150, -1, -1));
 
         chk4Player.setBackground(null
         );
         buttonGroup1.add(chk4Player);
         chk4Player.setFont(new java.awt.Font("Cambria Math", 1, 20)); // NOI18N
-        chk4Player.setForeground(new java.awt.Color(0, 0, 204));
         chk4Player.setText("4 Player Game");
         chk4Player.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chk4PlayerActionPerformed(evt);
             }
         });
-        jPanel1.add(chk4Player, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, -1, -1));
-
-        jButton3.setBackground(new java.awt.Color(56, 185, 33));
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Quit");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 455, 120, 30));
+        jPanel1.add(chk4Player, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, -1, -1));
 
         tblGames.setBackground(new java.awt.Color(204, 128, 59));
         tblGames.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -200,38 +187,45 @@ public class SelectGame extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblGames);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 610, 230));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 700, 140));
 
-        jLabel3.setBackground(new java.awt.Color(255, 255, 204));
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Current Online Games");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 810, 40));
+        jButton3.setBackground(new java.awt.Color(56, 185, 33));
+        jButton3.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-shutdown-25.png"))); // NOI18N
+        jButton3.setText("Quit");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 410, 120, 40));
 
         jButton1.setBackground(new java.awt.Color(0, 255, 0));
-        jButton1.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-game-controller-25.png"))); // NOI18N
         jButton1.setText("Play");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(683, 457, 120, 30));
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 500));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 410, 120, 40));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 530));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/phoenix50.png"))); // NOI18N
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 821, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -250,24 +244,32 @@ public class SelectGame extends javax.swing.JFrame {
     }//GEN-LAST:event_chk2PlayerActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        int typeid = 0;
+
         if (chk2Player.isSelected()) {
-            typeid = 1;
+            gameTypeid = 1;
         } else if (chk3Player.isSelected()) {
-            typeid = 2;
+            gameTypeid = 2;
         } else if (chk4Player.isSelected()) {
-            typeid = 3;
+            gameTypeid = 3;
         }
+
+        game.connectWithGame(gameTypeid);
+
+        // need to check all players are connected
+        OnlineUser t = new OnlineUser();
+        t.start();
+        //t.sleepThread();
+        t.shutdown();
         
-        game.connectWithGame(typeid);
         
-        GameBoardScreen gameBoard= new GameBoardScreen();
-        gameBoard.setVisible(true);
-        this.dispose();
-         
-         ShowGrid();
-         getGameData(); // show current Games
-         
+        
+//        GameBoardScreen gameBoard = new GameBoardScreen();
+//        gameBoard.setVisible(true);
+//        this.dispose();
+        
+        ShowGrid();
+        getGameData(); // show current Games
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -318,7 +320,7 @@ public class SelectGame extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblGames;

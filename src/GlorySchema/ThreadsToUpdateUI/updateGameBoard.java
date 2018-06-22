@@ -40,7 +40,7 @@ public class updateGameBoard extends Thread {
 
     public void sleepThread() {
         try {
-            Thread.sleep(5000);
+            Thread.sleep(4000);
         } catch (InterruptedException ex) {
             Logger.getLogger(updateGameBoard.class.getName()).log(Level.SEVERE, null, ex);
         }

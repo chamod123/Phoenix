@@ -22,15 +22,15 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Melanie Rebecca
  */
-public class UpdateUI  {
-    
-    
+public class UpdateUI {
+
+   
     Results result = new Results();
 
-    public void updateScoreTable(){
-     try {
-         DefaultTableModel dtf = (javax.swing.table.DefaultTableModel) GameBoardScreen.tblScoreBoard.getModel();
-               dtf.setRowCount(0);
+    public void updateScoreTable() {
+        try {
+            DefaultTableModel dtf = (javax.swing.table.DefaultTableModel) GameBoardScreen.tblScoreBoard.getModel();
+            dtf.setRowCount(0);
             ResultSet rs = null;
             String data[][] = null;
 
@@ -39,6 +39,7 @@ public class UpdateUI  {
 
             rs.last();
             int count = rs.getRow();
+            
             rs.beforeFirst();
             data = new String[count][5];
             int x = 0;
@@ -53,55 +54,54 @@ public class UpdateUI  {
         } catch (SQLException ex) {
             Logger.getLogger(SelectGame.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-}
-     public void updateLetter(){
-     GameBoard gameBord = new GameBoard();
-     try {
+
+    }
+
+    public void updateLetter() {
+        GameBoard gameBord = new GameBoard();
+        try {
             ResultSet rs = null;
             rs = gameBord.retrieveInitialLetters();
             rs.last();
             rs.beforeFirst();
-            
+
             int x = 1;
             while (rs.next()) {
-                
+
                 String playerName = rs.getString("PlayerName");
-                String initialLetters = rs.getString("Level"+gameBord.levelNo+"Letter");
-               
-              if(x==1){
-                  GameBoardScreen.player1.setText(playerName);
-                  GameBoardScreen.player1L.setText(initialLetters);
-              }
-              else if(x==2){
-                  GameBoardScreen.player2.setText(playerName);
-                  GameBoardScreen.player2L.setText(initialLetters);
-              }
-              else if(x==3){
-                  GameBoardScreen.player3.setText(playerName);
-                  GameBoardScreen.player3L.setText(initialLetters);
-              }
-              else if(x==4){
-                  GameBoardScreen.player4.setText(playerName);
-                  GameBoardScreen.player4L.setText(initialLetters);
-              }
+                String initialLetters = rs.getString("Level" + gameBord.levelNo + "Letter");
+
+                if (x == 1) {
+                    GameBoardScreen.player1.setText(playerName);
+                    GameBoardScreen.player1L.setText(initialLetters);
+                } else if (x == 2) {
+                    GameBoardScreen.player2.setText(playerName);
+                    GameBoardScreen.player2L.setText(initialLetters);
+                } else if (x == 3) {
+                    GameBoardScreen.player3.setText(playerName);
+                    GameBoardScreen.player3L.setText(initialLetters);
+                } else if (x == 4) {
+                    GameBoardScreen.player4.setText(playerName);
+                    GameBoardScreen.player4L.setText(initialLetters);
+                }
                 x = x + 1;
             }
 
         } catch (SQLException ex) {
             Logger.getLogger(SelectGame.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-}
-     public void updateLevelRanking() {
-         
-             //GameResult gameResult = new GameResult(); when create object from jFrame thread running
-         try {
+
+    }
+
+    public void updateLevelRanking() {
+
+        //GameResult gameResult = new GameResult(); when create object from jFrame thread running
+        try {
             DefaultTableModel dtf2 = (javax.swing.table.DefaultTableModel) GameResult.tblGames.getModel();
             ResultSet rs = null;
             String data[][] = null;
             dtf2.setRowCount(0);
-            rs = result.getRanking(GameBoard.levelNo-1);
+            rs = result.getRanking(GameBoard.levelNo - 1);
             ResultSetMetaData rsmd = rs.getMetaData();
 
             rs.last();
@@ -111,9 +111,9 @@ public class UpdateUI  {
             int x = 0;
             while (rs.next()) {
                 Vector v = new Vector();
-                
+
                 v.add(data[x][0] = rs.getString("Name"));
-                v.add(data[x][1] = rs.getString("Level"+(GameBoard.levelNo-1)+"Score"));
+                v.add(data[x][1] = rs.getString("Level" + (GameBoard.levelNo - 1) + "Score"));
                 v.add(data[x][2] = rs.getString("Total"));
                 dtf2.addRow(v);
                 x = x + 1;
@@ -122,10 +122,7 @@ public class UpdateUI  {
         } catch (SQLException ex) {
             Logger.getLogger(SelectGame.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }
 
-     
-     
 }
-

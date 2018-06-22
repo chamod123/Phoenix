@@ -140,6 +140,7 @@ public class GameResult extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         levelScore = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblGames = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
@@ -153,6 +154,9 @@ public class GameResult extends javax.swing.JFrame {
         levelScore.setForeground(new java.awt.Color(51, 0, 51));
         levelScore.setText("SCORE");
         jPanel1.add(levelScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 50, 190, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/phoenix50.png"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 50, 50));
 
         tblGames.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         tblGames.setModel(new javax.swing.table.DefaultTableModel(
@@ -250,6 +254,7 @@ public class GameResult extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel levelScore;
