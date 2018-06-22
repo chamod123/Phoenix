@@ -9,6 +9,7 @@ import GlorySchema.GameBoard.GameBoardScreen;
 import GlorySchema.Player;
 import static GlorySchema.Player.OnlinePlayers;
 import GlorySchema.UpdateUI;
+import Interface.SelectGame;
 import static Interface.SelectGame.gameTypeid;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,8 +20,7 @@ import java.util.logging.Logger;
  */
 public class OnlineUser extends Thread{
     Player player= new Player();
-//      UpdateUI updateUI = new UpdateUI();
-    private volatile boolean running = true;
+//    private volatile boolean running = true;
 
     @Override
     public void run() {
@@ -28,29 +28,27 @@ public class OnlineUser extends Thread{
             try {
                 Thread.sleep(1000);
                 player.getOnlineUser();
-//                updateUI.updateLetter();
-//                updateUI.updateScoreTable();
                 System.out.println("methanta awa");
             } catch (InterruptedException ex) {
                 Logger.getLogger(updateGameBoard.class.getName()).log(Level.SEVERE, null, ex);
             }
-            //System.out.println("Shutting down thread");
         }
+//        SelectGame selectGame=new SelectGame();
         GameBoardScreen gameBoard = new GameBoardScreen();
         gameBoard.setVisible(true);
-//        SelectGame.dispose();
+//        selectGame.dispose();
     }
 
-    public void shutdown() {
-        running = false;
-    }
+//    public void shutdown() {
+//        running = false;
+//    }
 
-    public void sleepThread() {
-        try {
-            Thread.sleep(4000);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(updateGameBoard.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+//    public void sleepThread() {
+//        try {
+//            Thread.sleep(4000);
+//        } catch (InterruptedException ex) {
+//            Logger.getLogger(updateGameBoard.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//    }
 
 }

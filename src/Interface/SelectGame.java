@@ -8,6 +8,7 @@ package Interface;
 import GlorySchema.GameBoard.GameBoardScreen;
 import GlorySchema.GameType;
 import GlorySchema.ThreadsToUpdateUI.OnlineUser;
+import GlorySchema.timer;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.sql.ResultSet;
@@ -206,6 +207,11 @@ public class SelectGame extends javax.swing.JFrame {
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-game-controller-25.png"))); // NOI18N
         jButton1.setText("Play");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -255,11 +261,10 @@ public class SelectGame extends javax.swing.JFrame {
 
         game.connectWithGame(gameTypeid);
 
-        // need to check all players are connected
         OnlineUser t = new OnlineUser();
         t.start();
         //t.sleepThread();
-        t.shutdown();
+//        t.shutdown();
         
         
         
@@ -275,6 +280,11 @@ public class SelectGame extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+//         timer t1=new timer();
+// t1.runTheTime();
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments

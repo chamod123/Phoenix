@@ -86,8 +86,8 @@ public class TimerTest extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-music();
-Timer timer = new Timer();
+        music();
+        Timer timer = new Timer();
         counter = 100;
         TimerTask task = new TimerTask() {
             @Override
@@ -126,19 +126,19 @@ Timer timer = new Timer();
     }//GEN-LAST:event_btnSaveMouseClicked
 
     public static void music() {
-       		AudioPlayer MGP = AudioPlayer.player;
-		AudioStream BGM;
-		AudioData MD;
-		ContinuousAudioDataStream loop = null;
-		try{
-			BGM = new AudioStream(new FileInputStream("/Images/ha.wav"));
-			MD = BGM.getData();
-			loop = new ContinuousAudioDataStream(MD);
-		}catch(IOException error){
-			System.out.print("file not found");
-		}
-		
-		MGP.start(loop);
+        AudioPlayer MGP = AudioPlayer.player;
+        AudioStream BGM;
+        AudioData MD;
+        ContinuousAudioDataStream loop = null;
+        try {
+            BGM = new AudioStream(new FileInputStream("/Images/ha.wav"));
+            MD = BGM.getData();
+            loop = new ContinuousAudioDataStream(MD);
+        } catch (IOException error) {
+            System.out.print("file not found");
+        }
+
+        MGP.start(loop);
     }
 
     /**

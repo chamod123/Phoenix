@@ -7,13 +7,13 @@ package GlorySchema.GameBoard;
 
 import GlorySchema.Score;
 import GlorySchema.ThreadsToUpdateUI.updateGameBoard;
-import GlorySchema.UpdateUI;
 import GlorySchema.WordSearch;
+import GlorySchema.timer;
 import Interface.GameResult;
 import Interface.SummaryOfGame;
 import java.util.Timer;
+import java.util.TimerTask;
 import javax.swing.JLabel;
-import javax.swing.JRootPane;
 import javax.swing.table.DefaultTableCellRenderer;
 
 /**
@@ -24,6 +24,8 @@ public class GameBoardScreen extends javax.swing.JFrame {
 
     GameBoard G = new GameBoard();
     Score score = new Score();
+    int counter = 10;
+    boolean isIt = false;
 
     //   UpdateUI updateUI =new UpdateUI();
     /**
@@ -33,7 +35,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
         setUndecorated(true);
         initComponents();
         setLocationRelativeTo(null);
-        
+
         DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
         rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
         tblScoreBoard.getColumnModel().getColumn(1).setCellRenderer(rightRenderer);
@@ -54,6 +56,10 @@ public class GameBoardScreen extends javax.swing.JFrame {
         t.sleepThread();
         t.shutdown();
 
+        (new Thread(new timer())).start();
+
+//        timer t1 = new timer();
+//        t1.runTheTime();
     }
 
     /**
@@ -70,6 +76,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
+        txtTime = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         txtMainWord = new javax.swing.JTextField();
@@ -80,7 +87,6 @@ public class GameBoardScreen extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         player1L = new javax.swing.JLabel();
         player3 = new javax.swing.JLabel();
@@ -105,19 +111,22 @@ public class GameBoardScreen extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         tblScoreBoard = new javax.swing.JTable();
         jButton6 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(153, 153, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 2, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("NEXT LETTER");
         jLabel2.setToolTipText("");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 320, 250, 50));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 250, 50));
 
-        jButton1.setBackground(new java.awt.Color(255, 51, 51));
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(56, 185, 33));
+        jButton1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Quit");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -125,14 +134,19 @@ public class GameBoardScreen extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 580, 120, 40));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 580, 120, 40));
 
-        jPanel2.setBackground(new java.awt.Color(153, 255, 102));
+        jPanel2.setBackground(new java.awt.Color(102, 0, 204));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel16.setText("03.59");
-        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 70, 40));
+        jLabel16.setText("s");
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, 30, 40));
+
+        txtTime.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        txtTime.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        txtTime.setText("180");
+        jPanel2.add(txtTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 60, 40));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 40, 140, 40));
 
@@ -142,7 +156,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 10, -1, 30));
 
         jButton2.setBackground(new java.awt.Color(0, 204, 255));
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(51, 51, 51));
         jButton2.setText("VOWEL");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -150,7 +164,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 390, 150, 40));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 430, 120, 30));
 
         txtMainWord.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -185,30 +199,24 @@ public class GameBoardScreen extends javax.swing.JFrame {
         jLabel6.setToolTipText("");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 130, 30));
 
-        jButton3.setBackground(new java.awt.Color(0, 153, 255));
-        jButton3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton3.setBackground(new java.awt.Color(56, 185, 33));
+        jButton3.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("MainMenu");
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 580, 120, 40));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 580, 120, 40));
 
         jButton4.setBackground(new java.awt.Color(51, 204, 255));
-        jButton4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton4.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton4.setText("CONSTANT");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, 150, 40));
-
-        jButton5.setBackground(new java.awt.Color(0, 153, 255));
-        jButton5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("MainMenu");
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, 120, 40));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 430, 120, 30));
 
         jPanel5.setBackground(new java.awt.Color(102, 204, 0));
-        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("Initial Letters"));
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Initial Letters", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         player1L.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -317,9 +325,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnSecond, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 50, 50));
-
-        jLabel1.setText("jLabel1");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 420));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 730, 420));
 
         tblScoreBoard.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -332,47 +338,46 @@ public class GameBoardScreen extends javax.swing.JFrame {
         jPanel1.add(tblScoreBoard, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 44, 170, 80));
 
         jButton6.setBackground(new java.awt.Color(0, 204, 255));
-        jButton6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton6.setText("GO");
+        jButton6.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-ok-25.png"))); // NOI18N
+        jButton6.setText("Done");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 380, 90, 70));
+        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 450, 120, 40));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-euro-money-100.png"))); // NOI18N
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 360, 100, 90));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/phoenix50.png"))); // NOI18N
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 590, 50, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1098, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 652, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
         this.dispose();
-
-        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnFirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFirstActionPerformed
-        // TODO add your handling code here:
-        String Y = txtMainWord.getText().toString();
-        String X = btnFirst.getText().toString();
-        String Z = Y.concat(X);
-        txtMainWord.setText(Z);
+        txtMainWord.setText(txtMainWord.getText() + btnFirst.getText());
         btnFirst.setEnabled(false);
     }//GEN-LAST:event_btnFirstActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
         String x;
 
         if (btnForth.getText().trim() == "" || btnForth.getText() == null) {
@@ -414,11 +419,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btnThirdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThirdActionPerformed
-        // TODO add your handling code here:
-        String Y = txtMainWord.getText().toString();
-        String X = btnThird.getText().toString();
-        String Z = Y.concat(X);
-        txtMainWord.setText(Z);
+        txtMainWord.setText(txtMainWord.getText() + btnThird.getText());
         btnThird.setEnabled(false);
     }//GEN-LAST:event_btnThirdActionPerformed
 
@@ -470,84 +471,48 @@ public class GameBoardScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void btnSecondActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSecondActionPerformed
-        // TODO add your handling code here:
-        String Y = txtMainWord.getText().toString();
-        String X = btnSecond.getText().toString();
-        String Z = Y.concat(X);
-        txtMainWord.setText(Z);
+        txtMainWord.setText(txtMainWord.getText() + btnSecond.getText());
         btnSecond.setEnabled(false);
 
     }//GEN-LAST:event_btnSecondActionPerformed
 
     private void btnForthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnForthActionPerformed
-        // TODO add your handling code here:
-        String Y = txtMainWord.getText().toString();
-        String X = btnForth.getText().toString();
-        String Z = Y.concat(X);
-        txtMainWord.setText(Z);
+        txtMainWord.setText(txtMainWord.getText() + btnForth.getText());
         btnForth.setEnabled(false);
     }//GEN-LAST:event_btnForthActionPerformed
 
     private void btnFifthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFifthActionPerformed
-        // TODO add your handling code here:
-        String Y = txtMainWord.getText().toString();
-        String X = btnFifth.getText().toString();
-        String Z = Y.concat(X);
-        txtMainWord.setText(Z);
+        txtMainWord.setText(txtMainWord.getText() + btnFifth.getText());
         btnFifth.setEnabled(false);
     }//GEN-LAST:event_btnFifthActionPerformed
 
     private void btnSixthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSixthActionPerformed
-        // TODO add your handling code here:
-        String Y = txtMainWord.getText().toString();
-        String X = btnSixth.getText().toString();
-        String Z = Y.concat(X);
-        txtMainWord.setText(Z);
+        txtMainWord.setText(txtMainWord.getText() + btnSixth.getText());
         btnSixth.setEnabled(false);
     }//GEN-LAST:event_btnSixthActionPerformed
 
     private void btnSeventhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeventhActionPerformed
-        // TODO add your handling code here:
-        String Y = txtMainWord.getText().toString();
-        String X = btnSeventh.getText().toString();
-        String Z = Y.concat(X);
-        txtMainWord.setText(Z);
+        txtMainWord.setText(txtMainWord.getText() + btnSeventh.getText());
         btnSeventh.setEnabled(false);
     }//GEN-LAST:event_btnSeventhActionPerformed
 
     private void btnEighthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEighthActionPerformed
-        // TODO add your handling code here:
-        String Y = txtMainWord.getText().toString();
-        String X = btnEighth.getText().toString();
-        String Z = Y.concat(X);
-        txtMainWord.setText(Z);
+        txtMainWord.setText(txtMainWord.getText() + btnEighth.getText());
         btnEighth.setEnabled(false);
     }//GEN-LAST:event_btnEighthActionPerformed
 
     private void btnNinethActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNinethActionPerformed
-        // TODO add your handling code here:
-        String Y = txtMainWord.getText().toString();
-        String X = btnNineth.getText().toString();
-        String Z = Y.concat(X);
-        txtMainWord.setText(Z);
+        txtMainWord.setText(txtMainWord.getText() + btnNineth.getText());
         btnNineth.setEnabled(false);
     }//GEN-LAST:event_btnNinethActionPerformed
 
     private void btnTenthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTenthActionPerformed
-        // TODO add your handling code here:
-        String Y = txtMainWord.getText().toString();
-        String X = btnTenth.getText().toString();
-        String Z = Y.concat(X);
-        txtMainWord.setText(Z);
+        txtMainWord.setText(txtMainWord.getText() + btnTenth.getText());
         btnTenth.setEnabled(false);
     }//GEN-LAST:event_btnTenthActionPerformed
 
     private void btnEleventhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEleventhActionPerformed
-        // TODO add your handling code here:
-        String Y = txtMainWord.getText().toString();
-        String X = btnEleventh.getText().toString();
-        String Z = Y.concat(X);
-        txtMainWord.setText(Z);
+        txtMainWord.setText(txtMainWord.getText() + btnEleventh.getText());
         btnEleventh.setEnabled(false);
     }//GEN-LAST:event_btnEleventhActionPerformed
 
@@ -558,35 +523,23 @@ public class GameBoardScreen extends javax.swing.JFrame {
         System.out.println("Debug word" + w.isCheckSpell());
         if (w.isCheckSpell() == true) {
             score.getTotalScore(txtMainWord.getText().trim(), btnFirst.getText().trim(), btnSecond.getText().trim(), btnThird.getText().trim(), w.isCheckSpell());
-            GameBoard.levelNo += 1;
-
-            if (GameBoard.levelNo > 5) {
-                SummaryOfGame summary = new SummaryOfGame();
-                summary.setVisible(true);
-                this.dispose();
-            } else {
-                //level result 
-                GameResult result = new GameResult();
-                result.setVisible(true);
-                this.dispose();
-
-            }
 
         } else {
             // JOptionPane.showMessageDialog(rootPane, "Wrong word");
             score.getTotalScore(txtMainWord.getText().trim(), btnFirst.getText().trim(), btnSecond.getText().trim(), btnThird.getText().trim(), w.isCheckSpell());
-            GameBoard.levelNo += 1;
-            if (GameBoard.levelNo > 5) {
-                SummaryOfGame summary = new SummaryOfGame();
-                summary.setVisible(true);
-                this.dispose();
-            } else {
-                //level result 
-                GameResult result = new GameResult();
-                result.setVisible(true);
-                this.dispose();
 
-            }
+        }
+        GameBoard.levelNo += 1;
+        if (GameBoard.levelNo > 5) {
+            SummaryOfGame summary = new SummaryOfGame();
+            summary.setVisible(true);
+            this.dispose();
+        } else {
+            //level result 
+            GameResult result = new GameResult();
+            result.setVisible(true);
+            this.dispose();
+
         }
     }//GEN-LAST:event_jButton6ActionPerformed
 
@@ -642,7 +595,6 @@ public class GameBoardScreen extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel15;
@@ -650,9 +602,11 @@ public class GameBoardScreen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
@@ -667,5 +621,6 @@ public class GameBoardScreen extends javax.swing.JFrame {
     public static javax.swing.JLabel player4L;
     public static javax.swing.JTable tblScoreBoard;
     private javax.swing.JTextField txtMainWord;
+    public static javax.swing.JLabel txtTime;
     // End of variables declaration//GEN-END:variables
 }
