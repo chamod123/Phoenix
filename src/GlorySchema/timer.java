@@ -5,7 +5,11 @@
  */
 package GlorySchema;
 
+import GlorySchema.GameBoard.GameBoard;
 import GlorySchema.GameBoard.GameBoardScreen;
+import Interface.GameResult;
+import Interface.SummaryOfGame;
+import java.awt.Window;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.logging.Level;
@@ -17,14 +21,15 @@ import java.util.logging.Logger;
  */
 public class timer extends Thread {
 
-    int counter = 180;
+    int counter = 50;
     boolean isIt = false;
 
     private volatile boolean running = true;
+     GameBoard G = new GameBoard();
 
     @Override
     public void run() {
-        while (running) {
+        while (counter >= 0) {
             try {
                 Thread.sleep(1000);
                 GameBoardScreen.txtTime.setText(counter + "");
@@ -33,6 +38,23 @@ public class timer extends Thread {
                 Logger.getLogger(timer.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        //stop time 
+         G.skipLevel(GameBoardScreen.txtMainWord.getText());
+////////        GameBoard.levelNo += 1;
+////////        if (GameBoard.levelNo > 5) {
+////////            SummaryOfGame summary = new SummaryOfGame();
+////////            summary.setVisible(true);
+////////            // this.dispose();
+////////
+////////        } else {
+////////            //level result 
+////////            GameResult result = new GameResult();
+////////            result.setVisible(true);
+////////            // this.dispose();
+////////
+////////        }
+        
+
     }
 
     public void shutdown() {
@@ -41,7 +63,7 @@ public class timer extends Thread {
 
     public void sleepThread() {
         try {
-            Thread.sleep(180000); // 180s run it
+            Thread.sleep(5000); // 50s run it
         } catch (InterruptedException ex) {
             Logger.getLogger(timer.class.getName()).log(Level.SEVERE, null, ex);
         }

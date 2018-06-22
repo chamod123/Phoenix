@@ -7,7 +7,11 @@ package GlorySchema.GameBoard;
 
 import Db.DataBase;
 import GlorySchema.GameType;
+import GlorySchema.Score;
+import GlorySchema.WordSearch;
+import Interface.GameResult;
 import static Interface.LoginScreen.PlayerId;
+import Interface.SummaryOfGame;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -25,6 +29,7 @@ import java.util.logging.Logger;
 public class GameBoard {
     
     DataBase db = new DataBase();
+    Score score = new Score();
 
     char constLetters[] = {'B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z'};
     char vowelLetters[] = {'A', 'E', 'I', 'O', 'U'};
@@ -43,6 +48,36 @@ public class GameBoard {
     public void getLetterBagWord() { 
     
     }
+    
+     public void skipLevel(String word) {
+        WordSearch w = new WordSearch();
+        w.setWord(word);
+        w.matchWord();
+        System.out.println("Debug word" + w.isCheckSpell());
+        if (w.isCheckSpell() == true) {
+            score.getTotalScore(word, GameBoardScreen.btnFirst.getText().trim(), GameBoardScreen.btnSecond.getText().trim(), GameBoardScreen.btnThird.getText().trim(), w.isCheckSpell());
+
+        } else {
+            // JOptionPane.showMessageDialog(rootPane, "Wrong word");
+            score.getTotalScore(word, GameBoardScreen.btnFirst.getText().trim(), GameBoardScreen.btnSecond.getText().trim(), GameBoardScreen.btnThird.getText().trim(), w.isCheckSpell());
+
+        }
+
+        GameBoard.levelNo += 1;
+         System.out.println(GameBoard.levelNo);
+        if (GameBoard.levelNo >= 5) {
+            SummaryOfGame summary = new SummaryOfGame();
+            summary.setVisible(true);
+           // this.dispose();
+        } else {
+            //level result 
+            GameResult result = new GameResult();
+            result.setVisible(true);
+           // this.dispose();
+
+        }
+    }
+
 
     public void getInitialLetter() {
         random();

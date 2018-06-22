@@ -7,12 +7,7 @@ package GlorySchema.GameBoard;
 
 import GlorySchema.Score;
 import GlorySchema.ThreadsToUpdateUI.updateGameBoard;
-import GlorySchema.WordSearch;
 import GlorySchema.timer;
-import Interface.GameResult;
-import Interface.SummaryOfGame;
-import java.util.Timer;
-import java.util.TimerTask;
 import javax.swing.JLabel;
 import javax.swing.table.DefaultTableCellRenderer;
 
@@ -517,32 +512,35 @@ public class GameBoardScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEleventhActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        WordSearch w = new WordSearch();
-        w.setWord(txtMainWord.getText());
-        w.matchWord();
-        System.out.println("Debug word" + w.isCheckSpell());
-        if (w.isCheckSpell() == true) {
-            score.getTotalScore(txtMainWord.getText().trim(), btnFirst.getText().trim(), btnSecond.getText().trim(), btnThird.getText().trim(), w.isCheckSpell());
-
-        } else {
-            // JOptionPane.showMessageDialog(rootPane, "Wrong word");
-            score.getTotalScore(txtMainWord.getText().trim(), btnFirst.getText().trim(), btnSecond.getText().trim(), btnThird.getText().trim(), w.isCheckSpell());
-
-        }
-        GameBoard.levelNo += 1;
-        if (GameBoard.levelNo > 5) {
-            SummaryOfGame summary = new SummaryOfGame();
-            summary.setVisible(true);
-            this.dispose();
-        } else {
-            //level result 
-            GameResult result = new GameResult();
-            result.setVisible(true);
-            this.dispose();
-
-        }
+        G.skipLevel(txtMainWord.getText());
+//        WordSearch w = new WordSearch();
+//        w.setWord(txtMainWord.getText());
+//        w.matchWord();
+//        System.out.println("Debug word" + w.isCheckSpell());
+//        if (w.isCheckSpell() == true) {
+//            score.getTotalScore(txtMainWord.getText().trim(), btnFirst.getText().trim(), btnSecond.getText().trim(), btnThird.getText().trim(), w.isCheckSpell());
+//
+//        } else {
+//            // JOptionPane.showMessageDialog(rootPane, "Wrong word");
+//            score.getTotalScore(txtMainWord.getText().trim(), btnFirst.getText().trim(), btnSecond.getText().trim(), btnThird.getText().trim(), w.isCheckSpell());
+//
+//        }
+//        
+////        GameBoard.levelNo += 1;
+////        if (GameBoard.levelNo > 5) {
+////            SummaryOfGame summary = new SummaryOfGame();
+////            summary.setVisible(true);
+////            this.dispose();
+////        } else {
+////            //level result 
+////            GameResult result = new GameResult();
+////            result.setVisible(true);
+////            this.dispose();
+////
+////        }
     }//GEN-LAST:event_jButton6ActionPerformed
 
+   
     /**
      * @param args the command line arguments
      */
@@ -583,14 +581,14 @@ public class GameBoardScreen extends javax.swing.JFrame {
     private javax.swing.JButton btnEighth;
     private javax.swing.JButton btnEleventh;
     private javax.swing.JButton btnFifth;
-    private javax.swing.JButton btnFirst;
+    public static javax.swing.JButton btnFirst;
     private javax.swing.JButton btnForth;
     private javax.swing.JButton btnNineth;
-    private javax.swing.JButton btnSecond;
+    public static javax.swing.JButton btnSecond;
     private javax.swing.JButton btnSeventh;
     private javax.swing.JButton btnSixth;
     private javax.swing.JButton btnTenth;
-    private javax.swing.JButton btnThird;
+    public static javax.swing.JButton btnThird;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -620,7 +618,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
     public static javax.swing.JLabel player4;
     public static javax.swing.JLabel player4L;
     public static javax.swing.JTable tblScoreBoard;
-    private javax.swing.JTextField txtMainWord;
+    public static javax.swing.JTextField txtMainWord;
     public static javax.swing.JLabel txtTime;
     // End of variables declaration//GEN-END:variables
 }

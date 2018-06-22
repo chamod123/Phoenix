@@ -43,7 +43,7 @@ public class updateSummary extends Thread {
 
     public void sleepThread() {
         try {
-            Thread.sleep(5000);
+            Thread.sleep(3000);
         } catch (InterruptedException ex) {
             Logger.getLogger(updateGameResult.class.getName()).log(Level.SEVERE, null, ex);
         }

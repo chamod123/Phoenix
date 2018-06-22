@@ -29,19 +29,24 @@ import javax.swing.table.TableColumn;
 public class SummaryOfGame extends javax.swing.JFrame {
 
     LeaderBoard summary = new LeaderBoard();
-    
-       int leaderTOp[] = null;
-       int topTot[] = null;
+    updateSummary t = new updateSummary();
+
+    int leaderTOp[] = null;
+    int topTot[] = null;
 
     public SummaryOfGame() {
+
+        setUndecorated(true);
         initComponents();
+        setLocationRelativeTo(null);
+
         ShowGrid();
+
         
-        updateSummary t = new updateSummary();
         t.start();
         t.sleepThread();
         t.shutdown();
-        getTopTot();
+//        getTopTot();
         //sort() ;
         summaryTbl.setOpaque(true);
     }
@@ -69,12 +74,13 @@ public class SummaryOfGame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(153, 153, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 204));
+        jLabel1.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 153));
         jLabel1.setText("GAME SUMMARY");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, 280, 40));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, 220, 40));
 
         summaryTbl.setBackground(new java.awt.Color(204, 128, 59));
         summaryTbl.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -91,13 +97,13 @@ public class SummaryOfGame extends javax.swing.JFrame {
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 550, 100));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/phoenix50.png"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 50, 50));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 50, 50));
 
         jButton1.setBackground(new java.awt.Color(0, 255, 0));
         jButton1.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Exit");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 370, 130, 30));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 370, 120, 40));
 
         jButton2.setBackground(new java.awt.Color(0, 255, 0));
         jButton2.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
@@ -108,14 +114,16 @@ public class SummaryOfGame extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 370, -1, 30));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 370, 120, 40));
+
+        jLabel2.setBackground(new java.awt.Color(153, 153, 255));
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 460));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,7 +152,7 @@ public class SummaryOfGame extends javax.swing.JFrame {
             int x = 0;
             while (rs.next()) {
                 Vector v = new Vector();
-                
+
                 v.add(data[x][0] = rs.getString(x + 1));
                 v.add(data[x][1] = rs.getString("PlayerName"));
                 v.add(data[x][2] = rs.getString("Level1Score"));
@@ -180,7 +188,7 @@ public class SummaryOfGame extends javax.swing.JFrame {
         summaryTbl.getTableHeader().setPreferredSize(new Dimension(summaryTbl.getTableHeader().getPreferredSize().width, 35));
         JTableHeader head = summaryTbl.getTableHeader();
         head.setFont(head.getFont().deriveFont(Font.BOLD));
-        
+
         DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
         rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
         // tblGames.getColumnModel().getColumn(4).setCellRenderer(rightRenderer);
@@ -193,58 +201,56 @@ public class SummaryOfGame extends javax.swing.JFrame {
 
     }
 
-    private void getTopTot() {
-        try {
-            ResultSet rs = null;
-      
+//    private void getTopTot() {
+//        try {
+//            ResultSet rs = null;
+//
+//            rs = summary.getTopScore();
+//            ResultSetMetaData rsmd = rs.getMetaData();
+//
+//            rs.last();
+//            int count = rs.getRow();
+//            rs.beforeFirst();
+//            topTot = new int[count];
+//            int x = 0;
+//            while (rs.next()) {
+//                Vector v = new Vector();
+//
+//                v.add(topTot[x] = rs.getInt("Total"));
+//                //confirm = rs.getInt("confirm");
+//                x = x + 1;
+//            }
+//        } catch (SQLException ex) {
+//            Logger.getLogger(SummaryOfGame.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//    }
+//
+//    private void getLeaderTop() {
+//        try {
+//            ResultSet rs = null;
+//
+//            rs = summary.getLeaderTopScore();
+//            ResultSetMetaData rsmd = rs.getMetaData();
+//
+//            rs.last();
+//            int count = rs.getRow();
+//            rs.beforeFirst();
+//            leaderTOp = new int[count];
+//            int x = 0;
+//            while (rs.next()) {
+//                Vector v = new Vector();
+//
+//                v.add(leaderTOp[x] = rs.getInt("Score"));
+//                //confirm = rs.getInt("confirm");
+//                x = x + 1;
+//            }
+//        } catch (SQLException ex) {
+//            Logger.getLogger(SummaryOfGame.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//
+//    }
 
-            rs = summary.getTopScore();
-            ResultSetMetaData rsmd = rs.getMetaData();
-
-            rs.last();
-            int count = rs.getRow();
-            rs.beforeFirst();
-            topTot = new int[count];
-            int x = 0;
-            while (rs.next()) {
-                Vector v = new Vector();
-
-                v.add(topTot[x] = rs.getInt("Total"));
-                //confirm = rs.getInt("confirm");
-                x = x + 1;
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(SummaryOfGame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
-    private void getLeaderTop() {
-        try {
-            ResultSet rs = null;
-          
-
-            rs = summary.getLeaderTopScore();
-            ResultSetMetaData rsmd = rs.getMetaData();
-
-            rs.last();
-            int count = rs.getRow();
-            rs.beforeFirst();
-            leaderTOp = new int[count];
-            int x = 0;
-            while (rs.next()) {
-                Vector v = new Vector();
-
-                v.add(leaderTOp[x] = rs.getInt("Score"));
-                //confirm = rs.getInt("confirm");
-                x = x + 1;
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(SummaryOfGame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }
-    
-   /* public void sort() 
+    /* public void sort() 
     {
     int n = topTot.length;
     int m= leaderTOp.length;
@@ -262,7 +268,6 @@ public class SummaryOfGame extends javax.swing.JFrame {
         }
     }
 }*/
-
     /**
      * @param args the command line arguments
      */

@@ -38,11 +38,10 @@ public class GameResult extends javax.swing.JFrame {
     
     
     public GameResult() {
-        setUndecorated(true);
-        getRootPane().setWindowDecorationStyle(JRootPane.NONE);
-        setSize(1100, 630);
-        setLocationRelativeTo(null);
+        setUndecorated(true);        
         initComponents();
+        setLocationRelativeTo(null);
+        
         ShowGrid();
         tblGames.setOpaque(true);
         levelScore.setText("Level "+(GameBoard.levelNo-1)+" Score");
@@ -148,15 +147,16 @@ public class GameResult extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(153, 153, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         levelScore.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
-        levelScore.setForeground(new java.awt.Color(51, 0, 51));
+        levelScore.setForeground(new java.awt.Color(0, 0, 153));
         levelScore.setText("SCORE");
-        jPanel1.add(levelScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 50, 190, -1));
+        jPanel1.add(levelScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 40, 250, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/phoenix50.png"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 50, 50));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, 50, 50));
 
         tblGames.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         tblGames.setModel(new javax.swing.table.DefaultTableModel(
@@ -169,10 +169,10 @@ public class GameResult extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblGames);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 580, 320));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 410, 640, 90));
 
         jButton1.setBackground(new java.awt.Color(0, 204, 255));
-        jButton1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Next");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -180,18 +180,18 @@ public class GameResult extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 430, 170, 80));
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 3, 1030, 520));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 430, 120, 40));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 3, 270, 120));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 940, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 530, Short.MAX_VALUE)
         );
 
         pack();
