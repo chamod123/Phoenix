@@ -8,6 +8,7 @@ package GlorySchema.GameBoard;
 import Db.DataBase;
 import GlorySchema.GameType;
 import GlorySchema.Score;
+import GlorySchema.ThreadsToUpdateUI.AllPlayerDone;
 import GlorySchema.WordSearch;
 import Interface.GameResult;
 import static Interface.LoginScreen.PlayerId;
@@ -27,7 +28,7 @@ import java.util.logging.Logger;
  * @author INDIKA
  */
 public class GameBoard {
-    
+
     DataBase db = new DataBase();
     Score score = new Score();
 
@@ -45,39 +46,40 @@ public class GameBoard {
     public static int levelNo = 1;
     Date time;
 
-    public void getLetterBagWord() { 
-    
+    public void getLetterBagWord() {
+
     }
-    
-     public void skipLevel(String word) {
+
+    public void skipLevel(String word) {
         WordSearch w = new WordSearch();
         w.setWord(word);
         w.matchWord();
         System.out.println("Debug word" + w.isCheckSpell());
         if (w.isCheckSpell() == true) {
             score.getTotalScore(word, GameBoardScreen.btnFirst.getText().trim(), GameBoardScreen.btnSecond.getText().trim(), GameBoardScreen.btnThird.getText().trim(), w.isCheckSpell());
-
         } else {
             // JOptionPane.showMessageDialog(rootPane, "Wrong word");
             score.getTotalScore(word, GameBoardScreen.btnFirst.getText().trim(), GameBoardScreen.btnSecond.getText().trim(), GameBoardScreen.btnThird.getText().trim(), w.isCheckSpell());
-
         }
-
-        GameBoard.levelNo += 1;
-         System.out.println(GameBoard.levelNo);
-        if (GameBoard.levelNo >= 5) {
-            SummaryOfGame summary = new SummaryOfGame();
-            summary.setVisible(true);
-           // this.dispose();
-        } else {
-            //level result 
-            GameResult result = new GameResult();
-            result.setVisible(true);
-           // this.dispose();
-
-        }
+        
+        AllPlayerDone t = new AllPlayerDone();
+        t.start();
+        //t.sleepThread();
+//        t.shutdown();
+//        GameBoard.levelNo += 1;
+//         System.out.println(GameBoard.levelNo);
+//        if (GameBoard.levelNo >= 5) {
+//            SummaryOfGame summary = new SummaryOfGame();
+//            summary.setVisible(true);
+//           // this.dispose();
+//        } else {
+//            //level result 
+//            GameResult result = new GameResult();
+//            result.setVisible(true);
+//           // this.dispose();
+//
+//        }
     }
-
 
     public void getInitialLetter() {
         random();
@@ -192,27 +194,28 @@ public class GameBoard {
     public void setSelectedConst(char selectedConst) {
         this.selectedConst = selectedConst;
     }
-    public void saveInitialLetters(String initialLetter1,String initialLetter2,String initialLetter3){
+
+    public void saveInitialLetters(String initialLetter1, String initialLetter2, String initialLetter3) {
         try {
-            PreparedStatement pst = (PreparedStatement) db.psmt("UPDATE  " +GameType.tableName+ " SET  Level"+levelNo+"Letter = '"+(initialLetter1+initialLetter2+initialLetter3)+"' WHERE PlayerID='"+PlayerId+"'");
+            PreparedStatement pst = (PreparedStatement) db.psmt("UPDATE  " + GameType.tableName + " SET  Level" + levelNo + "Letter = '" + (initialLetter1 + initialLetter2 + initialLetter3) + "' WHERE PlayerID='" + PlayerId + "'");
             pst.executeUpdate();
         } catch (Exception ex) {
             Logger.getLogger(GameBoard.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }
-    public ResultSet retrieveInitialLetters(){
-        
+
+    public ResultSet retrieveInitialLetters() {
+
         ResultSet rs = null;
         try {
-           // String query = "SELECT * FROM gameboard1 ORDER BY Total DESC";//SELECT * FROM onlinegame O INNER JOIN gametype T ON O.gameTypeId = T.GameId  WHERE O.gameId LIKE  '" + gameid + "%'";
-           String query = "SELECT playerName,Level"+levelNo+"Letter FROM  "+GameType.tableName+" ";//SELECT * FROM onlinegame O INNER JOIN gametype T ON O.gameTypeId = T.GameId  WHERE O.gameId LIKE  '" + gameid + "%'";
+            // String query = "SELECT * FROM gameboard1 ORDER BY Total DESC";//SELECT * FROM onlinegame O INNER JOIN gametype T ON O.gameTypeId = T.GameId  WHERE O.gameId LIKE  '" + gameid + "%'";
+            String query = "SELECT playerName,Level" + levelNo + "Letter FROM  " + GameType.tableName + " ";//SELECT * FROM onlinegame O INNER JOIN gametype T ON O.gameTypeId = T.GameId  WHERE O.gameId LIKE  '" + gameid + "%'";
             rs = (ResultSet) db.fetch(query);
         } catch (Exception e) {
             e.printStackTrace();
         }
         return rs;
     }
-        
 
 }

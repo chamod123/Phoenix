@@ -6,6 +6,7 @@
 package GlorySchema.GameBoard;
 
 import GlorySchema.Score;
+import static GlorySchema.ThreadsToUpdateUI.AllPlayerDone.moved;
 import GlorySchema.ThreadsToUpdateUI.updateGameBoard;
 import GlorySchema.timer;
 import javax.swing.JLabel;
@@ -27,6 +28,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
      * Creates new form GameBoard
      */
     public GameBoardScreen() {
+        moved = false;
         setUndecorated(true);
         initComponents();
         setLocationRelativeTo(null);

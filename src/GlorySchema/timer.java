@@ -7,6 +7,7 @@ package GlorySchema;
 
 import GlorySchema.GameBoard.GameBoard;
 import GlorySchema.GameBoard.GameBoardScreen;
+import static GlorySchema.ThreadsToUpdateUI.AllPlayerDone.moved;
 import Interface.GameResult;
 import Interface.SummaryOfGame;
 import java.awt.Window;
@@ -25,11 +26,11 @@ public class timer extends Thread {
     boolean isIt = false;
 
     private volatile boolean running = true;
-     GameBoard G = new GameBoard();
+    GameBoard G = new GameBoard();
 
     @Override
     public void run() {
-        while (counter >= 0) {
+        while (counter >= 0 && !moved) {
             try {
                 Thread.sleep(1000);
                 GameBoardScreen.txtTime.setText(counter + "");
@@ -39,7 +40,10 @@ public class timer extends Thread {
             }
         }
         //stop time 
-         G.skipLevel(GameBoardScreen.txtMainWord.getText());
+        if (!moved) {
+            moved=true;
+            G.skipLevel(GameBoardScreen.txtMainWord.getText());
+        }
 ////////        GameBoard.levelNo += 1;
 ////////        if (GameBoard.levelNo > 5) {
 ////////            SummaryOfGame summary = new SummaryOfGame();
@@ -53,7 +57,6 @@ public class timer extends Thread {
 ////////            // this.dispose();
 ////////
 ////////        }
-        
 
     }
 

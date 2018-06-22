@@ -9,6 +9,7 @@ import GlorySchema.GameBoard.GameBoardScreen;
 import GlorySchema.GameBoard.GameBoard;
 import GlorySchema.GameType;
 import GlorySchema.Results;
+import static GlorySchema.ThreadsToUpdateUI.AllPlayerDone.moved;
 import GlorySchema.ThreadsToUpdateUI.updateGameResult;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -38,6 +39,8 @@ public class GameResult extends javax.swing.JFrame {
     
     
     public GameResult() {
+//        moved = false;
+        
         setUndecorated(true);        
         initComponents();
         setLocationRelativeTo(null);

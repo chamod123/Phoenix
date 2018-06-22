@@ -73,6 +73,7 @@ public class updateSummary extends Thread {
             while (rs.next()) {
                 Vector v = new Vector();
                 if (x == 0) {
+                    SummaryOfGame.player1.setVisible(true);
                     SummaryOfGame.txtName0.setText(rs.getString("PlayerName"));
                     SummaryOfGame.level1score0.setText(rs.getString("Level1Score"));
                     SummaryOfGame.level2score0.setText(rs.getString("Level2Score"));
@@ -82,6 +83,7 @@ public class updateSummary extends Thread {
                     SummaryOfGame.total0.setText(rs.getString("Total"));
                     SummaryOfGame.status0.setText("1st Place");
                 } else if (x == 1) {
+                    SummaryOfGame.player2.setVisible(true);
                     SummaryOfGame.txtName1.setText(rs.getString("PlayerName"));
                     SummaryOfGame.level1score1.setText(rs.getString("Level1Score"));
                     SummaryOfGame.level2score1.setText(rs.getString("Level2Score"));
@@ -89,8 +91,9 @@ public class updateSummary extends Thread {
                     SummaryOfGame.level4score1.setText(rs.getString("Level4Score"));
                     SummaryOfGame.level5score1.setText(rs.getString("Level5Score"));
                     SummaryOfGame.total1.setText(rs.getString("Total"));
-                    SummaryOfGame.status0.setText("2nd Place");
+                    SummaryOfGame.status1.setText("2nd Place");
                 } else if (x == 2) {
+                    SummaryOfGame.player3.setVisible(true);
                     SummaryOfGame.txtName2.setText(rs.getString("PlayerName"));
                     SummaryOfGame.level1score2.setText(rs.getString("Level1Score"));
                     SummaryOfGame.level2score2.setText(rs.getString("Level2Score"));
@@ -98,8 +101,9 @@ public class updateSummary extends Thread {
                     SummaryOfGame.level4score2.setText(rs.getString("Level4Score"));
                     SummaryOfGame.level5score2.setText(rs.getString("Level5Score"));
                     SummaryOfGame.total2.setText(rs.getString("Total"));
-                    SummaryOfGame.status0.setText("3rd Place");
+                    SummaryOfGame.status2.setText("3rd Place");
                 } else if (x == 3) {
+                    SummaryOfGame.player4.setVisible(true);
                     SummaryOfGame.txtName3.setText(rs.getString("PlayerName"));
                     SummaryOfGame.level1score3.setText(rs.getString("Level1Score"));
                     SummaryOfGame.level2score3.setText(rs.getString("Level2Score"));
@@ -107,7 +111,7 @@ public class updateSummary extends Thread {
                     SummaryOfGame.level4score3.setText(rs.getString("Level4Score"));
                     SummaryOfGame.level5score3.setText(rs.getString("Level5Score"));
                     SummaryOfGame.total3.setText(rs.getString("Total"));
-                    SummaryOfGame.status0.setText("4th Place");
+                    SummaryOfGame.status3.setText("4th Place");
                 }
 
                 v.add(data[x][0] = rs.getString(x + 1));
