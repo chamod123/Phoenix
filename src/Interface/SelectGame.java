@@ -108,7 +108,6 @@ public class SelectGame extends javax.swing.JFrame {
         chk4Player = new javax.swing.JRadioButton();
         jButton3 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -118,12 +117,12 @@ public class SelectGame extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(153, 153, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/help.png"))); // NOI18N
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 30, 40, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 30, 40, -1));
 
         jLabel1.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 153));
         jLabel1.setText("Select Game ");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, 150, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, 150, -1));
 
         chk2Player.setBackground(null
         );
@@ -135,7 +134,7 @@ public class SelectGame extends javax.swing.JFrame {
                 chk2PlayerActionPerformed(evt);
             }
         });
-        jPanel1.add(chk2Player, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 100, 220, 80));
+        jPanel1.add(chk2Player, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 220, 80));
 
         chk3Player.setBackground(null
         );
@@ -147,7 +146,7 @@ public class SelectGame extends javax.swing.JFrame {
                 chk3PlayerActionPerformed(evt);
             }
         });
-        jPanel1.add(chk3Player, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 190, 220, 80));
+        jPanel1.add(chk3Player, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, 220, 80));
 
         chk4Player.setBackground(null
         );
@@ -159,7 +158,7 @@ public class SelectGame extends javax.swing.JFrame {
                 chk4PlayerActionPerformed(evt);
             }
         });
-        jPanel1.add(chk4Player, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 280, 220, 80));
+        jPanel1.add(chk4Player, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, 220, 80));
 
         jButton3.setBackground(new java.awt.Color(56, 185, 33));
         jButton3.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -171,7 +170,7 @@ public class SelectGame extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 480, 120, 40));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 120, 40));
 
         jButton1.setBackground(new java.awt.Color(0, 255, 0));
         jButton1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -188,21 +187,22 @@ public class SelectGame extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 410, 120, 40));
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 530));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 400, 120, 40));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/phoenix50.png"))); // NOI18N
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 460, -1, 70));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 709, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -298,7 +298,6 @@ public class SelectGame extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

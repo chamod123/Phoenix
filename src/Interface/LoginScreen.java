@@ -116,7 +116,7 @@ public class LoginScreen extends javax.swing.JFrame {
         jPanel2.add(lblLog, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 160, 240));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/phoenix50.png"))); // NOI18N
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, -1, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, -1, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 430));
 

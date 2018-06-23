@@ -36,6 +36,8 @@ public class RegisterScreen extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         //btn_register.setBackground(Color.GREEN);
         UpdateUserID();
+        uId.setVisible(false);
+        name.setVisible(false);
     }
 
     /**
@@ -48,7 +50,6 @@ public class RegisterScreen extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         uId = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         uName = new javax.swing.JTextField();
@@ -61,7 +62,6 @@ public class RegisterScreen extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         email = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         name = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
@@ -72,10 +72,6 @@ public class RegisterScreen extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(153, 153, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel1.setText("User ID");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 120, 30));
-
         uId.setEditable(false);
         uId.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         uId.setText(" ");
@@ -84,11 +80,11 @@ public class RegisterScreen extends javax.swing.JFrame {
                 uIdActionPerformed(evt);
             }
         });
-        jPanel1.add(uId, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, 340, 30));
+        jPanel1.add(uId, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 30, 30));
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel2.setText("User Name");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, -1, -1));
 
         uName.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         uName.setText(" ");
@@ -97,11 +93,11 @@ public class RegisterScreen extends javax.swing.JFrame {
                 uNameActionPerformed(evt);
             }
         });
-        jPanel1.add(uName, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 240, 340, 30));
+        jPanel1.add(uName, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, 340, 30));
 
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel3.setText("Password");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, -1, -1));
 
         Password.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         Password.addActionListener(new java.awt.event.ActionListener() {
@@ -109,14 +105,14 @@ public class RegisterScreen extends javax.swing.JFrame {
                 PasswordActionPerformed(evt);
             }
         });
-        jPanel1.add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 280, 340, 30));
+        jPanel1.add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 340, 30));
 
         jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel4.setText("Confirm Password");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 350, -1, -1));
 
         confirm_password.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jPanel1.add(confirm_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 320, 340, 30));
+        jPanel1.add(confirm_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 380, 340, 30));
 
         btn_register.setBackground(new java.awt.Color(56, 185, 33));
         btn_register.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
@@ -128,7 +124,7 @@ public class RegisterScreen extends javax.swing.JFrame {
                 btn_registerActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_register, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 420, 130, 40));
+        jPanel1.add(btn_register, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 430, 130, 40));
 
         btn_mainmenu.setBackground(new java.awt.Color(56, 185, 33));
         btn_mainmenu.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
@@ -141,26 +137,22 @@ public class RegisterScreen extends javax.swing.JFrame {
                 btn_mainmenuActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_mainmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, 120, 40));
+        jPanel1.add(btn_mainmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, 120, 40));
 
         jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel5.setText("Email");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, -1, -1));
 
         email.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        jPanel1.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, 340, 30));
+        jPanel1.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, 340, 30));
 
         jLabel6.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 204));
         jLabel6.setText("User Registation");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, 210, 32));
-
-        jLabel9.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel9.setText("Name");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 120, 30));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 210, 32));
 
         name.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 160, 340, 30));
+        jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 30, 30));
 
         jButton3.setBackground(new java.awt.Color(56, 185, 33));
         jButton3.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -172,20 +164,22 @@ public class RegisterScreen extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 420, 120, 40));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, 120, 40));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/phoenix50.png"))); // NOI18N
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 470, -1, -1));
 
         jLabel7.setBackground(new java.awt.Color(153, 204, 255));
         jLabel7.setForeground(new java.awt.Color(204, 255, 255));
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 530));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 420));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 780, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -325,7 +319,6 @@ public class RegisterScreen extends javax.swing.JFrame {
     private javax.swing.JPasswordField confirm_password;
     private javax.swing.JTextField email;
     private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -333,7 +326,6 @@ public class RegisterScreen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField name;
     private javax.swing.JTextField uId;
