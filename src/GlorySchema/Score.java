@@ -26,7 +26,7 @@ public class Score {
 
         noOfLettersUsed(word);
 
-        if (isWord == false || noOfLettters !=0 ) {
+        if (isWord == false || noOfLettters ==0 ) {
             roundScore = 0;
         } else {
             checkIfInitiolUsed(letter1, letter2, letter3, word);

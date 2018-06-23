@@ -41,12 +41,13 @@ public class GameBoard {
     private int randomConInt;
     public static int levelNo = 1;
     Date time;
+    //public boolean skipBoard = false;
 
     public void getLetterBagWord() {
 
     }
 
-    public void skipLevel(String word) {
+    public void skipLevel(String word, GameBoardScreen boardscreen) {
         WordSearch w = new WordSearch();
         System.out.println("--------------------"+word);
         w.setWord(word);
@@ -58,8 +59,8 @@ public class GameBoard {
             //JOptionPane.showMessageDialog(null, "Wrong word");
             score.getTotalScore(word, GameBoardScreen.btnFirst.getText().trim(), GameBoardScreen.btnSecond.getText().trim(), GameBoardScreen.btnThird.getText().trim(), w.isCheckSpell());
         }
-
-        AllPlayerDone t = new AllPlayerDone();
+        
+        AllPlayerDone t = new AllPlayerDone(boardscreen);
         t.start();
         //t.sleepThread();
 //        t.shutdown();
@@ -214,5 +215,7 @@ public class GameBoard {
         }
         return rs;
     }
+
+    
 
 }

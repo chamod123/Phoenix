@@ -161,7 +161,7 @@
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="180" y="160" width="720" height="50"/>
+              <AbsoluteConstraints x="150" y="160" width="720" height="50"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -203,7 +203,7 @@
                   <Font name="Tahoma" size="24" style="1"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="MIKE"/>
+                <Property name="text" type="java.lang.String" value="Name"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -553,7 +553,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton6">
+        <Component class="javax.swing.JButton" name="btnDone">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="cc" red="0" type="rgb"/>
@@ -567,7 +567,7 @@
             <Property name="text" type="java.lang.String" value="Done"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton6ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDoneActionPerformed"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -613,18 +613,18 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="900" y="160" width="50" height="50"/>
+              <AbsoluteConstraints x="870" y="160" width="50" height="50"/>
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton3">
+        <Component class="javax.swing.JButton" name="btnUndo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Images/Icons/icons8-undo-30.png"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUndoActionPerformed"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">

@@ -19,9 +19,15 @@ public class timer extends Thread {
 
     int counter = 150;
     boolean isIt = false;
+    GameBoardScreen boardscreen;
 
     private volatile boolean running = true;
     GameBoard G = new GameBoard();
+
+    public timer(GameBoardScreen boardscreen) {
+        this.boardscreen = boardscreen;
+        
+    }
 
     @Override
     public void run() {
@@ -37,7 +43,7 @@ public class timer extends Thread {
         //stop time 
         if (!moved) {
             moved = true;
-            G.skipLevel(GameBoardScreen.txtMainWord.getText());
+            G.skipLevel(GameBoardScreen.txtMainWord.getText(), boardscreen);
         }
 ////////        GameBoard.levelNo += 1;
 ////////        if (GameBoard.levelNo > 5) {
