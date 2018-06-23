@@ -8,9 +8,6 @@ package GlorySchema.ThreadsToUpdateUI;
 import GlorySchema.GameBoard.GameBoardScreen;
 import GlorySchema.Player;
 import static GlorySchema.Player.OnlinePlayers;
-import static GlorySchema.ThreadsToUpdateUI.AllPlayerDone.moved;
-import GlorySchema.UpdateUI;
-import Interface.SelectGame;
 import static Interface.SelectGame.gameTypeid;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,7 +19,6 @@ import java.util.logging.Logger;
 public class OnlineUser extends Thread {
 
     Player player = new Player();
-//    private volatile boolean running = true;
 
     @Override
     public void run() {
@@ -36,13 +32,11 @@ public class OnlineUser extends Thread {
             }
         }
 
-       
-            
 //        SelectGame selectGame=new SelectGame();
-            GameBoardScreen gameBoard = new GameBoardScreen();
-            gameBoard.setVisible(true);
+        GameBoardScreen gameBoard = new GameBoardScreen();
+        gameBoard.setVisible(true);
 //        selectGame.dispose();
-        
+
     }
 
 //    public void shutdown() {

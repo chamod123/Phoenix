@@ -7,28 +7,14 @@ package Interface;
 
 import GlorySchema.GameBoard.GameBoardScreen;
 import GlorySchema.GameBoard.GameBoard;
-import GlorySchema.GameType;
-import GlorySchema.Results;
-import static GlorySchema.ThreadsToUpdateUI.AllPlayerDone.moved;
 import GlorySchema.ThreadsToUpdateUI.updateGameResult;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
-import java.util.Timer;
-import java.util.Vector;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.DefaultCellEditor;
-import javax.swing.JComboBox;
 import javax.swing.JLabel;
-import javax.swing.JRootPane;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableColumn;
-import javax.swing.table.TableColumnModel;
 
 /**
  *
@@ -36,25 +22,23 @@ import javax.swing.table.TableColumnModel;
  */
 public class GameResult extends javax.swing.JFrame {
 
-    
-    
     public GameResult() {
 //        moved = false;
-        
-        setUndecorated(true);        
+
+        setUndecorated(true);
         initComponents();
         setLocationRelativeTo(null);
-        
+
         ShowGrid();
         tblGames.setOpaque(true);
-        levelScore.setText("Level "+(GameBoard.levelNo-1)+" Score");
-       
+        levelScore.setText("Level " + (GameBoard.levelNo - 1) + " Score");
+
         updateGameResult t = new updateGameResult();
         t.start();
         t.sleepThread();
         t.shutdown();
     }
-    
+
 //    public void getLevelRanking() {
 //        Results results = new Results();
 //         try {
@@ -87,10 +71,9 @@ public class GameResult extends javax.swing.JFrame {
 //        }
 //        
 //    }
-
     private void ShowGrid() {
         String data[][] = null;
-        String colu[] = new String[]{ "Player", "Level Score", "Total" };
+        String colu[] = new String[]{"Player", "Level Score", "Total"};
         DefaultTableModel model = new DefaultTableModel(data, colu) {
             //@Override
             public boolean isCellEditable(int x, int y) {
@@ -112,17 +95,17 @@ public class GameResult extends javax.swing.JFrame {
         tblGames.getColumnModel().getColumn(1).setCellRenderer(rightRenderer);
         tblGames.getColumnModel().getColumn(2).setCellRenderer(rightRenderer);
 
-       // model.setRowCount(20);
-       TableColumn col0 = tblGames.getColumnModel().getColumn(1);
+        // model.setRowCount(20);
+        TableColumn col0 = tblGames.getColumnModel().getColumn(1);
         col0.setMinWidth(80);
         col0.setPreferredWidth(80);
         col0.setMaxWidth(80);
-        
+
         TableColumn col1 = tblGames.getColumnModel().getColumn(1);
         col1.setMinWidth(80);
         col1.setPreferredWidth(80);
         col1.setMaxWidth(80);
-        
+
         TableColumn col2 = tblGames.getColumnModel().getColumn(2);
         col2.setMinWidth(80);
         col2.setPreferredWidth(80);
@@ -172,7 +155,7 @@ public class GameResult extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblGames);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 410, 640, 90));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 640, 140));
 
         jButton1.setBackground(new java.awt.Color(0, 204, 255));
         jButton1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -202,56 +185,55 @@ public class GameResult extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        if((GameBoard.levelNo-1)<5){
-            GameBoardScreen gameBoard= new GameBoardScreen();
+        if ((GameBoard.levelNo - 1) < 5) {
+            GameBoardScreen gameBoard = new GameBoardScreen();
             gameBoard.setVisible(true);
             this.dispose();
-        }
-       else{
-            SummaryOfGame summary= new SummaryOfGame();
-            summary.setVisible(true);  
+        } else {
+            SummaryOfGame summary = new SummaryOfGame();
+            summary.setVisible(true);
             this.dispose();
         }
-       
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GameResult.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GameResult.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GameResult.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GameResult.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-                     java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new GameResult().setVisible(true);
-            }
-        });
-    }
+//    /**
+//     * @param args the command line arguments
+//     */
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(GameResult.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(GameResult.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(GameResult.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(GameResult.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//        //</editor-fold>
+//        //</editor-fold>
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new GameResult().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;

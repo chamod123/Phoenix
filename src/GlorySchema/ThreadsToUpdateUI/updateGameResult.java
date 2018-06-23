@@ -6,8 +6,6 @@
 package GlorySchema.ThreadsToUpdateUI;
 
 import GlorySchema.UpdateUI;
-import Interface.GameResult;
-import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -18,7 +16,7 @@ import java.util.logging.Logger;
 public class updateGameResult extends Thread {
 
     UpdateUI updateUI = new UpdateUI();
-     private volatile boolean runningR = true;
+    private volatile boolean runningR = true;
 
     @Override
     public void run() {
@@ -26,9 +24,9 @@ public class updateGameResult extends Thread {
             try {
                 Thread.sleep(1000);
                 updateUI.updateLevelRanking();
-                System.out.println("GameResult thread");                
+                System.out.println("GameResult thread");
             } catch (InterruptedException ex) {
-                 Logger.getLogger(updateGameBoard.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(updateGameBoard.class.getName()).log(Level.SEVERE, null, ex);
             }
 //        System.out.println("Shutting down thread");
         }

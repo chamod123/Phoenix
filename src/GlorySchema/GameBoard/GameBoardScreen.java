@@ -70,7 +70,6 @@ public class GameBoardScreen extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         txtTime = new javax.swing.JLabel();
@@ -110,6 +109,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -121,17 +121,6 @@ public class GameBoardScreen extends javax.swing.JFrame {
         jLabel2.setText("NEXT LETTER");
         jLabel2.setToolTipText("");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 250, 50));
-
-        jButton1.setBackground(new java.awt.Color(56, 185, 33));
-        jButton1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Quit");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 580, 120, 40));
 
         jPanel2.setBackground(new java.awt.Color(102, 0, 204));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -163,12 +152,13 @@ public class GameBoardScreen extends javax.swing.JFrame {
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 430, 120, 30));
 
+        txtMainWord.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         txtMainWord.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtMainWordActionPerformed(evt);
             }
         });
-        jPanel1.add(txtMainWord, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 820, 50));
+        jPanel1.add(txtMainWord, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 720, 50));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -200,7 +190,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("MainMenu");
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 580, 120, 40));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 590, 120, 40));
 
         jButton4.setBackground(new java.awt.Color(51, 204, 255));
         jButton4.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
@@ -249,63 +239,63 @@ public class GameBoardScreen extends javax.swing.JFrame {
                 btnThirdActionPerformed(evt);
             }
         });
-        jPanel1.add(btnThird, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 50, 50));
+        jPanel1.add(btnThird, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 50, 50));
 
         btnForth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnForthActionPerformed(evt);
             }
         });
-        jPanel1.add(btnForth, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, 50, 50));
+        jPanel1.add(btnForth, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 50, 50));
 
         btnFifth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFifthActionPerformed(evt);
             }
         });
-        jPanel1.add(btnFifth, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, 50, 50));
+        jPanel1.add(btnFifth, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 220, 50, 50));
 
         btnSixth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSixthActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSixth, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 220, 50, 50));
+        jPanel1.add(btnSixth, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 220, 50, 50));
 
         btnSeventh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSeventhActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSeventh, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 220, 50, 50));
+        jPanel1.add(btnSeventh, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 220, 50, 50));
 
         btnEighth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEighthActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEighth, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 220, 50, 50));
+        jPanel1.add(btnEighth, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 220, 50, 50));
 
         btnNineth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNinethActionPerformed(evt);
             }
         });
-        jPanel1.add(btnNineth, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 220, 50, 50));
+        jPanel1.add(btnNineth, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 220, 50, 50));
 
         btnTenth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTenthActionPerformed(evt);
             }
         });
-        jPanel1.add(btnTenth, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 220, 50, 50));
+        jPanel1.add(btnTenth, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 220, 50, 50));
 
         btnEleventh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEleventhActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEleventh, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 220, 50, 50));
+        jPanel1.add(btnEleventh, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 220, 50, 50));
 
         btnFirst.setBackground(new java.awt.Color(255, 204, 0));
         btnFirst.addActionListener(new java.awt.event.ActionListener() {
@@ -313,7 +303,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
                 btnFirstActionPerformed(evt);
             }
         });
-        jPanel1.add(btnFirst, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 50, 50));
+        jPanel1.add(btnFirst, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 50, 50));
 
         btnSecond.setBackground(new java.awt.Color(255, 204, 0));
         btnSecond.addActionListener(new java.awt.event.ActionListener() {
@@ -321,7 +311,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
                 btnSecondActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSecond, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 50, 50));
+        jPanel1.add(btnSecond, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 220, 50, 50));
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 730, 420));
 
         tblScoreBoard.setModel(new javax.swing.table.DefaultTableModel(
@@ -351,6 +341,18 @@ public class GameBoardScreen extends javax.swing.JFrame {
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/phoenix50.png"))); // NOI18N
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 590, 50, 50));
 
+        jButton5.setBackground(new java.awt.Color(56, 185, 33));
+        jButton5.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-shutdown-25.png"))); // NOI18N
+        jButton5.setText("Quit");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 590, 120, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -365,10 +367,6 @@ public class GameBoardScreen extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void btnFirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFirstActionPerformed
         txtMainWord.setText(txtMainWord.getText() + btnFirst.getText());
         btnFirst.setEnabled(false);
@@ -377,36 +375,36 @@ public class GameBoardScreen extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         String x;
 
-        if (btnForth.getText().trim() == "" || btnForth.getText() == null) {
+        if ("".equals(btnForth.getText().trim()) || btnForth.getText() == null) {
             G.getVowel();
             x = String.valueOf(G.getSelectedVowel());
             btnForth.setText(x);
 
-        } else if (btnFifth.getText().trim() == "" || btnFifth.getText() == null) {
+        } else if ("".equals(btnFifth.getText().trim()) || btnFifth.getText() == null) {
             G.getVowel();
             x = String.valueOf(G.getSelectedVowel());
             btnFifth.setText(x);
-        } else if (btnSixth.getText().trim() == "" || btnSixth.getText() == null) {
+        } else if ("".equals(btnSixth.getText().trim()) || btnSixth.getText() == null) {
             G.getVowel();
             x = String.valueOf(G.getSelectedVowel());
             btnSixth.setText(x);
-        } else if (btnSeventh.getText().trim() == "" || btnSeventh.getText() == null) {
+        } else if ("".equals(btnSeventh.getText().trim()) || btnSeventh.getText() == null) {
             G.getVowel();
             x = String.valueOf(G.getSelectedVowel());
             btnSeventh.setText(x);
-        } else if (btnEighth.getText().trim() == "" || btnEighth.getText() == null) {
+        } else if ("".equals(btnEighth.getText().trim()) || btnEighth.getText() == null) {
             G.getVowel();
             x = String.valueOf(G.getSelectedVowel());
             btnEighth.setText(x);
-        } else if (btnNineth.getText().trim() == "" || btnNineth.getText() == null) {
+        } else if ("".equals(btnNineth.getText().trim()) || btnNineth.getText() == null) {
             G.getVowel();
             x = String.valueOf(G.getSelectedVowel());
             btnNineth.setText(x);
-        } else if (btnTenth.getText().trim() == "" || btnTenth.getText() == null) {
+        } else if ("".equals(btnTenth.getText().trim()) || btnTenth.getText() == null) {
             G.getVowel();
             x = String.valueOf(G.getSelectedVowel());
             btnTenth.setText(x);
-        } else if (btnEleventh.getText().trim() == "" || btnEleventh.getText() == null) {
+        } else if ("".equals(btnEleventh.getText().trim()) || btnEleventh.getText() == null) {
             G.getVowel();
             x = String.valueOf(G.getSelectedVowel());
             btnEleventh.setText(x);
@@ -429,36 +427,36 @@ public class GameBoardScreen extends javax.swing.JFrame {
         GameBoard G = new GameBoard();
         String x;
 
-        if (btnForth.getText().trim() == "" || btnForth.getText() == null) {
+        if ("".equals(btnForth.getText().trim()) || btnForth.getText() == null) {
             G.getConstent();
             x = String.valueOf(G.getSelectedConst());
             btnForth.setText(x);
 
-        } else if (btnFifth.getText().trim() == "" || btnFifth.getText() == null) {
+        } else if ("".equals(btnFifth.getText().trim()) || btnFifth.getText() == null) {
             G.getConstent();
             x = String.valueOf(G.getSelectedConst());
             btnFifth.setText(x);
-        } else if (btnSixth.getText().trim() == "" || btnSixth.getText() == null) {
+        } else if ("".equals(btnSixth.getText().trim()) || btnSixth.getText() == null) {
             G.getConstent();
             x = String.valueOf(G.getSelectedConst());
             btnSixth.setText(x);
-        } else if (btnSeventh.getText().trim() == "" || btnSeventh.getText() == null) {
+        } else if ("".equals(btnSeventh.getText().trim()) || btnSeventh.getText() == null) {
             G.getConstent();
             x = String.valueOf(G.getSelectedConst());
             btnSeventh.setText(x);
-        } else if (btnEighth.getText().trim() == "" || btnEighth.getText() == null) {
+        } else if ("".equals(btnEighth.getText().trim()) || btnEighth.getText() == null) {
             G.getConstent();
             x = String.valueOf(G.getSelectedConst());
             btnEighth.setText(x);
-        } else if (btnNineth.getText().trim() == "" || btnNineth.getText() == null) {
+        } else if ("".equals(btnNineth.getText().trim()) || btnNineth.getText() == null) {
             G.getConstent();
             x = String.valueOf(G.getSelectedConst());
             btnNineth.setText(x);
-        } else if (btnTenth.getText().trim() == "" || btnTenth.getText() == null) {
+        } else if ("".equals(btnTenth.getText().trim()) || btnTenth.getText() == null) {
             G.getConstent();
             x = String.valueOf(G.getSelectedConst());
             btnTenth.setText(x);
-        } else if (btnEleventh.getText().trim() == "" || btnEleventh.getText() == null) {
+        } else if ("".equals(btnEleventh.getText().trim()) || btnEleventh.getText() == null) {
             G.getConstent();
             x = String.valueOf(G.getSelectedConst());
             btnEleventh.setText(x);
@@ -474,43 +472,59 @@ public class GameBoardScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSecondActionPerformed
 
     private void btnForthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnForthActionPerformed
-        txtMainWord.setText(txtMainWord.getText() + btnForth.getText());
-        btnForth.setEnabled(false);
+        if (!"".equals(btnForth.getText().trim()) || btnForth.getText().trim() != null) {
+            txtMainWord.setText(txtMainWord.getText() + btnForth.getText());
+            btnForth.setEnabled(false);
+        }
     }//GEN-LAST:event_btnForthActionPerformed
 
     private void btnFifthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFifthActionPerformed
-        txtMainWord.setText(txtMainWord.getText() + btnFifth.getText());
-        btnFifth.setEnabled(false);
+        if (!"".equals(btnFifth.getText().trim()) || btnFifth.getText().trim() != null) {
+            txtMainWord.setText(txtMainWord.getText() + btnFifth.getText());
+            btnFifth.setEnabled(false);
+        }
     }//GEN-LAST:event_btnFifthActionPerformed
 
     private void btnSixthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSixthActionPerformed
-        txtMainWord.setText(txtMainWord.getText() + btnSixth.getText());
-        btnSixth.setEnabled(false);
+        if (!"".equals(btnSixth.getText().trim()) || btnSixth.getText().trim() != null) {
+            txtMainWord.setText(txtMainWord.getText() + btnSixth.getText());
+            btnSixth.setEnabled(false);
+        }
     }//GEN-LAST:event_btnSixthActionPerformed
 
     private void btnSeventhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeventhActionPerformed
-        txtMainWord.setText(txtMainWord.getText() + btnSeventh.getText());
-        btnSeventh.setEnabled(false);
+        if (!"".equals(btnSeventh.getText().trim()) || btnSeventh.getText().trim() != null) {
+            txtMainWord.setText(txtMainWord.getText() + btnSeventh.getText());
+            btnSeventh.setEnabled(false);
+        }
     }//GEN-LAST:event_btnSeventhActionPerformed
 
     private void btnEighthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEighthActionPerformed
-        txtMainWord.setText(txtMainWord.getText() + btnEighth.getText());
-        btnEighth.setEnabled(false);
+        if (!"".equals(btnEighth.getText().trim()) || btnEighth.getText().trim() != null) {
+            txtMainWord.setText(txtMainWord.getText() + btnEighth.getText());
+            btnEighth.setEnabled(false);
+        }
     }//GEN-LAST:event_btnEighthActionPerformed
 
     private void btnNinethActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNinethActionPerformed
-        txtMainWord.setText(txtMainWord.getText() + btnNineth.getText());
-        btnNineth.setEnabled(false);
+        if (!"".equals(btnNineth.getText().trim()) || btnNineth.getText().trim() != null) {
+            txtMainWord.setText(txtMainWord.getText() + btnNineth.getText());
+            btnNineth.setEnabled(false);
+        }
     }//GEN-LAST:event_btnNinethActionPerformed
 
     private void btnTenthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTenthActionPerformed
-        txtMainWord.setText(txtMainWord.getText() + btnTenth.getText());
-        btnTenth.setEnabled(false);
+        if (!"".equals(btnTenth.getText().trim()) || btnTenth.getText().trim() != null) {
+            txtMainWord.setText(txtMainWord.getText() + btnTenth.getText());
+            btnTenth.setEnabled(false);
+        }
     }//GEN-LAST:event_btnTenthActionPerformed
 
     private void btnEleventhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEleventhActionPerformed
-        txtMainWord.setText(txtMainWord.getText() + btnEleventh.getText());
-        btnEleventh.setEnabled(false);
+        if (!"".equals(btnEleventh.getText().trim()) || btnEleventh.getText().trim() != null) {
+            txtMainWord.setText(txtMainWord.getText() + btnEleventh.getText());
+            btnEleventh.setEnabled(false);
+        }
     }//GEN-LAST:event_btnEleventhActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -542,42 +556,45 @@ public class GameBoardScreen extends javax.swing.JFrame {
 ////        }
     }//GEN-LAST:event_jButton6ActionPerformed
 
-   
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GameBoardScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GameBoardScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GameBoardScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GameBoardScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButton5ActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new GameBoardScreen().setVisible(true);
-            }
-        });
-    }
+//    /**
+//     * @param args the command line arguments
+//     */
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(GameBoardScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(GameBoardScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(GameBoardScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(GameBoardScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new GameBoardScreen().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEighth;
@@ -591,10 +608,10 @@ public class GameBoardScreen extends javax.swing.JFrame {
     private javax.swing.JButton btnSixth;
     private javax.swing.JButton btnTenth;
     public static javax.swing.JButton btnThird;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel15;

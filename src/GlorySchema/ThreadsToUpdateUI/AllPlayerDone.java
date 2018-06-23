@@ -22,7 +22,6 @@ public class AllPlayerDone extends Thread {
 
     Player player = new Player();
     public static boolean moved = false;
-//    private volatile boolean running = true;
 
     @Override
     public void run() {

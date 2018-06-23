@@ -18,7 +18,6 @@ import javax.swing.JLabel;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
-import javax.swing.table.TableColumn;
 
 /**
  *
@@ -155,7 +154,7 @@ public class LeaderBoardScreen extends javax.swing.JFrame {
     private void getUpdateScore() {
         String temp[][];
         for (int i = 0; i < leaderTOp.length; i++) {
-            
+
 //            for (int j = 1; j < leaderTOp.length; j++) {
 //                if (Integer.parseInt(leaderTOp[i][1]) > Integer.parseInt(leaderTOp[j][1])) {
 //                    temp = (leaderTOp[i][j]);
@@ -164,7 +163,6 @@ public class LeaderBoardScreen extends javax.swing.JFrame {
 //
 //                }
 //            }
-
         }
 
     }

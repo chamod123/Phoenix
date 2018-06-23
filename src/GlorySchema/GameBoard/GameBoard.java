@@ -10,15 +10,10 @@ import GlorySchema.GameType;
 import GlorySchema.Score;
 import GlorySchema.ThreadsToUpdateUI.AllPlayerDone;
 import GlorySchema.WordSearch;
-import Interface.GameResult;
 import static Interface.LoginScreen.PlayerId;
-import Interface.SummaryOfGame;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.Date;
-import java.util.Dictionary;
-import java.util.Enumeration;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -61,7 +56,7 @@ public class GameBoard {
             // JOptionPane.showMessageDialog(rootPane, "Wrong word");
             score.getTotalScore(word, GameBoardScreen.btnFirst.getText().trim(), GameBoardScreen.btnSecond.getText().trim(), GameBoardScreen.btnThird.getText().trim(), w.isCheckSpell());
         }
-        
+
         AllPlayerDone t = new AllPlayerDone();
         t.start();
         //t.sleepThread();

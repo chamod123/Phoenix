@@ -6,25 +6,19 @@
 package GlorySchema;
 
 import Db.DataBase;
-import java.sql.Array;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author MELANI
  */
 public class LeaderBoard {
-    
+
     DataBase db = new DataBase();
-     
+
     public void addToLeaderBord() {  // need to compleet
 
         try {
@@ -34,13 +28,12 @@ public class LeaderBoard {
             Logger.getLogger(LeaderBoard.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    public ResultSet getTopRanking(){
-        
+
+    public ResultSet getTopRanking() {
+
         ResultSet rs = null;
         try {
-           // String query = "SELECT * FROM gameboard1 ORDER BY Total DESC";//SELECT * FROM onlinegame O INNER JOIN gametype T ON O.gameTypeId = T.GameId  WHERE O.gameId LIKE  '" + gameid + "%'";
-           String query = "SELECT * FROM topscore T INNER JOIN player P ON P.UserId = T.PlayerID ORDER BY T.Score DESC";//SELECT * FROM onlinegame O INNER JOIN gametype T ON O.gameTypeId = T.GameId  WHERE O.gameId LIKE  '" + gameid + "%'";
+            String query = "SELECT * FROM topscore T INNER JOIN player P ON P.UserId = T.PlayerID ORDER BY T.Score DESC";//SELECT * FROM onlinegame O INNER JOIN gametype T ON O.gameTypeId = T.GameId  WHERE O.gameId LIKE  '" + gameid + "%'";
             rs = (ResultSet) db.fetch(query);
         } catch (Exception e) {
             e.printStackTrace();
@@ -48,8 +41,7 @@ public class LeaderBoard {
         return rs;
     }
 
-public ResultSet getGameSummery()
-    {
+    public ResultSet getGameSummery() {
         ResultSet rs = null;
         try {
             String query = "SELECT * FROM " + GameType.tableName + " order by Total";
@@ -58,39 +50,35 @@ public ResultSet getGameSummery()
             e.printStackTrace();
         }
         return rs;
-    
-    
+
     }
 
-    public ResultSet getTopScore()
-    { 
+    public ResultSet getTopScore() {
 
         ResultSet rs = null;
         try {
-             String query = "SELECT Total FROM " + GameType.tableName + " order by Total";
+            String query = "SELECT Total FROM " + GameType.tableName + " order by Total";
             rs = (ResultSet) db.fetch(query);
-            
+
         } catch (Exception e) {
             e.printStackTrace();
         }
         return rs;
     }
-    
 
- public ResultSet getLeaderTopScore()
-    { 
+    public ResultSet getLeaderTopScore() {
 
         ResultSet rs = null;
         try {
-             String query = "SELECT Score FROM topscore order by Score";
+            String query = "SELECT Score FROM topscore order by Score";
             rs = (ResultSet) db.fetch(query);
-            
+
         } catch (Exception e) {
             e.printStackTrace();
         }
         return rs;
     }
-   
+
     /* public ResultSet getFinalTopScore()
      {
        ResultSet rs = null;
@@ -102,4 +90,3 @@ public ResultSet getGameSummery()
      
      }*/
 }
-

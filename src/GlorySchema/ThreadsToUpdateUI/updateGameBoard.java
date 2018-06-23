@@ -6,7 +6,6 @@
 package GlorySchema.ThreadsToUpdateUI;
 
 import GlorySchema.UpdateUI;
-import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 

@@ -68,14 +68,14 @@ public class LoginScreen extends javax.swing.JFrame {
         jLabel1.setText("UserName");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 90, 20));
 
-        txtUsername.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        txtUsername.setFont(new java.awt.Font("Trebuchet MS", 1, 16)); // NOI18N
         jPanel2.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 200, 40));
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel2.setText("Password");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 150, 90, 20));
 
-        txt_password.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        txt_password.setFont(new java.awt.Font("Trebuchet MS", 1, 16)); // NOI18N
         jPanel2.add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, 200, 40));
 
         jButton3.setBackground(new java.awt.Color(56, 185, 33));

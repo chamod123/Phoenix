@@ -5,11 +5,6 @@
  */
 package Interface;
 
-import java.awt.Dimension;
-import java.awt.Toolkit;
-import java.util.Random;
-import javax.swing.ImageIcon;
-
 /**
  *
  * @author CHAMOD
@@ -32,9 +27,7 @@ public class FirstPage extends javax.swing.JFrame {
 //        this.setIconImage(Image);
 //        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/2118409-super-mario-world-wallpaper.png"))); // NOI18N
 //         panal.add(jLabel6);
-        
-        
-        
+
 //        Random ran = new Random();
 //        char atoz = (char)(ran.nextInt('Z' - 'a') + 'a' );
 //        System.out.println(atoz);
@@ -785,12 +778,3 @@ public class FirstPage extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 }
-
-
-
-
-
-
-
-
-

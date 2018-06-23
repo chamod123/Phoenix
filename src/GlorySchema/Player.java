@@ -6,21 +6,12 @@
 package GlorySchema;
 
 import Db.DataBase;
-import GlorySchema.GameBoard.GameBoard;
 import static GlorySchema.GameBoard.GameBoard.levelNo;
 import static GlorySchema.GameType.tableName;
-import static Interface.LoginScreen.PlayerId;
-import static Interface.RegisterScreen.Email;
-import static Interface.RegisterScreen.UserName;
-import static Interface.RegisterScreen.password;
-import static Interface.RegisterScreen.UserId;
 import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.sql.Statement;
-import java.sql.SQLException;
 import java.sql.PreparedStatement;
-import java.sql.ResultSetMetaData;
 import javax.swing.JOptionPane;
 
 /**
@@ -64,7 +55,7 @@ public class Player {
     public int insertDetails(String UserId, String Name, String Email, String UserName, String password) {
         int val = 0;
         try {
-            PreparedStatement pst = (PreparedStatement) db.psmt("INSERT INTO phoenix.player (UserId, Name, Email,UserName, Password) VALUES (?,?,?,?,?);");
+            PreparedStatement pst = (PreparedStatement) db.psmt("INSERT INTO player (UserId, Name, Email,UserName, Password) VALUES (?,?,?,?,?);");
             pst.setString(1, UserId.trim());
             pst.setString(2, Name.trim());
             pst.setString(3, Email.trim());

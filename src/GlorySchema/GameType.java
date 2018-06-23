@@ -68,19 +68,17 @@ public class GameType {
                 // pst3.setString(2, "1");
                 //pst3.setString(3, "Searching");
                 pst3.executeUpdate();
-                 insertToPlayerData();
+                insertToPlayerData();
             } else {
                 System.out.println("game have");
                 rs.beforeFirst();
-                 insertToPlayerData();
+                insertToPlayerData();
                 while (rs.next()) {
                     tableName = "gameboard" + rs.getString("gameId");
                     PreparedStatement pst = (PreparedStatement) db.psmt("UPDATE  onlinegame SET  currentPlayers = currentPlayers + 1 WHERE gameId = '" + rs.getString("gameId") + "'");
                     pst.executeUpdate();
                 }
             }
-
-           
 
         } catch (Exception e) {
             e.printStackTrace();

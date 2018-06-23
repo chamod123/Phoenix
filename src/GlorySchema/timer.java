@@ -8,11 +8,6 @@ package GlorySchema;
 import GlorySchema.GameBoard.GameBoard;
 import GlorySchema.GameBoard.GameBoardScreen;
 import static GlorySchema.ThreadsToUpdateUI.AllPlayerDone.moved;
-import Interface.GameResult;
-import Interface.SummaryOfGame;
-import java.awt.Window;
-import java.util.Timer;
-import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -41,7 +36,7 @@ public class timer extends Thread {
         }
         //stop time 
         if (!moved) {
-            moved=true;
+            moved = true;
             G.skipLevel(GameBoardScreen.txtMainWord.getText());
         }
 ////////        GameBoard.levelNo += 1;
