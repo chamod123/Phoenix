@@ -26,6 +26,7 @@ public class SelectGame extends javax.swing.JFrame {
         //rdb2Player.setOpaque(false);
 //        tblGames.setOpaque(true);
         setLocationRelativeTo(null);
+        gisLoad.setVisible(false);
     }
 
 //    private void getGameData() {
@@ -101,6 +102,7 @@ public class SelectGame extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
+        gisLoad = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         chk2Player = new javax.swing.JRadioButton();
@@ -114,6 +116,10 @@ public class SelectGame extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        gisLoad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/loading.gif"))); // NOI18N
+        gisLoad.setText("jLabel2");
+        jPanel1.add(gisLoad, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 630, 260));
 
         jButton2.setBackground(new java.awt.Color(153, 153, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/help.png"))); // NOI18N
@@ -222,6 +228,8 @@ public class SelectGame extends javax.swing.JFrame {
 
     private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
         btnPlay.setEnabled(false);
+         gisLoad.setVisible(true);
+        // jPanel1.setEnabled(false);
         if (chk2Player.isSelected()) {
             gameTypeid = 1;
         } else if (chk3Player.isSelected()) {
@@ -229,7 +237,7 @@ public class SelectGame extends javax.swing.JFrame {
         } else if (chk4Player.isSelected()) {
             gameTypeid = 3;
         }
-
+         //gisLoad.setVisible(false);
         game.connectWithGame(gameTypeid);
 
         OnlineUser t = new OnlineUser(this);
@@ -295,6 +303,7 @@ public class SelectGame extends javax.swing.JFrame {
     private javax.swing.JRadioButton chk2Player;
     private javax.swing.JRadioButton chk3Player;
     private javax.swing.JRadioButton chk4Player;
+    private javax.swing.JLabel gisLoad;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;

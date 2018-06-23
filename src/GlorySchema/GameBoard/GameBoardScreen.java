@@ -33,6 +33,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
         setUndecorated(true);
         initComponents();
         setLocationRelativeTo(null);
+        gisLoad.setVisible(false);
 
         DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
         rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
@@ -72,6 +73,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        gisLoad = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
@@ -115,6 +117,10 @@ public class GameBoardScreen extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        gisLoad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/loading.gif"))); // NOI18N
+        gisLoad.setText("jLabel2");
+        jPanel1.add(gisLoad, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 630, 260));
 
         jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 2, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -516,7 +522,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
 
     private void btnDoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoneActionPerformed
         btnDone.setEnabled(false);
-        
+        gisLoad.setVisible(true);
         G.skipLevel(txtMainWord.getText(),this);
        // if(skipBoard){
        // System.out.println("----------------------dispose");
@@ -635,6 +641,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
     private javax.swing.JButton btnTenth;
     public static javax.swing.JButton btnThird;
     private javax.swing.JButton btnUndo;
+    private javax.swing.JLabel gisLoad;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
