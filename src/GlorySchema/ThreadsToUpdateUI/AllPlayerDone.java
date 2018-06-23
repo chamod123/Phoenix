@@ -11,9 +11,10 @@ import static GlorySchema.Player.OnlinePlayers;
 import Interface.GameResult;
 import static Interface.SelectGame.gameTypeid;
 import Interface.SummaryOfGame;
+import Interface.SummaryOfGame3;
+import Interface.SummaryOfGame2;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 /**
  *
  * @author CHAMOD
@@ -40,15 +41,24 @@ public class AllPlayerDone extends Thread {
         GameBoard.levelNo += 1;
         System.out.println(GameBoard.levelNo);
         if (GameBoard.levelNo > 5) {
-            
-            
-            
+
+            if(gameTypeid == 1){
+            SummaryOfGame2 summary = new SummaryOfGame2();
+            summary.setVisible(true);
+            }
+            else if(gameTypeid == 2){
+            SummaryOfGame3 summary = new SummaryOfGame3();
+            summary.setVisible(true);
+            }
+            else if(gameTypeid == 3){
             SummaryOfGame summary = new SummaryOfGame();
             summary.setVisible(true);
+            }           
             // this.dispose();
         } else {
             //level result 
             GameResult result = new GameResult();
+            
             result.setVisible(true);
             // this.dispose();
 
