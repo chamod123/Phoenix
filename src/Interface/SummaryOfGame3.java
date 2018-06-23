@@ -5,6 +5,7 @@
  */
 package Interface;
 
+import GlorySchema.GameType;
 import GlorySchema.ThreadsToUpdateUI.updateSummary;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -518,6 +519,8 @@ public class SummaryOfGame3 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        GameType gametype = new GameType();
+        gametype.deleteTable();
         this.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 

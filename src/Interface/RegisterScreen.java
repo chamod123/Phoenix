@@ -80,7 +80,7 @@ public class RegisterScreen extends javax.swing.JFrame {
                 uIdActionPerformed(evt);
             }
         });
-        jPanel1.add(uId, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 30, 30));
+        jPanel1.add(uId, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 30, 30));
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel2.setText("User Name");
@@ -88,6 +88,11 @@ public class RegisterScreen extends javax.swing.JFrame {
 
         uName.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         uName.setText(" ");
+        uName.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                uNameFocusLost(evt);
+            }
+        });
         uName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 uNameActionPerformed(evt);
@@ -194,7 +199,7 @@ public class RegisterScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_uIdActionPerformed
 
     private void uNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uNameActionPerformed
-        // TODO add your handling code here:
+        name.setText(uName.getText().trim());
     }//GEN-LAST:event_uNameActionPerformed
 
     private void btn_mainmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_mainmenuActionPerformed
@@ -275,6 +280,10 @@ public class RegisterScreen extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void uNameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_uNameFocusLost
+       name.setText(uName.getText().trim());
+    }//GEN-LAST:event_uNameFocusLost
 
     /**
      * @param args the command line arguments

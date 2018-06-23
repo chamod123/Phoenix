@@ -5,14 +5,8 @@
  */
 package Interface;
 
+import GlorySchema.GameType;
 import GlorySchema.ThreadsToUpdateUI.updateSummary;
-import java.awt.Dimension;
-import java.awt.Font;
-import javax.swing.JLabel;
-import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.JTableHeader;
-import javax.swing.table.TableColumn;
 
 /**
  *
@@ -241,7 +235,7 @@ public class SummaryOfGame extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1.add(player1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, 190, 150));
+        jPanel1.add(player1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, 190, 150));
 
         jButton2.setBackground(new java.awt.Color(0, 255, 0));
         jButton2.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
@@ -252,7 +246,7 @@ public class SummaryOfGame extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 580, 120, 40));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 560, 120, 40));
 
         jLabel2.setBackground(new java.awt.Color(153, 153, 255));
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, 80));
@@ -362,7 +356,7 @@ public class SummaryOfGame extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1.add(player2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 320, 200, 150));
+        jPanel1.add(player2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 320, 200, 150));
 
         player3.setBackground(new java.awt.Color(177, 75, 25));
 
@@ -469,7 +463,7 @@ public class SummaryOfGame extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1.add(player3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 200, 150));
+        jPanel1.add(player3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, 200, 150));
 
         player4.setBackground(new java.awt.Color(177, 75, 25));
 
@@ -576,7 +570,7 @@ public class SummaryOfGame extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1.add(player4, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 320, 200, 150));
+        jPanel1.add(player4, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 320, 200, 150));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/4th.png"))); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 130, 110, 130));
@@ -597,25 +591,25 @@ public class SummaryOfGame extends javax.swing.JFrame {
         txtName0.setForeground(new java.awt.Color(51, 255, 0));
         txtName0.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtName0.setText("name 1");
-        jPanel1.add(txtName0, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 190, 23));
+        jPanel1.add(txtName0, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, 190, 23));
 
         txtName1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtName1.setForeground(new java.awt.Color(0, 255, 0));
         txtName1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtName1.setText("name 1");
-        jPanel1.add(txtName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 200, 23));
+        jPanel1.add(txtName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 280, 200, 23));
 
         txtName2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtName2.setForeground(new java.awt.Color(0, 255, 0));
         txtName2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtName2.setText("name 1");
-        jPanel1.add(txtName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 280, 200, 23));
+        jPanel1.add(txtName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 280, 200, 23));
 
         txtName3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtName3.setForeground(new java.awt.Color(0, 255, 0));
         txtName3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtName3.setText("name 1");
-        jPanel1.add(txtName3, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 280, 200, 23));
+        jPanel1.add(txtName3, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 280, 200, 23));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/phoenix50.png"))); // NOI18N
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 520, 80, 80));
@@ -650,6 +644,8 @@ public class SummaryOfGame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        GameType gametype = new GameType();
+        gametype.deleteTable();
         this.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 

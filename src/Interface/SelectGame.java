@@ -108,7 +108,7 @@ public class SelectGame extends javax.swing.JFrame {
         chk2Player = new javax.swing.JRadioButton();
         chk3Player = new javax.swing.JRadioButton();
         chk4Player = new javax.swing.JRadioButton();
-        jButton3 = new javax.swing.JButton();
+        btnQuit = new javax.swing.JButton();
         btnPlay = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
 
@@ -166,17 +166,17 @@ public class SelectGame extends javax.swing.JFrame {
         });
         jPanel1.add(chk4Player, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, 220, 80));
 
-        jButton3.setBackground(new java.awt.Color(56, 185, 33));
-        jButton3.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-shutdown-25.png"))); // NOI18N
-        jButton3.setText("Quit");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnQuit.setBackground(new java.awt.Color(56, 185, 33));
+        btnQuit.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        btnQuit.setForeground(new java.awt.Color(255, 255, 255));
+        btnQuit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-shutdown-25.png"))); // NOI18N
+        btnQuit.setText("Quit");
+        btnQuit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnQuitActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 120, 40));
+        jPanel1.add(btnQuit, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 120, 40));
 
         btnPlay.setBackground(new java.awt.Color(56, 185, 33));
         btnPlay.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -228,6 +228,7 @@ public class SelectGame extends javax.swing.JFrame {
 
     private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
         btnPlay.setEnabled(false);
+        btnQuit.setEnabled(false);
          gisLoad.setVisible(true);
         // jPanel1.setEnabled(false);
         if (chk2Player.isSelected()) {
@@ -253,9 +254,9 @@ public class SelectGame extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnPlayActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitActionPerformed
         this.dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnQuitActionPerformed
 
     private void btnPlayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPlayMouseClicked
 //         timer t1=new timer();
@@ -299,13 +300,13 @@ public class SelectGame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnPlay;
+    private javax.swing.JButton btnQuit;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JRadioButton chk2Player;
     private javax.swing.JRadioButton chk3Player;
     private javax.swing.JRadioButton chk4Player;
     private javax.swing.JLabel gisLoad;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;

@@ -129,4 +129,14 @@ public class GameType {
         }
     }
 
+    
+     public void deleteTable() { 
+        try {
+            PreparedStatement pst = (PreparedStatement) db.psmt("DROP TABLE "+tableName);
+            pst.executeUpdate();
+            System.out.println("deleted");
+        } catch (Exception ex) {
+             System.out.println("deleted not complete");
+        }
+    }
 }

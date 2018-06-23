@@ -34,6 +34,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         gisLoad.setVisible(false);
+        txtLevel.setText("Level " + (GameBoard.levelNo - 1));
 
         DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
         rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
@@ -81,7 +82,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         txtMainWord = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
+        txtLevel = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         txtName = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
@@ -166,10 +167,10 @@ public class GameBoardScreen extends javax.swing.JFrame {
         });
         jPanel1.add(txtMainWord, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 720, 50));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("GAME TIME");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, 110, 30));
+        txtLevel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        txtLevel.setForeground(new java.awt.Color(255, 255, 255));
+        txtLevel.setText("GAME TIME");
+        jPanel1.add(txtLevel, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, 110, 30));
 
         jPanel4.setBackground(new java.awt.Color(153, 255, 102));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -523,11 +524,11 @@ public class GameBoardScreen extends javax.swing.JFrame {
     private void btnDoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoneActionPerformed
         btnDone.setEnabled(false);
         gisLoad.setVisible(true);
-        G.skipLevel(txtMainWord.getText(),this);
-       // if(skipBoard){
-       // System.out.println("----------------------dispose");
-       // this.dispose();
-       // }
+        G.skipLevel(txtMainWord.getText(), this);
+        // if(skipBoard){
+        // System.out.println("----------------------dispose");
+        // this.dispose();
+        // }
 //        WordSearch w = new WordSearch();
 //        w.setWord(txtMainWord.getText());
 //        w.matchWord();
@@ -647,7 +648,6 @@ public class GameBoardScreen extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
@@ -665,6 +665,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
     public static javax.swing.JLabel player4;
     public static javax.swing.JLabel player4L;
     public static javax.swing.JTable tblScoreBoard;
+    private javax.swing.JLabel txtLevel;
     public static javax.swing.JTextField txtMainWord;
     private javax.swing.JLabel txtName;
     public static javax.swing.JLabel txtTime;
