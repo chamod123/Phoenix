@@ -213,7 +213,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
         player2L.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jPanel5.add(player2L, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, 60, 40));
 
-        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 540, 1080, 50));
+        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, 1080, 50));
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 310, -1, -1));
 
         btnThird.setBackground(new java.awt.Color(255, 204, 0));
