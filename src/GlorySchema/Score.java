@@ -10,7 +10,8 @@ package GlorySchema;
  * @author
  */
 public class Score {
-    Results result=new Results();
+
+    Results result = new Results();
 
     int noOfLettters; // word lenght
     double roundScore; // total Score of the round
@@ -20,21 +21,25 @@ public class Score {
     int[] position = {1, 2, 3, 5, 8, 12, 17, 13, 30, 38, 47};
     int hightScoreBones = 5;
 
-    public void getTotalScore(String word, String letter1, String letter2, String letter3,Boolean isWord) {
-        //calculate total marks of current round with bonus
+    public void getTotalScore(String word, String letter1, String letter2, String letter3, Boolean isWord) {
+        //calculate total marks of current round with bonus       
+
         noOfLettersUsed(word);
-        checkIfInitiolUsed(letter1, letter2, letter3, word);
-        getScorePosition();
-        if (noOfLettters == 11) {
-            bones = bones + maxLenthBones;
+
+        if (isWord == false || noOfLettters !=0 ) {
+            roundScore = 0;
+        } else {
+            checkIfInitiolUsed(letter1, letter2, letter3, word);
+            getScorePosition();
+            if (noOfLettters == 11) {
+                bones = bones + maxLenthBones;
+            }
+            roundScore = bones + roundScore;
         }
-        roundScore = bones + roundScore;
-        if(isWord==false){
-        roundScore=0;
-         } 
+
         //data base save
         result.updateResults(roundScore);
-        
+
         System.out.println(String.valueOf(roundScore));
     }
 
@@ -104,7 +109,7 @@ public class Score {
 //            roundScore = roundScore + position[i];
 //        }
 
-roundScore = roundScore+position[noOfLettters-1];
+        roundScore = roundScore + position[noOfLettters - 1];
 //        roundScore = roundScore + (11 - noOfLettters) * (-2); // reduse score if not length 11
 //        roundScore = roundScore + roundScore * (-2);
     }

@@ -40,6 +40,9 @@ public class AllPlayerDone extends Thread {
         GameBoard.levelNo += 1;
         System.out.println(GameBoard.levelNo);
         if (GameBoard.levelNo > 5) {
+            
+            
+            
             SummaryOfGame summary = new SummaryOfGame();
             summary.setVisible(true);
             // this.dispose();
