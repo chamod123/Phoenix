@@ -155,7 +155,7 @@ public class GameResult extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblGames);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 640, 140));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 640, 290));
 
         jButton1.setBackground(new java.awt.Color(0, 204, 255));
         jButton1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -166,7 +166,7 @@ public class GameResult extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 430, 120, 40));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 430, 120, 40));
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 3, 270, 120));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

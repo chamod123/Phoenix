@@ -17,6 +17,7 @@ import java.util.Date;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -53,7 +54,7 @@ public class GameBoard {
         if (w.isCheckSpell() == true) {
             score.getTotalScore(word, GameBoardScreen.btnFirst.getText().trim(), GameBoardScreen.btnSecond.getText().trim(), GameBoardScreen.btnThird.getText().trim(), w.isCheckSpell());
         } else {
-            // JOptionPane.showMessageDialog(rootPane, "Wrong word");
+            JOptionPane.showMessageDialog(null, "Wrong word");
             score.getTotalScore(word, GameBoardScreen.btnFirst.getText().trim(), GameBoardScreen.btnSecond.getText().trim(), GameBoardScreen.btnThird.getText().trim(), w.isCheckSpell());
         }
 

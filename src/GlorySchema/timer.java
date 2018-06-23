@@ -17,7 +17,7 @@ import java.util.logging.Logger;
  */
 public class timer extends Thread {
 
-    int counter = 50;
+    int counter = 150;
     boolean isIt = false;
 
     private volatile boolean running = true;
@@ -61,7 +61,7 @@ public class timer extends Thread {
 
     public void sleepThread() {
         try {
-            Thread.sleep(5000); // 50s run it
+            Thread.sleep(15000); // 150s run it
         } catch (InterruptedException ex) {
             Logger.getLogger(timer.class.getName()).log(Level.SEVERE, null, ex);
         }

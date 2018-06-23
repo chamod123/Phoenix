@@ -34,7 +34,7 @@ public class LoginScreen extends javax.swing.JFrame {
         initComponents();
 
         setLocationRelativeTo(null);
-
+        
         //  btnLoging.setBackground(Color.red);
     }
 
@@ -171,6 +171,52 @@ public class LoginScreen extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
+//    private int oneX = 7;
+//    private int oneY = 7;
+//
+//    boolean up = false;
+//    boolean down = true;
+//    boolean left = false;
+//    boolean right = true;
+//    
+//     private void moveIt() {
+//        while(true){
+//            if(oneX >= 283){
+//                right = false;
+//                left = true;
+//            }
+//            if(oneX <= 7){
+//                right = true;
+//                left = false;
+//            }
+//            if(oneY >= 259){
+//                up = true;
+//                down = false;
+//            }
+//            if(oneY <= 7){
+//                up = false;
+//                down = true;
+//            }
+//            if(up){
+//                oneY--;
+//            }
+//            if(down){
+//                oneY++;
+//            }
+//            if(left){
+//                oneX--;
+//            }
+//            if(right){
+//                oneX++;
+//            }
+//            try{
+//                Thread.sleep(10);
+//            } catch (Exception exc){}
+//            this.repaint();
+//        }
+//    }
+    
+    
     /**
      * @param args the command line arguments
      */
