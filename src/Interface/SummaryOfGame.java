@@ -25,6 +25,15 @@ public class SummaryOfGame extends javax.swing.JFrame {
         setUndecorated(true);
         initComponents();
         setLocationRelativeTo(null);
+        player1.setBorder( null );
+        player1.setOpaque(false);
+        player2.setBorder( null );
+        player2.setOpaque(false);
+        player3.setBorder( null );
+        player3.setOpaque(false);
+        player4.setBorder( null );
+        player4.setOpaque(false);
+        
 
         player1.setVisible(false);
         player2.setVisible(false);
@@ -118,17 +127,22 @@ public class SummaryOfGame extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 153));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("SUMMARY");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, 210, 40));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, 210, 40));
 
         player1.setBackground(new java.awt.Color(177, 75, 25));
 
@@ -573,7 +587,7 @@ public class SummaryOfGame extends javax.swing.JFrame {
         jPanel1.add(player4, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 320, 200, 150));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/4th.png"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 130, 110, 130));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 150, 110, 130));
 
         jButton5.setBackground(new java.awt.Color(56, 185, 33));
         jButton5.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -603,7 +617,7 @@ public class SummaryOfGame extends javax.swing.JFrame {
         txtName2.setForeground(new java.awt.Color(0, 255, 0));
         txtName2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtName2.setText("name 1");
-        jPanel1.add(txtName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 280, 200, 23));
+        jPanel1.add(txtName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 280, 200, 23));
 
         txtName3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtName3.setForeground(new java.awt.Color(0, 255, 0));
@@ -612,16 +626,31 @@ public class SummaryOfGame extends javax.swing.JFrame {
         jPanel1.add(txtName3, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 280, 200, 23));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/phoenix50.png"))); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 520, 80, 80));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 80, 80, 80));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/3rd.png"))); // NOI18N
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 110, 130));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 110, 130));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/1st.png"))); // NOI18N
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 130, 110, 130));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 140, 110, 130));
 
         jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/2nd.png"))); // NOI18N
-        jPanel1.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 130, 110, 130));
+        jPanel1.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 140, 110, 130));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/summary.png"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, -1, -1));
+
+        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/summary.png"))); // NOI18N
+        jPanel1.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 260, -1, -1));
+
+        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/summary.png"))); // NOI18N
+        jPanel1.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, -1, -1));
+
+        jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/summary.png"))); // NOI18N
+        jPanel1.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, -1, -1));
+
+        jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/summary.png"))); // NOI18N
+        jPanel1.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 260, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -807,9 +836,14 @@ public class SummaryOfGame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

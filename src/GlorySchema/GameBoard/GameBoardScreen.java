@@ -32,6 +32,10 @@ public class GameBoardScreen extends javax.swing.JFrame {
         moved = false;
         setUndecorated(true);
         initComponents();
+        btnRefresh.setContentAreaFilled( false );
+        btnRefresh.setBorder( null );
+        btnUndo.setContentAreaFilled( false );
+        btnUndo.setBorder( null );
         setLocationRelativeTo(null);
         gisLoad.setVisible(false);
         txtLevel.setText("Level " + (GameBoard.levelNo - 1));
@@ -74,11 +78,11 @@ public class GameBoardScreen extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        gisLoad = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         txtTime = new javax.swing.JLabel();
+        gisLoad = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         txtMainWord = new javax.swing.JTextField();
@@ -111,45 +115,46 @@ public class GameBoardScreen extends javax.swing.JFrame {
         btnDone = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnRefresh = new javax.swing.JButton();
         btnUndo = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        gisLoad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/loading.gif"))); // NOI18N
-        gisLoad.setText("jLabel2");
-        jPanel1.add(gisLoad, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 630, 260));
-
-        jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 2, 36)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 2, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("NEXT LETTER");
         jLabel2.setToolTipText("");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 250, 50));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 420, 240, 50));
 
-        jPanel2.setBackground(new java.awt.Color(102, 0, 204));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 102));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel16.setText("s");
-        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, 30, 40));
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 40, 50));
 
         txtTime.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         txtTime.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         txtTime.setText("180");
-        jPanel2.add(txtTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 60, 40));
+        jPanel2.add(txtTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, 50));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 40, 140, 40));
+        gisLoad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/little-loader.gif"))); // NOI18N
+        jPanel2.add(gisLoad, new org.netbeans.lib.awtextra.AbsoluteConstraints(-280, -100, 790, 560));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 180, 110, 50));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("SCORE BOARD");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 10, -1, 30));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 90, -1, 30));
 
         jButton2.setBackground(new java.awt.Color(0, 204, 255));
-        jButton2.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(51, 51, 51));
         jButton2.setText("VOWEL");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -157,20 +162,21 @@ public class GameBoardScreen extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 430, 120, 40));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 500, 120, 40));
 
         txtMainWord.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        txtMainWord.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtMainWord.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtMainWordActionPerformed(evt);
             }
         });
-        jPanel1.add(txtMainWord, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 720, 50));
+        jPanel1.add(txtMainWord, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 290, 520, 50));
 
-        txtLevel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        txtLevel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         txtLevel.setForeground(new java.awt.Color(255, 255, 255));
         txtLevel.setText("GAME TIME");
-        jPanel1.add(txtLevel, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, 110, 30));
+        jPanel1.add(txtLevel, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 140, 220, 30));
 
         jPanel4.setBackground(new java.awt.Color(153, 255, 102));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -180,17 +186,17 @@ public class GameBoardScreen extends javax.swing.JFrame {
         txtName.setText("Name");
         jPanel4.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 130, 40));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 130, 40));
 
         jButton4.setBackground(new java.awt.Color(51, 204, 255));
-        jButton4.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jButton4.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jButton4.setText("CONSTANT");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 430, 120, 40));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 500, 130, 40));
 
         jPanel5.setBackground(new java.awt.Color(171, 19, 19));
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Initial Letters", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
@@ -220,7 +226,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
         player2L.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jPanel5.add(player2L, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, 60, 40));
 
-        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, 1080, 50));
+        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 700, 1080, 50));
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 310, -1, -1));
 
         btnThird.setBackground(new java.awt.Color(255, 204, 0));
@@ -229,63 +235,71 @@ public class GameBoardScreen extends javax.swing.JFrame {
                 btnThirdActionPerformed(evt);
             }
         });
-        jPanel1.add(btnThird, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 50, 50));
+        jPanel1.add(btnThird, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 370, 50, 50));
 
+        btnForth.setBackground(new java.awt.Color(102, 255, 51));
         btnForth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnForthActionPerformed(evt);
             }
         });
-        jPanel1.add(btnForth, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 50, 50));
+        jPanel1.add(btnForth, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 370, 50, 50));
 
+        btnFifth.setBackground(new java.awt.Color(102, 255, 51));
         btnFifth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFifthActionPerformed(evt);
             }
         });
-        jPanel1.add(btnFifth, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 220, 50, 50));
+        jPanel1.add(btnFifth, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 370, 50, 50));
 
+        btnSixth.setBackground(new java.awt.Color(102, 255, 51));
         btnSixth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSixthActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSixth, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 220, 50, 50));
+        jPanel1.add(btnSixth, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 370, 50, 50));
 
+        btnSeventh.setBackground(new java.awt.Color(102, 255, 51));
         btnSeventh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSeventhActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSeventh, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 220, 50, 50));
+        jPanel1.add(btnSeventh, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 370, 50, 50));
 
+        btnEighth.setBackground(new java.awt.Color(102, 255, 51));
         btnEighth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEighthActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEighth, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 220, 50, 50));
+        jPanel1.add(btnEighth, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 370, 50, 50));
 
+        btnNineth.setBackground(new java.awt.Color(102, 255, 51));
         btnNineth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNinethActionPerformed(evt);
             }
         });
-        jPanel1.add(btnNineth, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 220, 50, 50));
+        jPanel1.add(btnNineth, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 370, 50, 50));
 
+        btnTenth.setBackground(new java.awt.Color(102, 255, 51));
         btnTenth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTenthActionPerformed(evt);
             }
         });
-        jPanel1.add(btnTenth, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 220, 50, 50));
+        jPanel1.add(btnTenth, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 370, 50, 50));
 
+        btnEleventh.setBackground(new java.awt.Color(102, 255, 51));
         btnEleventh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEleventhActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEleventh, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 220, 50, 50));
+        jPanel1.add(btnEleventh, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 370, 50, 50));
 
         btnFirst.setBackground(new java.awt.Color(255, 204, 0));
         btnFirst.addActionListener(new java.awt.event.ActionListener() {
@@ -293,7 +307,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
                 btnFirstActionPerformed(evt);
             }
         });
-        jPanel1.add(btnFirst, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 50, 50));
+        jPanel1.add(btnFirst, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 370, 50, 50));
 
         btnSecond.setBackground(new java.awt.Color(255, 204, 0));
         btnSecond.addActionListener(new java.awt.event.ActionListener() {
@@ -301,7 +315,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
                 btnSecondActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSecond, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 220, 50, 50));
+        jPanel1.add(btnSecond, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 370, 50, 50));
 
         tblScoreBoard.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -311,7 +325,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
                 "null", "Title 2"
             }
         ));
-        jPanel1.add(tblScoreBoard, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 44, 170, 80));
+        jPanel1.add(tblScoreBoard, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 130, 170, 80));
 
         btnDone.setBackground(new java.awt.Color(0, 204, 255));
         btnDone.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -322,40 +336,46 @@ public class GameBoardScreen extends javax.swing.JFrame {
                 btnDoneActionPerformed(evt);
             }
         });
-        jPanel1.add(btnDone, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 490, 120, 40));
+        jPanel1.add(btnDone, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 570, 120, 40));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-euro-money-100.png"))); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 350, 100, 90));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 540, 100, 90));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/phoenix50.png"))); // NOI18N
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 590, 50, 50));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, 50, 50));
 
-        jButton1.setBackground(new java.awt.Color(153, 153, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-restart-30.png"))); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnRefresh.setBackground(new java.awt.Color(153, 153, 255));
+        btnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/refresh.png"))); // NOI18N
+        btnRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnRefreshActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 160, 50, 50));
+        jPanel1.add(btnRefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 290, 50, 50));
 
-        btnUndo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-undo-30.png"))); // NOI18N
+        btnUndo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/retry.png"))); // NOI18N
         btnUndo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUndoActionPerformed(evt);
             }
         });
-        jPanel1.add(btnUndo, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 430, 40, -1));
+        jPanel1.add(btnUndo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 480, 80, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/gameBoard.png"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 900, 640));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/time-loading-gif.gif"))); // NOI18N
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 170, 50, 60));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1098, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 653, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -556,7 +576,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
 ////        }
     }//GEN-LAST:event_btnDoneActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
         btnFirst.setEnabled(true);
         btnSecond.setEnabled(true);
         btnThird.setEnabled(true);
@@ -569,7 +589,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
         btnTenth.setEnabled(true);
         btnEleventh.setEnabled(true);
         txtMainWord.setText("");
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnRefreshActionPerformed
 
     private void btnUndoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUndoActionPerformed
         if (!"".equals(btnEleventh.getText().trim())) {
@@ -636,6 +656,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
     public static javax.swing.JButton btnFirst;
     private javax.swing.JButton btnForth;
     private javax.swing.JButton btnNineth;
+    private javax.swing.JButton btnRefresh;
     public static javax.swing.JButton btnSecond;
     private javax.swing.JButton btnSeventh;
     private javax.swing.JButton btnSixth;
@@ -643,13 +664,14 @@ public class GameBoardScreen extends javax.swing.JFrame {
     public static javax.swing.JButton btnThird;
     private javax.swing.JButton btnUndo;
     private javax.swing.JLabel gisLoad;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;

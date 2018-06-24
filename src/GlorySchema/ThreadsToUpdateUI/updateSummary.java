@@ -61,19 +61,14 @@ public class updateSummary extends Thread {
     public void getSummaryData() {
         try {
             ResultSet rs = null;
-//            String data[][] = null;
-//            DefaultTableModel dtf = (javax.swing.table.DefaultTableModel) SummaryOfGame.summaryTbl.getModel();
-//            dtf.setRowCount(0);
             rs = summary.getGameSummery();
             ResultSetMetaData rsmd = rs.getMetaData();
 
             rs.last();
             int count = rs.getRow();
             rs.beforeFirst();
-//            data = new String[count][8];
             int x = 0;
             while (rs.next()) {
-//                Vector v = new Vector();
                 switch (x) {
                     case 0:
                         this.setWinner1(rs);

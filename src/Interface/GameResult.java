@@ -94,22 +94,24 @@ public class GameResult extends javax.swing.JFrame {
         rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
         tblGames.getColumnModel().getColumn(1).setCellRenderer(rightRenderer);
         tblGames.getColumnModel().getColumn(2).setCellRenderer(rightRenderer);
-
+        tblGames.setShowGrid(false);
+        tblGames.setBorder( null );
+        tblGames.setOpaque(false);
         // model.setRowCount(20);
         TableColumn col0 = tblGames.getColumnModel().getColumn(1);
-        col0.setMinWidth(80);
-        col0.setPreferredWidth(80);
-        col0.setMaxWidth(80);
+        col0.setMinWidth(40);
+        col0.setPreferredWidth(40);
+        col0.setMaxWidth(40);
 
         TableColumn col1 = tblGames.getColumnModel().getColumn(1);
-        col1.setMinWidth(80);
-        col1.setPreferredWidth(80);
-        col1.setMaxWidth(80);
+        col1.setMinWidth(40);
+        col1.setPreferredWidth(40);
+        col1.setMaxWidth(40);
 
         TableColumn col2 = tblGames.getColumnModel().getColumn(2);
-        col2.setMinWidth(80);
-        col2.setPreferredWidth(80);
-        col2.setMaxWidth(80);
+        col2.setMinWidth(40);
+        col2.setPreferredWidth(40);
+        col2.setMaxWidth(40);
 
     }
 
@@ -130,6 +132,7 @@ public class GameResult extends javax.swing.JFrame {
         tblGames = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -139,10 +142,10 @@ public class GameResult extends javax.swing.JFrame {
         levelScore.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
         levelScore.setForeground(new java.awt.Color(0, 0, 153));
         levelScore.setText("SCORE");
-        jPanel1.add(levelScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 40, 250, -1));
+        jPanel1.add(levelScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, 250, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/phoenix50.png"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, 50, 50));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 30, 50, 50));
 
         tblGames.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         tblGames.setModel(new javax.swing.table.DefaultTableModel(
@@ -155,7 +158,7 @@ public class GameResult extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblGames);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 640, 290));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 200, 360, 250));
 
         jButton1.setBackground(new java.awt.Color(0, 204, 255));
         jButton1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -166,8 +169,11 @@ public class GameResult extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 430, 120, 40));
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 3, 270, 120));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 490, 120, 40));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 120));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/result.png"))); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 60, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -177,7 +183,7 @@ public class GameResult extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 530, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -240,6 +246,7 @@ public class GameResult extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel levelScore;

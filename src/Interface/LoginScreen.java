@@ -32,6 +32,14 @@ public class LoginScreen extends javax.swing.JFrame {
 //        getRootPane().setWindowDecorationStyle(JRootPane.NONE);
 //        setSize(852, 480);
         initComponents();
+        btnLogin.setContentAreaFilled( false );
+        btnLogin.setBorder( null );
+        btnregister.setContentAreaFilled( false );
+        btnregister.setBorder( null );
+        txtUsername.setOpaque(false);
+        txtUsername.setBorder( null );
+        txt_password.setOpaque(false);
+        txt_password.setBorder( null );
 
         setLocationRelativeTo(null);
         
@@ -48,15 +56,13 @@ public class LoginScreen extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         txtUsername = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
         txt_password = new javax.swing.JPasswordField();
         jButton3 = new javax.swing.JButton();
-        btnLoging = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        lblLog = new javax.swing.JLabel();
+        btnregister = new javax.swing.JButton();
+        btnLogin = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -64,19 +70,11 @@ public class LoginScreen extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(153, 153, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel1.setText("UserName");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 90, 20));
-
         txtUsername.setFont(new java.awt.Font("Trebuchet MS", 1, 16)); // NOI18N
-        jPanel2.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 200, 40));
-
-        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel2.setText("Password");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 150, 90, 20));
+        jPanel2.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, 310, 40));
 
         txt_password.setFont(new java.awt.Font("Trebuchet MS", 1, 16)); // NOI18N
-        jPanel2.add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, 200, 40));
+        jPanel2.add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, 300, 40));
 
         jButton3.setBackground(new java.awt.Color(56, 185, 33));
         jButton3.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -88,42 +86,41 @@ public class LoginScreen extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 300, 120, 40));
+        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 630, 120, 40));
 
-        btnLoging.setBackground(new java.awt.Color(56, 185, 33));
-        btnLoging.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        btnLoging.setForeground(new java.awt.Color(255, 255, 255));
-        btnLoging.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-user-engagement-male-25.png"))); // NOI18N
-        btnLoging.setText("Loging");
-        btnLoging.addActionListener(new java.awt.event.ActionListener() {
+        btnregister.setBackground(new java.awt.Color(56, 185, 33));
+        btnregister.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        btnregister.setForeground(new java.awt.Color(255, 255, 255));
+        btnregister.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/btnRegister.png"))); // NOI18N
+        btnregister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLogingActionPerformed(evt);
+                btnregisterActionPerformed(evt);
             }
         });
-        jPanel2.add(btnLoging, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, 120, 40));
+        jPanel2.add(btnregister, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 610, 200, 60));
 
-        jButton2.setBackground(new java.awt.Color(56, 185, 33));
-        jButton2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-add-user-male-25.png"))); // NOI18N
-        jButton2.setText("Signin");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnLogin.setBackground(new java.awt.Color(102, 102, 255));
+        btnLogin.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        btnLogin.setForeground(new java.awt.Color(255, 255, 255));
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnLoginActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, 120, 40));
-        jPanel2.add(lblLog, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 160, 240));
+        jPanel2.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 480, 130, 60));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/phoenix50.png"))); // NOI18N
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, -1, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 620, -1, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 430));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/login.png"))); // NOI18N
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 500, 570));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 760));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnLogingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogingActionPerformed
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         if (!value.checkNull(txtUsername.getText(), "User name")) {
             return;
         } else if (!value.checkNull(txt_password.getText(), "Password")) {
@@ -154,9 +151,9 @@ public class LoginScreen extends javax.swing.JFrame {
         } catch (Exception ex) {
             Logger.getLogger(LoginScreen.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_btnLogingActionPerformed
+    }//GEN-LAST:event_btnLoginActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnregisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregisterActionPerformed
         RegisterScreen register = new RegisterScreen();
         register.setVisible(true);
         this.dispose();
@@ -165,7 +162,7 @@ public class LoginScreen extends javax.swing.JFrame {
         //  txt_password.setText(null);
         //  this.hide();
         //  new RegisterScreen().setVisible(rootPaneCheckingEnabled);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnregisterActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         this.dispose();
@@ -268,14 +265,12 @@ public class LoginScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnLoging;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnLogin;
+    private javax.swing.JButton btnregister;
     private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JLabel lblLog;
     private javax.swing.JTextField txtUsername;
     private javax.swing.JPasswordField txt_password;
     // End of variables declaration//GEN-END:variables
