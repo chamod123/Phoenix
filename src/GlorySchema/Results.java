@@ -34,9 +34,7 @@ public class Results {
         return rs;
     }
 
-    public void getwiner() {
-
-    }
+  
 
     public void updateResults(double score) {
         try {

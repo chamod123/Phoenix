@@ -67,6 +67,5 @@ public class Validation {
         return true;
     }
 
-    public void specialCharacter() {
-    }
+  
 }

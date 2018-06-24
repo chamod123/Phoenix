@@ -6,6 +6,7 @@
 package Interface;
 
 import Db.DataBase;
+import GlorySchema.Player;
 import GlorySchema.Validation;
 import java.sql.ResultSet;
 import java.util.logging.Level;
@@ -20,6 +21,7 @@ public class LoginScreen extends javax.swing.JFrame {
 
     public static String PlayerId;
     public static String PlayerName;
+    Player player = new Player();
 
     Validation value = new Validation();
 
@@ -86,7 +88,7 @@ public class LoginScreen extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 630, 120, 40));
+        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 600, 120, 40));
 
         btnregister.setBackground(new java.awt.Color(56, 185, 33));
         btnregister.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -97,7 +99,7 @@ public class LoginScreen extends javax.swing.JFrame {
                 btnregisterActionPerformed(evt);
             }
         });
-        jPanel2.add(btnregister, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 610, 200, 60));
+        jPanel2.add(btnregister, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 580, 200, 60));
 
         btnLogin.setBackground(new java.awt.Color(102, 102, 255));
         btnLogin.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -110,12 +112,12 @@ public class LoginScreen extends javax.swing.JFrame {
         jPanel2.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 480, 130, 60));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/phoenix50.png"))); // NOI18N
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 620, -1, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 590, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/login.png"))); // NOI18N
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 500, 570));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 760));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 680));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -127,30 +129,7 @@ public class LoginScreen extends javax.swing.JFrame {
             return;
         }
 
-        try {
-            DataBase db = new DataBase();
-            String username = txtUsername.getText();
-            ResultSet rs = null;
-
-            String query = "SELECT * FROM player WHERE UserName  = '" + username + "'";
-            rs = (ResultSet) db.fetch(query);
-            if (rs.next()) {
-                PlayerName = rs.getString("Name");
-                PlayerId = rs.getString("UserId");
-                if (txt_password.getText().equals(rs.getString("Password"))) {
-                    // JOptionPane.showMessageDialog(null, "Success", "InfoBox: " + "Done", JOptionPane.INFORMATION_MESSAGE);
-                    SelectGame breq = new SelectGame();
-                    breq.setVisible(true);
-                    this.dispose();
-                    breq = null;
-
-                } else {
-                    JOptionPane.showMessageDialog(null, "Failed", "InfoBox: " + "Error", JOptionPane.INFORMATION_MESSAGE);
-                }
-            }
-        } catch (Exception ex) {
-            Logger.getLogger(LoginScreen.class.getName()).log(Level.SEVERE, null, ex);
-        }
+       player.loging(txtUsername.getText().trim(),txt_password.getText().trim(), this);
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnregisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregisterActionPerformed

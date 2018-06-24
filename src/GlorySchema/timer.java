@@ -8,6 +8,7 @@ package GlorySchema;
 import GlorySchema.GameBoard.GameBoard;
 import GlorySchema.GameBoard.GameBoardScreen;
 import static GlorySchema.ThreadsToUpdateUI.AllPlayerDone.moved;
+import java.awt.Color;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -17,7 +18,7 @@ import java.util.logging.Logger;
  */
 public class timer extends Thread {
 
-    int counter = 150;
+    int counter = 100;
     boolean isIt = false;
     GameBoardScreen boardscreen;
 
@@ -26,7 +27,7 @@ public class timer extends Thread {
 
     public timer(GameBoardScreen boardscreen) {
         this.boardscreen = boardscreen;
-        
+
     }
 
     @Override
@@ -35,6 +36,9 @@ public class timer extends Thread {
             try {
                 Thread.sleep(1000);
                 GameBoardScreen.txtTime.setText(counter + "");
+                if(counter < 10){
+                    GameBoardScreen.txtTimePanal.setBackground(Color.red);
+                        }
                 counter--;
             } catch (InterruptedException ex) {
                 Logger.getLogger(timer.class.getName()).log(Level.SEVERE, null, ex);
@@ -43,7 +47,10 @@ public class timer extends Thread {
         //stop time 
         if (!moved) {
             moved = true;
-            G.skipLevel(GameBoardScreen.txtMainWord.getText(), boardscreen);
+            if (!GameBoardScreen.isdone) {
+                GameBoardScreen.isdone = true;
+                G.skipLevel(GameBoardScreen.txtMainWord.getText(), boardscreen);
+            }
         }
 ////////        GameBoard.levelNo += 1;
 ////////        if (GameBoard.levelNo > 5) {
@@ -67,7 +74,7 @@ public class timer extends Thread {
 
     public void sleepThread() {
         try {
-            Thread.sleep(15000); // 150s run it
+            Thread.sleep(10000); // 100s run it
         } catch (InterruptedException ex) {
             Logger.getLogger(timer.class.getName()).log(Level.SEVERE, null, ex);
         }

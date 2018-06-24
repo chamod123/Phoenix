@@ -5,10 +5,12 @@
  */
 package Testing;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
+import javax.swing.JOptionPane;
 import sun.audio.AudioData;
 import sun.audio.AudioPlayer;
 import sun.audio.AudioStream;
@@ -126,19 +128,28 @@ public class TimerTest extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSaveMouseClicked
 
     public static void music() {
-        AudioPlayer MGP = AudioPlayer.player;
-        AudioStream BGM;
-        AudioData MD;
-        ContinuousAudioDataStream loop = null;
-        try {
-            BGM = new AudioStream(new FileInputStream("/Images/ha.wav"));
-            MD = BGM.getData();
-            loop = new ContinuousAudioDataStream(MD);
-        } catch (IOException error) {
-            System.out.print("file not found");
-        }
 
-        MGP.start(loop);
+        Timer timer = new Timer();
+        // counter = 100;
+        TimerTask task = new TimerTask() {
+            @Override
+            public void run() {
+                try {
+                    System.out.println("play");
+                    //FileInputStream music = new FileInputStream(new File("C:\\errorsound\\MoodyLooprec1.WAV"));
+                   // File file =new File("/Testing/MoodyLooprec1.WAV");
+                    File file =new File("C:\\errorsound\\MoodyLooprec1.WAV");
+                   FileInputStream music = new FileInputStream(file.getAbsolutePath());
+                    
+                    AudioStream audios = new AudioStream(music);
+                    AudioPlayer.player.start(audios);
+
+                } catch (Exception e) {
+                }
+            }
+        };
+        timer.scheduleAtFixedRate(task, 1000, 8000);
+
     }
 
     /**
@@ -172,6 +183,7 @@ public class TimerTest extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new TimerTest().setVisible(true);
+
             }
         });
     }

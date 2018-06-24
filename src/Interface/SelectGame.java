@@ -119,7 +119,7 @@ public class SelectGame extends javax.swing.JFrame {
 
         gisLoad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/loading.gif"))); // NOI18N
         gisLoad.setText("jLabel2");
-        jPanel1.add(gisLoad, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 630, 260));
+        jPanel1.add(gisLoad, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 670, 260));
 
         jButton2.setBackground(new java.awt.Color(153, 153, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/help.png"))); // NOI18N
