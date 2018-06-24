@@ -83,18 +83,18 @@ public class SummaryOfGame2 extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        level1score0 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        level2score0 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        total0 = new javax.swing.JLabel();
-        level5score0 = new javax.swing.JLabel();
-        level4score0 = new javax.swing.JLabel();
-        level3score0 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        level1score0 = new javax.swing.JLabel();
+        level2score0 = new javax.swing.JLabel();
+        level3score0 = new javax.swing.JLabel();
+        level4score0 = new javax.swing.JLabel();
+        level5score0 = new javax.swing.JLabel();
+        total0 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -245,7 +245,7 @@ public class SummaryOfGame2 extends javax.swing.JFrame {
         txtName0.setForeground(new java.awt.Color(0, 255, 0));
         txtName0.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtName0.setText("name 1");
-        jPanel1.add(txtName0, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, 200, 23));
+        jPanel1.add(txtName0, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, 200, 23));
 
         txtName1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtName1.setForeground(new java.awt.Color(0, 255, 0));
@@ -267,20 +267,10 @@ public class SummaryOfGame2 extends javax.swing.JFrame {
         jLabel8.setText("LEVEL 1 -");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, 86, -1));
 
-        level1score0.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        level1score0.setForeground(new java.awt.Color(51, 255, 0));
-        level1score0.setText("Level 1");
-        jPanel1.add(level1score0, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 330, 71, -1));
-
         jLabel9.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("LEVEL 2 -");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 350, 86, -1));
-
-        level2score0.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        level2score0.setForeground(new java.awt.Color(51, 255, 0));
-        level2score0.setText("Level 2 ");
-        jPanel1.add(level2score0, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 350, 71, -1));
 
         jLabel10.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
@@ -302,28 +292,38 @@ public class SummaryOfGame2 extends javax.swing.JFrame {
         jLabel13.setText("TOTAL   -");
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 430, 86, -1));
 
-        total0.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        total0.setForeground(new java.awt.Color(51, 255, 0));
-        total0.setText("Total ");
-        jPanel1.add(total0, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 430, 71, -1));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/summary.png"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 250, -1, -1));
 
-        level5score0.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        level5score0.setForeground(new java.awt.Color(51, 255, 0));
-        level5score0.setText("Level 5 ");
-        jPanel1.add(level5score0, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 410, 71, -1));
+        level1score0.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        level1score0.setForeground(new java.awt.Color(51, 255, 0));
+        level1score0.setText("Level 1");
+        jPanel1.add(level1score0, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 330, -1, -1));
 
-        level4score0.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        level4score0.setForeground(new java.awt.Color(51, 255, 0));
-        level4score0.setText("Level 4 ");
-        jPanel1.add(level4score0, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 390, 71, -1));
+        level2score0.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        level2score0.setForeground(new java.awt.Color(51, 255, 0));
+        level2score0.setText("Level 2 ");
+        jPanel1.add(level2score0, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 350, -1, -1));
 
         level3score0.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         level3score0.setForeground(new java.awt.Color(51, 255, 0));
         level3score0.setText("Level 3 ");
-        jPanel1.add(level3score0, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 370, 71, -1));
+        jPanel1.add(level3score0, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 370, -1, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/summary.png"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 250, -1, -1));
+        level4score0.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        level4score0.setForeground(new java.awt.Color(51, 255, 0));
+        level4score0.setText("Level 4 ");
+        jPanel1.add(level4score0, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 390, -1, -1));
+
+        level5score0.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        level5score0.setForeground(new java.awt.Color(51, 255, 0));
+        level5score0.setText("Level 5 ");
+        jPanel1.add(level5score0, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 410, -1, -1));
+
+        total0.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        total0.setForeground(new java.awt.Color(51, 255, 0));
+        total0.setText("Total ");
+        jPanel1.add(total0, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 430, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/summary.png"))); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, -1, -1));
@@ -513,18 +513,18 @@ public class SummaryOfGame2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel level1score0;
+    public static javax.swing.JLabel level1score0;
     public static javax.swing.JLabel level1score1;
-    private javax.swing.JLabel level2score0;
+    public static javax.swing.JLabel level2score0;
     public static javax.swing.JLabel level2score1;
-    private javax.swing.JLabel level3score0;
+    public static javax.swing.JLabel level3score0;
     public static javax.swing.JLabel level3score1;
-    private javax.swing.JLabel level4score0;
+    public static javax.swing.JLabel level4score0;
     public static javax.swing.JLabel level4score1;
-    private javax.swing.JLabel level5score0;
+    public static javax.swing.JLabel level5score0;
     public static javax.swing.JLabel level5score1;
     public static javax.swing.JPanel player2;
-    private javax.swing.JLabel total0;
+    public static javax.swing.JLabel total0;
     public static javax.swing.JLabel total1;
     public static javax.swing.JLabel txtName0;
     public static javax.swing.JLabel txtName1;

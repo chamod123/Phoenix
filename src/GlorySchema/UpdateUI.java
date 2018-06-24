@@ -109,12 +109,59 @@ public class UpdateUI {
             data = new String[count][5];
             int x = 0;
             while (rs.next()) {
-                Vector v = new Vector();
+//                Vector v = new Vector();
+//
+//                v.add(data[x][0] = rs.getString("Name"));
+//                v.add(data[x][1] = rs.getString("Level" + (GameBoard.levelNo - 1) + "Score"));
+//                v.add(data[x][2] = rs.getString("Total"));
+//                dtf2.addRow(v);
+                switch (x) {
+                    case 0:
+                        GameResult.player0.setVisible(true);
+                        GameResult.player0.setText(rs.getString("Name"));
+                       
+                        GameResult.levelScore0.setVisible(true);
+                        GameResult.levelScore0.setText(rs.getString("Level" + (GameBoard.levelNo - 1) + "Score"));
+                        
+                        GameResult.total0.setVisible(true);
+                        GameResult.total0.setText(rs.getString("Total"));
+                        break;
+                    case 1:
+                        GameResult.player1.setVisible(true);
+                        GameResult.player1.setText(rs.getString("Name"));
+                       
+                        GameResult.levelScore1.setVisible(true);
+                        GameResult.levelScore1.setText(rs.getString("Level" + (GameBoard.levelNo - 1) + "Score"));
+                        
+                        GameResult.total1.setVisible(true);
+                        GameResult.total1.setText(rs.getString("Total"));
+                      
+                        break;
+                    case 2:
+                        GameResult.player2.setVisible(true);
+                        GameResult.player2.setText(rs.getString("Name"));
+                       
+                        GameResult.levelScore2.setVisible(true);
+                        GameResult.levelScore2.setText(rs.getString("Level" + (GameBoard.levelNo - 1) + "Score"));
+                        
+                        GameResult.total2.setVisible(true);
+                        GameResult.total2.setText(rs.getString("Total"));
+                        break;
+                    case 3:
+                         GameResult.player3.setVisible(true);
+                        GameResult.player3.setText(rs.getString("Name"));
+                       
+                        GameResult.levelScore3.setVisible(true);
+                        GameResult.levelScore3.setText(rs.getString("Level" + (GameBoard.levelNo - 1) + "Score"));
+                        
+                        GameResult.total3.setVisible(true);
+                        GameResult.total3.setText(rs.getString("Total"));
+                        break;
+                    default:
+                        break;
+                }
 
-                v.add(data[x][0] = rs.getString("Name"));
-                v.add(data[x][1] = rs.getString("Level" + (GameBoard.levelNo - 1) + "Score"));
-                v.add(data[x][2] = rs.getString("Total"));
-                dtf2.addRow(v);
+
                 x = x + 1;
             }
 

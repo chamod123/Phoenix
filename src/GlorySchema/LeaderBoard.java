@@ -44,7 +44,7 @@ public class LeaderBoard {
     public ResultSet getGameSummery() {
         ResultSet rs = null;
         try {
-            String query = "SELECT * FROM " + GameType.tableName + " order by Total";
+            String query = "SELECT * FROM " + GameType.tableName + " order by Total DESC";
             rs = (ResultSet) db.fetch(query);
         } catch (Exception e) {
             e.printStackTrace();
@@ -57,7 +57,7 @@ public class LeaderBoard {
 
         ResultSet rs = null;
         try {
-            String query = "SELECT Total FROM " + GameType.tableName + " order by Total";
+            String query = "SELECT Total FROM " + GameType.tableName + " order by Total DESC";
             rs = (ResultSet) db.fetch(query);
 
         } catch (Exception e) {
