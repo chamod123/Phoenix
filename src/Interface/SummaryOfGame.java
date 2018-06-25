@@ -30,28 +30,9 @@ public class SummaryOfGame extends javax.swing.JFrame {
         btnQuit.setBorder(null);
         btnPlayAgain.setContentAreaFilled(false);
         btnPlayAgain.setBorder(null);
-//        player1.setBorder( null );
-//        player1.setOpaque(false);
-//        player2.setBorder( null );
-//        player2.setOpaque(false);
-//        player3.setBorder( null );
-//        player3.setOpaque(false);
-//        player4.setBorder( null );
-//        player4.setOpaque(false);
-//        
-//
-//        player1.setVisible(false);
-//        player2.setVisible(false);
-//        player3.setVisible(false);
-//        player4.setVisible(false);
-
-        // ShowGrid();
         t.start();
         t.sleepThread();
         t.shutdown();
-//        getTopTot();
-        //sort() ;
-        // summaryTbl.setOpaque(true);
     }
 
     /**
@@ -516,137 +497,6 @@ public class SummaryOfGame extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnQuitActionPerformed
 
-//    private void ShowGrid() {
-//        String data[][] = null;
-//
-//        String colu[] = new String[]{"Rank", "Player", "Level 1", "Level 2", "Level 3", "Level 4", "Level 5", "Total"};
-//        DefaultTableModel model = new DefaultTableModel(data, colu) {
-//            //@Override
-//            public boolean isCellEditable(int x, int y) {
-//                if (y == 1) {
-//                    return true;
-//                } else {
-//                    return false;
-//                }
-//            }
-//        };
-//        summaryTbl.setModel(model);
-//        summaryTbl.getTableHeader().setPreferredSize(new Dimension(summaryTbl.getTableHeader().getPreferredSize().width, 35));
-//        JTableHeader head = summaryTbl.getTableHeader();
-//        head.setFont(head.getFont().deriveFont(Font.BOLD));
-//
-//        DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
-//        rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
-//        // tblGames.getColumnModel().getColumn(4).setCellRenderer(rightRenderer);
-//
-//        // model.setRowCount(20);
-//        TableColumn colou10 = summaryTbl.getColumnModel().getColumn(0);
-//        colou10.setMinWidth(80);
-//        colou10.setPreferredWidth(80);
-//        colou10.setMaxWidth(80);
-//
-//    }
-//    private void getTopTot() {
-//        try {
-//            ResultSet rs = null;
-//
-//            rs = summary.getTopScore();
-//            ResultSetMetaData rsmd = rs.getMetaData();
-//
-//            rs.last();
-//            int count = rs.getRow();
-//            rs.beforeFirst();
-//            topTot = new int[count];
-//            int x = 0;
-//            while (rs.next()) {
-//                Vector v = new Vector();
-//
-//                v.add(topTot[x] = rs.getInt("Total"));
-//                //confirm = rs.getInt("confirm");
-//                x = x + 1;
-//            }
-//        } catch (SQLException ex) {
-//            Logger.getLogger(SummaryOfGame.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//    }
-//
-//    private void getLeaderTop() {
-//        try {
-//            ResultSet rs = null;
-//
-//            rs = summary.getLeaderTopScore();
-//            ResultSetMetaData rsmd = rs.getMetaData();
-//
-//            rs.last();
-//            int count = rs.getRow();
-//            rs.beforeFirst();
-//            leaderTOp = new int[count];
-//            int x = 0;
-//            while (rs.next()) {
-//                Vector v = new Vector();
-//
-//                v.add(leaderTOp[x] = rs.getInt("Score"));
-//                //confirm = rs.getInt("confirm");
-//                x = x + 1;
-//            }
-//        } catch (SQLException ex) {
-//            Logger.getLogger(SummaryOfGame.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//
-//    }
-
-    /* public void sort() 
-    {
-    int n = topTot.length;
-    int m= leaderTOp.length;
-    for (int i = 1; i < n; i++)
-    {
-        for (int j = i; j > 0; j--)
-        {
-            if (topTot[i] > leaderTOp[j])
-            {
-               topTot[i]=leaderTOp[j];
-                 
-            }
-                
-            else break;
-        }
-    }
-}*/
-//    /**
-//     * @param args the command line arguments
-//     */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(SummaryOfGame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(SummaryOfGame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(SummaryOfGame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(SummaryOfGame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new SummaryOfGame().setVisible(true);
-//            }
-//        });
-//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnPlayAgain;

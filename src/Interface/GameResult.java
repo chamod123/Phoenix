@@ -23,7 +23,6 @@ import javax.swing.table.TableColumn;
 public class GameResult extends javax.swing.JFrame {
 
     public GameResult() {
-//        moved = false;
         setUndecorated(true);
         initComponents();
         player0.setVisible(false);
@@ -40,13 +39,7 @@ public class GameResult extends javax.swing.JFrame {
         total3.setVisible(false);
         btnNext.setContentAreaFilled( false );
         btnNext.setBorder( null );
-        //set visible false for all lable
         setLocationRelativeTo(null);
-//        tblGames.setBorder( null );
-//        tblGames.setOpaque(false);
-//
-//        //ShowGrid();
-//        tblGames.setOpaque(true);
         levelScore.setText("Level " + (GameBoard.levelNo - 1) + " Score");
 
         updateGameResult t = new updateGameResult();
@@ -55,81 +48,6 @@ public class GameResult extends javax.swing.JFrame {
         t.shutdown();
     }
 
-//    public void getLevelRanking() {
-//        Results results = new Results();
-//         try {
-//            ResultSet rs = null;
-//            String data[][] = null;
-//
-//            rs = results.getRanking(GameBord.levelNo-1);
-//            ResultSetMetaData rsmd = rs.getMetaData();
-//
-//            rs.last();
-//            int count = rs.getRow();
-//            rs.beforeFirst();
-//            data = new String[count][5];
-//            int x = 0;
-//            while (rs.next()) {
-//                Vector v = new Vector();
-//                DefaultTableModel dtf = (javax.swing.table.DefaultTableModel) tblGames.getModel();
-//                v.add(data[x][0] = rs.getString("Name"));
-//                v.add(data[x][1] = rs.getString("Level"+(GameBord.levelNo-1)+"Score"));
-//                v.add(data[x][2] = rs.getString("Total"));
-////                v.add(data[x][3] = rs.getString(""));
-////                v.add(data[x][4] = rs.getString(""));
-//                dtf.addRow(v);
-//                //confirm = rs.getInt("confirm");
-//                x = x + 1;
-//            }
-//
-//        } catch (SQLException ex) {
-//            Logger.getLogger(SelectGame.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//        
-//    }
-//    private void ShowGrid() {
-//        String data[][] = null;
-//        String colu[] = new String[]{"Player", "Level Score", "Total"};
-//        DefaultTableModel model = new DefaultTableModel(data, colu) {
-//            //@Override
-//            public boolean isCellEditable(int x, int y) {
-//                if (y == 1) {
-//                    return true;
-//                } else {
-//                    return false;
-//                }
-//            }
-//        };
-//
-//        tblGames.setModel(model);
-//        tblGames.getTableHeader().setPreferredSize(new Dimension(tblGames.getTableHeader().getPreferredSize().width, 35));
-//        JTableHeader head = tblGames.getTableHeader();
-//        head.setFont(head.getFont().deriveFont(Font.BOLD));
-//
-//        DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
-//        rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
-//        tblGames.getColumnModel().getColumn(1).setCellRenderer(rightRenderer);
-//        tblGames.getColumnModel().getColumn(2).setCellRenderer(rightRenderer);
-//        tblGames.setShowGrid(false);
-//        tblGames.setBorder( null );
-//        tblGames.setOpaque(false);
-//        // model.setRowCount(20);
-//        TableColumn col0 = tblGames.getColumnModel().getColumn(1);
-//        col0.setMinWidth(40);
-//        col0.setPreferredWidth(40);
-//        col0.setMaxWidth(40);
-//
-//        TableColumn col1 = tblGames.getColumnModel().getColumn(1);
-//        col1.setMinWidth(40);
-//        col1.setPreferredWidth(40);
-//        col1.setMaxWidth(40);
-//
-//        TableColumn col2 = tblGames.getColumnModel().getColumn(2);
-//        col2.setMinWidth(40);
-//        col2.setPreferredWidth(40);
-//        col2.setMaxWidth(40);
-//
-//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -284,7 +202,6 @@ public class GameResult extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
-        // TODO add your handling code here:
         if ((GameBoard.levelNo - 1) < 5) {
             GameBoardScreen gameBoard = new GameBoardScreen();
             gameBoard.setVisible(true);
@@ -297,43 +214,6 @@ public class GameResult extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnNextActionPerformed
 
-//    /**
-//     * @param args the command line arguments
-//     */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(GameResult.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(GameResult.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(GameResult.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(GameResult.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//        //</editor-fold>
-//        //</editor-fold>
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new GameResult().setVisible(true);
-//            }
-//        });
-//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnNext;

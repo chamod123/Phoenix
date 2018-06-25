@@ -48,8 +48,6 @@ public class GameBoardScreen extends javax.swing.JFrame {
         rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
         tblScoreBoard.getColumnModel().getColumn(1).setCellRenderer(rightRenderer);
 
-        // get the initial letter to player
-        //G.getInitialLetter();
         String x = getInitial();
         btnFirst.setText(x);
         String y = getInitial();
@@ -74,15 +72,11 @@ public class GameBoardScreen extends javax.swing.JFrame {
         String x;
         G.getInitialLetter();
         x = String.valueOf(G.getInitialLetter1());
-    
+
         if (x.equals("W") || x.equals("X") || x.equals("Q") || x.equals("Z") || x.equals("J")) {
             if (x.equals(btnFirst.getText()) || x.equals(btnSecond.getText()) || x.equals(btnThird.getText()) || x.equals(btnForth.getText()) || x.equals(btnFifth.getText()) || x.equals(btnSixth.getText()) || x.equals(btnSeventh.getText()) || x.equals(btnEighth.getText()) || x.equals(btnNineth.getText()) || x.equals(btnTenth.getText()) || x.equals(btnEleventh.getText())) {
                 x = setConsonant();
             }
-             if (x.equals(btnFirst.getText()) || x.equals(btnSecond.getText()) || x.equals(btnThird.getText()) || x.equals(btnForth.getText()) || x.equals(btnFifth.getText()) || x.equals(btnSixth.getText()) || x.equals(btnSeventh.getText()) || x.equals(btnEighth.getText()) || x.equals(btnNineth.getText()) || x.equals(btnTenth.getText()) || x.equals(btnEleventh.getText())) {
-                x = setConsonant();
-            }
-            
         }
         return x;
     }

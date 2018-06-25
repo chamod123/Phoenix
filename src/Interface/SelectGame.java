@@ -225,7 +225,6 @@ public class SelectGame extends javax.swing.JFrame {
         btnPlay.setEnabled(false);
         btnQuit.setEnabled(false);
         gisLoad.setVisible(true);
-        // jPanel1.setEnabled(false);
         if (chk2Player.isSelected()) {
             gameTypeid = 1;
         } else if (chk3Player.isSelected()) {
@@ -233,7 +232,6 @@ public class SelectGame extends javax.swing.JFrame {
         } else if (chk4Player.isSelected()) {
             gameTypeid = 3;
         }
-        //gisLoad.setVisible(false);
         game.connectWithGame(gameTypeid);
 
         OnlineUser t = new OnlineUser(this);

@@ -89,7 +89,7 @@ public class RegisterScreen extends javax.swing.JFrame {
                 uIdActionPerformed(evt);
             }
         });
-        jPanel1.add(uId, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 30, 30));
+        jPanel1.add(uId, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, 10));
 
         uName.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         uName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -150,7 +150,7 @@ public class RegisterScreen extends javax.swing.JFrame {
         jPanel1.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, 260, 30));
 
         name.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 30, 30));
+        jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 10, 10));
 
         jButton3.setBackground(new java.awt.Color(56, 185, 33));
         jButton3.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -282,42 +282,6 @@ public class RegisterScreen extends javax.swing.JFrame {
     private void confirm_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm_passwordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_confirm_passwordActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RegisterScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RegisterScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RegisterScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RegisterScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new RegisterScreen().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPasswordField Password;
