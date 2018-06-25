@@ -70,6 +70,7 @@ public class AllPlayerDone extends Thread {
         }
         
         System.out.println("----------------------dispose");
+        GameBoardScreen.isdone=false;
         boardscreen.dispose();
 
 ////        SelectGame selectGame=new SelectGame();

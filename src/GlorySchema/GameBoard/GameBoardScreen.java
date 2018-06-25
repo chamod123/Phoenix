@@ -23,7 +23,8 @@ public class GameBoardScreen extends javax.swing.JFrame {
     Score score = new Score();
     int counter = 10;
     boolean isIt = false;
-
+    public static boolean isdone = false;
+    
     //   UpdateUI updateUI =new UpdateUI();
     /**
      * Creates new form GameBoard
@@ -40,6 +41,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
         btnDone.setBorder( null );
         setLocationRelativeTo(null);
         gisLoad.setVisible(false);
+        gisLoad1.setVisible(false);
         txtLevel.setText("Level " + (GameBoard.levelNo));
 
         DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
@@ -83,7 +85,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         gisLoad1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        txtTimePanal = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         txtTime = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -139,19 +141,19 @@ public class GameBoardScreen extends javax.swing.JFrame {
         jLabel2.setToolTipText("");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 350, 240, 50));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 102));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        txtTimePanal.setBackground(new java.awt.Color(102, 255, 102));
+        txtTimePanal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel16.setText("s");
-        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 40, 50));
+        txtTimePanal.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 40, 50));
 
         txtTime.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         txtTime.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        txtTime.setText("180");
-        jPanel2.add(txtTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, 50));
+        txtTime.setText("100");
+        txtTimePanal.add(txtTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, 50));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 120, 110, 50));
+        jPanel1.add(txtTimePanal, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 120, 110, 50));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -183,7 +185,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
         txtLevel.setText("GAME TIME");
         jPanel1.add(txtLevel, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 60, 220, 30));
 
-        jPanel4.setBackground(new java.awt.Color(153, 255, 102));
+        jPanel4.setBackground(new java.awt.Color(255, 255, 102));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtName.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -552,7 +554,11 @@ public class GameBoardScreen extends javax.swing.JFrame {
     private void btnDoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoneActionPerformed
         btnDone.setEnabled(false);
         gisLoad.setVisible(true);
+        gisLoad1.setVisible(true);
+         if(!isdone){
+            isdone=true;
         G.skipLevel(txtMainWord.getText(), this);
+         }
         // if(skipBoard){
         // System.out.println("----------------------dispose");
         // this.dispose();
@@ -684,7 +690,6 @@ public class GameBoardScreen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     public static javax.swing.JLabel player1;
@@ -700,5 +705,6 @@ public class GameBoardScreen extends javax.swing.JFrame {
     public static javax.swing.JTextField txtMainWord;
     private javax.swing.JLabel txtName;
     public static javax.swing.JLabel txtTime;
+    public static javax.swing.JPanel txtTimePanal;
     // End of variables declaration//GEN-END:variables
 }

@@ -15,9 +15,9 @@ public class Score {
 
     int noOfLettters; // word lenght
     double roundScore; // total Score of the round
-    double bones; //total bones
-    int initialBones = 3;
-    int maxLenthBones = 5;
+    double bonus; //total bonus
+    int initialBonus = 3;
+    int maxLengthBonus = 5;
     int[] position = {1, 2, 3, 5, 8, 12, 17, 13, 30, 38, 47};
     int hightScoreBones = 5;
 
@@ -26,15 +26,15 @@ public class Score {
 
         noOfLettersUsed(word);
 
-        if (isWord == false || noOfLettters ==0 ) {
+        if (isWord == false || noOfLettters <= 3 ) {
             roundScore = 0;
         } else {
             checkIfInitiolUsed(letter1, letter2, letter3, word);
             getScorePosition();
             if (noOfLettters == 11) {
-                bones = bones + maxLenthBones;
+                bonus = bonus + maxLengthBonus;
             }
-            roundScore = bones + roundScore;
+            roundScore = bonus + roundScore;
         }
 
         //data base save
@@ -94,11 +94,11 @@ public class Score {
         for (int i = 0; noOfLettters > i; i++) {
             String letter = word.trim().substring(i, i + 1);
             if (letter.equals(letter1) || letter.equals(letter2) || letter.equals(letter3)) {
-                bones = bones + initialBones;
+                bonus = bonus + initialBonus;
             }
 
-            if (letter.equals("J") || letter.equals("Q") || letter.equals("Z")) {
-                bones = bones + 8;
+            if (letter.equals("j") || letter.equals("q") || letter.equals("z") || letter.equals("x") || letter.equals("w")) {
+                bonus = bonus + 8;
             }
         }
     }

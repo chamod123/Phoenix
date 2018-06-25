@@ -49,15 +49,15 @@ public class GameBoard {
 
     public void skipLevel(String word, GameBoardScreen boardscreen) {
         WordSearch w = new WordSearch();
-        System.out.println("--------------------"+word);
-        w.setWord(word);
+        System.out.println("--------------------"+word.toLowerCase());
+        w.setWord(word.toLowerCase());
         w.matchWord();
         System.out.println("Debug word" + w.isCheckSpell());
-        if (w.isCheckSpell() == true && !"".equals(word) ) {
-            score.getTotalScore(word, GameBoardScreen.btnFirst.getText().trim(), GameBoardScreen.btnSecond.getText().trim(), GameBoardScreen.btnThird.getText().trim(), w.isCheckSpell());
+        if (w.isCheckSpell() == true && !"".equals(word.toLowerCase()) ) {
+            score.getTotalScore(word.toLowerCase(), GameBoardScreen.btnFirst.getText().trim(), GameBoardScreen.btnSecond.getText().trim(), GameBoardScreen.btnThird.getText().trim(), w.isCheckSpell());
         } else {
             //JOptionPane.showMessageDialog(null, "Wrong word");
-            score.getTotalScore(word, GameBoardScreen.btnFirst.getText().trim(), GameBoardScreen.btnSecond.getText().trim(), GameBoardScreen.btnThird.getText().trim(), w.isCheckSpell());
+            score.getTotalScore(word.toLowerCase(), GameBoardScreen.btnFirst.getText().trim(), GameBoardScreen.btnSecond.getText().trim(), GameBoardScreen.btnThird.getText().trim(), w.isCheckSpell());
         }
         
         AllPlayerDone t = new AllPlayerDone(boardscreen);
