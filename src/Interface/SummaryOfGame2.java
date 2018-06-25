@@ -31,6 +31,10 @@ public class SummaryOfGame2 extends javax.swing.JFrame {
 
         setUndecorated(true);
         initComponents();
+        btnQuit.setContentAreaFilled( false );
+        btnQuit.setBorder( null );
+        btnPlayAgain.setContentAreaFilled( false );        
+        btnPlayAgain.setBorder( null );
         setLocationRelativeTo(null);
         setLocationRelativeTo(null);
 
@@ -61,7 +65,7 @@ public class SummaryOfGame2 extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        btnPlayAgain = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         player2 = new javax.swing.JPanel();
         level2score1 = new javax.swing.JLabel();
@@ -76,7 +80,7 @@ public class SummaryOfGame2 extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
+        btnQuit = new javax.swing.JButton();
         txtName0 = new javax.swing.JLabel();
         txtName1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -96,6 +100,10 @@ public class SummaryOfGame2 extends javax.swing.JFrame {
         level5score0 = new javax.swing.JLabel();
         total0 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -108,16 +116,16 @@ public class SummaryOfGame2 extends javax.swing.JFrame {
         jLabel1.setText("SUMMARY");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, 210, 40));
 
-        jButton2.setBackground(new java.awt.Color(0, 255, 0));
-        jButton2.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Play Again");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnPlayAgain.setBackground(new java.awt.Color(0, 255, 0));
+        btnPlayAgain.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        btnPlayAgain.setForeground(new java.awt.Color(255, 255, 255));
+        btnPlayAgain.setText("PLAY AGAIN");
+        btnPlayAgain.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnPlayAgainActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 540, 120, 40));
+        jPanel1.add(btnPlayAgain, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 500, 170, 40));
 
         jLabel2.setBackground(new java.awt.Color(153, 153, 255));
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 70, 80));
@@ -229,17 +237,17 @@ public class SummaryOfGame2 extends javax.swing.JFrame {
 
         jPanel1.add(player2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 310, 200, 150));
 
-        jButton5.setBackground(new java.awt.Color(56, 185, 33));
-        jButton5.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-shutdown-25.png"))); // NOI18N
-        jButton5.setText("Quit");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnQuit.setBackground(new java.awt.Color(56, 185, 33));
+        btnQuit.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        btnQuit.setForeground(new java.awt.Color(255, 255, 255));
+        btnQuit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-shutdown-25.png"))); // NOI18N
+        btnQuit.setText("QUIT");
+        btnQuit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnQuitActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 550, 120, 40));
+        jPanel1.add(btnQuit, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 500, 160, 40));
 
         txtName0.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtName0.setForeground(new java.awt.Color(0, 255, 0));
@@ -328,6 +336,21 @@ public class SummaryOfGame2 extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/summary.png"))); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, -1, -1));
 
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/hbd.gif"))); // NOI18N
+        jLabel6.setText("jLabel6");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, -10, 490, 460));
+
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/hbd.gif"))); // NOI18N
+        jLabel20.setText("jLabel6");
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 490, 420));
+
+        jLabel28.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/btn.png"))); // NOI18N
+        jPanel1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 500, -1, -1));
+
+        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/btn.png"))); // NOI18N
+        jPanel1.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 500, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -345,17 +368,17 @@ public class SummaryOfGame2 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnPlayAgainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayAgainActionPerformed
         SelectGame selectgame = new SelectGame();
         selectgame.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnPlayAgainActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitActionPerformed
         GameType gametype = new GameType();
         gametype.deleteTable();
         this.dispose();
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_btnQuitActionPerformed
 
 //    private void ShowGrid() {
 //        String data[][] = null;
@@ -491,8 +514,8 @@ public class SummaryOfGame2 extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton btnPlayAgain;
+    private javax.swing.JButton btnQuit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -505,10 +528,14 @@ public class SummaryOfGame2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;

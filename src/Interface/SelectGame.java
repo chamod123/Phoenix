@@ -20,6 +20,10 @@ public class SelectGame extends javax.swing.JFrame {
     public SelectGame() {
         setUndecorated(true);
         initComponents();
+        btnPlay.setContentAreaFilled( false );
+        btnPlay.setBorder( null );
+        btnQuit.setContentAreaFilled( false );
+        btnQuit.setBorder( null );
 //        ShowGrid();
 //        getGameData(); // show current Games
 
@@ -111,15 +115,19 @@ public class SelectGame extends javax.swing.JFrame {
         btnQuit = new javax.swing.JButton();
         btnPlay = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        gisLoad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/loading.gif"))); // NOI18N
-        gisLoad.setText("jLabel2");
-        jPanel1.add(gisLoad, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 670, 260));
+        gisLoad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/loader.gif"))); // NOI18N
+        jPanel1.add(gisLoad, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 260, 260));
 
         jButton2.setBackground(new java.awt.Color(153, 153, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/help.png"))); // NOI18N
@@ -127,47 +135,56 @@ public class SelectGame extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 153));
-        jLabel1.setText("Select Game ");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, 150, -1));
+        jLabel1.setText("SELECT GAME");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 190, -1));
 
         chk2Player.setBackground(null
         );
         buttonGroup1.add(chk2Player);
-        chk2Player.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
-        chk2Player.setText("2 Player");
+        chk2Player.setFont(new java.awt.Font("Consolas", 1, 36)); // NOI18N
+        chk2Player.setForeground(new java.awt.Color(255, 255, 255));
+        chk2Player.setText("2 PLAYER");
+        chk2Player.setFocusCycleRoot(true);
+        chk2Player.setOpaque(false);
         chk2Player.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chk2PlayerActionPerformed(evt);
             }
         });
-        jPanel1.add(chk2Player, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 220, 80));
+        jPanel1.add(chk2Player, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, 220, 80));
 
         chk3Player.setBackground(null
         );
         buttonGroup1.add(chk3Player);
-        chk3Player.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
-        chk3Player.setText("3 Player");
+        chk3Player.setFont(new java.awt.Font("Consolas", 1, 36)); // NOI18N
+        chk3Player.setForeground(new java.awt.Color(255, 255, 255));
+        chk3Player.setText("3 PLAYER");
+        chk3Player.setFocusCycleRoot(true);
+        chk3Player.setOpaque(false);
         chk3Player.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chk3PlayerActionPerformed(evt);
             }
         });
-        jPanel1.add(chk3Player, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, 220, 80));
+        jPanel1.add(chk3Player, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, 220, 80));
 
         chk4Player.setBackground(null
         );
         buttonGroup1.add(chk4Player);
-        chk4Player.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
-        chk4Player.setText("4 Player");
+        chk4Player.setFont(new java.awt.Font("Consolas", 1, 36)); // NOI18N
+        chk4Player.setForeground(new java.awt.Color(255, 255, 255));
+        chk4Player.setText("4 PLAYER");
+        chk4Player.setFocusCycleRoot(true);
+        chk4Player.setOpaque(false);
         chk4Player.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chk4PlayerActionPerformed(evt);
             }
         });
-        jPanel1.add(chk4Player, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, 220, 80));
+        jPanel1.add(chk4Player, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 420, 220, 80));
 
         btnQuit.setBackground(new java.awt.Color(56, 185, 33));
-        btnQuit.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        btnQuit.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         btnQuit.setForeground(new java.awt.Color(255, 255, 255));
         btnQuit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-shutdown-25.png"))); // NOI18N
         btnQuit.setText("Quit");
@@ -176,10 +193,10 @@ public class SelectGame extends javax.swing.JFrame {
                 btnQuitActionPerformed(evt);
             }
         });
-        jPanel1.add(btnQuit, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 120, 40));
+        jPanel1.add(btnQuit, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 560, 160, 40));
 
         btnPlay.setBackground(new java.awt.Color(56, 185, 33));
-        btnPlay.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        btnPlay.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         btnPlay.setForeground(new java.awt.Color(255, 255, 255));
         btnPlay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-game-controller-25.png"))); // NOI18N
         btnPlay.setText("Play");
@@ -193,10 +210,26 @@ public class SelectGame extends javax.swing.JFrame {
                 btnPlayActionPerformed(evt);
             }
         });
-        jPanel1.add(btnPlay, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 400, 120, 40));
+        jPanel1.add(btnPlay, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 560, 170, 40));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/phoenix50.png"))); // NOI18N
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 460, -1, 70));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, -1, 70));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/smallleaves.gif"))); // NOI18N
+        jLabel5.setText("jLabel5");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, -30, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/btn.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 560, -1, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/smallleaves.gif"))); // NOI18N
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, -1, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/btn.png"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 560, -1, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/result.png"))); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -208,7 +241,7 @@ public class SelectGame extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 694, Short.MAX_VALUE)
         );
 
         pack();
@@ -308,6 +341,11 @@ public class SelectGame extends javax.swing.JFrame {
     private javax.swing.JLabel gisLoad;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

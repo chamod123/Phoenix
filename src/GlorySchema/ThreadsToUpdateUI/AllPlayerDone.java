@@ -7,7 +7,6 @@ package GlorySchema.ThreadsToUpdateUI;
 
 import GlorySchema.GameBoard.GameBoard;
 import GlorySchema.GameBoard.GameBoardScreen;
-import static GlorySchema.GameBoard.GameBoardScreen.isdone;
 import GlorySchema.Player;
 import static GlorySchema.Player.OnlinePlayers;
 import Interface.GameResult;
@@ -55,13 +54,14 @@ public class AllPlayerDone extends Thread {
                 summary.setVisible(true);
             } else if (gameTypeid == 2) {
                 SummaryOfGame3 summary = new SummaryOfGame3();
-                summary.setVisible(true); 
+                summary.setVisible(true);
             } else if (gameTypeid == 3) {
                 SummaryOfGame summary = new SummaryOfGame();
                 summary.setVisible(true);
             }
             // this.dispose();
         } else {
+            //level result 
             GameResult result = new GameResult();
 
             result.setVisible(true);
@@ -70,7 +70,6 @@ public class AllPlayerDone extends Thread {
         }
         
         System.out.println("----------------------dispose");
-        isdone=false;
         boardscreen.dispose();
 
 ////        SelectGame selectGame=new SelectGame();

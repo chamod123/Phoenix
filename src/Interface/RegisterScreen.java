@@ -92,6 +92,7 @@ public class RegisterScreen extends javax.swing.JFrame {
         jPanel1.add(uId, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 30, 30));
 
         uName.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        uName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         uName.setText(" ");
         uName.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -106,6 +107,7 @@ public class RegisterScreen extends javax.swing.JFrame {
         jPanel1.add(uName, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, 260, 30));
 
         Password.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        Password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PasswordActionPerformed(evt);
@@ -114,6 +116,7 @@ public class RegisterScreen extends javax.swing.JFrame {
         jPanel1.add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, 260, 30));
 
         confirm_password.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        confirm_password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         confirm_password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 confirm_passwordActionPerformed(evt);
@@ -143,6 +146,7 @@ public class RegisterScreen extends javax.swing.JFrame {
         jPanel1.add(btn_mainmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 590, 100, 50));
 
         email.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        email.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel1.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, 260, 30));
 
         name.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N

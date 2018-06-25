@@ -8,10 +8,6 @@ package GlorySchema;
 import Db.DataBase;
 import static GlorySchema.GameBoard.GameBoard.levelNo;
 import static GlorySchema.GameType.tableName;
-import Interface.LoginScreen;
-import static Interface.LoginScreen.PlayerId;
-import static Interface.LoginScreen.PlayerName;
-import Interface.SelectGame;
 import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -50,31 +46,7 @@ public class Player {
         return id;
     }
 
-    public void loging(String userName, String password, LoginScreen log) {
-         try {
-            DataBase db = new DataBase();
-            String username = userName;
-            ResultSet rs = null;
-
-            String query = "SELECT * FROM player WHERE UserName  = '" + username + "'";
-            rs = (ResultSet) db.fetch(query);
-            if (rs.next()) {
-                PlayerName = rs.getString("Name");
-                PlayerId = rs.getString("UserId");
-                if (password.equals(rs.getString("Password"))) {
-                    // JOptionPane.showMessageDialog(null, "Success", "InfoBox: " + "Done", JOptionPane.INFORMATION_MESSAGE);
-                    SelectGame breq = new SelectGame();
-                    breq.setVisible(true);
-                    log.dispose();
-                    breq = null;
-
-                } else {
-                    JOptionPane.showMessageDialog(null, "Failed", "InfoBox: " + "Error", JOptionPane.INFORMATION_MESSAGE);
-                }
-            }
-        } catch (Exception ex) {
-            Logger.getLogger(LoginScreen.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    public void loging() {
     }
 
     public void editDetails() {

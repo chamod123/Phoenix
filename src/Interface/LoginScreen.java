@@ -6,7 +6,6 @@
 package Interface;
 
 import Db.DataBase;
-import GlorySchema.Player;
 import GlorySchema.Validation;
 import java.sql.ResultSet;
 import java.util.logging.Level;
@@ -21,7 +20,6 @@ public class LoginScreen extends javax.swing.JFrame {
 
     public static String PlayerId;
     public static String PlayerName;
-    Player player = new Player();
 
     Validation value = new Validation();
 
@@ -36,8 +34,10 @@ public class LoginScreen extends javax.swing.JFrame {
         initComponents();
         btnLogin.setContentAreaFilled( false );
         btnLogin.setBorder( null );
-        btnregister.setContentAreaFilled( false );
+        btnregister.setContentAreaFilled( false );        
         btnregister.setBorder( null );
+        btnQuit.setContentAreaFilled( false );
+        btnQuit.setBorder( null );
         txtUsername.setOpaque(false);
         txtUsername.setBorder( null );
         txt_password.setOpaque(false);
@@ -60,11 +60,12 @@ public class LoginScreen extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         txtUsername = new javax.swing.JTextField();
         txt_password = new javax.swing.JPasswordField();
-        jButton3 = new javax.swing.JButton();
+        btnQuit = new javax.swing.JButton();
         btnregister = new javax.swing.JButton();
         btnLogin = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -72,23 +73,25 @@ public class LoginScreen extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(153, 153, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txtUsername.setFont(new java.awt.Font("Trebuchet MS", 1, 16)); // NOI18N
+        txtUsername.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        txtUsername.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel2.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, 310, 40));
 
-        txt_password.setFont(new java.awt.Font("Trebuchet MS", 1, 16)); // NOI18N
+        txt_password.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        txt_password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel2.add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, 300, 40));
 
-        jButton3.setBackground(new java.awt.Color(56, 185, 33));
-        jButton3.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-shutdown-25.png"))); // NOI18N
-        jButton3.setText("Quit");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnQuit.setBackground(new java.awt.Color(56, 185, 33));
+        btnQuit.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        btnQuit.setForeground(new java.awt.Color(255, 255, 255));
+        btnQuit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-shutdown-25.png"))); // NOI18N
+        btnQuit.setText("QUIT");
+        btnQuit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnQuitActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 600, 120, 40));
+        jPanel2.add(btnQuit, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 630, 120, 40));
 
         btnregister.setBackground(new java.awt.Color(56, 185, 33));
         btnregister.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -99,7 +102,7 @@ public class LoginScreen extends javax.swing.JFrame {
                 btnregisterActionPerformed(evt);
             }
         });
-        jPanel2.add(btnregister, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 580, 200, 60));
+        jPanel2.add(btnregister, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 630, 200, 60));
 
         btnLogin.setBackground(new java.awt.Color(102, 102, 255));
         btnLogin.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -112,12 +115,15 @@ public class LoginScreen extends javax.swing.JFrame {
         jPanel2.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 480, 130, 60));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/phoenix50.png"))); // NOI18N
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 590, -1, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 630, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/login.png"))); // NOI18N
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 500, 570));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 680));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/btn.png"))); // NOI18N
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 630, 190, -1));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 740));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -129,7 +135,30 @@ public class LoginScreen extends javax.swing.JFrame {
             return;
         }
 
-       player.loging(txtUsername.getText().trim(),txt_password.getText().trim(), this);
+        try {
+            DataBase db = new DataBase();
+            String username = txtUsername.getText();
+            ResultSet rs = null;
+
+            String query = "SELECT * FROM player WHERE UserName  = '" + username + "'";
+            rs = (ResultSet) db.fetch(query);
+            if (rs.next()) {
+                PlayerName = rs.getString("Name");
+                PlayerId = rs.getString("UserId");
+                if (txt_password.getText().equals(rs.getString("Password"))) {
+                    // JOptionPane.showMessageDialog(null, "Success", "InfoBox: " + "Done", JOptionPane.INFORMATION_MESSAGE);
+                    SelectGame breq = new SelectGame();
+                    breq.setVisible(true);
+                    this.dispose();
+                    breq = null;
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "Failed", "InfoBox: " + "Error", JOptionPane.INFORMATION_MESSAGE);
+                }
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(LoginScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnregisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregisterActionPerformed
@@ -143,9 +172,9 @@ public class LoginScreen extends javax.swing.JFrame {
         //  new RegisterScreen().setVisible(rootPaneCheckingEnabled);
     }//GEN-LAST:event_btnregisterActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitActionPerformed
         this.dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnQuitActionPerformed
 
 //    private int oneX = 7;
 //    private int oneY = 7;
@@ -245,8 +274,9 @@ public class LoginScreen extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
+    private javax.swing.JButton btnQuit;
     private javax.swing.JButton btnregister;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;

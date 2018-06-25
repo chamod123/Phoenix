@@ -25,6 +25,10 @@ public class SummaryOfGame extends javax.swing.JFrame {
         setUndecorated(true);
         initComponents();
         setLocationRelativeTo(null);
+        btnQuit.setContentAreaFilled( false );
+        btnQuit.setBorder( null );
+        btnPlayAgain.setContentAreaFilled( false );        
+        btnPlayAgain.setBorder( null );
         player1.setBorder( null );
         player1.setOpaque(false);
         player2.setBorder( null );
@@ -63,6 +67,7 @@ public class SummaryOfGame extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
         player1 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -76,7 +81,7 @@ public class SummaryOfGame extends javax.swing.JFrame {
         level4score0 = new javax.swing.JLabel();
         level5score0 = new javax.swing.JLabel();
         total0 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        btnPlayAgain = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         player2 = new javax.swing.JPanel();
         level2score1 = new javax.swing.JLabel();
@@ -118,7 +123,7 @@ public class SummaryOfGame extends javax.swing.JFrame {
         jLabel28 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
+        btnQuit = new javax.swing.JButton();
         txtName0 = new javax.swing.JLabel();
         txtName1 = new javax.swing.JLabel();
         txtName2 = new javax.swing.JLabel();
@@ -132,6 +137,9 @@ public class SummaryOfGame extends javax.swing.JFrame {
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -143,6 +151,10 @@ public class SummaryOfGame extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("SUMMARY");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, 210, 40));
+
+        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/hbd.gif"))); // NOI18N
+        jLabel37.setText("jLabel6");
+        jPanel1.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, -40, 490, 420));
 
         player1.setBackground(new java.awt.Color(177, 75, 25));
 
@@ -251,16 +263,16 @@ public class SummaryOfGame extends javax.swing.JFrame {
 
         jPanel1.add(player1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, 190, 150));
 
-        jButton2.setBackground(new java.awt.Color(0, 255, 0));
-        jButton2.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Play Again");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnPlayAgain.setBackground(new java.awt.Color(0, 255, 0));
+        btnPlayAgain.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
+        btnPlayAgain.setForeground(new java.awt.Color(255, 255, 255));
+        btnPlayAgain.setText("Play Again");
+        btnPlayAgain.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnPlayAgainActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 560, 120, 40));
+        jPanel1.add(btnPlayAgain, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 530, 160, 40));
 
         jLabel2.setBackground(new java.awt.Color(153, 153, 255));
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, 80));
@@ -589,17 +601,17 @@ public class SummaryOfGame extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/4th.png"))); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 150, 110, 130));
 
-        jButton5.setBackground(new java.awt.Color(56, 185, 33));
-        jButton5.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-shutdown-25.png"))); // NOI18N
-        jButton5.setText("Quit");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnQuit.setBackground(new java.awt.Color(56, 185, 33));
+        btnQuit.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        btnQuit.setForeground(new java.awt.Color(255, 255, 255));
+        btnQuit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-shutdown-25.png"))); // NOI18N
+        btnQuit.setText("QUIT");
+        btnQuit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnQuitActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 570, 120, 40));
+        jPanel1.add(btnQuit, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 530, 160, 40));
 
         txtName0.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtName0.setForeground(new java.awt.Color(51, 255, 0));
@@ -652,6 +664,16 @@ public class SummaryOfGame extends javax.swing.JFrame {
         jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/summary.png"))); // NOI18N
         jPanel1.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 260, -1, -1));
 
+        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/hbd.gif"))); // NOI18N
+        jLabel38.setText("jLabel6");
+        jPanel1.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, -50, 490, 420));
+
+        jLabel39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/btn.png"))); // NOI18N
+        jPanel1.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 530, -1, -1));
+
+        jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/btn.png"))); // NOI18N
+        jPanel1.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 530, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -666,17 +688,17 @@ public class SummaryOfGame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnPlayAgainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayAgainActionPerformed
         SelectGame selectgame = new SelectGame();
         selectgame.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnPlayAgainActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitActionPerformed
         GameType gametype = new GameType();
         gametype.deleteTable();
         this.dispose();
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_btnQuitActionPerformed
 
 //    private void ShowGrid() {
 //        String data[][] = null;
@@ -812,8 +834,8 @@ public class SummaryOfGame extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton btnPlayAgain;
+    private javax.swing.JButton btnQuit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -844,7 +866,11 @@ public class SummaryOfGame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
