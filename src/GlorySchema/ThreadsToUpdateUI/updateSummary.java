@@ -93,7 +93,7 @@ public class updateSummary extends Thread {
     public void setWinner1(ResultSet rs) {
         try {
             if (gameTypeid == 1) {
-                SummaryOfGame2.txtWon.setText(rs.getString("PlayerName"+" Won"));
+                SummaryOfGame2.txtWon.setText(rs.getString("PlayerName")+" Won");
                 SummaryOfGame2.txtName0.setText(rs.getString("PlayerName"));
                 SummaryOfGame2.level1score0.setText(rs.getString("Level1Score"));
                 SummaryOfGame2.level2score0.setText(rs.getString("Level2Score"));
@@ -102,7 +102,7 @@ public class updateSummary extends Thread {
                 SummaryOfGame2.level5score0.setText(rs.getString("Level5Score"));
                 SummaryOfGame2.total0.setText(rs.getString("Total"));
             } else if (gameTypeid == 2) {
-                SummaryOfGame3.txtWon.setText(rs.getString("PlayerName"+" Won"));
+                SummaryOfGame3.txtWon.setText(rs.getString("PlayerName")+" Won");
                 SummaryOfGame3.txtName0.setText(rs.getString("PlayerName"));
                 SummaryOfGame3.level1score0.setText(rs.getString("Level1Score"));
                 SummaryOfGame3.level2score0.setText(rs.getString("Level2Score"));
@@ -111,7 +111,7 @@ public class updateSummary extends Thread {
                 SummaryOfGame3.level5score0.setText(rs.getString("Level5Score"));
                 SummaryOfGame3.total0.setText(rs.getString("Total"));
             } else if (gameTypeid == 3) {
-                SummaryOfGame.txtWon.setText(rs.getString("PlayerName"+" Won"));
+                SummaryOfGame.txtWon.setText(rs.getString("PlayerName")+" Won");
                 SummaryOfGame.txtName0.setText(rs.getString("PlayerName"));
                 SummaryOfGame.level1score0.setText(rs.getString("Level1Score"));
                 SummaryOfGame.level2score0.setText(rs.getString("Level2Score"));

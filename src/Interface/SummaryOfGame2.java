@@ -5,6 +5,7 @@
  */
 package Interface;
 
+import GlorySchema.GameBoard.GameBoard;
 import GlorySchema.GameType;
 import GlorySchema.ThreadsToUpdateUI.updateSummary;
 
@@ -29,7 +30,7 @@ public class SummaryOfGame2 extends javax.swing.JFrame {
         btnPlayAgain.setContentAreaFilled(false);
         btnPlayAgain.setBorder(null);
         setLocationRelativeTo(null);
-        setLocationRelativeTo(null);
+       // setLocationRelativeTo(null);
 
         // player2.setBorder( null );
         // player2.setOpaque(false);
@@ -316,6 +317,7 @@ public class SummaryOfGame2 extends javax.swing.JFrame {
         SelectGame selectgame = new SelectGame();
         selectgame.setVisible(true);
         gametype.deleteTable();
+        GameBoard.levelNo=1;
         this.dispose();
     }//GEN-LAST:event_btnPlayAgainActionPerformed
 

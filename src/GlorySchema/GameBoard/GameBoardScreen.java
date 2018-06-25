@@ -49,12 +49,12 @@ public class GameBoardScreen extends javax.swing.JFrame {
         tblScoreBoard.getColumnModel().getColumn(1).setCellRenderer(rightRenderer);
 
         // get the initial letter to player
-        G.getInitialLetter();
-        String x = String.valueOf(G.getInitialLetter1());
+        //G.getInitialLetter();
+        String x = getInitial();
         btnFirst.setText(x);
-        String y = String.valueOf(G.getInitialLetter2());
+        String y = getInitial();
         btnSecond.setText(y);
-        String z = String.valueOf(G.getInitialLetter3());
+        String z = getInitial();
         btnThird.setText(z);
 
         G.saveInitialLetters(x, y, z);
@@ -68,6 +68,20 @@ public class GameBoardScreen extends javax.swing.JFrame {
 
         txtName.setText(LoginScreen.PlayerName);
 
+    }
+
+    public String getInitial() {
+        String x;
+        G.getInitialLetter();
+        x = String.valueOf(G.getInitialLetter1());
+    
+        if (x.equals("W") || x.equals("X") || x.equals("Q") || x.equals("Z") || x.equals("J")) {
+            if (x.equals(btnFirst.getText()) || x.equals(btnSecond.getText()) || x.equals(btnThird.getText()) || x.equals(btnForth.getText()) || x.equals(btnFifth.getText()) || x.equals(btnSixth.getText()) || x.equals(btnSeventh.getText()) || x.equals(btnEighth.getText()) || x.equals(btnNineth.getText()) || x.equals(btnTenth.getText()) || x.equals(btnEleventh.getText())) {
+                x = setConsonant();
+            }
+            
+        }
+        return x;
     }
 
     /**
@@ -467,8 +481,6 @@ public class GameBoardScreen extends javax.swing.JFrame {
         String x;
         G.getConstent();
         x = String.valueOf(G.getSelectedConst());
-      //  System.out.println(x);
-
         if (x.equals("W") || x.equals("X") || x.equals("Q") || x.equals("Z") || x.equals("J")) {
             if (x.equals(btnFirst.getText()) || x.equals(btnSecond.getText()) || x.equals(btnThird.getText()) || x.equals(btnForth.getText()) || x.equals(btnFifth.getText()) || x.equals(btnSixth.getText()) || x.equals(btnSeventh.getText()) || x.equals(btnEighth.getText()) || x.equals(btnNineth.getText()) || x.equals(btnTenth.getText()) || x.equals(btnEleventh.getText())) {
                 x = setConsonant();
@@ -578,7 +590,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
             isdone = true;
             G.skipLevel(txtMainWord.getText(), this);
         }
-       
+
     }//GEN-LAST:event_btnDoneActionPerformed
 
     private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
