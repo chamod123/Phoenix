@@ -39,6 +39,7 @@ public class Validation {
             Matcher matcher = pattern.matcher(Email);
             if (!matcher.matches()) {
                 JOptionPane.showMessageDialog(null, "Invalid Email address!!");
+                 return false;
             }
         }
 

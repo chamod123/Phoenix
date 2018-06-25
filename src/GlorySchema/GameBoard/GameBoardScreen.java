@@ -79,6 +79,9 @@ public class GameBoardScreen extends javax.swing.JFrame {
             if (x.equals(btnFirst.getText()) || x.equals(btnSecond.getText()) || x.equals(btnThird.getText()) || x.equals(btnForth.getText()) || x.equals(btnFifth.getText()) || x.equals(btnSixth.getText()) || x.equals(btnSeventh.getText()) || x.equals(btnEighth.getText()) || x.equals(btnNineth.getText()) || x.equals(btnTenth.getText()) || x.equals(btnEleventh.getText())) {
                 x = setConsonant();
             }
+             if (x.equals(btnFirst.getText()) || x.equals(btnSecond.getText()) || x.equals(btnThird.getText()) || x.equals(btnForth.getText()) || x.equals(btnFifth.getText()) || x.equals(btnSixth.getText()) || x.equals(btnSeventh.getText()) || x.equals(btnEighth.getText()) || x.equals(btnNineth.getText()) || x.equals(btnTenth.getText()) || x.equals(btnEleventh.getText())) {
+                x = setConsonant();
+            }
             
         }
         return x;

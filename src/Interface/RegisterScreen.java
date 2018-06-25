@@ -221,31 +221,33 @@ public class RegisterScreen extends javax.swing.JFrame {
         try {
             Validation val = new Validation();
             if (!val.checkNull(uId.getText(), "UserId")) {
-                return true;
+                return false;
             }
             if (!val.checkNull(name.getText(), "Name")) {
-                return true;
+                return false;
             }
             if (!val.checkNumaric(Name, "Name")) {
-                return true;
+                return false;
             }
             if (!val.checkNull(email.getText(), "Email")) {
-                return true;
+                return false;
             }
-            if (val.checkEmail(Email)) {
+            if (!val.checkEmail(Email)) {
+                 return false;
             }
             if (!val.checkNull(uName.getText(), "UserName")) {
-                return true;
+                return false;
             }
             if (val.checkNull(new String(Password.getPassword()), "Password")) {
-                if (val.checkPasswordLength(new String(Password.getPassword()))) {
+                if (!val.checkPasswordLength(new String(Password.getPassword()))) {
+                     return false;
                 }
             }
             if (!val.checkNull(new String(confirm_password.getPassword()), "Confirm Password")) {
-                return true;
+                return false;
             }
             if (!val.comfirmPassword(password, cPassword)) {
-                return true;
+                return false;
             } else {
                 Player insert = new Player();
                 int result = insert.insertDetails(UserId, Name, Email, UserName, password);// Insert data to the Player table in DB
