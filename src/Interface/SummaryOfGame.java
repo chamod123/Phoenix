@@ -15,7 +15,7 @@ import GlorySchema.ThreadsToUpdateUI.updateSummary;
 public class SummaryOfGame extends javax.swing.JFrame {
 
     updateSummary t = new updateSummary();
-
+    GameType gametype = new GameType();
     int leaderTOp[] = null;
     int topTot[] = null;
 
@@ -25,32 +25,32 @@ public class SummaryOfGame extends javax.swing.JFrame {
         setUndecorated(true);
         initComponents();
         setLocationRelativeTo(null);
-        btnQuit.setContentAreaFilled( false );
-        btnQuit.setBorder( null );
-        btnPlayAgain.setContentAreaFilled( false );        
-        btnPlayAgain.setBorder( null );
-        player1.setBorder( null );
-        player1.setOpaque(false);
-        player2.setBorder( null );
-        player2.setOpaque(false);
-        player3.setBorder( null );
-        player3.setOpaque(false);
-        player4.setBorder( null );
-        player4.setOpaque(false);
-        
+        btnQuit.setContentAreaFilled(false);
+        btnQuit.setBorder(null);
+        btnPlayAgain.setContentAreaFilled(false);
+        btnPlayAgain.setBorder(null);
+//        player1.setBorder( null );
+//        player1.setOpaque(false);
+//        player2.setBorder( null );
+//        player2.setOpaque(false);
+//        player3.setBorder( null );
+//        player3.setOpaque(false);
+//        player4.setBorder( null );
+//        player4.setOpaque(false);
+//        
+//
+//        player1.setVisible(false);
+//        player2.setVisible(false);
+//        player3.setVisible(false);
+//        player4.setVisible(false);
 
-        player1.setVisible(false);
-        player2.setVisible(false);
-        player3.setVisible(false);
-        player4.setVisible(false);
-
-       // ShowGrid();
+        // ShowGrid();
         t.start();
         t.sleepThread();
         t.shutdown();
 //        getTopTot();
         //sort() ;
-       // summaryTbl.setOpaque(true);
+        // summaryTbl.setOpaque(true);
     }
 
     /**
@@ -66,202 +66,92 @@ public class SummaryOfGame extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        txtWon = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
-        player1 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        level1score0 = new javax.swing.JLabel();
-        level2score0 = new javax.swing.JLabel();
-        level3score0 = new javax.swing.JLabel();
-        level4score0 = new javax.swing.JLabel();
-        level5score0 = new javax.swing.JLabel();
-        total0 = new javax.swing.JLabel();
         btnPlayAgain = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        player2 = new javax.swing.JPanel();
-        level2score1 = new javax.swing.JLabel();
-        level3score1 = new javax.swing.JLabel();
-        total1 = new javax.swing.JLabel();
-        level1score1 = new javax.swing.JLabel();
-        level4score1 = new javax.swing.JLabel();
-        level5score1 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        player3 = new javax.swing.JPanel();
-        level1score2 = new javax.swing.JLabel();
-        level4score2 = new javax.swing.JLabel();
-        level2score2 = new javax.swing.JLabel();
-        total2 = new javax.swing.JLabel();
-        level5score2 = new javax.swing.JLabel();
-        level3score2 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        player4 = new javax.swing.JPanel();
-        level1score3 = new javax.swing.JLabel();
-        level4score3 = new javax.swing.JLabel();
-        total3 = new javax.swing.JLabel();
-        level3score3 = new javax.swing.JLabel();
-        level2score3 = new javax.swing.JLabel();
-        level5score3 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         btnQuit = new javax.swing.JButton();
         txtName0 = new javax.swing.JLabel();
         txtName1 = new javax.swing.JLabel();
         txtName2 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        level4score0 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        level5score0 = new javax.swing.JLabel();
+        total0 = new javax.swing.JLabel();
+        level3score0 = new javax.swing.JLabel();
+        level2score0 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        level1score0 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        total1 = new javax.swing.JLabel();
+        level5score1 = new javax.swing.JLabel();
+        level4score1 = new javax.swing.JLabel();
+        level3score1 = new javax.swing.JLabel();
+        level2score1 = new javax.swing.JLabel();
+        level1score1 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        total2 = new javax.swing.JLabel();
+        level5score2 = new javax.swing.JLabel();
+        level4score2 = new javax.swing.JLabel();
+        level3score2 = new javax.swing.JLabel();
+        level2score2 = new javax.swing.JLabel();
+        level1score2 = new javax.swing.JLabel();
         txtName3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        total3 = new javax.swing.JLabel();
+        level5score3 = new javax.swing.JLabel();
+        level4score3 = new javax.swing.JLabel();
+        level3score3 = new javax.swing.JLabel();
+        level2score3 = new javax.swing.JLabel();
+        level1score3 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 153));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("SUMMARY");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, 210, 40));
+        txtWon.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
+        txtWon.setForeground(new java.awt.Color(0, 0, 153));
+        txtWon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtWon.setText("SUMMARY");
+        jPanel1.add(txtWon, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, 390, 40));
 
         jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/hbd.gif"))); // NOI18N
         jLabel37.setText("jLabel6");
-        jPanel1.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, -40, 490, 420));
-
-        player1.setBackground(new java.awt.Color(177, 75, 25));
-
-        jLabel8.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("LEVEL 1 -");
-
-        jLabel9.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("LEVEL 2 -");
-
-        jLabel10.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("LEVEL 3 -");
-
-        jLabel11.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("LEVEL 4 -");
-
-        jLabel12.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("LEVEL 5 -");
-
-        jLabel13.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("TOTAL   -");
-
-        level1score0.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        level1score0.setForeground(new java.awt.Color(51, 255, 0));
-        level1score0.setText("Level 1");
-
-        level2score0.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        level2score0.setForeground(new java.awt.Color(51, 255, 0));
-        level2score0.setText("Level 2 ");
-
-        level3score0.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        level3score0.setForeground(new java.awt.Color(51, 255, 0));
-        level3score0.setText("Level 3 ");
-
-        level4score0.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        level4score0.setForeground(new java.awt.Color(51, 255, 0));
-        level4score0.setText("Level 4 ");
-
-        level5score0.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        level5score0.setForeground(new java.awt.Color(51, 255, 0));
-        level5score0.setText("Level 5 ");
-
-        total0.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        total0.setForeground(new java.awt.Color(51, 255, 0));
-        total0.setText("Total ");
-
-        javax.swing.GroupLayout player1Layout = new javax.swing.GroupLayout(player1);
-        player1.setLayout(player1Layout);
-        player1Layout.setHorizontalGroup(
-            player1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(player1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(player1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(player1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(level1score0, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(level2score0, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(level3score0, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(level4score0, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(level5score0, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(total0, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23))
-        );
-        player1Layout.setVerticalGroup(
-            player1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(player1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(player1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(player1Layout.createSequentialGroup()
-                        .addGroup(player1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(level1score0))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel13))
-                    .addGroup(player1Layout.createSequentialGroup()
-                        .addComponent(level2score0)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(level3score0)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(level4score0)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(level5score0)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(total0)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(player1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, 190, 150));
+        jPanel1.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 420));
 
         btnPlayAgain.setBackground(new java.awt.Color(0, 255, 0));
         btnPlayAgain.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
@@ -276,327 +166,6 @@ public class SummaryOfGame extends javax.swing.JFrame {
 
         jLabel2.setBackground(new java.awt.Color(153, 153, 255));
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, 80));
-
-        player2.setBackground(new java.awt.Color(177, 75, 25));
-
-        level2score1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        level2score1.setForeground(new java.awt.Color(0, 255, 0));
-        level2score1.setText("Level 2 ");
-
-        level3score1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        level3score1.setForeground(new java.awt.Color(0, 255, 0));
-        level3score1.setText("Level 3 ");
-
-        total1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        total1.setForeground(new java.awt.Color(0, 255, 0));
-        total1.setText("Total");
-
-        level1score1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        level1score1.setForeground(new java.awt.Color(0, 255, 0));
-        level1score1.setText("Level 1");
-
-        level4score1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        level4score1.setForeground(new java.awt.Color(0, 255, 0));
-        level4score1.setText("Level 4 ");
-
-        level5score1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        level5score1.setForeground(new java.awt.Color(0, 255, 0));
-        level5score1.setText("Level 5 ");
-
-        jLabel19.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel19.setText("TOTAL   -");
-
-        jLabel16.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setText("LEVEL 3 -");
-
-        jLabel17.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel17.setText("LEVEL 4 -");
-
-        jLabel18.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setText("LEVEL 5 -");
-
-        jLabel14.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("LEVEL 1 -");
-
-        jLabel15.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("LEVEL 2 -");
-
-        javax.swing.GroupLayout player2Layout = new javax.swing.GroupLayout(player2);
-        player2.setLayout(player2Layout);
-        player2Layout.setHorizontalGroup(
-            player2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(player2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(player2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
-                .addGroup(player2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(level1score1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(level2score1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(level3score1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(level4score1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(level5score1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(total1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-        player2Layout.setVerticalGroup(
-            player2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(player2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(player2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(player2Layout.createSequentialGroup()
-                        .addComponent(jLabel14)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel15)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel16)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel17)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel18)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel19))
-                    .addGroup(player2Layout.createSequentialGroup()
-                        .addComponent(level1score1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(level2score1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(level3score1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(level4score1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(level5score1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(total1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(player2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 320, 200, 150));
-
-        player3.setBackground(new java.awt.Color(177, 75, 25));
-
-        level1score2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        level1score2.setForeground(new java.awt.Color(0, 255, 0));
-        level1score2.setText("Level 1");
-
-        level4score2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        level4score2.setForeground(new java.awt.Color(0, 255, 0));
-        level4score2.setText("Level 4");
-
-        level2score2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        level2score2.setForeground(new java.awt.Color(0, 255, 0));
-        level2score2.setText("Level 2");
-
-        total2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        total2.setForeground(new java.awt.Color(0, 255, 0));
-        total2.setText("Total ");
-
-        level5score2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        level5score2.setForeground(new java.awt.Color(0, 255, 0));
-        level5score2.setText("Level 5 ");
-
-        level3score2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        level3score2.setForeground(new java.awt.Color(0, 255, 0));
-        level3score2.setText("Level 3");
-
-        jLabel25.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel25.setText("LEVEL 2 -");
-
-        jLabel22.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel22.setText("LEVEL 4 -");
-
-        jLabel24.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel24.setText("LEVEL 1 -");
-
-        jLabel20.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel20.setText("TOTAL   -");
-
-        jLabel21.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel21.setText("LEVEL 3 -");
-
-        jLabel23.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel23.setText("LEVEL 5 -");
-
-        javax.swing.GroupLayout player3Layout = new javax.swing.GroupLayout(player3);
-        player3.setLayout(player3Layout);
-        player3Layout.setHorizontalGroup(
-            player3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(player3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(player3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
-                .addGroup(player3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(level1score2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(level2score2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(level3score2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(level4score2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(level5score2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(total2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-        player3Layout.setVerticalGroup(
-            player3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(player3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(player3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(player3Layout.createSequentialGroup()
-                        .addComponent(jLabel24)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel25)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel21)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel22)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel23)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel20))
-                    .addGroup(player3Layout.createSequentialGroup()
-                        .addComponent(level1score2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(level2score2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(level3score2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(level4score2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(level5score2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(total2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(player3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, 200, 150));
-
-        player4.setBackground(new java.awt.Color(177, 75, 25));
-
-        level1score3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        level1score3.setForeground(new java.awt.Color(0, 255, 0));
-        level1score3.setText("Level 1 ");
-
-        level4score3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        level4score3.setForeground(new java.awt.Color(0, 255, 0));
-        level4score3.setText("Level 4 ");
-
-        total3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        total3.setForeground(new java.awt.Color(0, 255, 0));
-        total3.setText("Total ");
-
-        level3score3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        level3score3.setForeground(new java.awt.Color(0, 255, 0));
-        level3score3.setText("Level 3 ");
-
-        level2score3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        level2score3.setForeground(new java.awt.Color(0, 255, 0));
-        level2score3.setText("Level 2 ");
-
-        level5score3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        level5score3.setForeground(new java.awt.Color(0, 255, 0));
-        level5score3.setText("Level 5 ");
-
-        jLabel29.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel29.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel29.setText("TOTAL   -");
-
-        jLabel31.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel31.setText("LEVEL 5 -");
-
-        jLabel30.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel30.setText("LEVEL 3 -");
-
-        jLabel26.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel26.setText("LEVEL 2 -");
-
-        jLabel28.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel28.setText("LEVEL 1 -");
-
-        jLabel27.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel27.setText("LEVEL 4 -");
-
-        javax.swing.GroupLayout player4Layout = new javax.swing.GroupLayout(player4);
-        player4.setLayout(player4Layout);
-        player4Layout.setHorizontalGroup(
-            player4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, player4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(player4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabel26, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel30, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel31, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel29, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
-                .addGroup(player4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(level1score3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(level2score3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(level3score3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(level4score3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(level5score3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(total3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-        player4Layout.setVerticalGroup(
-            player4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(player4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(player4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(player4Layout.createSequentialGroup()
-                        .addComponent(jLabel28)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel26)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel30)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel27)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel31)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel29))
-                    .addGroup(player4Layout.createSequentialGroup()
-                        .addComponent(level1score3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(level2score3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(level3score3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(level4score3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(level5score3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(total3)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(player4, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 320, 200, 150));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/4th.png"))); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 150, 110, 130));
@@ -631,6 +200,190 @@ public class SummaryOfGame extends javax.swing.JFrame {
         txtName2.setText("name 1");
         jPanel1.add(txtName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 280, 200, 23));
 
+        jLabel24.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel24.setText("LEVEL 1 -");
+        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, 86, -1));
+
+        jLabel13.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("TOTAL   -");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 440, 86, -1));
+
+        level4score0.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        level4score0.setForeground(new java.awt.Color(51, 255, 0));
+        level4score0.setText("Level 4 ");
+        jPanel1.add(level4score0, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 400, 71, -1));
+
+        jLabel10.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("LEVEL 3 -");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 380, 86, -1));
+
+        jLabel9.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("LEVEL 2 -");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, 86, -1));
+
+        jLabel8.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("LEVEL 1 -");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 340, 86, -1));
+
+        level5score0.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        level5score0.setForeground(new java.awt.Color(51, 255, 0));
+        level5score0.setText("Level 5 ");
+        jPanel1.add(level5score0, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 420, 71, -1));
+
+        total0.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        total0.setForeground(new java.awt.Color(51, 0, 51));
+        total0.setText("Total ");
+        jPanel1.add(total0, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 440, 71, -1));
+
+        level3score0.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        level3score0.setForeground(new java.awt.Color(51, 255, 0));
+        level3score0.setText("Level 3 ");
+        jPanel1.add(level3score0, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 380, 71, -1));
+
+        level2score0.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        level2score0.setForeground(new java.awt.Color(51, 255, 0));
+        level2score0.setText("Level 2 ");
+        jPanel1.add(level2score0, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 360, 71, -1));
+
+        jLabel12.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("LEVEL 5 -");
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 420, 86, -1));
+
+        jLabel11.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("LEVEL 4 -");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 400, 86, -1));
+
+        level1score0.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        level1score0.setForeground(new java.awt.Color(51, 255, 0));
+        level1score0.setText("Level 1");
+        jPanel1.add(level1score0, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 340, 71, -1));
+
+        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/hbd.gif"))); // NOI18N
+        jLabel38.setText("jLabel6");
+        jPanel1.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 490, 420));
+
+        jLabel25.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel25.setText("LEVEL 2 -");
+        jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, 86, -1));
+
+        jLabel21.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel21.setText("LEVEL 3 -");
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 380, 86, -1));
+
+        jLabel14.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("LEVEL 1 -");
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 340, 86, -1));
+
+        jLabel15.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setText("LEVEL 2 -");
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 360, 86, -1));
+
+        jLabel16.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText("LEVEL 3 -");
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 380, 86, -1));
+
+        jLabel17.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setText("LEVEL 4 -");
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 400, 86, -1));
+
+        jLabel18.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setText("LEVEL 5 -");
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 420, 86, -1));
+
+        jLabel19.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setText("TOTAL   -");
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 440, 86, -1));
+
+        total1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        total1.setForeground(new java.awt.Color(51, 0, 51));
+        total1.setText("Total");
+        jPanel1.add(total1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 440, 71, -1));
+
+        level5score1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        level5score1.setForeground(new java.awt.Color(0, 255, 0));
+        level5score1.setText("Level 5 ");
+        jPanel1.add(level5score1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 420, 71, -1));
+
+        level4score1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        level4score1.setForeground(new java.awt.Color(0, 255, 0));
+        level4score1.setText("Level 4 ");
+        jPanel1.add(level4score1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 400, 71, -1));
+
+        level3score1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        level3score1.setForeground(new java.awt.Color(0, 255, 0));
+        level3score1.setText("Level 3 ");
+        jPanel1.add(level3score1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 380, 71, -1));
+
+        level2score1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        level2score1.setForeground(new java.awt.Color(0, 255, 0));
+        level2score1.setText("Level 2 ");
+        jPanel1.add(level2score1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 360, 71, -1));
+
+        level1score1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        level1score1.setForeground(new java.awt.Color(0, 255, 0));
+        level1score1.setText("Level 1");
+        jPanel1.add(level1score1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 340, 71, -1));
+
+        jLabel22.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel22.setText("LEVEL 4 -");
+        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, 86, -1));
+
+        jLabel23.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel23.setText("LEVEL 5 -");
+        jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 420, 86, -1));
+
+        jLabel20.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel20.setText("TOTAL   -");
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 440, 86, -1));
+
+        total2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        total2.setForeground(new java.awt.Color(51, 0, 51));
+        total2.setText("Total ");
+        jPanel1.add(total2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 440, 71, -1));
+
+        level5score2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        level5score2.setForeground(new java.awt.Color(0, 255, 0));
+        level5score2.setText("Level 5 ");
+        jPanel1.add(level5score2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, 71, -1));
+
+        level4score2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        level4score2.setForeground(new java.awt.Color(0, 255, 0));
+        level4score2.setText("Level 4");
+        jPanel1.add(level4score2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 400, 71, -1));
+
+        level3score2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        level3score2.setForeground(new java.awt.Color(0, 255, 0));
+        level3score2.setText("Level 3");
+        jPanel1.add(level3score2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 71, -1));
+
+        level2score2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        level2score2.setForeground(new java.awt.Color(0, 255, 0));
+        level2score2.setText("Level 2");
+        jPanel1.add(level2score2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, 71, -1));
+
+        level1score2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        level1score2.setForeground(new java.awt.Color(0, 255, 0));
+        level1score2.setText("Level 1");
+        jPanel1.add(level1score2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 71, -1));
+
         txtName3.setFont(new java.awt.Font("Trebuchet MS", 1, 16)); // NOI18N
         txtName3.setForeground(new java.awt.Color(0, 0, 255));
         txtName3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -649,6 +402,66 @@ public class SummaryOfGame extends javax.swing.JFrame {
         jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/2nd.png"))); // NOI18N
         jPanel1.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 140, 110, 130));
 
+        jLabel28.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel28.setText("LEVEL 1 -");
+        jPanel1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 340, 86, -1));
+
+        jLabel26.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel26.setText("LEVEL 2 -");
+        jPanel1.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 360, 86, -1));
+
+        jLabel30.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel30.setText("LEVEL 3 -");
+        jPanel1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 380, 86, -1));
+
+        jLabel27.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel27.setText("LEVEL 4 -");
+        jPanel1.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 400, 86, -1));
+
+        jLabel31.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel31.setText("LEVEL 5 -");
+        jPanel1.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 420, 86, -1));
+
+        jLabel29.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel29.setText("TOTAL   -");
+        jPanel1.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 440, 86, -1));
+
+        total3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        total3.setForeground(new java.awt.Color(51, 0, 51));
+        total3.setText("Total ");
+        jPanel1.add(total3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 440, 71, -1));
+
+        level5score3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        level5score3.setForeground(new java.awt.Color(0, 255, 0));
+        level5score3.setText("Level 5 ");
+        jPanel1.add(level5score3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 420, 71, -1));
+
+        level4score3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        level4score3.setForeground(new java.awt.Color(0, 255, 0));
+        level4score3.setText("Level 4 ");
+        jPanel1.add(level4score3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 400, 71, -1));
+
+        level3score3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        level3score3.setForeground(new java.awt.Color(0, 255, 0));
+        level3score3.setText("Level 3 ");
+        jPanel1.add(level3score3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 380, 71, -1));
+
+        level2score3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        level2score3.setForeground(new java.awt.Color(0, 255, 0));
+        level2score3.setText("Level 2 ");
+        jPanel1.add(level2score3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 360, 71, -1));
+
+        level1score3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        level1score3.setForeground(new java.awt.Color(0, 255, 0));
+        level1score3.setText("Level 1 ");
+        jPanel1.add(level1score3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 340, 71, -1));
+
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/summary.png"))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, -1, -1));
 
@@ -664,21 +477,21 @@ public class SummaryOfGame extends javax.swing.JFrame {
         jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/summary.png"))); // NOI18N
         jPanel1.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 260, -1, -1));
 
-        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/hbd.gif"))); // NOI18N
-        jLabel38.setText("jLabel6");
-        jPanel1.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, -50, 490, 420));
-
         jLabel39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/btn.png"))); // NOI18N
         jPanel1.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 530, -1, -1));
 
         jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/btn.png"))); // NOI18N
         jPanel1.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 530, -1, -1));
 
+        jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/hbd.gif"))); // NOI18N
+        jLabel41.setText("jLabel6");
+        jPanel1.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 0, 490, 420));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1098, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -691,11 +504,12 @@ public class SummaryOfGame extends javax.swing.JFrame {
     private void btnPlayAgainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayAgainActionPerformed
         SelectGame selectgame = new SelectGame();
         selectgame.setVisible(true);
+        gametype.deleteTable();
         this.dispose();
     }//GEN-LAST:event_btnPlayAgainActionPerformed
 
     private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitActionPerformed
-        GameType gametype = new GameType();
+
         gametype.deleteTable();
         this.dispose();
     }//GEN-LAST:event_btnQuitActionPerformed
@@ -730,7 +544,6 @@ public class SummaryOfGame extends javax.swing.JFrame {
 //        colou10.setMaxWidth(80);
 //
 //    }
-
 //    private void getTopTot() {
 //        try {
 //            ResultSet rs = null;
@@ -836,7 +649,6 @@ public class SummaryOfGame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnPlayAgain;
     private javax.swing.JButton btnQuit;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -871,6 +683,7 @@ public class SummaryOfGame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -897,10 +710,6 @@ public class SummaryOfGame extends javax.swing.JFrame {
     public static javax.swing.JLabel level5score1;
     public static javax.swing.JLabel level5score2;
     public static javax.swing.JLabel level5score3;
-    public static javax.swing.JPanel player1;
-    public static javax.swing.JPanel player2;
-    public static javax.swing.JPanel player3;
-    public static javax.swing.JPanel player4;
     public static javax.swing.JLabel total0;
     public static javax.swing.JLabel total1;
     public static javax.swing.JLabel total2;
@@ -909,5 +718,6 @@ public class SummaryOfGame extends javax.swing.JFrame {
     public static javax.swing.JLabel txtName1;
     public static javax.swing.JLabel txtName2;
     public static javax.swing.JLabel txtName3;
+    public static javax.swing.JLabel txtWon;
     // End of variables declaration//GEN-END:variables
 }

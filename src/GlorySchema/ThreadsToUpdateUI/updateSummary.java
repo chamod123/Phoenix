@@ -76,7 +76,7 @@ public class updateSummary extends Thread {
                         break;
                     case 1:
                         this.setWinner2(rs);
-                       // SummaryOfGame.status1.setText("2nd Place");
+                        // SummaryOfGame.status1.setText("2nd Place");
                         break;
                     case 2:
                         this.setWinner3(rs);
@@ -84,7 +84,7 @@ public class updateSummary extends Thread {
                         break;
                     case 3:
                         this.setWinner4(rs);
-                       // SummaryOfGame.status3.setText("4th Place");
+                        // SummaryOfGame.status3.setText("4th Place");
                         break;
                     default:
                         break;
@@ -97,49 +97,47 @@ public class updateSummary extends Thread {
             Logger.getLogger(SummaryOfGame.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    public void setWinner1(ResultSet rs){
+
+    public void setWinner1(ResultSet rs) {
         try {
-            if(gameTypeid == 1){
-            //SummaryOfGame2.player1.setVisible(true);
-            SummaryOfGame2.txtName0.setText(rs.getString("PlayerName"));
-            SummaryOfGame2.level1score0.setText(rs.getString("Level1Score"));
-            SummaryOfGame2.level2score0.setText(rs.getString("Level2Score"));
-            SummaryOfGame2.level3score0.setText(rs.getString("Level3Score"));
-            SummaryOfGame2.level4score0.setText(rs.getString("Level4Score"));
-            SummaryOfGame2.level5score0.setText(rs.getString("Level5Score"));
-            SummaryOfGame2.total0.setText(rs.getString("Total"));
+            if (gameTypeid == 1) {
+                SummaryOfGame2.txtWon.setText(rs.getString("PlayerName"));
+                SummaryOfGame2.txtName0.setText(rs.getString("PlayerName"));
+                SummaryOfGame2.level1score0.setText(rs.getString("Level1Score"));
+                SummaryOfGame2.level2score0.setText(rs.getString("Level2Score"));
+                SummaryOfGame2.level3score0.setText(rs.getString("Level3Score"));
+                SummaryOfGame2.level4score0.setText(rs.getString("Level4Score"));
+                SummaryOfGame2.level5score0.setText(rs.getString("Level5Score"));
+                SummaryOfGame2.total0.setText(rs.getString("Total"));
+            } else if (gameTypeid == 2) {
+                SummaryOfGame3.txtWon.setText(rs.getString("PlayerName"));
+                SummaryOfGame3.txtName0.setText(rs.getString("PlayerName"));
+                SummaryOfGame3.level1score0.setText(rs.getString("Level1Score"));
+                SummaryOfGame3.level2score0.setText(rs.getString("Level2Score"));
+                SummaryOfGame3.level3score0.setText(rs.getString("Level3Score"));
+                SummaryOfGame3.level4score0.setText(rs.getString("Level4Score"));
+                SummaryOfGame3.level5score0.setText(rs.getString("Level5Score"));
+                SummaryOfGame3.total0.setText(rs.getString("Total"));
+            } else if (gameTypeid == 3) {
+                SummaryOfGame.txtWon.setText(rs.getString("PlayerName"));
+                SummaryOfGame.txtName0.setText(rs.getString("PlayerName"));
+                SummaryOfGame.level1score0.setText(rs.getString("Level1Score"));
+                SummaryOfGame.level2score0.setText(rs.getString("Level2Score"));
+                SummaryOfGame.level3score0.setText(rs.getString("Level3Score"));
+                SummaryOfGame.level4score0.setText(rs.getString("Level4Score"));
+                SummaryOfGame.level5score0.setText(rs.getString("Level5Score"));
+                SummaryOfGame.total0.setText(rs.getString("Total"));
             }
-            else
-            if(gameTypeid == 2){
-            SummaryOfGame3.player1.setVisible(true);
-            SummaryOfGame3.txtName0.setText(rs.getString("PlayerName"));
-            SummaryOfGame3.level1score0.setText(rs.getString("Level1Score"));
-            SummaryOfGame3.level2score0.setText(rs.getString("Level2Score"));
-            SummaryOfGame3.level3score0.setText(rs.getString("Level3Score"));
-            SummaryOfGame3.level4score0.setText(rs.getString("Level4Score"));
-            SummaryOfGame3.level5score0.setText(rs.getString("Level5Score"));
-            SummaryOfGame3.total0.setText(rs.getString("Total"));
-            }
-            else if(gameTypeid == 3){
-            SummaryOfGame.player1.setVisible(true);
-            SummaryOfGame.txtName0.setText(rs.getString("PlayerName"));
-            SummaryOfGame.level1score0.setText(rs.getString("Level1Score"));
-            SummaryOfGame.level2score0.setText(rs.getString("Level2Score"));
-            SummaryOfGame.level3score0.setText(rs.getString("Level3Score"));
-            SummaryOfGame.level4score0.setText(rs.getString("Level4Score"));
-            SummaryOfGame.level5score0.setText(rs.getString("Level5Score"));
-            SummaryOfGame.total0.setText(rs.getString("Total"));
-            }           
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(updateSummary.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-     public void setWinner2(ResultSet rs) {
+
+    public void setWinner2(ResultSet rs) {
         try {
             if (gameTypeid == 1) {
-                SummaryOfGame2.player2.setVisible(true);
+                //  SummaryOfGame2.player2.setVisible(true);
                 SummaryOfGame2.txtName1.setText(rs.getString("PlayerName"));
                 SummaryOfGame2.level1score1.setText(rs.getString("Level1Score"));
                 SummaryOfGame2.level2score1.setText(rs.getString("Level2Score"));
@@ -147,9 +145,8 @@ public class updateSummary extends Thread {
                 SummaryOfGame2.level4score1.setText(rs.getString("Level4Score"));
                 SummaryOfGame2.level5score1.setText(rs.getString("Level5Score"));
                 SummaryOfGame2.total1.setText(rs.getString("Total"));;
-            }
-            else if (gameTypeid == 2) {
-                SummaryOfGame3.player2.setVisible(true);
+            } else if (gameTypeid == 2) {
+                //  SummaryOfGame3.player2.setVisible(true);
                 SummaryOfGame3.txtName1.setText(rs.getString("PlayerName"));
                 SummaryOfGame3.level1score1.setText(rs.getString("Level1Score"));
                 SummaryOfGame3.level2score1.setText(rs.getString("Level2Score"));
@@ -157,9 +154,8 @@ public class updateSummary extends Thread {
                 SummaryOfGame3.level4score1.setText(rs.getString("Level4Score"));
                 SummaryOfGame3.level5score1.setText(rs.getString("Level5Score"));
                 SummaryOfGame3.total1.setText(rs.getString("Total"));;
-            }
-            else if (gameTypeid == 3) {
-                SummaryOfGame.player2.setVisible(true);
+            } else if (gameTypeid == 3) {
+//                SummaryOfGame.player2.setVisible(true);
                 SummaryOfGame.txtName1.setText(rs.getString("PlayerName"));
                 SummaryOfGame.level1score1.setText(rs.getString("Level1Score"));
                 SummaryOfGame.level2score1.setText(rs.getString("Level2Score"));
@@ -172,36 +168,37 @@ public class updateSummary extends Thread {
             Logger.getLogger(updateSummary.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-      public void setWinner3(ResultSet rs){
-          try {
-            if (gameTypeid == 2) {
-         //   SummaryOfGame3.player3.setVisible(true);
-              SummaryOfGame3.txtName2.setText(rs.getString("PlayerName"));
-              SummaryOfGame3.level1score2.setText(rs.getString("Level1Score"));
-              SummaryOfGame3.level2score2.setText(rs.getString("Level2Score"));
-              SummaryOfGame3.level3score2.setText(rs.getString("Level3Score"));
-              SummaryOfGame3.level4score2.setText(rs.getString("Level4Score"));
-              SummaryOfGame3.level5score2.setText(rs.getString("Level5Score"));
-              SummaryOfGame3.total2.setText(rs.getString("Total"));
-            }
-            else if (gameTypeid == 3) {
-               SummaryOfGame.player3.setVisible(true);
-              SummaryOfGame.txtName2.setText(rs.getString("PlayerName"));
-              SummaryOfGame.level1score2.setText(rs.getString("Level1Score"));
-              SummaryOfGame.level2score2.setText(rs.getString("Level2Score"));
-              SummaryOfGame.level3score2.setText(rs.getString("Level3Score"));
-              SummaryOfGame.level4score2.setText(rs.getString("Level4Score"));
-              SummaryOfGame.level5score2.setText(rs.getString("Level5Score"));
-              SummaryOfGame.total2.setText(rs.getString("Total"));
-            }
-          } catch (SQLException ex) {
-              Logger.getLogger(updateSummary.class.getName()).log(Level.SEVERE, null, ex);
-          }
-    }
-       public void setWinner4(ResultSet rs) {
+
+    public void setWinner3(ResultSet rs) {
         try {
             if (gameTypeid == 2) {
-                SummaryOfGame.player4.setVisible(true);
+                //   SummaryOfGame3.player3.setVisible(true);
+                SummaryOfGame3.txtName2.setText(rs.getString("PlayerName"));
+                SummaryOfGame3.level1score2.setText(rs.getString("Level1Score"));
+                SummaryOfGame3.level2score2.setText(rs.getString("Level2Score"));
+                SummaryOfGame3.level3score2.setText(rs.getString("Level3Score"));
+                SummaryOfGame3.level4score2.setText(rs.getString("Level4Score"));
+                SummaryOfGame3.level5score2.setText(rs.getString("Level5Score"));
+                SummaryOfGame3.total2.setText(rs.getString("Total"));
+            } else if (gameTypeid == 3) {
+//               SummaryOfGame.player3.setVisible(true);
+                SummaryOfGame.txtName2.setText(rs.getString("PlayerName"));
+                SummaryOfGame.level1score2.setText(rs.getString("Level1Score"));
+                SummaryOfGame.level2score2.setText(rs.getString("Level2Score"));
+                SummaryOfGame.level3score2.setText(rs.getString("Level3Score"));
+                SummaryOfGame.level4score2.setText(rs.getString("Level4Score"));
+                SummaryOfGame.level5score2.setText(rs.getString("Level5Score"));
+                SummaryOfGame.total2.setText(rs.getString("Total"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(updateSummary.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void setWinner4(ResultSet rs) {
+        try {
+            if (gameTypeid == 2) {
+//                SummaryOfGame.player4.setVisible(true);
                 SummaryOfGame.txtName3.setText(rs.getString("PlayerName"));
                 SummaryOfGame.level1score3.setText(rs.getString("Level1Score"));
                 SummaryOfGame.level2score3.setText(rs.getString("Level2Score"));

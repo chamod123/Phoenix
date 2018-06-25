@@ -7,13 +7,6 @@ package Interface;
 
 import GlorySchema.GameType;
 import GlorySchema.ThreadsToUpdateUI.updateSummary;
-import java.awt.Dimension;
-import java.awt.Font;
-import javax.swing.JLabel;
-import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.JTableHeader;
-import javax.swing.table.TableColumn;
 
 /**
  *
@@ -22,7 +15,7 @@ import javax.swing.table.TableColumn;
 public class SummaryOfGame2 extends javax.swing.JFrame {
 
     updateSummary t = new updateSummary();
-
+    GameType gametype = new GameType();
     int leaderTOp[] = null;
     int topTot[] = null;
 
@@ -31,24 +24,23 @@ public class SummaryOfGame2 extends javax.swing.JFrame {
 
         setUndecorated(true);
         initComponents();
-        btnQuit.setContentAreaFilled( false );
-        btnQuit.setBorder( null );
-        btnPlayAgain.setContentAreaFilled( false );        
-        btnPlayAgain.setBorder( null );
+        btnQuit.setContentAreaFilled(false);
+        btnQuit.setBorder(null);
+        btnPlayAgain.setContentAreaFilled(false);
+        btnPlayAgain.setBorder(null);
         setLocationRelativeTo(null);
         setLocationRelativeTo(null);
 
-        player2.setBorder( null );
-        player2.setOpaque(false);
-        player2.setVisible(false);
-
-       // ShowGrid();
+        // player2.setBorder( null );
+        // player2.setOpaque(false);
+        // player2.setVisible(false);
+        // ShowGrid();
         t.start();
         t.sleepThread();
         t.shutdown();
 //        getTopTot();
         //sort() ;
-       // summaryTbl.setOpaque(true);
+        // summaryTbl.setOpaque(true);
     }
 
     /**
@@ -64,32 +56,31 @@ public class SummaryOfGame2 extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         btnPlayAgain = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        player2 = new javax.swing.JPanel();
-        level2score1 = new javax.swing.JLabel();
-        level3score1 = new javax.swing.JLabel();
-        total1 = new javax.swing.JLabel();
-        level1score1 = new javax.swing.JLabel();
-        level4score1 = new javax.swing.JLabel();
-        level5score1 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
         btnQuit = new javax.swing.JButton();
         txtName0 = new javax.swing.JLabel();
         txtName1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        total1 = new javax.swing.JLabel();
+        level5score1 = new javax.swing.JLabel();
+        level4score1 = new javax.swing.JLabel();
+        level3score1 = new javax.swing.JLabel();
+        level2score1 = new javax.swing.JLabel();
+        level1score1 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        txtWon = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -110,12 +101,6 @@ public class SummaryOfGame2 extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 153));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("SUMMARY");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, 210, 40));
-
         btnPlayAgain.setBackground(new java.awt.Color(0, 255, 0));
         btnPlayAgain.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         btnPlayAgain.setForeground(new java.awt.Color(255, 255, 255));
@@ -129,113 +114,6 @@ public class SummaryOfGame2 extends javax.swing.JFrame {
 
         jLabel2.setBackground(new java.awt.Color(153, 153, 255));
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 70, 80));
-
-        player2.setBackground(new java.awt.Color(177, 75, 25));
-
-        level2score1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        level2score1.setForeground(new java.awt.Color(0, 255, 0));
-        level2score1.setText("Level 2 ");
-
-        level3score1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        level3score1.setForeground(new java.awt.Color(0, 255, 0));
-        level3score1.setText("Level 3 ");
-
-        total1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        total1.setForeground(new java.awt.Color(0, 255, 0));
-        total1.setText("Total");
-
-        level1score1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        level1score1.setForeground(new java.awt.Color(0, 255, 0));
-        level1score1.setText("Level 1");
-
-        level4score1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        level4score1.setForeground(new java.awt.Color(0, 255, 0));
-        level4score1.setText("Level 4 ");
-
-        level5score1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        level5score1.setForeground(new java.awt.Color(0, 255, 0));
-        level5score1.setText("Level 5 ");
-
-        jLabel19.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel19.setText("TOTAL   -");
-
-        jLabel16.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setText("LEVEL 3 -");
-
-        jLabel17.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel17.setText("LEVEL 4 -");
-
-        jLabel18.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setText("LEVEL 5 -");
-
-        jLabel14.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("LEVEL 1 -");
-
-        jLabel15.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("LEVEL 2 -");
-
-        javax.swing.GroupLayout player2Layout = new javax.swing.GroupLayout(player2);
-        player2.setLayout(player2Layout);
-        player2Layout.setHorizontalGroup(
-            player2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(player2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(player2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
-                .addGroup(player2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(level1score1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(level2score1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(level3score1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(level4score1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(level5score1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(total1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-        player2Layout.setVerticalGroup(
-            player2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(player2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(player2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(player2Layout.createSequentialGroup()
-                        .addComponent(jLabel14)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel15)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel16)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel17)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel18)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel19))
-                    .addGroup(player2Layout.createSequentialGroup()
-                        .addComponent(level1score1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(level2score1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(level3score1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(level4score1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(level5score1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(total1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(player2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 310, 200, 150));
 
         btnQuit.setBackground(new java.awt.Color(56, 185, 33));
         btnQuit.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
@@ -270,6 +148,66 @@ public class SummaryOfGame2 extends javax.swing.JFrame {
         jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/2nd.png"))); // NOI18N
         jPanel1.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 130, 110, 130));
 
+        jLabel14.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("LEVEL 1 -");
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 330, 86, -1));
+
+        jLabel15.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setText("LEVEL 2 -");
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 350, 86, -1));
+
+        jLabel16.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText("LEVEL 3 -");
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 370, 86, -1));
+
+        jLabel17.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setText("LEVEL 4 -");
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 390, 86, -1));
+
+        jLabel18.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setText("LEVEL 5 -");
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 410, 86, -1));
+
+        jLabel19.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setText("TOTAL   -");
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 430, 86, -1));
+
+        total1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        total1.setForeground(new java.awt.Color(51, 0, 51));
+        total1.setText("Total");
+        jPanel1.add(total1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 430, 71, -1));
+
+        level5score1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        level5score1.setForeground(new java.awt.Color(0, 255, 0));
+        level5score1.setText("Level 5 ");
+        jPanel1.add(level5score1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 410, 71, -1));
+
+        level4score1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        level4score1.setForeground(new java.awt.Color(0, 255, 0));
+        level4score1.setText("Level 4 ");
+        jPanel1.add(level4score1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 390, 71, -1));
+
+        level3score1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        level3score1.setForeground(new java.awt.Color(0, 255, 0));
+        level3score1.setText("Level 3 ");
+        jPanel1.add(level3score1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 370, 71, -1));
+
+        level2score1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        level2score1.setForeground(new java.awt.Color(0, 255, 0));
+        level2score1.setText("Level 2 ");
+        jPanel1.add(level2score1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 350, 71, -1));
+
+        level1score1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        level1score1.setForeground(new java.awt.Color(0, 255, 0));
+        level1score1.setText("Level 1");
+        jPanel1.add(level1score1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 330, 71, -1));
+
         jLabel8.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("LEVEL 1 -");
@@ -290,6 +228,12 @@ public class SummaryOfGame2 extends javax.swing.JFrame {
         jLabel11.setText("LEVEL 4 -");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 390, 86, -1));
 
+        txtWon.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
+        txtWon.setForeground(new java.awt.Color(0, 0, 153));
+        txtWon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtWon.setText("SUMMARY");
+        jPanel1.add(txtWon, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, 340, 40));
+
         jLabel12.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("LEVEL 5 -");
@@ -303,42 +247,42 @@ public class SummaryOfGame2 extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/summary.png"))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 250, -1, -1));
 
-        level1score0.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        level1score0.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         level1score0.setForeground(new java.awt.Color(51, 255, 0));
         level1score0.setText("Level 1");
         jPanel1.add(level1score0, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 330, -1, -1));
 
-        level2score0.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        level2score0.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         level2score0.setForeground(new java.awt.Color(51, 255, 0));
         level2score0.setText("Level 2 ");
         jPanel1.add(level2score0, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 350, -1, -1));
 
-        level3score0.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        level3score0.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         level3score0.setForeground(new java.awt.Color(51, 255, 0));
         level3score0.setText("Level 3 ");
         jPanel1.add(level3score0, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 370, -1, -1));
 
-        level4score0.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        level4score0.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         level4score0.setForeground(new java.awt.Color(51, 255, 0));
         level4score0.setText("Level 4 ");
         jPanel1.add(level4score0, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 390, -1, -1));
 
-        level5score0.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        level5score0.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         level5score0.setForeground(new java.awt.Color(51, 255, 0));
         level5score0.setText("Level 5 ");
         jPanel1.add(level5score0, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 410, -1, -1));
 
-        total0.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        total0.setForeground(new java.awt.Color(51, 255, 0));
+        total0.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        total0.setForeground(new java.awt.Color(51, 0, 51));
         total0.setText("Total ");
-        jPanel1.add(total0, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 430, -1, -1));
+        jPanel1.add(total0, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 430, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/summary.png"))); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/hbd.gif"))); // NOI18N
         jLabel6.setText("jLabel6");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, -10, 490, 460));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 490, 460));
 
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/hbd.gif"))); // NOI18N
         jLabel20.setText("jLabel6");
@@ -356,9 +300,9 @@ public class SummaryOfGame2 extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 953, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -371,11 +315,12 @@ public class SummaryOfGame2 extends javax.swing.JFrame {
     private void btnPlayAgainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayAgainActionPerformed
         SelectGame selectgame = new SelectGame();
         selectgame.setVisible(true);
+        gametype.deleteTable();
         this.dispose();
     }//GEN-LAST:event_btnPlayAgainActionPerformed
 
     private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitActionPerformed
-        GameType gametype = new GameType();
+
         gametype.deleteTable();
         this.dispose();
     }//GEN-LAST:event_btnQuitActionPerformed
@@ -410,7 +355,6 @@ public class SummaryOfGame2 extends javax.swing.JFrame {
 //        colou10.setMaxWidth(80);
 //
 //    }
-
 //    private void getTopTot() {
 //        try {
 //            ResultSet rs = null;
@@ -516,7 +460,6 @@ public class SummaryOfGame2 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnPlayAgain;
     private javax.swing.JButton btnQuit;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -550,10 +493,10 @@ public class SummaryOfGame2 extends javax.swing.JFrame {
     public static javax.swing.JLabel level4score1;
     public static javax.swing.JLabel level5score0;
     public static javax.swing.JLabel level5score1;
-    public static javax.swing.JPanel player2;
     public static javax.swing.JLabel total0;
     public static javax.swing.JLabel total1;
     public static javax.swing.JLabel txtName0;
     public static javax.swing.JLabel txtName1;
+    public static javax.swing.JLabel txtWon;
     // End of variables declaration//GEN-END:variables
 }

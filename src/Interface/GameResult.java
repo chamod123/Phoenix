@@ -42,11 +42,11 @@ public class GameResult extends javax.swing.JFrame {
         btnNext.setBorder( null );
         //set visible false for all lable
         setLocationRelativeTo(null);
-        tblGames.setBorder( null );
-        tblGames.setOpaque(false);
-
-        ShowGrid();
-        tblGames.setOpaque(true);
+//        tblGames.setBorder( null );
+//        tblGames.setOpaque(false);
+//
+//        //ShowGrid();
+//        tblGames.setOpaque(true);
         levelScore.setText("Level " + (GameBoard.levelNo - 1) + " Score");
 
         updateGameResult t = new updateGameResult();
@@ -87,49 +87,49 @@ public class GameResult extends javax.swing.JFrame {
 //        }
 //        
 //    }
-    private void ShowGrid() {
-        String data[][] = null;
-        String colu[] = new String[]{"Player", "Level Score", "Total"};
-        DefaultTableModel model = new DefaultTableModel(data, colu) {
-            //@Override
-            public boolean isCellEditable(int x, int y) {
-                if (y == 1) {
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-        };
-
-        tblGames.setModel(model);
-        tblGames.getTableHeader().setPreferredSize(new Dimension(tblGames.getTableHeader().getPreferredSize().width, 35));
-        JTableHeader head = tblGames.getTableHeader();
-        head.setFont(head.getFont().deriveFont(Font.BOLD));
-
-        DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
-        rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
-        tblGames.getColumnModel().getColumn(1).setCellRenderer(rightRenderer);
-        tblGames.getColumnModel().getColumn(2).setCellRenderer(rightRenderer);
-        tblGames.setShowGrid(false);
-        tblGames.setBorder( null );
-        tblGames.setOpaque(false);
-        // model.setRowCount(20);
-        TableColumn col0 = tblGames.getColumnModel().getColumn(1);
-        col0.setMinWidth(40);
-        col0.setPreferredWidth(40);
-        col0.setMaxWidth(40);
-
-        TableColumn col1 = tblGames.getColumnModel().getColumn(1);
-        col1.setMinWidth(40);
-        col1.setPreferredWidth(40);
-        col1.setMaxWidth(40);
-
-        TableColumn col2 = tblGames.getColumnModel().getColumn(2);
-        col2.setMinWidth(40);
-        col2.setPreferredWidth(40);
-        col2.setMaxWidth(40);
-
-    }
+//    private void ShowGrid() {
+//        String data[][] = null;
+//        String colu[] = new String[]{"Player", "Level Score", "Total"};
+//        DefaultTableModel model = new DefaultTableModel(data, colu) {
+//            //@Override
+//            public boolean isCellEditable(int x, int y) {
+//                if (y == 1) {
+//                    return true;
+//                } else {
+//                    return false;
+//                }
+//            }
+//        };
+//
+//        tblGames.setModel(model);
+//        tblGames.getTableHeader().setPreferredSize(new Dimension(tblGames.getTableHeader().getPreferredSize().width, 35));
+//        JTableHeader head = tblGames.getTableHeader();
+//        head.setFont(head.getFont().deriveFont(Font.BOLD));
+//
+//        DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
+//        rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
+//        tblGames.getColumnModel().getColumn(1).setCellRenderer(rightRenderer);
+//        tblGames.getColumnModel().getColumn(2).setCellRenderer(rightRenderer);
+//        tblGames.setShowGrid(false);
+//        tblGames.setBorder( null );
+//        tblGames.setOpaque(false);
+//        // model.setRowCount(20);
+//        TableColumn col0 = tblGames.getColumnModel().getColumn(1);
+//        col0.setMinWidth(40);
+//        col0.setPreferredWidth(40);
+//        col0.setMaxWidth(40);
+//
+//        TableColumn col1 = tblGames.getColumnModel().getColumn(1);
+//        col1.setMinWidth(40);
+//        col1.setPreferredWidth(40);
+//        col1.setMaxWidth(40);
+//
+//        TableColumn col2 = tblGames.getColumnModel().getColumn(2);
+//        col2.setMinWidth(40);
+//        col2.setPreferredWidth(40);
+//        col2.setMaxWidth(40);
+//
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -156,8 +156,6 @@ public class GameResult extends javax.swing.JFrame {
         total2 = new javax.swing.JLabel();
         total3 = new javax.swing.JLabel();
         total0 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tblGames = new javax.swing.JTable();
         btnNext = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -245,20 +243,6 @@ public class GameResult extends javax.swing.JFrame {
         total0.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         total0.setText("total");
         jPanel1.add(total0, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 250, 50, -1));
-
-        tblGames.setBackground(new java.awt.Color(172, 91, 10));
-        tblGames.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        tblGames.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane1.setViewportView(tblGames);
-
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 230, 160));
 
         btnNext.setBackground(new java.awt.Color(0, 204, 255));
         btnNext.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
@@ -360,7 +344,6 @@ public class GameResult extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel levelScore;
     public static javax.swing.JLabel levelScore0;
     public static javax.swing.JLabel levelScore1;
@@ -370,7 +353,6 @@ public class GameResult extends javax.swing.JFrame {
     public static javax.swing.JLabel player1;
     public static javax.swing.JLabel player2;
     public static javax.swing.JLabel player3;
-    public static javax.swing.JTable tblGames;
     public static javax.swing.JLabel total0;
     public static javax.swing.JLabel total1;
     public static javax.swing.JLabel total2;

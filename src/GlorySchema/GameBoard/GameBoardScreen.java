@@ -223,28 +223,28 @@ public class GameBoardScreen extends javax.swing.JFrame {
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Initial Letters", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        player1L.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        player1L.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jPanel5.add(player1L, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 60, 40));
 
-        player3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        player3.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jPanel5.add(player3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 140, 40));
 
-        player2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        player2.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jPanel5.add(player2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, 130, 40));
 
-        player4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        player4.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jPanel5.add(player4, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 10, 110, 40));
 
-        player1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        player1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jPanel5.add(player1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 120, 40));
 
-        player3L.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        player3L.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jPanel5.add(player3L, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, 60, 40));
 
-        player4L.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        player4L.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jPanel5.add(player4L, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 10, 60, 40));
 
-        player2L.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        player2L.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jPanel5.add(player2L, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, 60, 40));
 
         jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 640, 1080, 50));

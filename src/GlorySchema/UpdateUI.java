@@ -23,7 +23,6 @@ import javax.swing.table.DefaultTableModel;
  */
 public class UpdateUI {
 
-   
     Results result = new Results();
 
     public void updateScoreTable() {
@@ -38,7 +37,7 @@ public class UpdateUI {
 
             rs.last();
             int count = rs.getRow();
-            
+
             rs.beforeFirst();
             data = new String[count][5];
             int x = 0;
@@ -96,17 +95,17 @@ public class UpdateUI {
 
         //GameResult gameResult = new GameResult(); when create object from jFrame thread running
         try {
-            DefaultTableModel dtf2 = (javax.swing.table.DefaultTableModel) GameResult.tblGames.getModel();
+//            DefaultTableModel dtf2 = (javax.swing.table.DefaultTableModel) GameResult.tblGames.getModel();
             ResultSet rs = null;
-            String data[][] = null;
-            dtf2.setRowCount(0);
+//            String data[][] = null;
+//            dtf2.setRowCount(0);
             rs = result.getRanking(GameBoard.levelNo - 1);
             ResultSetMetaData rsmd = rs.getMetaData();
 
             rs.last();
-            int count = rs.getRow();
+//            int count = rs.getRow();
             rs.beforeFirst();
-            data = new String[count][5];
+//            data = new String[count][5];
             int x = 0;
             while (rs.next()) {
 //                Vector v = new Vector();
@@ -119,48 +118,47 @@ public class UpdateUI {
                     case 0:
                         GameResult.player0.setVisible(true);
                         GameResult.player0.setText(rs.getString("Name"));
-                       
+
                         GameResult.levelScore0.setVisible(true);
                         GameResult.levelScore0.setText(rs.getString("Level" + (GameBoard.levelNo - 1) + "Score"));
-                        
+
                         GameResult.total0.setVisible(true);
                         GameResult.total0.setText(rs.getString("Total"));
                         break;
                     case 1:
                         GameResult.player1.setVisible(true);
                         GameResult.player1.setText(rs.getString("Name"));
-                       
+
                         GameResult.levelScore1.setVisible(true);
                         GameResult.levelScore1.setText(rs.getString("Level" + (GameBoard.levelNo - 1) + "Score"));
-                        
+
                         GameResult.total1.setVisible(true);
                         GameResult.total1.setText(rs.getString("Total"));
-                      
+
                         break;
                     case 2:
                         GameResult.player2.setVisible(true);
                         GameResult.player2.setText(rs.getString("Name"));
-                       
+
                         GameResult.levelScore2.setVisible(true);
                         GameResult.levelScore2.setText(rs.getString("Level" + (GameBoard.levelNo - 1) + "Score"));
-                        
+
                         GameResult.total2.setVisible(true);
                         GameResult.total2.setText(rs.getString("Total"));
                         break;
                     case 3:
-                         GameResult.player3.setVisible(true);
+                        GameResult.player3.setVisible(true);
                         GameResult.player3.setText(rs.getString("Name"));
-                       
+
                         GameResult.levelScore3.setVisible(true);
                         GameResult.levelScore3.setText(rs.getString("Level" + (GameBoard.levelNo - 1) + "Score"));
-                        
+
                         GameResult.total3.setVisible(true);
                         GameResult.total3.setText(rs.getString("Total"));
                         break;
                     default:
                         break;
                 }
-
 
                 x = x + 1;
             }
