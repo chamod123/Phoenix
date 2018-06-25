@@ -249,14 +249,14 @@ public class SummaryOfGame2 extends javax.swing.JFrame {
         });
         jPanel1.add(btnQuit, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 500, 160, 40));
 
-        txtName0.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtName0.setForeground(new java.awt.Color(0, 255, 0));
+        txtName0.setFont(new java.awt.Font("Trebuchet MS", 1, 16)); // NOI18N
+        txtName0.setForeground(new java.awt.Color(0, 0, 255));
         txtName0.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtName0.setText("name 1");
         jPanel1.add(txtName0, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, 200, 23));
 
-        txtName1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtName1.setForeground(new java.awt.Color(0, 255, 0));
+        txtName1.setFont(new java.awt.Font("Trebuchet MS", 1, 16)); // NOI18N
+        txtName1.setForeground(new java.awt.Color(0, 0, 255));
         txtName1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtName1.setText("name 1");
         jPanel1.add(txtName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 270, 200, 23));

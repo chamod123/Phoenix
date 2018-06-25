@@ -10,6 +10,7 @@ import static GlorySchema.ThreadsToUpdateUI.AllPlayerDone.moved;
 import GlorySchema.ThreadsToUpdateUI.updateGameBoard;
 import GlorySchema.timer;
 import Interface.LoginScreen;
+import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.table.DefaultTableCellRenderer;
 
@@ -24,7 +25,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
     int counter = 10;
     boolean isIt = false;
     public static boolean isdone = false;
-    
+
     //   UpdateUI updateUI =new UpdateUI();
     /**
      * Creates new form GameBoard
@@ -33,12 +34,12 @@ public class GameBoardScreen extends javax.swing.JFrame {
         moved = false;
         setUndecorated(true);
         initComponents();
-        btnRefresh.setContentAreaFilled( false );
-        btnRefresh.setBorder( null );
-        btnUndo.setContentAreaFilled( false );
-        btnUndo.setBorder( null );
-        btnDone.setContentAreaFilled( false );
-        btnDone.setBorder( null );
+        btnRefresh.setContentAreaFilled(false);
+        btnRefresh.setBorder(null);
+        btnUndo.setContentAreaFilled(false);
+        btnUndo.setBorder(null);
+        btnDone.setContentAreaFilled(false);
+        btnDone.setBorder(null);
         setLocationRelativeTo(null);
         gisLoad.setVisible(false);
         gisLoad1.setVisible(false);
@@ -83,6 +84,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
 
         gisLoad = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        txtAlet = new javax.swing.JLabel();
         gisLoad1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtTimePanal = new javax.swing.JPanel();
@@ -132,8 +134,14 @@ public class GameBoardScreen extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(153, 153, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        txtAlet.setBackground(new java.awt.Color(255, 153, 0));
+        txtAlet.setFont(new java.awt.Font("Trebuchet MS", 2, 14)); // NOI18N
+        txtAlet.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtAlet.setText("jLabel1");
+        jPanel1.add(txtAlet, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 210, 340, 20));
+
         gisLoad1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/loader.gif"))); // NOI18N
-        jPanel1.add(gisLoad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, 260, 260));
+        jPanel1.add(gisLoad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, 260, 260));
 
         jLabel2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 2, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -171,11 +179,17 @@ public class GameBoardScreen extends javax.swing.JFrame {
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 430, 140, 40));
 
+        txtMainWord.setEditable(false);
         txtMainWord.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         txtMainWord.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtMainWord.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtMainWordActionPerformed(evt);
+            }
+        });
+        txtMainWord.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtMainWordKeyPressed(evt);
             }
         });
         jPanel1.add(txtMainWord, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 520, 50));
@@ -308,6 +322,11 @@ public class GameBoardScreen extends javax.swing.JFrame {
         jPanel1.add(btnEleventh, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 290, 50, 50));
 
         btnFirst.setBackground(new java.awt.Color(255, 204, 0));
+        btnFirst.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnFirstMouseClicked(evt);
+            }
+        });
         btnFirst.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFirstActionPerformed(evt);
@@ -394,6 +413,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
     private void btnFirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFirstActionPerformed
         txtMainWord.setText(txtMainWord.getText() + btnFirst.getText());
         btnFirst.setEnabled(false);
+        setAlet();
     }//GEN-LAST:event_btnFirstActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -440,10 +460,11 @@ public class GameBoardScreen extends javax.swing.JFrame {
     private void btnThirdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThirdActionPerformed
         txtMainWord.setText(txtMainWord.getText() + btnThird.getText());
         btnThird.setEnabled(false);
+        setAlet();
     }//GEN-LAST:event_btnThirdActionPerformed
 
     private void txtMainWordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMainWordActionPerformed
-        // TODO add your handling code here:
+        setAlet();
     }//GEN-LAST:event_txtMainWordActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -492,13 +513,14 @@ public class GameBoardScreen extends javax.swing.JFrame {
     private void btnSecondActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSecondActionPerformed
         txtMainWord.setText(txtMainWord.getText() + btnSecond.getText());
         btnSecond.setEnabled(false);
-
+        setAlet();
     }//GEN-LAST:event_btnSecondActionPerformed
 
     private void btnForthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnForthActionPerformed
         if (!"".equals(btnForth.getText().trim()) || btnForth.getText().trim() != null) {
             txtMainWord.setText(txtMainWord.getText() + btnForth.getText());
             btnForth.setEnabled(false);
+            setAlet();
         }
     }//GEN-LAST:event_btnForthActionPerformed
 
@@ -506,6 +528,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
         if (!"".equals(btnFifth.getText().trim()) || btnFifth.getText().trim() != null) {
             txtMainWord.setText(txtMainWord.getText() + btnFifth.getText());
             btnFifth.setEnabled(false);
+            setAlet();
         }
     }//GEN-LAST:event_btnFifthActionPerformed
 
@@ -513,6 +536,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
         if (!"".equals(btnSixth.getText().trim()) || btnSixth.getText().trim() != null) {
             txtMainWord.setText(txtMainWord.getText() + btnSixth.getText());
             btnSixth.setEnabled(false);
+            setAlet();
         }
     }//GEN-LAST:event_btnSixthActionPerformed
 
@@ -520,6 +544,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
         if (!"".equals(btnSeventh.getText().trim()) || btnSeventh.getText().trim() != null) {
             txtMainWord.setText(txtMainWord.getText() + btnSeventh.getText());
             btnSeventh.setEnabled(false);
+            setAlet();
         }
     }//GEN-LAST:event_btnSeventhActionPerformed
 
@@ -527,6 +552,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
         if (!"".equals(btnEighth.getText().trim()) || btnEighth.getText().trim() != null) {
             txtMainWord.setText(txtMainWord.getText() + btnEighth.getText());
             btnEighth.setEnabled(false);
+            setAlet();
         }
     }//GEN-LAST:event_btnEighthActionPerformed
 
@@ -534,6 +560,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
         if (!"".equals(btnNineth.getText().trim()) || btnNineth.getText().trim() != null) {
             txtMainWord.setText(txtMainWord.getText() + btnNineth.getText());
             btnNineth.setEnabled(false);
+            setAlet();
         }
     }//GEN-LAST:event_btnNinethActionPerformed
 
@@ -541,6 +568,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
         if (!"".equals(btnTenth.getText().trim()) || btnTenth.getText().trim() != null) {
             txtMainWord.setText(txtMainWord.getText() + btnTenth.getText());
             btnTenth.setEnabled(false);
+            setAlet();
         }
     }//GEN-LAST:event_btnTenthActionPerformed
 
@@ -548,6 +576,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
         if (!"".equals(btnEleventh.getText().trim()) || btnEleventh.getText().trim() != null) {
             txtMainWord.setText(txtMainWord.getText() + btnEleventh.getText());
             btnEleventh.setEnabled(false);
+            setAlet();
         }
     }//GEN-LAST:event_btnEleventhActionPerformed
 
@@ -555,10 +584,10 @@ public class GameBoardScreen extends javax.swing.JFrame {
         btnDone.setEnabled(false);
         gisLoad.setVisible(true);
         gisLoad1.setVisible(true);
-         if(!isdone){
-            isdone=true;
-        G.skipLevel(txtMainWord.getText(), this);
-         }
+        if (!isdone) {
+            isdone = true;
+            G.skipLevel(txtMainWord.getText(), this);
+        }
         // if(skipBoard){
         // System.out.println("----------------------dispose");
         // this.dispose();
@@ -626,6 +655,29 @@ public class GameBoardScreen extends javax.swing.JFrame {
         btnUndo.setEnabled(false);
     }//GEN-LAST:event_btnUndoActionPerformed
 
+    private void txtMainWordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMainWordKeyPressed
+        setAlet();
+    }//GEN-LAST:event_txtMainWordKeyPressed
+
+    private void btnFirstMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFirstMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnFirstMouseClicked
+
+    public void setAlet() {
+        if (txtMainWord.getText().trim().length() >= 3) {
+            if (G.checkSpell(txtMainWord.getText().trim())) {
+                txtAlet.setText("Correct Word");
+                txtAlet.setForeground(Color.GREEN);
+            } else {
+                txtAlet.setText("Wrong word");
+                txtAlet.setForeground(Color.PINK);
+            }
+        } else {
+            txtAlet.setText("word must have 3 letters");
+            txtAlet.setForeground(Color.ORANGE);
+        }
+
+    }
 //    /**
 //     * @param args the command line arguments
 //     */
@@ -701,6 +753,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
     public static javax.swing.JLabel player4;
     public static javax.swing.JLabel player4L;
     public static javax.swing.JTable tblScoreBoard;
+    private javax.swing.JLabel txtAlet;
     private javax.swing.JLabel txtLevel;
     public static javax.swing.JTextField txtMainWord;
     private javax.swing.JLabel txtName;

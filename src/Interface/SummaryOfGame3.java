@@ -377,20 +377,20 @@ public class SummaryOfGame3 extends javax.swing.JFrame {
         });
         jPanel1.add(btnQuit, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 500, 150, 40));
 
-        txtName2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtName2.setForeground(new java.awt.Color(255, 255, 255));
+        txtName2.setFont(new java.awt.Font("Trebuchet MS", 1, 16)); // NOI18N
+        txtName2.setForeground(new java.awt.Color(0, 0, 255));
         txtName2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtName2.setText("name 1");
         jPanel1.add(txtName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 190, 23));
 
-        txtName0.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtName0.setForeground(new java.awt.Color(255, 255, 255));
+        txtName0.setFont(new java.awt.Font("Trebuchet MS", 1, 16)); // NOI18N
+        txtName0.setForeground(new java.awt.Color(0, 0, 255));
         txtName0.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtName0.setText("name 1");
         jPanel1.add(txtName0, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 280, 200, 23));
 
-        txtName1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtName1.setForeground(new java.awt.Color(255, 255, 255));
+        txtName1.setFont(new java.awt.Font("Trebuchet MS", 1, 16)); // NOI18N
+        txtName1.setForeground(new java.awt.Color(0, 0, 255));
         txtName1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtName1.setText("name 1");
         jPanel1.add(txtName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 280, 200, 23));
