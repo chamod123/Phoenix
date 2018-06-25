@@ -78,6 +78,35 @@ public class GameBoardScreen extends javax.swing.JFrame {
                 x = setConsonant();
             }
         }
+
+        int count = 0;
+        if (x.equals(btnFirst.getText())) {
+            count = count + 1;
+        }  if (x.equals(btnSecond.getText())) {
+            count = count + 1;
+        }  if (x.equals(btnThird.getText())) {
+            count = count + 1;
+        }  if (x.equals(btnForth.getText())) {
+            count = count + 1;
+        }  if (x.equals(btnFifth.getText())) {
+            count = count + 1;
+        }  if (x.equals(btnSixth.getText())) {
+            count = count + 1;
+        }  if (x.equals(btnSeventh.getText())) {
+            count = count + 1;
+        }  if (x.equals(btnEighth.getText())) {
+            count = count + 1;
+        }  if (x.equals(btnNineth.getText())) {
+            count = count + 1;
+        }  if (x.equals(btnTenth.getText())) {
+            count = count + 1;
+        }  if (x.equals(btnEleventh.getText())) {
+            count = count + 1;
+        }
+        if (count >= 2) {
+            x = setConsonant();
+        }
+
         return x;
     }
 
@@ -482,6 +511,34 @@ public class GameBoardScreen extends javax.swing.JFrame {
             if (x.equals(btnFirst.getText()) || x.equals(btnSecond.getText()) || x.equals(btnThird.getText()) || x.equals(btnForth.getText()) || x.equals(btnFifth.getText()) || x.equals(btnSixth.getText()) || x.equals(btnSeventh.getText()) || x.equals(btnEighth.getText()) || x.equals(btnNineth.getText()) || x.equals(btnTenth.getText()) || x.equals(btnEleventh.getText())) {
                 x = setConsonant();
             }
+        }
+
+        int count = 0;
+        if (x.equals(btnFirst.getText())) {
+            count = count + 1;
+        }  if (x.equals(btnSecond.getText())) {
+            count = count + 1;
+        }  if (x.equals(btnThird.getText())) {
+            count = count + 1;
+        }  if (x.equals(btnForth.getText())) {
+            count = count + 1;
+        }  if (x.equals(btnFifth.getText())) {
+            count = count + 1;
+        }  if (x.equals(btnSixth.getText())) {
+            count = count + 1;
+        }  if (x.equals(btnSeventh.getText())) {
+            count = count + 1;
+        }  if (x.equals(btnEighth.getText())) {
+            count = count + 1;
+        }  if (x.equals(btnNineth.getText())) {
+            count = count + 1;
+        }  if (x.equals(btnTenth.getText())) {
+            count = count + 1;
+        }  if (x.equals(btnEleventh.getText())) {
+            count = count + 1;
+        }
+        if (count >= 2) {
+            x = setConsonant();
         }
         return x;
     }
