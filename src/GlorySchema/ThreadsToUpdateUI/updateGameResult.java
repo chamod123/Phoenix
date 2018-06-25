@@ -24,12 +24,11 @@ public class updateGameResult extends Thread {
             try {
                 Thread.sleep(1000);
                 updateUI.updateLevelRanking();
-                System.out.println("GameResult thread");
+              //  System.out.println("GameResult thread");
             } catch (InterruptedException ex) {
                 Logger.getLogger(updateGameBoard.class.getName()).log(Level.SEVERE, null, ex);
             }
-//        System.out.println("Shutting down thread");
-        }
+}
     }
 
     public void shutdown() {

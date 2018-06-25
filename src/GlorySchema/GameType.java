@@ -52,10 +52,8 @@ public class GameType {
                 pst2.setString(3, "Searching");
                 pst2.executeUpdate();
 
-                //search current game
                 searchCurrentGame(typeOfGame);
 
-                int gameId = 2;
                 PreparedStatement pst3 = (PreparedStatement) db.psmt("CREATE TABLE " + tableName + " ( `PlayerId` INT(5) NOT NULL,\n"
                         + "  `Level1Score` DOUBLE DEFAULT NULL, `Level1Letter` VARCHAR(5) DEFAULT NULL,\n"
                         + "  `Level2Score` DOUBLE DEFAULT NULL, `Level2Letter` VARCHAR(5) DEFAULT NULL,\n"
@@ -64,9 +62,6 @@ public class GameType {
                         + "  `Level5Score` DOUBLE DEFAULT NULL, `Level5Letter` VARCHAR(5) DEFAULT NULL,\n"
                         + "  `PlayerName` VARCHAR(10) DEFAULT NULL, `Total` double DEFAULT NULL,  PRIMARY KEY (`PlayerId`)\n"
                         + ") ENGINE=INNODB DEFAULT CHARSET=latin1");
-                //pst3.setString(1, String.valueOf(typeOfGame));
-                // pst3.setString(2, "1");
-                //pst3.setString(3, "Searching");
                 pst3.executeUpdate();
                 insertToPlayerData();
             } else {
@@ -85,22 +80,6 @@ public class GameType {
         }
     }
 
-//    public int getMaxSysTransctionno() {
-//        int a = 1;
-//        com.mysql.jdbc.ResultSet rs = null;
-//        try {
-//            String quary = "SELECT  (MAX(Sys_tra_no) +1 ) AS SysTra FROM  posting ";
-//            rs = (com.mysql.jdbc.ResultSet) db.fetch(quary);
-//            while (rs.next()) {
-//                a = rs.getInt("SysTra");
-//            }
-//            rs.close();
-//            rs = null;
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return a;
-//    }
     private ResultSet searchCurrentGame(int typeOfGame) {
         ResultSet rs = null;
         try {
@@ -129,14 +108,13 @@ public class GameType {
         }
     }
 
-    
-     public void deleteTable() { 
+    public void deleteTable() {
         try {
-            PreparedStatement pst = (PreparedStatement) db.psmt("DROP TABLE "+tableName);
+            PreparedStatement pst = (PreparedStatement) db.psmt("DROP TABLE " + tableName);
             pst.executeUpdate();
             System.out.println("deleted");
         } catch (Exception ex) {
-             System.out.println("deleted not complete");
+            System.out.println("deleted not complete");
         }
     }
 }

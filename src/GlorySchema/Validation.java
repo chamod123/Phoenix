@@ -15,9 +15,6 @@ import javax.swing.JOptionPane;
  */
 public class Validation {
 
-    /**
-     *
-     */
     public boolean checkNull(String value, String type) {
 
         if ("".equals(value.trim()) || value == null) {

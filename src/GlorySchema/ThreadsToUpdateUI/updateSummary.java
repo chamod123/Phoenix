@@ -25,7 +25,6 @@ import Interface.SummaryOfGame3;
  */
 public class updateSummary extends Thread {
 
-    // SummaryOfGame summary = new SummaryOfGame();
     GameResult result = new GameResult();
     LeaderBoard summary = new LeaderBoard();
     private volatile boolean running = true;
@@ -36,8 +35,7 @@ public class updateSummary extends Thread {
         while (running) {
             try {
                 getSummaryData();
-                System.out.println("Summary thread");
-
+                //       System.out.println("Summary thread");
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {
                 Logger.getLogger(updateSummary.class.getName()).log(Level.SEVERE, null, ex);
@@ -72,25 +70,19 @@ public class updateSummary extends Thread {
                 switch (x) {
                     case 0:
                         this.setWinner1(rs);
-                        //SummaryOfGame.status0.setText("1st Place");
                         break;
                     case 1:
                         this.setWinner2(rs);
-                        // SummaryOfGame.status1.setText("2nd Place");
                         break;
                     case 2:
                         this.setWinner3(rs);
-                        //SummaryOfGame.status2.setText("3rd Place");
                         break;
                     case 3:
                         this.setWinner4(rs);
-                        // SummaryOfGame.status3.setText("4th Place");
                         break;
                     default:
                         break;
                 }
-
-                //confirm = rs.getInt("confirm");
                 x = x + 1;
             }
         } catch (SQLException ex) {
@@ -137,7 +129,6 @@ public class updateSummary extends Thread {
     public void setWinner2(ResultSet rs) {
         try {
             if (gameTypeid == 1) {
-                //  SummaryOfGame2.player2.setVisible(true);
                 SummaryOfGame2.txtName1.setText(rs.getString("PlayerName"));
                 SummaryOfGame2.level1score1.setText(rs.getString("Level1Score"));
                 SummaryOfGame2.level2score1.setText(rs.getString("Level2Score"));
@@ -146,7 +137,6 @@ public class updateSummary extends Thread {
                 SummaryOfGame2.level5score1.setText(rs.getString("Level5Score"));
                 SummaryOfGame2.total1.setText(rs.getString("Total"));;
             } else if (gameTypeid == 2) {
-                //  SummaryOfGame3.player2.setVisible(true);
                 SummaryOfGame3.txtName1.setText(rs.getString("PlayerName"));
                 SummaryOfGame3.level1score1.setText(rs.getString("Level1Score"));
                 SummaryOfGame3.level2score1.setText(rs.getString("Level2Score"));
@@ -155,7 +145,6 @@ public class updateSummary extends Thread {
                 SummaryOfGame3.level5score1.setText(rs.getString("Level5Score"));
                 SummaryOfGame3.total1.setText(rs.getString("Total"));;
             } else if (gameTypeid == 3) {
-//                SummaryOfGame.player2.setVisible(true);
                 SummaryOfGame.txtName1.setText(rs.getString("PlayerName"));
                 SummaryOfGame.level1score1.setText(rs.getString("Level1Score"));
                 SummaryOfGame.level2score1.setText(rs.getString("Level2Score"));
@@ -172,7 +161,6 @@ public class updateSummary extends Thread {
     public void setWinner3(ResultSet rs) {
         try {
             if (gameTypeid == 2) {
-                //   SummaryOfGame3.player3.setVisible(true);
                 SummaryOfGame3.txtName2.setText(rs.getString("PlayerName"));
                 SummaryOfGame3.level1score2.setText(rs.getString("Level1Score"));
                 SummaryOfGame3.level2score2.setText(rs.getString("Level2Score"));
@@ -181,7 +169,6 @@ public class updateSummary extends Thread {
                 SummaryOfGame3.level5score2.setText(rs.getString("Level5Score"));
                 SummaryOfGame3.total2.setText(rs.getString("Total"));
             } else if (gameTypeid == 3) {
-//               SummaryOfGame.player3.setVisible(true);
                 SummaryOfGame.txtName2.setText(rs.getString("PlayerName"));
                 SummaryOfGame.level1score2.setText(rs.getString("Level1Score"));
                 SummaryOfGame.level2score2.setText(rs.getString("Level2Score"));
@@ -198,7 +185,6 @@ public class updateSummary extends Thread {
     public void setWinner4(ResultSet rs) {
         try {
             if (gameTypeid == 2) {
-//                SummaryOfGame.player4.setVisible(true);
                 SummaryOfGame.txtName3.setText(rs.getString("PlayerName"));
                 SummaryOfGame.level1score3.setText(rs.getString("Level1Score"));
                 SummaryOfGame.level2score3.setText(rs.getString("Level2Score"));

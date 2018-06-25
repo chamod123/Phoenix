@@ -92,28 +92,15 @@ public class UpdateUI {
     }
 
     public void updateLevelRanking() {
-
-        //GameResult gameResult = new GameResult(); when create object from jFrame thread running
         try {
-//            DefaultTableModel dtf2 = (javax.swing.table.DefaultTableModel) GameResult.tblGames.getModel();
             ResultSet rs = null;
-//            String data[][] = null;
-//            dtf2.setRowCount(0);
             rs = result.getRanking(GameBoard.levelNo - 1);
             ResultSetMetaData rsmd = rs.getMetaData();
 
             rs.last();
-//            int count = rs.getRow();
             rs.beforeFirst();
-//            data = new String[count][5];
             int x = 0;
             while (rs.next()) {
-//                Vector v = new Vector();
-//
-//                v.add(data[x][0] = rs.getString("Name"));
-//                v.add(data[x][1] = rs.getString("Level" + (GameBoard.levelNo - 1) + "Score"));
-//                v.add(data[x][2] = rs.getString("Total"));
-//                dtf2.addRow(v);
                 switch (x) {
                     case 0:
                         GameResult.player0.setVisible(true);

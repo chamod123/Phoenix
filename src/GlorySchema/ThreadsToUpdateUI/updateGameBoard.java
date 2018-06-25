@@ -25,7 +25,7 @@ public class updateGameBoard extends Thread {
                 Thread.sleep(1000);
                 updateUI.updateLetter();
                 updateUI.updateScoreTable();
-                System.out.println("GameResult board");
+              //  System.out.println("GameResult board");
             } catch (InterruptedException ex) {
                 Logger.getLogger(updateGameBoard.class.getName()).log(Level.SEVERE, null, ex);
             }

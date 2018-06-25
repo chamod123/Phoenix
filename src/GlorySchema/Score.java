@@ -45,9 +45,6 @@ public class Score {
 
     public void checkHightScore(double[] scoresOfPlayers) {
         //compare score of players and show current round winner
-//        Arrays.sort(scoresOfPlayer); 
-//        System.out.printf("Modified arr[] : %s", Arrays.toString(scoresOfPlayer));
-
         int maxAt = 0;
         for (int i = 0; i < scoresOfPlayers.length; i++) {
             maxAt = scoresOfPlayers[i] > scoresOfPlayers[maxAt] ? i : maxAt;
@@ -105,23 +102,16 @@ public class Score {
 
     public void getScorePosition(int remaintime) {
         //using lenth of word give the score
-//        for (int i = 0; noOfLettters > i; i++) {
-//            roundScore = roundScore + position[i];
-//        }
         double timeBonus = 0.00;
         if (remaintime <= 50) {
-            timeBonus=1;
-        }else  if (remaintime <= 75) {
-            timeBonus=2;
-        }else  if (remaintime <= 100) {
-            timeBonus=3;
+            timeBonus = 1;
+        } else if (remaintime <= 75) {
+            timeBonus = 2;
+        } else if (remaintime <= 100) {
+            timeBonus = 3;
         }
-        
-        
-            roundScore = roundScore + position[noOfLettters - 1] + timeBonus;
-        
-//        roundScore = roundScore + (11 - noOfLettters) * (-2); // reduse score if not length 11
-//        roundScore = roundScore + roundScore * (-2);
+
+        roundScore = roundScore + position[noOfLettters - 1] + timeBonus;
     }
 
 }

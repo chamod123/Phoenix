@@ -38,7 +38,7 @@ public class AllPlayerDone extends Thread {
             try {
                 Thread.sleep(1000);
                 player.getDoneLevel();
-                System.out.println("complete level " + OnlinePlayers);
+               // System.out.println("complete level " + OnlinePlayers);
             } catch (Exception ex) {
                 Logger.getLogger(updateGameBoard.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -59,23 +59,15 @@ public class AllPlayerDone extends Thread {
                 SummaryOfGame summary = new SummaryOfGame();
                 summary.setVisible(true);
             }
-            // this.dispose();
         } else {
-            //level result 
             GameResult result = new GameResult();
-
             result.setVisible(true);
-            // this.dispose();
 
         }
         
-        System.out.println("----------------------dispose");
+      //  System.out.println("----------------------dispose");
         GameBoardScreen.isdone=false;
         boardscreen.dispose();
 
-////        SelectGame selectGame=new SelectGame();
-//        GameBoardScreen gameBoard = new GameBoardScreen();
-//        gameBoard.setVisible(true);
-////        selectGame.dispose();
     }
 }

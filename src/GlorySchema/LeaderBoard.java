@@ -19,16 +19,6 @@ public class LeaderBoard {
 
     DataBase db = new DataBase();
 
-    public void addToLeaderBord() {  // need to compleet
-
-        try {
-            PreparedStatement pst = (PreparedStatement) db.psmt("UPDATE  topscore SET  PlayerId = '3' , Score='10' WHERE TopId = '2'");
-            pst.executeUpdate();
-        } catch (Exception ex) {
-            Logger.getLogger(LeaderBoard.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
     public ResultSet getTopRanking() {
 
         ResultSet rs = null;
@@ -51,6 +41,15 @@ public class LeaderBoard {
         }
         return rs;
 
+    }
+
+    public void addToLeaderBord() {
+        try {
+            PreparedStatement pst = (PreparedStatement) db.psmt("UPDATE  topscore SET  PlayerId = '3' , Score='10' WHERE TopId = '2'");
+            pst.executeUpdate();
+        } catch (Exception ex) {
+            Logger.getLogger(LeaderBoard.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public ResultSet getTopScore() {
@@ -78,15 +77,4 @@ public class LeaderBoard {
         }
         return rs;
     }
-
-    /* public ResultSet getFinalTopScore()
-     {
-       ResultSet rs = null;
-       try 
-       {
-        String query = "UPDATE";
-       
-       }
-     
-     }*/
 }

@@ -52,20 +52,6 @@ public class timer extends Thread {
                 G.skipLevel(GameBoardScreen.txtMainWord.getText(), boardscreen);
             }
         }
-////////        GameBoard.levelNo += 1;
-////////        if (GameBoard.levelNo > 5) {
-////////            SummaryOfGame summary = new SummaryOfGame();
-////////            summary.setVisible(true);
-////////            // this.dispose();
-////////
-////////        } else {
-////////            //level result 
-////////            GameResult result = new GameResult();
-////////            result.setVisible(true);
-////////            // this.dispose();
-////////
-////////        }
-
     }
 
     public void shutdown() {
@@ -80,22 +66,5 @@ public class timer extends Thread {
         }
     }
 
-    public void runTheTime() {
-//    Timer timer = new Timer();
-//        counter = 100;
-//        TimerTask task = new TimerTask() {
-//            @Override
-//            public void run() {
-//                GameBoardScreen.txtTime.setText(Integer.toString(counter));
-//                counter--;
-//                if (counter == -1) {
-//                    timer.cancel();
-//                } else if (isIt) {
-//                    timer.cancel();
-//                    isIt = false;
-//                }
-//            }
-//        };
-    }
-
+  
 }

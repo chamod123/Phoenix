@@ -26,7 +26,6 @@ public class GameBoardScreen extends javax.swing.JFrame {
     boolean isIt = false;
     public static boolean isdone = false;
 
-    //   UpdateUI updateUI =new UpdateUI();
     /**
      * Creates new form GameBoard
      */
@@ -68,9 +67,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
         (new Thread(new timer(this))).start();
 
         txtName.setText(LoginScreen.PlayerName);
-//        timer t1 = new timer();
 
-//        t1.runTheTime();
     }
 
     /**
@@ -137,7 +134,6 @@ public class GameBoardScreen extends javax.swing.JFrame {
         txtAlet.setBackground(new java.awt.Color(255, 153, 0));
         txtAlet.setFont(new java.awt.Font("Trebuchet MS", 2, 14)); // NOI18N
         txtAlet.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtAlet.setText("jLabel1");
         jPanel1.add(txtAlet, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 210, 340, 20));
 
         gisLoad1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/loader.gif"))); // NOI18N
@@ -471,11 +467,11 @@ public class GameBoardScreen extends javax.swing.JFrame {
         String x;
         G.getConstent();
         x = String.valueOf(G.getSelectedConst());
-       System.out.println(x);
+      //  System.out.println(x);
 
-        if ( x.equals("W") || x.equals("X") || x.equals("Q") || x.equals("Z") || x.equals("J")) {
-            if (x.equals(btnFirst.getText()) || x.equals(btnSecond.getText())|| x.equals(btnThird.getText())|| x.equals(btnForth.getText())|| x.equals(btnFifth.getText())|| x.equals(btnSixth.getText())|| x.equals(btnSeventh.getText())|| x.equals(btnEighth.getText())|| x.equals(btnNineth.getText())|| x.equals(btnTenth.getText())|| x.equals(btnEleventh.getText())) {
-                x=setConsonant();
+        if (x.equals("W") || x.equals("X") || x.equals("Q") || x.equals("Z") || x.equals("J")) {
+            if (x.equals(btnFirst.getText()) || x.equals(btnSecond.getText()) || x.equals(btnThird.getText()) || x.equals(btnForth.getText()) || x.equals(btnFifth.getText()) || x.equals(btnSixth.getText()) || x.equals(btnSeventh.getText()) || x.equals(btnEighth.getText()) || x.equals(btnNineth.getText()) || x.equals(btnTenth.getText()) || x.equals(btnEleventh.getText())) {
+                x = setConsonant();
             }
         }
         return x;
@@ -486,32 +482,18 @@ public class GameBoardScreen extends javax.swing.JFrame {
             btnForth.setText(setConsonant());
             btnUndo.setEnabled(true);
         } else if ("".equals(btnFifth.getText().trim()) || btnFifth.getText() == null) {
-//            G.getConstent();
-//            x = String.valueOf(G.getSelectedConst());
             btnFifth.setText(setConsonant());
         } else if ("".equals(btnSixth.getText().trim()) || btnSixth.getText() == null) {
-//            G.getConstent();
-//            x = String.valueOf(G.getSelectedConst());
             btnSixth.setText(setConsonant());
         } else if ("".equals(btnSeventh.getText().trim()) || btnSeventh.getText() == null) {
-//            G.getConstent();
-//            x = String.valueOf(G.getSelectedConst());
             btnSeventh.setText(setConsonant());
         } else if ("".equals(btnEighth.getText().trim()) || btnEighth.getText() == null) {
-//            G.getConstent();
-//            x = String.valueOf(G.getSelectedConst());
             btnEighth.setText(setConsonant());
         } else if ("".equals(btnNineth.getText().trim()) || btnNineth.getText() == null) {
-//            G.getConstent();
-//            x = String.valueOf(G.getSelectedConst());
             btnNineth.setText(setConsonant());
         } else if ("".equals(btnTenth.getText().trim()) || btnTenth.getText() == null) {
-//            G.getConstent();
-//            x = String.valueOf(G.getSelectedConst());
             btnTenth.setText(setConsonant());
         } else if ("".equals(btnEleventh.getText().trim()) || btnEleventh.getText() == null) {
-//            G.getConstent();
-//            x = String.valueOf(G.getSelectedConst());
             btnEleventh.setText(setConsonant());
         }
 
@@ -596,35 +578,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
             isdone = true;
             G.skipLevel(txtMainWord.getText(), this);
         }
-        // if(skipBoard){
-        // System.out.println("----------------------dispose");
-        // this.dispose();
-        // }
-//        WordSearch w = new WordSearch();
-//        w.setWord(txtMainWord.getText());
-//        w.matchWord();
-//        System.out.println("Debug word" + w.isCheckSpell());
-//        if (w.isCheckSpell() == true) {
-//            score.getTotalScore(txtMainWord.getText().trim(), btnFirst.getText().trim(), btnSecond.getText().trim(), btnThird.getText().trim(), w.isCheckSpell());
-//
-//        } else {
-//            // JOptionPane.showMessageDialog(rootPane, "Wrong word");
-//            score.getTotalScore(txtMainWord.getText().trim(), btnFirst.getText().trim(), btnSecond.getText().trim(), btnThird.getText().trim(), w.isCheckSpell());
-//
-//        }
-//        
-////        GameBoard.levelNo += 1;
-////        if (GameBoard.levelNo > 5) {
-////            SummaryOfGame summary = new SummaryOfGame();
-////            summary.setVisible(true);
-////            this.dispose();
-////        } else {
-////            //level result 
-////            GameResult result = new GameResult();
-////            result.setVisible(true);
-////            this.dispose();
-////
-////        }
+       
     }//GEN-LAST:event_btnDoneActionPerformed
 
     private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
@@ -686,41 +640,6 @@ public class GameBoardScreen extends javax.swing.JFrame {
         }
 
     }
-//    /**
-//     * @param args the command line arguments
-//     */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(GameBoardScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(GameBoardScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(GameBoardScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(GameBoardScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new GameBoardScreen().setVisible(true);
-//            }
-//        });
-//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnConsonant;

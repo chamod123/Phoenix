@@ -41,14 +41,13 @@ public class GameBoard {
     private int randomConInt;
     public static int levelNo = 1;
     Date time;
-    //public boolean skipBoard = false;
 
     public boolean checkSpell(String word) {
         WordSearch w = new WordSearch();
         System.out.println("--------------------" + word.toLowerCase());
         w.setWord(word.toLowerCase());
         w.matchWord();
-        System.out.println("Debug word" + w.isCheckSpell());
+       // System.out.println("Debug word" + w.isCheckSpell());
         return w.isCheckSpell();
     }
 
@@ -57,27 +56,12 @@ public class GameBoard {
         if (iscorrect && !"".equals(word.toLowerCase())) {
             score.getTotalScore(word.toLowerCase(), GameBoardScreen.btnFirst.getText().trim().toLowerCase(), GameBoardScreen.btnSecond.getText().trim().toLowerCase(), GameBoardScreen.btnThird.getText().trim().toLowerCase(), iscorrect, Integer.valueOf(GameBoardScreen.txtTime.getText().trim()));
         } else {
-            //JOptionPane.showMessageDialog(null, "Wrong word");
             score.getTotalScore(word.toLowerCase(), GameBoardScreen.btnFirst.getText().trim().toLowerCase(), GameBoardScreen.btnSecond.getText().trim().toLowerCase(), GameBoardScreen.btnThird.getText().trim().toLowerCase(), iscorrect, Integer.valueOf(GameBoardScreen.txtTime.getText().trim()));
         }
 
         AllPlayerDone t = new AllPlayerDone(boardscreen);
         t.start();
-        //t.sleepThread();
-//        t.shutdown();
-//        GameBoard.levelNo += 1;
-//         System.out.println(GameBoard.levelNo);
-//        if (GameBoard.levelNo >= 5) {
-//            SummaryOfGame summary = new SummaryOfGame();
-//            summary.setVisible(true);
-//           // this.dispose();
-//        } else {
-//            //level result 
-//            GameResult result = new GameResult();
-//            result.setVisible(true);
-//           // this.dispose();
-//
-//        }
+        
     }
 
     public void getInitialLetter() {
@@ -208,8 +192,7 @@ public class GameBoard {
 
         ResultSet rs = null;
         try {
-            // String query = "SELECT * FROM gameboard1 ORDER BY Total DESC";//SELECT * FROM onlinegame O INNER JOIN gametype T ON O.gameTypeId = T.GameId  WHERE O.gameId LIKE  '" + gameid + "%'";
-            String query = "SELECT playerName,Level" + levelNo + "Letter FROM  " + GameType.tableName + " ";//SELECT * FROM onlinegame O INNER JOIN gametype T ON O.gameTypeId = T.GameId  WHERE O.gameId LIKE  '" + gameid + "%'";
+           String query = "SELECT playerName,Level" + levelNo + "Letter FROM  " + GameType.tableName + " ";//SELECT * FROM onlinegame O INNER JOIN gametype T ON O.gameTypeId = T.GameId  WHERE O.gameId LIKE  '" + gameid + "%'";
             rs = (ResultSet) db.fetch(query);
         } catch (Exception e) {
             e.printStackTrace();

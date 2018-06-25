@@ -32,14 +32,12 @@ public class OnlineUser extends Thread {
             try {
                 Thread.sleep(1000);
                 player.getOnlineUser();
-                System.out.println("online player " + OnlinePlayers);
+              //  System.out.println("online player " + OnlinePlayers);
             } catch (InterruptedException ex) {
                 Logger.getLogger(updateGameBoard.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-
-//        SelectGame selectGame=new SelectGame();
-        GameBoardScreen gameBoard = new GameBoardScreen();
+GameBoardScreen gameBoard = new GameBoardScreen();
         gameBoard.setVisible(true);
         selectgame.dispose();
 

@@ -20,82 +20,19 @@ public class SelectGame extends javax.swing.JFrame {
     public SelectGame() {
         setUndecorated(true);
         initComponents();
-        btnPlay.setContentAreaFilled( false );
-        btnPlay.setBorder( null );
-        btnQuit.setContentAreaFilled( false );
-        btnQuit.setBorder( null );
-        btnLeader.setContentAreaFilled( false );
-        btnLeader.setBorder( null );
-//        ShowGrid();
-//        getGameData(); // show current Games
+        btnPlay.setContentAreaFilled(false);
+        btnPlay.setBorder(null);
+        btnQuit.setContentAreaFilled(false);
+        btnQuit.setBorder(null);
+        btnLeader.setContentAreaFilled(false);
+        btnLeader.setBorder(null);
 
-        //rdb2Player.setOpaque(false);
-//        tblGames.setOpaque(true);
+        jLabel7.setVisible(false);
+        btnLeader.setVisible(false);
+
         setLocationRelativeTo(null);
         gisLoad.setVisible(false);
     }
-
-//    private void getGameData() {
-//        try {
-//            ResultSet rs = null;
-//            String data[][] = null;
-//
-//            rs = game.getGameTypes("");
-//            ResultSetMetaData rsmd = rs.getMetaData();
-//
-//            rs.last();
-//            int count = rs.getRow();
-//            rs.beforeFirst();
-//            data = new String[count][5];
-//            int x = 0;
-//            while (rs.next()) {
-//                Vector v = new Vector();
-//                DefaultTableModel dtf = (javax.swing.table.DefaultTableModel) tblGames.getModel();
-//                v.add(data[x][0] = rs.getString("gameId"));
-//                v.add(data[x][1] = rs.getString("Description"));
-//                v.add(data[x][2] = rs.getString("currentPlayers"));
-////                v.add(data[x][3] = rs.getString(""));
-////                v.add(data[x][4] = rs.getString(""));
-//                dtf.addRow(v);
-//                //confirm = rs.getInt("confirm");
-//                x = x + 1;
-//            }
-//
-//        } catch (SQLException ex) {
-//            Logger.getLogger(SelectGame.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//    }
-
-//    private void ShowGrid() {
-//        String data[][] = null;
-//        String colu[] = new String[]{"Game Id", "Game Type", "Connected players"};
-//        DefaultTableModel model = new DefaultTableModel(data, colu) {
-//            //@Override
-//            public boolean isCellEditable(int x, int y) {
-//                if (y == 1) {
-//                    return true;
-//                } else {
-//                    return false;
-//                }
-//            }
-//        };
-//
-//        tblGames.setModel(model);
-//        tblGames.getTableHeader().setPreferredSize(new Dimension(tblGames.getTableHeader().getPreferredSize().width, 35));
-//        JTableHeader head = tblGames.getTableHeader();
-//        head.setFont(head.getFont().deriveFont(Font.BOLD));
-//
-//        DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
-//        rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
-//        // tblGames.getColumnModel().getColumn(4).setCellRenderer(rightRenderer);
-//
-//        // model.setRowCount(20);
-//        TableColumn colou10 = tblGames.getColumnModel().getColumn(0);
-//        colou10.setMinWidth(80);
-//        colou10.setPreferredWidth(80);
-//        colou10.setMaxWidth(80);
-//
-//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -282,7 +219,7 @@ public class SelectGame extends javax.swing.JFrame {
     private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
         btnPlay.setEnabled(false);
         btnQuit.setEnabled(false);
-         gisLoad.setVisible(true);
+        gisLoad.setVisible(true);
         // jPanel1.setEnabled(false);
         if (chk2Player.isSelected()) {
             gameTypeid = 1;
@@ -291,20 +228,11 @@ public class SelectGame extends javax.swing.JFrame {
         } else if (chk4Player.isSelected()) {
             gameTypeid = 3;
         }
-         //gisLoad.setVisible(false);
+        //gisLoad.setVisible(false);
         game.connectWithGame(gameTypeid);
 
         OnlineUser t = new OnlineUser(this);
         t.start();
-        //t.sleepThread();
-//        t.shutdown();
-
-//        GameBoardScreen gameBoard = new GameBoardScreen();
-//        gameBoard.setVisible(true);
-//        this.dispose();
-//        ShowGrid();
-//        getGameData(); // show current Games
-
     }//GEN-LAST:event_btnPlayActionPerformed
 
     private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitActionPerformed
@@ -312,8 +240,7 @@ public class SelectGame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnQuitActionPerformed
 
     private void btnPlayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPlayMouseClicked
-//         timer t1=new timer();
-// t1.runTheTime();
+
     }//GEN-LAST:event_btnPlayMouseClicked
 
     private void btnLeaderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLeaderActionPerformed
@@ -321,41 +248,6 @@ public class SelectGame extends javax.swing.JFrame {
         leader.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnLeaderActionPerformed
-
-//    /**
-//     * @param args the command line arguments
-//     */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(SelectGame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(SelectGame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(SelectGame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(SelectGame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new SelectGame().setVisible(true);
-//            }
-//        });
-//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLeader;

@@ -48,8 +48,8 @@ public class Player {
         return id;
     }
 
-   public void loging(String userName, String password, LoginScreen log) {
-         try {
+    public void loging(String userName, String password, LoginScreen log) {
+        try {
             DataBase db = new DataBase();
             String username = userName;
             ResultSet rs = null;
@@ -59,8 +59,7 @@ public class Player {
             if (rs.next()) {
                 LoginScreen.PlayerName = rs.getString("Name");
                 LoginScreen.PlayerId = rs.getString("UserId");
-               if (password.equals(rs.getString("Password"))) {
-                    // JOptionPane.showMessageDialog(null, "Success", "InfoBox: " + "Done", JOptionPane.INFORMATION_MESSAGE);
+                if (password.equals(rs.getString("Password"))) {
                     SelectGame breq = new SelectGame();
                     breq.setVisible(true);
                     log.dispose();
@@ -73,7 +72,7 @@ public class Player {
         } catch (Exception ex) {
             Logger.getLogger(LoginScreen.class.getName()).log(Level.SEVERE, null, ex);
         }
-   }
+    }
 
     public void editDetails() {
     }
@@ -88,8 +87,6 @@ public class Player {
             pst.setString(4, UserName.trim());
             pst.setString(5, password.trim());
             val = pst.executeUpdate();
-
-//            JOptionPane.showMessageDialog(null, "Data Saved Successfully");
         } catch (Exception e) {
 
             JOptionPane.showMessageDialog(null, "Data not saved");
@@ -99,23 +96,21 @@ public class Player {
 
     public void getOnlineUser() {
         try {
-            String query = "SELECT PlayerId FROM "+tableName+"";
+            String query = "SELECT PlayerId FROM " + tableName + "";
             ResultSet rs = (ResultSet) db.fetch(query);
             rs.last();
-            //int count = rs.getRow();
             OnlinePlayers = rs.getRow();
         } catch (Exception ex) {
             Logger.getLogger(Player.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-     public void getDoneLevel() {
+
+    public void getDoneLevel() {
         try {
-            
-            String query = "SELECT Level"+levelNo+"Score FROM "+tableName+" WHERE Level"+levelNo+"Score >= 0";
+
+            String query = "SELECT Level" + levelNo + "Score FROM " + tableName + " WHERE Level" + levelNo + "Score >= 0";
             ResultSet rs = (ResultSet) db.fetch(query);
             rs.last();
-            //int count = rs.getRow();
             OnlinePlayers = rs.getRow();
         } catch (Exception ex) {
             Logger.getLogger(Player.class.getName()).log(Level.SEVERE, null, ex);
