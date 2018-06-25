@@ -96,7 +96,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
         txtLevel = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         txtName = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        btnConsonant = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         player1L = new javax.swing.JLabel();
         player3 = new javax.swing.JLabel();
@@ -209,15 +209,15 @@ public class GameBoardScreen extends javax.swing.JFrame {
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 130, 40));
 
-        jButton4.setBackground(new java.awt.Color(51, 204, 255));
-        jButton4.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jButton4.setText("CONSONANT");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnConsonant.setBackground(new java.awt.Color(51, 204, 255));
+        btnConsonant.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        btnConsonant.setText("CONSONANT");
+        btnConsonant.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnConsonantActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 430, 140, 40));
+        jPanel1.add(btnConsonant, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 430, 140, 40));
 
         jPanel5.setBackground(new java.awt.Color(51, 204, 0));
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Initial Letters", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
@@ -467,48 +467,56 @@ public class GameBoardScreen extends javax.swing.JFrame {
         setAlet();
     }//GEN-LAST:event_txtMainWordActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-        GameBoard G = new GameBoard();
+    public String setConsonant() {
         String x;
+        G.getConstent();
+        x = String.valueOf(G.getSelectedConst());
+       System.out.println(x);
 
+        if ( x.equals("W") || x.equals("X") || x.equals("Q") || x.equals("Z") || x.equals("J")) {
+            if (x.equals(btnFirst.getText()) || x.equals(btnSecond.getText())|| x.equals(btnThird.getText())|| x.equals(btnForth.getText())|| x.equals(btnFifth.getText())|| x.equals(btnSixth.getText())|| x.equals(btnSeventh.getText())|| x.equals(btnEighth.getText())|| x.equals(btnNineth.getText())|| x.equals(btnTenth.getText())|| x.equals(btnEleventh.getText())) {
+                x=setConsonant();
+            }
+        }
+        return x;
+    }
+
+    private void btnConsonantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsonantActionPerformed
         if ("".equals(btnForth.getText().trim()) || btnForth.getText() == null) {
-            G.getConstent();
-            x = String.valueOf(G.getSelectedConst());
-            btnForth.setText(x);
+            btnForth.setText(setConsonant());
             btnUndo.setEnabled(true);
         } else if ("".equals(btnFifth.getText().trim()) || btnFifth.getText() == null) {
-            G.getConstent();
-            x = String.valueOf(G.getSelectedConst());
-            btnFifth.setText(x);
+//            G.getConstent();
+//            x = String.valueOf(G.getSelectedConst());
+            btnFifth.setText(setConsonant());
         } else if ("".equals(btnSixth.getText().trim()) || btnSixth.getText() == null) {
-            G.getConstent();
-            x = String.valueOf(G.getSelectedConst());
-            btnSixth.setText(x);
+//            G.getConstent();
+//            x = String.valueOf(G.getSelectedConst());
+            btnSixth.setText(setConsonant());
         } else if ("".equals(btnSeventh.getText().trim()) || btnSeventh.getText() == null) {
-            G.getConstent();
-            x = String.valueOf(G.getSelectedConst());
-            btnSeventh.setText(x);
+//            G.getConstent();
+//            x = String.valueOf(G.getSelectedConst());
+            btnSeventh.setText(setConsonant());
         } else if ("".equals(btnEighth.getText().trim()) || btnEighth.getText() == null) {
-            G.getConstent();
-            x = String.valueOf(G.getSelectedConst());
-            btnEighth.setText(x);
+//            G.getConstent();
+//            x = String.valueOf(G.getSelectedConst());
+            btnEighth.setText(setConsonant());
         } else if ("".equals(btnNineth.getText().trim()) || btnNineth.getText() == null) {
-            G.getConstent();
-            x = String.valueOf(G.getSelectedConst());
-            btnNineth.setText(x);
+//            G.getConstent();
+//            x = String.valueOf(G.getSelectedConst());
+            btnNineth.setText(setConsonant());
         } else if ("".equals(btnTenth.getText().trim()) || btnTenth.getText() == null) {
-            G.getConstent();
-            x = String.valueOf(G.getSelectedConst());
-            btnTenth.setText(x);
+//            G.getConstent();
+//            x = String.valueOf(G.getSelectedConst());
+            btnTenth.setText(setConsonant());
         } else if ("".equals(btnEleventh.getText().trim()) || btnEleventh.getText() == null) {
-            G.getConstent();
-            x = String.valueOf(G.getSelectedConst());
-            btnEleventh.setText(x);
+//            G.getConstent();
+//            x = String.valueOf(G.getSelectedConst());
+            btnEleventh.setText(setConsonant());
         }
 
 
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnConsonantActionPerformed
 
     private void btnSecondActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSecondActionPerformed
         txtMainWord.setText(txtMainWord.getText() + btnSecond.getText());
@@ -715,6 +723,7 @@ public class GameBoardScreen extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnConsonant;
     private javax.swing.JButton btnDone;
     private javax.swing.JButton btnEighth;
     private javax.swing.JButton btnEleventh;
@@ -732,7 +741,6 @@ public class GameBoardScreen extends javax.swing.JFrame {
     private javax.swing.JLabel gisLoad;
     private javax.swing.JLabel gisLoad1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

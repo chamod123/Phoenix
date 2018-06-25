@@ -44,8 +44,8 @@ public class GameBoard {
     //public boolean skipBoard = false;
 
     public boolean checkSpell(String word) {
-         WordSearch w = new WordSearch();
-        System.out.println("--------------------"+word.toLowerCase());
+        WordSearch w = new WordSearch();
+        System.out.println("--------------------" + word.toLowerCase());
         w.setWord(word.toLowerCase());
         w.matchWord();
         System.out.println("Debug word" + w.isCheckSpell());
@@ -53,14 +53,14 @@ public class GameBoard {
     }
 
     public void skipLevel(String word, GameBoardScreen boardscreen) {
-       boolean iscorrect = checkSpell(word);
-        if ( iscorrect && !"".equals(word.toLowerCase()) ) {
-            score.getTotalScore(word.toLowerCase(), GameBoardScreen.btnFirst.getText().trim().toLowerCase(), GameBoardScreen.btnSecond.getText().trim().toLowerCase(), GameBoardScreen.btnThird.getText().trim().toLowerCase(), iscorrect);
+        boolean iscorrect = checkSpell(word);
+        if (iscorrect && !"".equals(word.toLowerCase())) {
+            score.getTotalScore(word.toLowerCase(), GameBoardScreen.btnFirst.getText().trim().toLowerCase(), GameBoardScreen.btnSecond.getText().trim().toLowerCase(), GameBoardScreen.btnThird.getText().trim().toLowerCase(), iscorrect, Integer.valueOf(GameBoardScreen.txtTime.getText().trim()));
         } else {
             //JOptionPane.showMessageDialog(null, "Wrong word");
-            score.getTotalScore(word.toLowerCase(), GameBoardScreen.btnFirst.getText().trim().toLowerCase(), GameBoardScreen.btnSecond.getText().trim().toLowerCase(), GameBoardScreen.btnThird.getText().trim().toLowerCase(), iscorrect);
+            score.getTotalScore(word.toLowerCase(), GameBoardScreen.btnFirst.getText().trim().toLowerCase(), GameBoardScreen.btnSecond.getText().trim().toLowerCase(), GameBoardScreen.btnThird.getText().trim().toLowerCase(), iscorrect, Integer.valueOf(GameBoardScreen.txtTime.getText().trim()));
         }
-        
+
         AllPlayerDone t = new AllPlayerDone(boardscreen);
         t.start();
         //t.sleepThread();
@@ -216,7 +216,5 @@ public class GameBoard {
         }
         return rs;
     }
-
-    
 
 }

@@ -21,16 +21,16 @@ public class Score {
     int[] position = {1, 2, 3, 5, 8, 12, 17, 13, 30, 38, 47};
     int hightScoreBones = 5;
 
-    public void getTotalScore(String word, String letter1, String letter2, String letter3, Boolean isWord) {
+    public void getTotalScore(String word, String letter1, String letter2, String letter3, Boolean isWord, int time) {
         //calculate total marks of current round with bonus       
 
         noOfLettersUsed(word);
 
-        if (isWord == false || noOfLettters < 3 ) {
+        if (isWord == false || noOfLettters < 3) {
             roundScore = 0;
         } else {
             checkIfInitiolUsed(letter1, letter2, letter3, word);
-            getScorePosition();
+            getScorePosition(time);
             if (noOfLettters == 11) {
                 bonus = bonus + maxLengthBonus;
             }
@@ -103,13 +103,23 @@ public class Score {
         }
     }
 
-    public void getScorePosition() {
+    public void getScorePosition(int remaintime) {
         //using lenth of word give the score
 //        for (int i = 0; noOfLettters > i; i++) {
 //            roundScore = roundScore + position[i];
 //        }
-
-        roundScore = roundScore + position[noOfLettters - 1];
+        double timeBonus = 0.00;
+        if (remaintime <= 50) {
+            timeBonus=1;
+        }else  if (remaintime <= 75) {
+            timeBonus=2;
+        }else  if (remaintime <= 100) {
+            timeBonus=3;
+        }
+        
+        
+            roundScore = roundScore + position[noOfLettters - 1] + timeBonus;
+        
 //        roundScore = roundScore + (11 - noOfLettters) * (-2); // reduse score if not length 11
 //        roundScore = roundScore + roundScore * (-2);
     }
